@@ -4,7 +4,10 @@ using System.Text;
 
 namespace PokemonBox.Models
 {
-    class PokemonAbility : ElementType
+    abstract class ElementType
     {
+        protected string name;
+
+        
     }
 }

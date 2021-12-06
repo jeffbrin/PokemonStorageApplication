@@ -13,8 +13,7 @@ namespace PokemonBox.Models
         public int PokedexNumber { get; set; }
         public string Name { get; set; }
         public string? Nickname { get; set; }
-        public PokemonType PrimaryType { get; set; }
-        public PokemonType? SecondaryType { get; set; }
+        public PokemonType[] Types { get; set; }
         public int BaseHealth { get; set; }
         public int BaseAttack { get; set; }
         public int BaseDefence { get; set; }

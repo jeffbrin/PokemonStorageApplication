@@ -25,9 +25,10 @@ namespace PokemonBox.Models
                         {
                             PokedexNumber = int.Parse(pokemonData[POKEDEX_NUMBER_COLUMN]),
                             Name = pokemonData[NAME_COLUMN],
-                            PrimaryType = new PokemonType(pokemonData[TYPE_ONE_COLUMN]);
-                        }
+                            Types = new PokemonType[2] { new PokemonType(pokemonData[TYPE_ONE_COLUMN]), string.IsNullOrEmpty(pokemonData[TYPE_TWO_COLUMN]) ? null : new PokemonType(pokemonData[TYPE_TWO_COLUMN]) }
+                        };
                     }
+
                 }
             }
             catch (Exception)
@@ -35,9 +36,7 @@ namespace PokemonBox.Models
 
                 throw;
             }
-
             return null;
         }
-
     }
 }
