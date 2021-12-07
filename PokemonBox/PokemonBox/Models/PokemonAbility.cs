@@ -4,23 +4,9 @@ using System.Text;
 
 namespace PokemonBox.Models
 {
-    class PokemonAbility : ElementType
+    class PokemonAbility
     {
 
-        public override string[] GetWeaknessTypes()
-        {
-            throw new NotImplementedException();
-        }
-
-        public override string[] GetImmunityTypes()
-        {
-            throw new NotImplementedException();
-        }
-
-        public override string[] GetStrengthTypes()
-        {
-            throw new NotImplementedException();
-        }
 
     }
 }

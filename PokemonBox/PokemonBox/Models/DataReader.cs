@@ -7,15 +7,28 @@ namespace PokemonBox.Models
 {
     static class DataReader
     {
-        static public Pokemon[] GetPokemonInformation(string path)
+        private enum PokemonDatasheetColumns
         {
+            Pokedex_number,
+            Name,
+            TypeOne,
+            TypeTwo,
+            Health,
+            Attack,
+            Defence,
+            SpecialAttack,
+            SpecialDefence,
+            Speed
+        }
+
+        static public Pokemon[] GetPokemonInformation(string path, Dictionary<string, PokemonType> PokemonTypeDictionary)
+        {
+
             try
             {
                 if (File.Exists(path))
                 {
-                    // TODO: CHANGE TO AN ENUM
-                    const int POKEDEX_NUMBER_COLUMN = 0, NAME_COLUMN = 1, TYPE_ONE_COLUMN = 2, TYPE_TWO_COLUMN = 3, HEALTH_COLUMN = 4;
-                    const int ATTACK_COLUMN = 5, DEFENCE_COLUMN = 6, SPECIAL_ATTACK_COLUMN = 7, SPECIAL_DEFENCE_COLUMN = 8, SPEED_COLUMN = 9;
+
                     string[] pokemonLines = File.ReadAllLines(path);
                     Pokemon[] pokemon = new Pokemon[pokemonLines.Length];
 
@@ -24,9 +37,11 @@ namespace PokemonBox.Models
                         string[] pokemonData = pokemonLines[i].Split(',');
                         pokemon[i] = new Pokemon()
                         {
-                            PokedexNumber = int.Parse(pokemonData[POKEDEX_NUMBER_COLUMN]),
-                            Name = pokemonData[NAME_COLUMN],
-                            Types = new PokemonType[2] { new PokemonType(pokemonData[TYPE_ONE_COLUMN]), string.IsNullOrEmpty(pokemonData[TYPE_TWO_COLUMN]) ? null : new PokemonType(pokemonData[TYPE_TWO_COLUMN]) }
+                            PokedexNumber = int.Parse(pokemonData[(int)PokemonDatasheetColumns.Pokedex_number]),
+                            Name = pokemonData[(int)PokemonDatasheetColumns.Name]
+                            //Types = new PokemonType[2] { 
+                            //    new PokemonType(pokemonData[TYPE_ONE_COLUMN]), 
+                            //    string.IsNullOrEmpty(pokemonData[TYPE_TWO_COLUMN]) ? null : new PokemonType(pokemonData[TYPE_TWO_COLUMN]) }
                         };
                     }
 
