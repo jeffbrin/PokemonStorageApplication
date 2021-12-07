@@ -10,6 +10,8 @@ namespace PokemonBox.Models
         private Dictionary<string, PokemonType> pokemonTypeByNameDictionary;
         private Dictionary<string, PokemonType> attackTypeByNameDictionary;
 
+        public PokemonType[] pokemonTypes; // Remove
+
         public PCBox()
         {
             // Get the dictionaries generated from csv files by the DataReader class
@@ -17,7 +19,7 @@ namespace PokemonBox.Models
             Dictionary<string, Dictionary<string, string[]>> attackTypeDictionary = DataReader.GetTypesInformation("PokemonData/attackMatchups.csv");
 
             // Get the arrays of pokemon types
-            PokemonType[] pokemonTypes = GetAllTypes(pokemonTypeDictionary);
+            pokemonTypes = GetAllTypes(pokemonTypeDictionary);
             PokemonType[] attackTypes = GetAllTypes(attackTypeDictionary);
 
             // Get the typeName: PokemonType dictionaries
@@ -42,7 +44,10 @@ namespace PokemonBox.Models
                 // Get the matchups of the type being iterated over
                 Dictionary<string, string[]> typeMatchups = typeDictionary[pokemonTypeName];
                 // Instantiate this pokemon type and add it to the list
-                pokemonTypes.Add(new PokemonType(pokemonTypeName, typeMatchups["Weak"], typeMatchups["Effective"], typeMatchups["Immune"]));
+                pokemonTypes.Add(new PokemonType(pokemonTypeName,
+                                    typeMatchups.ContainsKey("Weak") ? typeMatchups["Weak"] : null,
+                                    typeMatchups.ContainsKey("Effective") ? typeMatchups["Effective"] : null,
+                                    typeMatchups.ContainsKey("Immune") ? typeMatchups["Immune"] : null));
             }
 
             // Return the pokemon types list as an array

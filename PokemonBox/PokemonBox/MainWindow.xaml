@@ -12,7 +12,6 @@
             <RowDefinition Height="50"/>
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
-        <Button Grid.Row="0" Content="Click me" x:Name="btnTesting" Click="btnTesting_Click"/>
-        <TextBlock Grid.Row="1" x:Name="txtTesting"/>
+        <ComboBox x:Name="cmbAttackTypes" ItemsSource="{Binding Name}"/>
     </Grid>
 </Window>
