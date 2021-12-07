@@ -4,51 +4,46 @@ using System.Text;
 
 namespace PokemonBox.Models
 {
-    class PokemonType : ElementType
+    class PokemonType
     {
-        private PokemonType[] weaknesses; // Not sure what the best type for these are
-        private PokemonType[] resistances; // Could be PokemonTypes or maybe strings 
-        private string typeName;
+        private const string ELEMENT_ICON_DIRECTORY = "ElementIcons/";
+        private const string ICON_FILE_EXTENSIONS = ".png";
+        private string[] weaknesses;
+        private string[] strengths;
+        private string[] immunities;
 
-        static Dictionary<string, string[]> typeResistances =
-             new Dictionary<string, string[]>();
-
-        static Dictionary<string, string[]> typeWeaknesses =
-             new Dictionary<string, string[]>();
-
-        static Dictionary<string, string[]> typeImmunities =
-             new Dictionary<string, string[]>();
-
-
-        public PokemonType(string typeName)
+        public PokemonType(string name, string[] weaknesses, string[] strengths, string[] immunities)
         {
-
+            Name = name;
+            this.weaknesses = weaknesses;
+            this.strengths = strengths;
+            this.immunities = immunities;
         }
 
-        static PokemonType()
+        public PokemonType(string name, string[] weaknesses, string[] strengths, string[] immunities, string colorTheme): this(name, weaknesses, strengths, immunities)
         {
-            typeResistances.Add("Normal", null);
-            typeWeaknesses.Add("Normal", new string[] {"Fighting"});
-            typeImmunities.Add("Normal", new string[] { "Ghost" });
-
-            typeResistances.Add("Fire", new string[] { "Fire", "Grass", "Bug"});
-            typeWeaknesses.Add("Fire", new string[] { "Water" });
-            typeImmunities.Add("Normal", new string[] { "Ghost" });
+            ColorTheme = colorTheme;
         }
 
-        public override string[] GetStrengthTypes()
+        public string Name { get; set; }
+        public string ColorTheme { get; set; }
+        public string ImagePath
         {
-            throw new NotImplementedException();    
+            get { return ELEMENT_ICON_DIRECTORY + Name + ICON_FILE_EXTENSIONS; }
         }
 
-        public override string[] GetImmunityTypes()
+        public string[] GetWeaknessTypes
         {
-            throw new NotImplementedException();
+            get { return weaknesses; }
+        }
+        public string[] GetStrengthTypes
+        {
+            get { return strengths; }
+        }
+        public string[] GetImmunityTypes
+        {
+            get { return immunities; }
         }
 
-        public override string[] GetWeaknessTypes()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

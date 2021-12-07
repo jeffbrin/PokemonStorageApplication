@@ -30,11 +30,12 @@ namespace PokemonBox
         // TODO: DELETE
         private void btnTesting_Click(object sender, RoutedEventArgs e)
         {
-            Dictionary<string, Dictionary<string, string[]>> typeMatchups = DataReader.GetAttackTypesInformation("PokemonData/attackMatchups.csv");
+            Dictionary<string, Dictionary<string, string[]>> attackeMatchups = DataReader.GetTypesInformation("PokemonData/attackMatchups.csv");
+            Dictionary<string, Dictionary<string, string[]>> defenceMatchups = DataReader.GetTypesInformation("PokemonData/defenceMatchups.csv");
 
             string matchup = "Fire is weak against: ";
 
-            foreach (string type in typeMatchups["Fire"]["Weak"])
+            foreach (string type in defenceMatchups["Normal"]["Weak"])
                 matchup += $"{type} ";
             txtTesting.Text = matchup;
         }

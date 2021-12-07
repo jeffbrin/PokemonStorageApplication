@@ -47,7 +47,7 @@ namespace PokemonBox.Models
         /// </summary>
         /// <param name="path">The path to the attack matchups file</param>
         /// <returns>A nested dictionary of super effective types, weak types, and immunities for each pokemon type.</returns>
-        static public Dictionary<string, Dictionary<string, string[]>> GetAttackTypesInformation(string path)
+        static public Dictionary<string, Dictionary<string, string[]>> GetTypesInformation(string path)
         {
             try
             {
