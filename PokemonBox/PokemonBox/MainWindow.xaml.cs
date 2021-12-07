@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using PokemonBox.Models;
 
 namespace PokemonBox
 {
@@ -23,6 +24,19 @@ namespace PokemonBox
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+
+        // TODO: DELETE
+        private void btnTesting_Click(object sender, RoutedEventArgs e)
+        {
+            Dictionary<string, Dictionary<string, string[]>> typeMatchups = DataReader.GetAttackTypesInformation("PokemonData/attackMatchups.csv");
+
+            string matchup = "Fire is weak against: ";
+
+            foreach (string type in typeMatchups["Fire"]["Weak"])
+                matchup += $"{type} ";
+            txtTesting.Text = matchup;
         }
     }
 }

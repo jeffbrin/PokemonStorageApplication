@@ -6,5 +6,9 @@ namespace PokemonBox.Models
 {
     class Attack
     {
+        public int Damage { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
+        public AttackType Type { get; set; }
     }
 }

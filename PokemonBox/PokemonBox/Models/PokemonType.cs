@@ -35,5 +35,20 @@ namespace PokemonBox.Models
             typeWeaknesses.Add("Fire", new string[] { "Water" });
             typeImmunities.Add("Normal", new string[] { "Ghost" });
         }
+
+        public override string[] GetStrengthTypes()
+        {
+            throw new NotImplementedException();    
+        }
+
+        public override string[] GetImmunityTypes()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override string[] GetWeaknessTypes()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
