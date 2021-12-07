@@ -25,6 +25,10 @@ x86/
 [Aa][Rr][Mm]/
 [Aa][Rr][Mm]64/
 bld/
+<<<<<<< HEAD
+=======
+[Bb]in/*.deps
+>>>>>>> 52257d764b5f96ec80ecc2bd47227a7350b549dd
 [Oo]bj/
 [Ll]og/
 [Ll]ogs/

@@ -13,4 +13,4 @@
 - [ ] Pokémon Class
 - [ ] Move Class
 - [ ] Type Class
-- [ ] 
+- [ ] PokemonBox Class to hold all the created pokemon
