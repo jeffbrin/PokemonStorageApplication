@@ -7,11 +7,10 @@ namespace PokemonBox.Models
     class Pokemon
     {
 
-        private string spritePath;
         private const string SPRITES_DIRECTORY_PATH = "PokemonData/";
 
         public int PokedexNumber { get; set; }
-        public string Name { get; set; }
+        public string Species { get; set; }
         public string Nickname { get; set; }
         public PokemonType[] Types {get; set;}
         public int BaseHealth { get; set; }
@@ -29,7 +28,7 @@ namespace PokemonBox.Models
 
         public string DisplayName
         {
-            get { return (Nickname != string.Empty ? Nickname : Name); }
+            get { return (Nickname != string.Empty ? Nickname : Species); }
         }
 
         public override string ToString()

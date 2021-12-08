@@ -39,7 +39,7 @@ namespace PokemonBox.Models
                         pokemon[i] = new Pokemon()
                         {
                             PokedexNumber = int.Parse(pokemonData[(int)PokemonDatasheetColumns.Pokedex_number]),
-                            Name = pokemonData[(int)PokemonDatasheetColumns.Name],
+                            Species = pokemonData[(int)PokemonDatasheetColumns.Name],
                             Types = new PokemonType[] { pokemonTypeDictionary[pokemonData[(int)PokemonDatasheetColumns.TypeOne]], string.IsNullOrEmpty(pokemonData[(int)PokemonDatasheetColumns.TypeTwo]) ? null : pokemonTypeDictionary[pokemonData[(int)PokemonDatasheetColumns.TypeTwo]] },
                             BaseAttack = int.Parse(pokemonData[(int)PokemonDatasheetColumns.Attack]),
                             BaseDefence = int.Parse(pokemonData[(int)PokemonDatasheetColumns.Defence]),

@@ -35,7 +35,13 @@ namespace PokemonBox
         {
             // Instantiate the pc box
             pcBox = new PCBox();
-            cmbAttackTypes.ItemsSource = pcBox.GetPokemonOptions();
+            cmbSpeciesOptions.ItemsSource = pcBox.GetPokemonOptions();
+        }
+
+        private void cmbAttackTypes_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            // Set the bindings for the pokemon selection grid
+            grdSelectedSpecies.DataContext = cmbSpeciesOptions.SelectedItem;
         }
     }
 }
