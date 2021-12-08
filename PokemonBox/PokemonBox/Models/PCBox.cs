@@ -74,6 +74,7 @@ namespace PokemonBox.Models
             return pokemonTypeDictionary;
         }
 
+        // Returns all the species of pokemon that the user can choose from
         public Pokemon[] GetPokemonOptions()
         {
             return pokemonOptions;

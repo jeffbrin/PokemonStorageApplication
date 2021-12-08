@@ -11,7 +11,7 @@ namespace PokemonBox.Models
         public enum PokemonDatasheetColumns
         {
             Pokedex_number,
-            Name,
+            Species,
             TypeOne,
             TypeTwo,
             Health,
@@ -22,36 +22,50 @@ namespace PokemonBox.Models
             Speed
         }
 
+        /// <summary>
+        /// Gets an array of pokemon generated from the csv file passed in through the path
+        /// </summary>
+        /// <param name="path">A csv file with pokemon data</param>
+        /// <param name="pokemonTypeDictionary">A dictionary that returns a pokemon type when passed a string</param>
+        /// <returns></returns>
         static public Pokemon[] GetPokemonOptions(string path, Dictionary<string, PokemonType> pokemonTypeDictionary)
         {
 
             try
             {
+                // Check if the csv file exists
                 if (File.Exists(path))
                 {
-
+                    
+                    // Read all the lines from the file and instantiate the empty pokemon array
                     string[] pokemonLines = File.ReadAllLines(path);
                     Pokemon[] pokemon = new Pokemon[pokemonLines.Length];
 
+                    // Loop through each line in the file
                     for (int i = 0; i < pokemonLines.Length; i++)
                     {
+                        // Split the pokemon data on the comma
                         string[] pokemonData = pokemonLines[i].Split(',');
+                        // Generate the new pokemon from this line of data
                         pokemon[i] = new Pokemon()
                         {
-                            PokedexNumber = int.Parse(pokemonData[(int)PokemonDatasheetColumns.Pokedex_number]),
-                            Species = pokemonData[(int)PokemonDatasheetColumns.Name],
-                            Types = new PokemonType[] { pokemonTypeDictionary[pokemonData[(int)PokemonDatasheetColumns.TypeOne]], string.IsNullOrEmpty(pokemonData[(int)PokemonDatasheetColumns.TypeTwo]) ? null : pokemonTypeDictionary[pokemonData[(int)PokemonDatasheetColumns.TypeTwo]] },
-                            BaseAttack = int.Parse(pokemonData[(int)PokemonDatasheetColumns.Attack]),
-                            BaseDefence = int.Parse(pokemonData[(int)PokemonDatasheetColumns.Defence]),
-                            BaseHealth = int.Parse(pokemonData[(int)PokemonDatasheetColumns.Health]),
-                            BaseSpecialAttack = int.Parse(pokemonData[(int)PokemonDatasheetColumns.SpecialAttack]),
-                            BaseSpecialDefence = int.Parse(pokemonData[(int)PokemonDatasheetColumns.SpecialDefence]),
-                            BaseSpeed = int.Parse(pokemonData[(int)PokemonDatasheetColumns.Speed]),
-                            Nickname = string.Empty
+                            PokedexNumber = int.Parse(pokemonData[(int)PokemonDatasheetColumns.Pokedex_number]), // Get the pokedex number
+                            Species = pokemonData[(int)PokemonDatasheetColumns.Species], //Get the pokemon's species
+                            Types = new PokemonType[] {  // Add the pokemon's types. Make the second type null if it isn't a dual type
+                                pokemonTypeDictionary[pokemonData[(int)PokemonDatasheetColumns.TypeOne]], 
+                                string.IsNullOrEmpty(pokemonData[(int)PokemonDatasheetColumns.TypeTwo]) ? null : pokemonTypeDictionary[pokemonData[(int)PokemonDatasheetColumns.TypeTwo]] 
+                            },
+                            BaseAttack = int.Parse(pokemonData[(int)PokemonDatasheetColumns.Attack]), // Get the base attack from the line of the file
+                            BaseDefence = int.Parse(pokemonData[(int)PokemonDatasheetColumns.Defence]), // Get the base defence from the line of the file
+                            BaseHealth = int.Parse(pokemonData[(int)PokemonDatasheetColumns.Health]), // Get the base health from the line of the file
+                            BaseSpecialAttack = int.Parse(pokemonData[(int)PokemonDatasheetColumns.SpecialAttack]), // Get the base special defence from the line of the file
+                            BaseSpecialDefence = int.Parse(pokemonData[(int)PokemonDatasheetColumns.SpecialDefence]), // Get the base Special defence from the line of the file
+                            BaseSpeed = int.Parse(pokemonData[(int)PokemonDatasheetColumns.Speed]), // Get the speed from the line of the file
+                            Nickname = string.Empty // Set the nickname to empty to be set later
                         };
                     }
 
-                    return pokemon;
+                    return pokemon; // return all the pokemon array
 
                 }
             }
