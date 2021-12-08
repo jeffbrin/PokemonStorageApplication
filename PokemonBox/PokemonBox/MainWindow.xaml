@@ -14,7 +14,7 @@
         </Grid.RowDefinitions>
         <ComboBox x:Name="cmbAttackTypes" DisplayMemberPath="Name"/>
         <DataGrid Grid.Row="1">
-            
+
         </DataGrid>
     </Grid>
 </Window>
