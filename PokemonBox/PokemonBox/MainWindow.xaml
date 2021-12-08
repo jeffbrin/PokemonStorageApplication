@@ -12,6 +12,9 @@
             <RowDefinition Height="50"/>
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
-        <ComboBox x:Name="cmbAttackTypes" ItemsSource="{Binding Name}"/>
+        <ComboBox x:Name="cmbAttackTypes" DisplayMemberPath="Name"/>
+        <DataGrid Grid.Row="1">
+            
+        </DataGrid>
     </Grid>
 </Window>

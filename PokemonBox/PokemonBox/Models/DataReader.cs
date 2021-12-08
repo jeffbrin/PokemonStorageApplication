@@ -7,7 +7,8 @@ namespace PokemonBox.Models
 {
     static class DataReader
     {
-        private enum PokemonDatasheetColumns
+        // Used to read the lines returned from the GetPokemonInformation function
+        public enum PokemonDatasheetColumns
         {
             Pokedex_number,
             Name,
@@ -21,7 +22,7 @@ namespace PokemonBox.Models
             Speed
         }
 
-        static public Pokemon[] GetPokemonInformation(string path, Dictionary<string, PokemonType> PokemonTypeDictionary)
+        static public Pokemon[] GetPokemonOptions(string path, Dictionary<string, PokemonType> pokemonTypeDictionary)
         {
 
             try
@@ -38,12 +39,19 @@ namespace PokemonBox.Models
                         pokemon[i] = new Pokemon()
                         {
                             PokedexNumber = int.Parse(pokemonData[(int)PokemonDatasheetColumns.Pokedex_number]),
-                            Name = pokemonData[(int)PokemonDatasheetColumns.Name]
-                            //Types = new PokemonType[2] { 
-                            //    new PokemonType(pokemonData[TYPE_ONE_COLUMN]), 
-                            //    string.IsNullOrEmpty(pokemonData[TYPE_TWO_COLUMN]) ? null : new PokemonType(pokemonData[TYPE_TWO_COLUMN]) }
+                            Name = pokemonData[(int)PokemonDatasheetColumns.Name],
+                            Types = new PokemonType[] { pokemonTypeDictionary[pokemonData[(int)PokemonDatasheetColumns.TypeOne]], string.IsNullOrEmpty(pokemonData[(int)PokemonDatasheetColumns.TypeTwo]) ? null : pokemonTypeDictionary[pokemonData[(int)PokemonDatasheetColumns.TypeTwo]] },
+                            BaseAttack = int.Parse(pokemonData[(int)PokemonDatasheetColumns.Attack]),
+                            BaseDefence = int.Parse(pokemonData[(int)PokemonDatasheetColumns.Defence]),
+                            BaseHealth = int.Parse(pokemonData[(int)PokemonDatasheetColumns.Health]),
+                            BaseSpecialAttack = int.Parse(pokemonData[(int)PokemonDatasheetColumns.SpecialAttack]),
+                            BaseSpecialDefence = int.Parse(pokemonData[(int)PokemonDatasheetColumns.SpecialDefence]),
+                            BaseSpeed = int.Parse(pokemonData[(int)PokemonDatasheetColumns.Speed]),
+                            Nickname = string.Empty
                         };
                     }
+
+                    return pokemon;
 
                 }
             }

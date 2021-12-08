@@ -7,10 +7,7 @@ namespace PokemonBox.Models
     class PCBox
     {
 
-        private Dictionary<string, PokemonType> pokemonTypeByNameDictionary;
-        private Dictionary<string, PokemonType> attackTypeByNameDictionary;
-
-        public PokemonType[] pokemonTypes; // Remove
+        Pokemon[] pokemonOptions;
 
         public PCBox()
         {
@@ -19,12 +16,14 @@ namespace PokemonBox.Models
             Dictionary<string, Dictionary<string, string[]>> attackTypeDictionary = DataReader.GetTypesInformation("PokemonData/attackMatchups.csv");
 
             // Get the arrays of pokemon types
-            pokemonTypes = GetAllTypes(pokemonTypeDictionary);
+            PokemonType[] pokemonTypes = GetAllTypes(pokemonTypeDictionary);
             PokemonType[] attackTypes = GetAllTypes(attackTypeDictionary);
 
             // Get the typeName: PokemonType dictionaries
-            pokemonTypeByNameDictionary = GetPokemonTypesDictionary(pokemonTypes);
-            attackTypeByNameDictionary = GetPokemonTypesDictionary(attackTypes);
+            Dictionary<string, PokemonType> pokemonTypeByNameDictionary = GetPokemonTypesDictionary(pokemonTypes);
+            Dictionary<string, PokemonType> attackTypeByNameDictionary = GetPokemonTypesDictionary(attackTypes);
+
+            pokemonOptions = DataReader.GetPokemonOptions("PokemonData/pokemonData.csv", pokemonTypeByNameDictionary);
 
         }
 
@@ -73,19 +72,10 @@ namespace PokemonBox.Models
 
             return pokemonTypeDictionary;
         }
-        
-        public PokemonType GetDefensiveType(string typeName)
-        {
-            if (pokemonTypeByNameDictionary.ContainsKey(typeName))
-                return pokemonTypeByNameDictionary[typeName];
-            return null;
-        }
 
-        public PokemonType GetAttackType(string typeName)
+        public Pokemon[] GetPokemonOptions()
         {
-            if (attackTypeByNameDictionary.ContainsKey(typeName))
-                return attackTypeByNameDictionary[typeName];
-            return null;
+            return pokemonOptions;
         }
 
     }

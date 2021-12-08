@@ -35,7 +35,7 @@ namespace PokemonBox
         {
             // Instantiate the pc box
             pcBox = new PCBox();
-            cmbAttackTypes.ItemsSource = pcBox.pokemonTypes;
+            cmbAttackTypes.ItemsSource = pcBox.GetPokemonOptions();
         }
     }
 }
