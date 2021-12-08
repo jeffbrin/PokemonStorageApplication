@@ -7,7 +7,7 @@ namespace PokemonBox.Models
     class PCBox
     {
 
-        Pokemon[] pokemonOptions;
+        private Pokemon[] pokemonOptions;
 
         public PCBox()
         {
@@ -23,6 +23,7 @@ namespace PokemonBox.Models
             Dictionary<string, PokemonType> pokemonTypeByNameDictionary = GetPokemonTypesDictionary(pokemonTypes);
             Dictionary<string, PokemonType> attackTypeByNameDictionary = GetPokemonTypesDictionary(attackTypes);
 
+            // Get all the pokemon options from the backend
             pokemonOptions = DataReader.GetPokemonOptions("PokemonData/pokemonData.csv", pokemonTypeByNameDictionary);
 
         }
