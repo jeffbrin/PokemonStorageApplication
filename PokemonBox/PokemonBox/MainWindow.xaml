@@ -50,7 +50,7 @@
         </Grid>
 
         <!--under header left side-->
-        <Grid Grid.Row="1" Grid.Column="0">
+        <Grid Grid.Row="1" Grid.Column="0" Margin="10,0,10,10">
 
             <Grid.RowDefinitions>
                 <!--contains button-->
@@ -72,45 +72,46 @@
             <StackPanel Background="AliceBlue" Grid.Row="1">
                 <Image
                        x:Name="imgSelectedPokemon"
-                       Source="/azu.png"
-                       RenderOptions.BitmapScalingMode="Fant" Height="167" Width="216">
-                </Image>
+                       Source="/Images/Front/1.png"
+                       RenderOptions.BitmapScalingMode="Fant" Height="167" Width="216"/>
             </StackPanel>
 
+            <Border Grid.Row="2" BorderBrush="#FF7597" BorderThickness="5px">
+                <Grid Background="Beige">
 
-            <Grid Background="Beige" Grid.Row="2">
+                    <Grid.RowDefinitions>
+                        <!--Name-->
+                        <RowDefinition Height="1*"/>
+                        <!--Type-->
+                        <RowDefinition Height="1*"/>
+                        <!--Show Stats Button-->
+                        <RowDefinition Height="2*"/>
+                    </Grid.RowDefinitions>
 
-                <Grid.RowDefinitions>
-                    <!--Name-->
-                    <RowDefinition Height="1*"/>
-                    <!--Type-->
-                    <RowDefinition Height="1*"/>
-                    <!--Show Stats Button-->
-                    <RowDefinition Height="2*"/>
-                </Grid.RowDefinitions>
-
-                <TextBlock x:Name="txtSelectedPokemonName"
+                    <TextBlock x:Name="txtSelectedPokemonName"
                                Grid.Row="0" Text="Azumarill" FontSize="15" 
                                HorizontalAlignment="Center" Margin="0,15,0,0"/>
-                <!--2 Column Grid for type and Type name-->
-                <Grid Grid.Row="1" Margin="0,15,0,0">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
-                    </Grid.ColumnDefinitions>
-                    <Image Source="/waterType.png" 
+                    <!--2 Column Grid for type and Type name-->
+                    <Grid Grid.Row="1" Margin="0,15,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Image Source="/waterType.png" 
                             x:Name="imgTypePng" HorizontalAlignment="Right"
                              Margin="0,0,5,0" Width="25"
                                RenderOptions.BitmapScalingMode="Fant" Grid.Column="0">
-                    </Image>
-                    <TextBlock x:Name="txtSelectedPokemonType"
+                        </Image>
+                        <TextBlock x:Name="txtSelectedPokemonType"
                                    Grid.Column="1" Text="Water" FontSize="15" VerticalAlignment="Center"/>
-                </Grid>
-                <!--SHOW STATS BUTTON-->
-                <Button Grid.Row="2" Content="Show Stats" Background="#03DAC5"
+                    </Grid>
+                    <!--SHOW STATS BUTTON-->
+                    <Button Grid.Row="2" Content="Show Stats" Background="#03DAC5"
                             HorizontalAlignment="Center" VerticalAlignment="Center"
                         Padding="30,15,30,15" FontWeight="Bold" FontSize="15"/>
-            </Grid>
+                </Grid>
+            </Border>
+            
 
         </Grid>
 

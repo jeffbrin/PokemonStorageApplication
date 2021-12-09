@@ -7,13 +7,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="1.png" />
     <None Remove="azu.png" />
     <None Remove="Images\azu.png" />
+    <None Remove="waterType.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="azu.png" />
-    <Resource Include="Images\azu.png" />
+	  <Resource Include="Images\Back\*"/>
+	  <Resource Include="Images\Front\*"/>
   </ItemGroup>
 
 </Project>
