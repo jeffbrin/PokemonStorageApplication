@@ -12,15 +12,15 @@
             <RowDefinition Height="50"/>
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
-        <ComboBox Grid.Row="0" x:Name="cmbSpeciesOptions" DisplayMemberPath="Species" SelectionChanged="cmbAttackTypes_SelectionChanged"/>
+        <ComboBox Grid.Row="0" x:Name="cmbSpeciesOptions" DisplayMemberPath="Name" SelectionChanged="cmbAttackTypes_SelectionChanged"/>
 
         <Grid x:Name="grdSelectedSpecies" Grid.Row="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="50"/>
                 <RowDefinition Height="auto"/>
             </Grid.RowDefinitions>
-            <TextBlock Grid.Row="0" x:Name="txtAttack" FontSize="20" Text="{Binding BaseAttack}"/>
-            <TextBlock Grid.Row="1" x:Name="txtSpecies" FontSize="20" Text="{Binding Species}"/>
+            <TextBlock Grid.Row="0" x:Name="txtAttack" FontSize="20" Text="{Binding Name}"/>
+            <TextBlock Grid.Row="1" x:Name="txtSpecies" FontSize="20" Text="{Binding Description}"/>
         </Grid>
     </Grid>
 

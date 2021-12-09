@@ -8,6 +8,7 @@ namespace PokemonBox.Models
     {
 
         private Pokemon[] pokemonOptions;
+        private Attack[] attackOptions;
 
         public PCBox()
         {
@@ -25,7 +26,7 @@ namespace PokemonBox.Models
 
             // Get all the pokemon options from the backend
             pokemonOptions = DataReader.GetPokemonOptions("PokemonData/pokemonData.csv", pokemonTypeByNameDictionary);
-
+            attackOptions = DataReader.GetAttackOptions("PokemonData/attackOptions.csv", attackTypeByNameDictionary);
         }
 
         /// <summary>
@@ -80,5 +81,10 @@ namespace PokemonBox.Models
             return pokemonOptions;
         }
 
+        // Returns all the attacks that the user can choose from
+        public Attack[] GetAttackOptions()
+        {
+            return attackOptions;
+        }
     }
 }
