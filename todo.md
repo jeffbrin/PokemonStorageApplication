@@ -7,10 +7,10 @@
 - [x] Get csv (or Database) for the Pokémon we want to include
 - [ ] Get all Transparent PNGs
 - [ ] Implement Saving to File
-- [ ] Implement Open from File
+- [x] Implement Open from File
 - [ ] Implement Buttons
 - [ ] Drop down options
-- [ ] Pokémon Class
+- [x] Pokémon Class
 - [ ] Move Class
-- [ ] Type Class
+- [x] Type Class
 - [ ] PokemonBox Class to hold all the created pokemon
