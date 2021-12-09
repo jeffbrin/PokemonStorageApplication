@@ -14,8 +14,8 @@
   </ItemGroup>
 
   <ItemGroup>
-	  <Resource Include="Images\Back\*"/>
-	  <Resource Include="Images\Front\*"/>
+	  <Resource Include="bin\Debug\netcoreapp3.1\PokemonData\PokemonIcons\Front\*"/>
+	  <Resource Include="bin\Debug\netcoreapp3.1\PokemonData\PokemonIcons\Back\*"/>
   </ItemGroup>
 
 </Project>

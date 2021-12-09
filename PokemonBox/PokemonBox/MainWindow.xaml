@@ -58,7 +58,7 @@
             <StackPanel Background="AliceBlue" Grid.Row="1">
                 <Image
                        x:Name="imgSelectedPokemon"
-                       Source="/Images/Front/1.png"
+                       Source="/bin/Debug/netcoreapp3.1/PokemonData/PokemonIcons/Front/1.png"
                        RenderOptions.BitmapScalingMode="Fant" Height="167" Width="216"/>
             </StackPanel>
 
