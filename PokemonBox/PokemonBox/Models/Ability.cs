@@ -4,9 +4,10 @@ using System.Text;
 
 namespace PokemonBox.Models
 {
-    class PokemonAbility
+    class Ability
     {
-
+        public string Name { get; set; }
+        public string Description { get; set; }
 
     }
 }
