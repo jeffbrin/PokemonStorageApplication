@@ -183,7 +183,7 @@ namespace PokemonBox.Models
 
                     // Read all the lines from the file and instantiate the empty pokemon array
                     string[] attackLines = File.ReadAllLines(path);
-                    Attack[] attack = new Attack[attackLines.Length];
+                    Attack[] attacks = new Attack[attackLines.Length];
 
                     // Loop through each line in the file
                     for (int i = 0; i < attackLines.Length; i++)
@@ -191,7 +191,7 @@ namespace PokemonBox.Models
                         // Split the pokemon data on the comma
                         string[] attackData = attackLines[i].Split(',');
                         // Generate the new pokemon from this line of data
-                        attack[i] = new Attack()
+                        attacks[i] = new Attack()
                         {
                             Name = attackData[(int)AttackDatasheetColumns.Name], // Get the attack name
                             Category = attackData[(int)AttackDatasheetColumns.Category], // Get the attack category (Physical or special)
@@ -202,7 +202,7 @@ namespace PokemonBox.Models
                         };
                     }
 
-                    return attack; // return all the pokemon array
+                    return attacks; // return all the pokemon array
 
                 }
             }
@@ -212,6 +212,52 @@ namespace PokemonBox.Models
                 throw;
             }
             return null;
+        }
+
+        /// <summary>
+        /// Reads the attack data file and returns an array of all the attacks the user can give their pokemon.
+        /// </summary>
+        /// <param name="path">The path to the attack options csv file</param>
+        /// <param name="stringToTypeDictionary">A dictionary to get a pokemon type from a string</param>
+        /// <returns></returns>
+        static public Ability[] GetAbilityOptions(string path)
+        {
+
+            {
+                try
+                {
+                    // Check if the csv file exists
+                    if (File.Exists(path))
+                    {
+
+                        // Read all the lines from the file and instantiate the empty pokemon array
+                        string[] abilityLines = File.ReadAllLines(path);
+                        Ability[] abilities = new Ability[abilityLines.Length];
+
+                        // Loop through each line in the file
+                        for (int i = 0; i < abilityLines.Length; i++)
+                        {
+                            // Split the pokemon data on the comma
+                            string[] abilityData = abilityLines[i].Split(',');
+                            // Generate the new pokemon from this line of data
+                            abilities[i] = new Ability()
+                            {
+                                Name = abilityData[0],
+                                Description = abilityData[1]
+                            };
+                        }
+
+                        return abilities; // return all the pokemon array
+
+                    }
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+                return null;
+            }
         }
     }
 }
