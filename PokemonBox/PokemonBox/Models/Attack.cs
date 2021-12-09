@@ -6,9 +6,11 @@ namespace PokemonBox.Models
 {
     class Attack
     {
-        public int Damage { get; set; }
+        public string attackType { get; set; } // Physical or special
+        public int Power { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public PokemonType Type { get; set; }
+        public int PP { get; set; }
     }
 }
