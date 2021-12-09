@@ -13,20 +13,6 @@
 
     <!--big Grid-->
     <Grid>
-        <!--<Grid.RowDefinitions>
-            <RowDefinition Height="50"/>
-            <RowDefinition Height="auto"/>
-        </Grid.RowDefinitions>
-        <ComboBox Grid.Row="0" x:Name="cmbSpeciesOptions" DisplayMemberPath="Species" SelectionChanged="cmbAttackTypes_SelectionChanged"/>-->
-
-        <!--<Grid x:Name="grdSelectedSpecies" Grid.Row="1">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="50"/>
-                <RowDefinition Height="auto"/>
-            </Grid.RowDefinitions>
-            <TextBlock Grid.Row="0" x:Name="txtAttack" FontSize="20" Text="{Binding BaseAttack}"/>
-            <TextBlock Grid.Row="1" x:Name="txtSpecies" FontSize="20" Text="{Binding Species}"/>
-        </Grid>-->
         <Grid.RowDefinitions>
             <RowDefinition Height="25px"/>
             <RowDefinition/>

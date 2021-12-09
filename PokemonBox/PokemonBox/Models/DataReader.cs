@@ -7,8 +7,8 @@ namespace PokemonBox.Models
 {
     static class DataReader
     {
-        // Used to read the lines returned from the GetPokemonInformation function
-        public enum PokemonDatasheetColumns
+        // Used to read the lines in the GetPokemonOptions function
+        private enum PokemonDatasheetColumns
         {
             Pokedex_number,
             Species,
@@ -20,6 +20,18 @@ namespace PokemonBox.Models
             SpecialAttack,
             SpecialDefence,
             Speed
+        }
+
+        // Used to read the lines in the GetPokemonOptions function
+        private enum AttackDatasheetColumns
+        {
+            Name,
+            Type,
+            Category,
+            Description,
+            Power,
+            Accuracy,
+            PP
         }
 
         /// <summary>
@@ -145,6 +157,53 @@ namespace PokemonBox.Models
 
                     // Return the info dictionary
                     return attackTypesAndRelationsDictionary;
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            return null;
+        }
+    
+        /// <summary>
+        /// Reads the attack data file and returns an array of all the attacks the user can give their pokemon.
+        /// </summary>
+        /// <param name="path">The path to the attack options csv file</param>
+        /// <param name="stringToTypeDictionary">A dictionary to get a pokemon type from a string</param>
+        /// <returns></returns>
+        static public Attack[] GetAttackOptions(string path, Dictionary<string, PokemonType> stringToTypeDictionary)
+        {
+            try
+            {
+                // Check if the csv file exists
+                if (File.Exists(path))
+                {
+
+                    // Read all the lines from the file and instantiate the empty pokemon array
+                    string[] attackLines = File.ReadAllLines(path);
+                    Attack[] attack = new Attack[attackLines.Length];
+
+                    // Loop through each line in the file
+                    for (int i = 0; i < attackLines.Length; i++)
+                    {
+                        // Split the pokemon data on the comma
+                        string[] attackData = attackLines[i].Split(',');
+                        // Generate the new pokemon from this line of data
+                        attack[i] = new Attack()
+                        {
+                            Name = attackData[(int)AttackDatasheetColumns.Name], // Get the attack name
+                            Category = attackData[(int)AttackDatasheetColumns.Category], // Get the attack category (Physical or special)
+                            Description = attackData[(int)AttackDatasheetColumns.Description], // Get the attack description
+                            Power = int.Parse(attackData[(int)AttackDatasheetColumns.Power]), // Get the attack power
+                            PP = int.Parse(attackData[(int)AttackDatasheetColumns.PP]), // Get the attack pp
+                            AttackType = stringToTypeDictionary[attackData[(int)AttackDatasheetColumns.Type]] // Get the PokemonType related to that attack
+                        };
+                    }
+
+                    return attack; // return all the pokemon array
+
                 }
             }
             catch (Exception)
