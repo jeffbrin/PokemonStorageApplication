@@ -6,22 +6,102 @@
         xmlns:local="clr-namespace:PokemonBox"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800"
-        Loaded="Window_Loaded">
+        Loaded="Window_Loaded"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Background="#181735">
+
+    <!--big Grid-->
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="50"/>
-            <RowDefinition Height="auto"/>
+            <RowDefinition Height="25px"/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
-        <ComboBox Grid.Row="0" x:Name="cmbSpeciesOptions" DisplayMemberPath="Name" SelectionChanged="cmbAttackTypes_SelectionChanged"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
 
-        <Grid x:Name="grdSelectedSpecies" Grid.Row="1">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="50"/>
-                <RowDefinition Height="auto"/>
-            </Grid.RowDefinitions>
-            <TextBlock Grid.Row="0" x:Name="txtAttack" FontSize="20" Text="{Binding Name}"/>
-            <TextBlock Grid.Row="1" x:Name="txtSpecies" FontSize="20" Text="{Binding Description}"/>
+        <!--header-->
+        <Grid Background="#0f0f2d" Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Text="Your PC" Foreground="White" Grid.Column="0" TextAlignment="Center"
+                       HorizontalAlignment="Left" FontFamily="Fonts/#Baloo" FontSize="20" Margin="50,0,0,0"/>
+            <TextBlock Text="BOX 1" Foreground="White" Grid.Column="1" TextAlignment="Center"
+                       HorizontalAlignment="Center"  FontFamily="Fonts/Baloo.ttf" FontSize="20"/>
         </Grid>
+
+        <!--under header left side-->
+        <Grid Grid.Row="1" Grid.Column="0">
+
+            <Grid.RowDefinitions>
+                <!--contains button-->
+                <RowDefinition Height="2*"/>
+                <!--contains selected pokemon box-->
+                <RowDefinition Height="4*"/>
+                <!--contains picture and name-->
+                <RowDefinition Height="4*"/>
+            </Grid.RowDefinitions>
+            <!--only one column so no need to make column definition-->
+
+            <Button x:Name="btnAdd" Content="ADD" 
+                    HorizontalAlignment="Left" Margin="25,0,0,0" VerticalAlignment="Center"
+                    Padding="30,15,30,15" Background="#EA80FC" FontWeight="Bold"
+                    FontSize="20" Grid.Row="0"/>
+
+
+            <!--Image of Selected Pokemon-->
+            <StackPanel Background="AliceBlue" Grid.Row="1">
+                <Image
+                       x:Name="imgSelectedPokemon"
+                       Source="/azu.png"
+                       RenderOptions.BitmapScalingMode="Fant" Height="167" Width="216">
+                </Image>
+            </StackPanel>
+
+
+            <Grid Background="Beige" Grid.Row="2">
+
+                <Grid.RowDefinitions>
+                    <!--Name-->
+                    <RowDefinition Height="1*"/>
+                    <!--Type-->
+                    <RowDefinition Height="1*"/>
+                    <!--Show Stats Button-->
+                    <RowDefinition Height="2*"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock x:Name="txtSelectedPokemonName"
+                               Grid.Row="0" Text="Azumarill" FontSize="15" 
+                               HorizontalAlignment="Center" Margin="0,15,0,0"/>
+                <!--2 Column Grid for type and Type name-->
+                <Grid Grid.Row="1" Margin="0,15,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Image Source="/waterType.png" 
+                            x:Name="imgTypePng" HorizontalAlignment="Right"
+                             Margin="0,0,5,0" Width="25"
+                               RenderOptions.BitmapScalingMode="Fant" Grid.Column="0">
+                    </Image>
+                    <TextBlock x:Name="txtSelectedPokemonType"
+                                   Grid.Column="1" Text="Water" FontSize="15" VerticalAlignment="Center"/>
+                </Grid>
+                <!--SHOW STATS BUTTON-->
+                <Button Grid.Row="2" Content="Show Stats" Background="#03DAC5"
+                            HorizontalAlignment="Center" VerticalAlignment="Center"
+                        Padding="30,15,30,15" FontWeight="Bold" FontSize="15"/>
+            </Grid>
+
+        </Grid>
+
+
+
     </Grid>
 
 </Window>
