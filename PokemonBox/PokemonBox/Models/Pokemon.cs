@@ -23,9 +23,16 @@ namespace PokemonBox.Models
         public int BaseSpecialDefence { get; set; }
         public int BaseSpeed { get; set; }
         public List<Attack> Attacks { get; set; }
+        public bool Shiny { get; set; }
 
         // The images are stored as their pokedex number.png
-        public string SpritePath
+        public string FrontSpritePath
+        {
+            get { return $"{SPRITES_DIRECTORY_PATH}{PokedexNumber}{ICON_FILE_EXTENSIONS}"; }
+        }
+
+        // The images are stored as their pokedex number.png
+        public string BackspritePath
         {
             get { return $"{SPRITES_DIRECTORY_PATH}{PokedexNumber}{ICON_FILE_EXTENSIONS}"; }
         }
