@@ -33,10 +33,5 @@ namespace PokemonBox
         }
     }
 
-        private void btnAdd_Click(object sender, RoutedEventArgs e)
-        {
-            // Open the add window
-            
-        }
-    }
 }
+

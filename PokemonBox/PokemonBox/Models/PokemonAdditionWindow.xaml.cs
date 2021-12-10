@@ -20,6 +20,7 @@ namespace PokemonBox.Models
         public PokemonAdditionWindow(List<Pokemon> storedPokemon)
         {
             InitializeComponent();
+            spPokemonCreator.DataContext = storedPokemon;
             
         }
     }
