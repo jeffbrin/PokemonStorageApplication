@@ -17,9 +17,10 @@ namespace PokemonBox.Models
     /// </summary>
     public partial class PokemonAdditionWindow : Window
     {
-        public PokemonAdditionWindow()
+        public PokemonAdditionWindow(PCBox pcBox)
         {
             InitializeComponent();
+            
         }
     }
 }

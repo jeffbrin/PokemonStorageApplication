@@ -56,8 +56,8 @@ namespace PokemonBox.Models
         public string SpritePath
         {
             get {
-                if (Shiny) return $"{SPRITES_DIRECTORY_PATH}Shiny/{Species}{ICON_FILE_EXTENSIONS}";
-                return $"{SPRITES_DIRECTORY_PATH}{Species}{ICON_FILE_EXTENSIONS}";
+                if (Shiny) return $"{SPRITES_DIRECTORY_PATH}Shiny/{PokedexNumber}{ICON_FILE_EXTENSIONS}";
+                return $"{SPRITES_DIRECTORY_PATH}{Species}Regular/{ICON_FILE_EXTENSIONS}";
             }
         }
 

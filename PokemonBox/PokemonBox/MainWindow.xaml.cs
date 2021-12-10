@@ -37,17 +37,6 @@ namespace PokemonBox
             // Instantiate the pc box
             pcBox = new PCBox();
         }
-
-        private void meSelectedPokemonLoop(object sender, RoutedEventArgs e)
-        {
-            //meSelectedPokemon.Position = new TimeSpan(0, 0, 1);
-            //meSelectedPokemon.Play();
-        }
-
-        //private void cmbAttackTypes_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        //{
-        //    // Set the bindings for the pokemon selection grid
-        //    grdSelectedSpecies.DataContext = cmbSpeciesOptions.SelectedItem;
-        //}
     }
+
 }
