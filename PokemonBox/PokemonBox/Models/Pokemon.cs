@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel; // For the interface
 
 namespace PokemonBox.Models
 {
-    public class Pokemon
+    public class Pokemon : INotifyPropertyChanged
     {
 
         // The folder in which the images are stored
@@ -15,6 +16,8 @@ namespace PokemonBox.Models
         private const string ANIMATED_SPRITES_DIRECTORY_PATH = "AnimatedSprites/";
         // The file extension of the images
         private const string ICON_FILE_EXTENSIONS = ".gif";
+
+        private bool isShiny;
 
         public int PokedexNumber { get; set; }
         public string Species { get; set; }
@@ -27,7 +30,7 @@ namespace PokemonBox.Models
         public int BaseSpecialDefence { get; set; }
         public int BaseSpeed { get; set; }
         public List<Attack> Attacks { get; set; }
-        public bool Shiny { get; set; }
+        
         public string Sex { get; set; }
         public Ability Ability { get; set; }
 
@@ -38,7 +41,7 @@ namespace PokemonBox.Models
         }
 
         // constructor for making a new pokemon created by the player
-        public Pokemon(Pokemon generic, List<Attack> attacks, bool shiny, string sex, Ability ability, string nickname)
+        public Pokemon(Pokemon generic, List<Attack> attacks = null, bool shiny = false, string sex = "M", Ability ability = null, string nickname = "")
         {
             PokedexNumber = generic.PokedexNumber;
             Species = generic.Species;
@@ -51,7 +54,7 @@ namespace PokemonBox.Models
             BaseSpecialDefence = generic.BaseSpecialDefence;
             BaseSpeed = generic.BaseSpeed;
             Attacks = attacks;
-            Shiny = shiny;
+            IsShiny = shiny;
             Sex = sex;
             Ability = ability;
         }
@@ -61,7 +64,7 @@ namespace PokemonBox.Models
         {
             get
             {
-                if (Shiny) return $"{SPRITES_DIRECTORY_PATH}{ANIMATED_SPRITES_DIRECTORY_PATH}Shiny/{PokedexNumber}{ICON_FILE_EXTENSIONS}";
+                if (IsShiny) return $"{SPRITES_DIRECTORY_PATH}{ANIMATED_SPRITES_DIRECTORY_PATH}Shiny/{PokedexNumber}{ICON_FILE_EXTENSIONS}";
                 return $"{SPRITES_DIRECTORY_PATH}{ANIMATED_SPRITES_DIRECTORY_PATH}Regular/{Species}{ICON_FILE_EXTENSIONS}";
             }
         }
@@ -71,7 +74,7 @@ namespace PokemonBox.Models
         {
             get
             {
-                if (Shiny) return $"{SPRITES_DIRECTORY_PATH}{BOX_SPRITES_DIRECTORY_PATH}Shiny/{PokedexNumber}{ICON_FILE_EXTENSIONS}";
+                if (IsShiny) return $"{SPRITES_DIRECTORY_PATH}{BOX_SPRITES_DIRECTORY_PATH}Shiny/{PokedexNumber}{ICON_FILE_EXTENSIONS}";
                 return $"{SPRITES_DIRECTORY_PATH}{BOX_SPRITES_DIRECTORY_PATH}Regular/{Species}{ICON_FILE_EXTENSIONS}";
             }
         }
@@ -82,5 +85,28 @@ namespace PokemonBox.Models
             get { return Nickname != string.Empty ? Nickname : Species; }
         }
 
+        public bool IsShiny
+        {
+            get { return isShiny; }
+            set
+            {
+                isShiny = value;
+                NotifyPropertyChanged("AnimatedSpritePath");
+                NotifyPropertyChanged("BoxSpritePath");
+            }
+        }
+
+        #region INotify
+        // This method is called by the Set accessor of each property.  
+        // The CallerMemberName attribute that is applied to the optional propertyName  
+        // parameter causes the property name of the caller to be substituted as an argument.  
+        private void NotifyPropertyChanged(String propertyName = "")
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        #endregion
     }
 }

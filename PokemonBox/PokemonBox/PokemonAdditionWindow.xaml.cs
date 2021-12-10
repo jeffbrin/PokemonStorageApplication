@@ -18,17 +18,28 @@ namespace PokemonBox
     /// </summary>
     public partial class PokemonAdditionWindow : Window
     {
+
+        private Pokemon tempPokemon;
+
         public PokemonAdditionWindow(List<Pokemon> storedPokemon)
         {
             InitializeComponent();
-            cmbSpeciesPicker.ItemsSource = PCBox.PokemonOptions;
-
+            cmbSpeciesPicker.ItemsSource = PCBox.PokemonOptions; // Bind the combo box with the pokemon options
+            cmbSpeciesPicker.SelectedItem = PCBox.PokemonOptions[0];
+            tempPokemon = new Pokemon(cmbSpeciesPicker.SelectedItem as Pokemon); // Set the default pokemon for the selection
+            spSelectedSpecies.DataContext = tempPokemon; // sync the selected species stack grid with the temp pokemon
+            
         }
 
         private void cmbSpeciesPicker_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            spSelectedSpecies.DataContext = cmbSpeciesPicker.SelectedItem;
+            tempPokemon = new Pokemon(cmbSpeciesPicker.SelectedItem as Pokemon); // Get the selected pokemon and copy it to the temp pokemon
+            spSelectedSpecies.DataContext = tempPokemon; // resync the DataContext
         }
 
+        private void chkShiny_Toggled(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

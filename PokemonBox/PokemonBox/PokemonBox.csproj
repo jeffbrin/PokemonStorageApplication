@@ -938,157 +938,453 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Images\BackgroundSprites\outerSpace.png" />
-    <Content Include="Images\AnimatedSprites\Shiny\1.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\10.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\100.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\101.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\102.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\103.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\104.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\105.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\106.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\107.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\108.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\109.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\11.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\110.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\111.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\112.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\113.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\114.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\115.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\116.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\117.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\118.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\119.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\12.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\120.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\121.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\122.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\123.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\124.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\125.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\126.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\127.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\128.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\129.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\13.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\130.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\131.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\132.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\133.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\134.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\135.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\136.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\137.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\138.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\139.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\14.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\140.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\141.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\142.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\143.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\144.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\145.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\146.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\147.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\148.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\149.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\15.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\150.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\151.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\16.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\17.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\18.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\19.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\2.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\20.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\21.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\22.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\23.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\24.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\25.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\26.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\27.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\28.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\29.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\3.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\30.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\31.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\32.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\33.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\34.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\35.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\36.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\37.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\38.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\39.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\4.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\40.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\41.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\42.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\43.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\44.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\45.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\47.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\48.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\49.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\5.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\50.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\51.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\52.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\53.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\54.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\55.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\56.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\57.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\58.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\59.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\6.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\60.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\61.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\62.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\63.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\64.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\65.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\66.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\67.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\68.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\69.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\7.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\70.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\71.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\72.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\73.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\74.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\75.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\76.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\77.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\78.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\79.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\8.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\80.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\81.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\82.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\84.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\85.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\86.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\87.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\88.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\89.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\9.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\90.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\91.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\92.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\93.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\94.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\95.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\96.gif" />
-    <Content Include="Images\AnimatedSprites\Shiny\97.gif" />
+    <Content Include="Images\AnimatedSprites\Shiny\1.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\10.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\100.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\101.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\102.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\103.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\104.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\105.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\106.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\107.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\108.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\109.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\11.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\110.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\111.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\112.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\113.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\114.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\115.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\116.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\117.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\118.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\119.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\12.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\120.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\121.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\122.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\123.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\124.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\125.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\126.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\127.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\128.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\129.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\13.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\130.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\131.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\132.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\133.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\134.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\135.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\136.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\137.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\138.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\139.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\14.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\140.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\141.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\142.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\143.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\144.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\145.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\146.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\147.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\148.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\149.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\15.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\150.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\151.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\16.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\17.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\18.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\19.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\2.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\20.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\21.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\22.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\23.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\24.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\25.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\26.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\27.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\28.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\29.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\3.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\30.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\31.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\32.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\33.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\34.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\35.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\36.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\37.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\38.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\39.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\4.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\40.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\41.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\42.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\43.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\44.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\45.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\47.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\48.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\49.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\5.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\50.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\51.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\52.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\53.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\54.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\55.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\56.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\57.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\58.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\59.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\6.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\60.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\61.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\62.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\63.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\64.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\65.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\66.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\67.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\68.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\69.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\7.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\70.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\71.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\72.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\73.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\74.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\75.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\76.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\77.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\78.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\79.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\8.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\80.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\81.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\82.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\84.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\85.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\86.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\87.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\88.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\89.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\9.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\90.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\91.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\92.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\93.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\94.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\95.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\96.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\97.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Images\AnimatedSprites\Shiny\98.gif">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\AnimatedSprites\Shiny\99.gif" />
+    <Content Include="Images\AnimatedSprites\Shiny\99.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Images\BoxSprites\1.png" />
     <Content Include="Images\BoxSprites\10.png" />
     <Content Include="Images\BoxSprites\100.png" />

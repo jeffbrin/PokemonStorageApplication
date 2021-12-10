@@ -56,12 +56,12 @@
 
             <!--Image of Selected Pokemon-->
             <StackPanel Background="AliceBlue" Grid.Row="1">
-                <!--<MediaElement Source="Images/Regular/abra.gif" LoadedBehavior="Play" Visibility="Visible"/>-->
                 <Image gif:ImageBehavior.AnimatedSource="Images/AnimatedSprites/Regular/abra.gif"
                        HorizontalAlignment="Center"
                        VerticalAlignment="Top"
                        Height="200"
-                       Width="200"/>
+                       Width="200"
+                       RenderOptions.BitmapScalingMode="HighQuality"/>
             </StackPanel>
 
             <Border Grid.Row="2" BorderBrush="#FF7597" BorderThickness="5px">
