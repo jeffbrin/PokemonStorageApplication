@@ -22,6 +22,7 @@ namespace PokemonBox.Models
         private const string POKEMON_CRY_PATH = "Audio/Cries/";
 
         private bool isShiny;
+        private char sex;
 
         public int PokedexNumber { get; set; }
         public string Species { get; set; }
@@ -33,19 +34,19 @@ namespace PokemonBox.Models
         public int BaseSpecialAttack { get; set; }
         public int BaseSpecialDefence { get; set; }
         public int BaseSpeed { get; set; }
-        public List<Attack> Attacks { get; set; }
+        public Attack[] Attacks { get; set; }
         
-        public string Sex { get; set; }
         public Ability Ability { get; set; }
 
         // Default for object initialization syntax
         public Pokemon()
         {
-
+            // Always at most 4 attacks
+            Attacks = new Attack[4];
         }
 
         // constructor for making a new pokemon created by the player
-        public Pokemon(Pokemon generic, List<Attack> attacks = null, bool shiny = false, string sex = "M", Ability ability = null, string nickname = "")
+        public Pokemon(Pokemon generic, bool shiny = false, char sex = 'M', Ability ability = null, string nickname = ""): this()
         {
             PokedexNumber = generic.PokedexNumber;
             Species = generic.Species;
@@ -57,10 +58,21 @@ namespace PokemonBox.Models
             BaseSpecialAttack = generic.BaseSpecialAttack;
             BaseSpecialDefence = generic.BaseSpecialDefence;
             BaseSpeed = generic.BaseSpeed;
-            Attacks = attacks;
             IsShiny = shiny;
             Sex = sex;
             Ability = ability;
+        }
+
+        public char Sex
+        {
+            get { return sex; }
+            set
+            {
+                char tempSex = char.ToUpper(value);
+                if (tempSex != 'M' && tempSex != 'F')
+                    throw new ArgumentException("Sex", "Sex must be M or F for a pokemon.");
+                sex = tempSex;
+            }
         }
 
         // The path to this pokemon's animated sprites
@@ -78,15 +90,18 @@ namespace PokemonBox.Models
         {
             get
             {
+                if (IsShiny) return $"{SPRITES_DIRECTORY_PATH}{ANIMATED_SPRITES_DIRECTORY_PATH}Shiny/{PokedexNumber}{ICON_FILE_EXTENSIONS}";
+                return $"{SPRITES_DIRECTORY_PATH}{ANIMATED_SPRITES_DIRECTORY_PATH}Regular/{Species}{ICON_FILE_EXTENSIONS}";
                 if (IsShiny) return $"{SPRITES_DIRECTORY_PATH}{BOX_SPRITES_DIRECTORY_PATH}Shiny/{PokedexNumber}{ICON_FILE_EXTENSIONS}";
                 return $"{SPRITES_DIRECTORY_PATH}{BOX_SPRITES_DIRECTORY_PATH}Regular/{Species}{ICON_FILE_EXTENSIONS}";
+
             }
         }
 
         // The display name of the pokemon is either the species name or the nickname if it exists
         public string DisplayName
         {
-            get { return Nickname != string.Empty ? Nickname : Species; }
+            get { return string.IsNullOrWhiteSpace(Nickname) ? Species : Nickname; }
         }
 
         // Whether of not this pokemon is shiny. Custom setter is needed for PropertyChanged events on the images

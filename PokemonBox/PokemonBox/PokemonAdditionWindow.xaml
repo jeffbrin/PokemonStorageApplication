@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:PokemonBox.Models"
         mc:Ignorable="d"
 xmlns:gif="http://wpfanimatedgif.codeplex.com"
-        Title="PokemonAdditionWindow" Height="500" Width="500"
+        Title="PokemonAdditionWindow" Height="800" Width="500"
         SizeToContent="Height">
     <Grid x:Name="grdPokemonCreator">
         <Grid.RowDefinitions>
@@ -17,15 +17,17 @@ xmlns:gif="http://wpfanimatedgif.codeplex.com"
         
         <ComboBox Grid.Row="0" x:Name="cmbSpeciesPicker" DisplayMemberPath="Species" SelectionChanged="cmbSpeciesPicker_SelectionChanged"/>
         <StackPanel Grid.Row="1" x:Name="spSelectedSpecies">
+            
             <!--Pokemon species selector-->
             <TextBlock Text="{Binding Species}"/>
+            
             <!--The pokemon image-->
             <Image x:Name="imgSelectedSpecies" gif:ImageBehavior.AnimatedSource="{Binding AnimatedSpritePath}" 
                    Height="300" Width="300"/>
-            <!--Checkbox for if the pokemon is shiny-->
-            <CheckBox Content="Shiny" IsChecked="{Binding IsShiny}"/>
+            
             <!--The pokedex number-->
             <TextBlock Text="{Binding PokedexNumber}"/>
+            
             <!--Grid to display pokemon types-->
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -33,13 +35,108 @@ xmlns:gif="http://wpfanimatedgif.codeplex.com"
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <StackPanel x:Name="spTypeOne" Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center"  HorizontalAlignment="Center">
-                    <Image Source="{Binding Types[0].SpritePath}" Height="25" Width="25"/>
+                    <Image Source="{Binding Types[0].ImagePath}" Height="25" Width="25"/>
                     <TextBlock FontSize="20" Text="{Binding Types[0].Name}" Margin="5 0 0 0"/>
                 </StackPanel>
                 <StackPanel x:Name="spTypeTwo" Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center"  HorizontalAlignment="Center">
-                    <Image Source="{Binding Types[1].SpritePath}" Height="25" Width="25"/>
+                    <Image Source="{Binding Types[1].ImagePath}" Height="25" Width="25"/>
                     <TextBlock FontSize="20" Text="{Binding Types[1].Name}" Margin="5 0 0 0"/>
                 </StackPanel>
+            </Grid>
+            
+            <!--Grid for base stats-->
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                
+                <!--Stack pannels for each base stat-->
+                <TextBlock Grid.Column="0" Grid.ColumnSpan="2" Text="Base Stats" FontSize="25" FontWeight="ExtraBold" HorizontalAlignment="Center"/>
+                <StackPanel Grid.Column="0" Grid.Row="1">
+                    <TextBlock Text="Health" FontSize="18" FontWeight="Bold" HorizontalAlignment="Center"/>
+                    <TextBlock Text="{Binding BaseHealth}" HorizontalAlignment="Center"/>
+                </StackPanel>
+                <StackPanel Grid.Column="1" Grid.Row="1">
+                    <TextBlock Text="Speed" FontSize="18" FontWeight="Bold" HorizontalAlignment="Center"/>
+                    <TextBlock Text="{Binding BaseSpeed}" HorizontalAlignment="Center"/>
+                </StackPanel>
+                <StackPanel Grid.Column="0" Grid.Row="2">
+                    <TextBlock Text="Attack" FontSize="18" FontWeight="Bold" HorizontalAlignment="Center"/>
+                    <TextBlock Text="{Binding BaseAttack}" HorizontalAlignment="Center"/>
+                </StackPanel>
+                <StackPanel Grid.Column="1" Grid.Row="2">
+                    <TextBlock Text="Defence" FontSize="18" FontWeight="Bold" HorizontalAlignment="Center"/>
+                    <TextBlock Text="{Binding BaseDefence}" HorizontalAlignment="Center"/>
+                </StackPanel>
+                <StackPanel Grid.Column="0" Grid.Row="3">
+                    <TextBlock Text="Special Attack" FontSize="18" FontWeight="Bold" HorizontalAlignment="Center"/>
+                    <TextBlock Text="{Binding BaseSpecialAttack}" HorizontalAlignment="Center"/>
+                </StackPanel>
+                <StackPanel Grid.Column="2" Grid.Row="3">
+                    <TextBlock Text="Special Defence" FontSize="18" FontWeight="Bold" HorizontalAlignment="Center"/>
+                    <TextBlock Text="{Binding BaseSpecialDefence}" HorizontalAlignment="Center"/>
+                </StackPanel>
+                
+            </Grid>
+
+            <!--Checkbox for if the pokemon is shiny-->
+            <CheckBox x:Name="chkShiny" Margin="0,10,0,0" HorizontalAlignment="Center" Content="Shiny" IsChecked="{Binding IsShiny}"/>
+            
+            <!--Gender picker-->
+            <StackPanel Margin="0,10,0,0" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center"> 
+                <Label Content="Sex" FontWeight="Bold" FontSize="14"/>
+                <RadioButton x:Name="rdbMale" GroupName="Sex" Checked="rdbGender_Checked" VerticalAlignment="Center">Male</RadioButton>
+                <RadioButton x:Name="rdbFemale" GroupName="Sex" VerticalAlignment="Center">Female</RadioButton>
+            </StackPanel>
+            
+            <!--Nickname Picker-->
+            <StackPanel Margin="0,10,0,0" Orientation="Horizontal" HorizontalAlignment="Center">
+                <Label FontWeight="Bold" Content="Nickname"/>
+                <TextBox VerticalAlignment="Center" x:Name="txtNickname" Width="300" Text="{Binding Nickname}"/>
+            </StackPanel>
+            
+            <!--Moves picker-->
+            <Grid Margin="0,10,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Label Grid.Column="0" Grid.ColumnSpan="2" Content="Attacks" FontWeight="Bold" FontSize="16" HorizontalAlignment="Center"/>
+                <ComboBox SelectedItem="{Binding Attacks[0]}" x:Name="cmbMoveSelection1" DisplayMemberPath="Name" Grid.Column="0" Grid.Row="1"/>
+                <ComboBox SelectedItem="{Binding Attacks[1]}" x:Name="cmbMoveSelection2" DisplayMemberPath="Name" Grid.Column="1" Grid.Row="1"/>
+                <ComboBox SelectedItem="{Binding Attacks[2]}" x:Name="cmbMoveSelection3" DisplayMemberPath="Name" Grid.Column="0" Grid.Row="2"/>
+                <ComboBox SelectedItem="{Binding Attacks[3]}" x:Name="cmbMoveSelection4" DisplayMemberPath="Name" Grid.Column="1" Grid.Row="2"/>
+            </Grid>
+            
+            <!--Ability Picker-->
+            <StackPanel Margin="0,20,0,0">
+                <Label HorizontalAlignment="Center" Content="Ability" FontWeight="Bold" FontSize="16"/>
+                <ComboBox SelectedItem="{Binding Ability}" x:Name="cmbAbilitySelection" DisplayMemberPath="Name"/>
+            </StackPanel>
+            
+            <!--Functionality Buttons-->
+            <Grid Margin="0,20,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" Content="Exit"  Width="100" Height="25" x:Name="btnExitPokemonCreation" Click="btnExitPokemonCreation_Click"/>
+                <Button Grid.Column="1" Content="Reset" Width="100" Height="25" x:Name="btnResetPokemon" Click="btnResetPokemon_Click"/>
+                <Button Grid.Column="2" Content="Create" Width="100" Height="25" x:Name="btnCreatePokemon" Click="btnCreatePokemon_Click"/>
             </Grid>
         </StackPanel>
     </Grid>

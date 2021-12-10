@@ -14,8 +14,14 @@ namespace PokemonBox.Models
 
         private List<Pokemon> storedPokemon;
 
-        public PCBox()
+        public PCBox(int maxStorageSlots)
         {
+
+            MaxStorageSlots = maxStorageSlots;
+
+            // Initialize stored pokemon
+            storedPokemon = new List<Pokemon>();
+
             // Get the dictionaries generated from csv files by the DataReader class
             Dictionary<string, Dictionary<string, string[]>> pokemonTypeDictionary = DataReader.GetTypesInformation("PokemonData/defenceMatchups.csv");
             Dictionary<string, Dictionary<string, string[]>> attackTypeDictionary = DataReader.GetTypesInformation("PokemonData/attackMatchups.csv");
@@ -32,6 +38,15 @@ namespace PokemonBox.Models
             pokemonOptions = DataReader.GetPokemonOptions("PokemonData/pokemonData.csv", pokemonTypeByNameDictionary);
             attackOptions = DataReader.GetAttackOptions("PokemonData/attackOptions.csv", attackTypeByNameDictionary);
             abilityOptions = DataReader.GetAbilityOptions("PokemonData/abilityOptions.csv");
+        }
+
+        // The size of the box
+        public int MaxStorageSlots { get; set; }
+
+        // Indicated whether the box full
+        public bool IsFull
+        {
+            get { return StoredPokemon.Count == MaxStorageSlots; }
         }
 
         /// <summary>
@@ -109,9 +124,15 @@ namespace PokemonBox.Models
         /// Add a pokemon to the box.
         /// </summary>
         /// <param name="pokemon">The pokemon to add.</param>
-        public void AddPokemon(Pokemon pokemon)
+        /// <returns>Whether the pokemon was successfully added.</returns>
+        public bool AddPokemon(Pokemon pokemon)
         {
-            storedPokemon.Add(pokemon);
+            if (storedPokemon.Count < MaxStorageSlots)
+            {
+                storedPokemon.Add(pokemon);
+                return true;
+            }
+            return false;
         }
 
         /// <summary>

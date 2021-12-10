@@ -24,7 +24,7 @@
             <!--Main Body-->
             <RowDefinition Height="30*"/>
             <!--Footer-->
-            <RowDefinition Height="1*"/>
+            <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"/>
@@ -77,7 +77,7 @@
         </Grid>
 
         <!--under header left side-->
-        <Grid Grid.Row="1" Grid.Column="0" Margin="10,0,10,10">
+        <Grid x:Name="grdPokemonDisplayAndAdd" Grid.Row="1" Grid.Column="0" Margin="10,0,10,10">
             <!--only one column so no need to make column definition-->
             <Grid.RowDefinitions>
                 <!--contains button-->
@@ -121,7 +121,7 @@
 
             <!--Image of Selected Pokemon-->
             <StackPanel Background="AliceBlue" Grid.Row="1">
-                <Image gif:ImageBehavior.AnimatedSource="Images/AnimatedSprites/Regular/abra.gif"
+                <Image gif:ImageBehavior.AnimatedSource="{Binding AnimatedSpritePath}"
                        HorizontalAlignment="Center"
                        VerticalAlignment="Top"
                        Height="200"
@@ -143,7 +143,7 @@
                     </Grid.RowDefinitions>
 
                     <TextBlock x:Name="txtSelectedPokemonName"
-                               Grid.Row="0" Text="Alakazam" FontSize="15" 
+                               Grid.Row="0" Text="{Binding DisplayName}" FontSize="15" 
                                HorizontalAlignment="Center" Margin="0,15,0,0"/>
                     <!--2 Column Grid for type and Type name-->
                     <Grid Grid.Row="1" Margin="0,15,0,0">
@@ -151,9 +151,19 @@
                             <ColumnDefinition/>
                             <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
-                        <Image Source="Images/TypeSprites/waterType.png"/>
-                        <TextBlock x:Name="txtSelectedPokemonType"
-                                   Grid.Column="1" Text="Psychic" FontSize="15" VerticalAlignment="Center"/>
+                        <!--<Image Source=""/>-->
+                        <!--Type One-->
+                        <StackPanel Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <Image Source="{Binding Types[0].ImagePath}"/>
+                            <TextBlock x:Name="txtSelectedPokemonTypeOne"
+                                   Grid.Column="1" Text="{Binding Types[0].Name}" FontSize="15" VerticalAlignment="Center"/>
+                        </StackPanel>
+                        <!--Type Two-->
+                        <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <Image Source="{Binding Types[1].ImagePath}"/>
+                            <TextBlock x:Name="txtSelectedPokemonTypeTwo"
+                                   Grid.Column="1" Text="{Binding Types[1].Name}" FontSize="15" VerticalAlignment="Center"/>
+                        </StackPanel>
                     </Grid>
                     <!--SHOW STATS BUTTON-->
                     <Button Grid.Row="2" Content="Show Stats" 
@@ -175,7 +185,7 @@
 
         <!--Box UI Grid-->
         <!--Going to do 5x5 grid for the pokemons-->
-        <Grid Grid.Row="1" Grid.Column="1" Margin="25,25,25,25">
+        <Grid x:Name="grdBoxedPokemon" Grid.Row="1" Grid.Column="1" Margin="25,25,25,25">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
@@ -191,13 +201,31 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <Image Source="Images/BackgroundSprites/outerSpace.png" Grid.Column="0" 
-                   Grid.Row="0"  Grid.RowSpan="5" Grid.ColumnSpan="5"/>
-            <Image Source="Images/BoxSprites/Regular/1.png" Grid.Column="0" 
-                   Grid.Row="0" Width="150" Height="150" HorizontalAlignment="Center"
-                   VerticalAlignment="Center"/>
+                   Stretch="Fill" Grid.Row="0"  Grid.RowSpan="5" Grid.ColumnSpan="5"/>
+            <!--Each image goes in a stack panel to keep them in the box-->
+            <Border BorderBrush="Black" BorderThickness="2" Grid.Column="0" Grid.Row="0">
+                <Button x:Name="btnSelectPokemon" Click="btnSelectPokemon_Click" BorderBrush="Transparent" Background="Transparent">
+                    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Image Source="{Binding BoxSpritePath}" 
+                        Width="50" Height="50"/>
+                    </StackPanel>
+                </Button>
+            </Border>
+
         </Grid>
 
+        <!--Footer-->
+        <Grid Grid.Row="2" Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
 
+            <StackPanel Grid.Column="1" Orientation="Horizontal">
+                <Button Content="Release Pokemon" Click="btnReleasePokemon_Click"/>
+            </StackPanel>
+            
+        </Grid>
 
     </Grid>
 

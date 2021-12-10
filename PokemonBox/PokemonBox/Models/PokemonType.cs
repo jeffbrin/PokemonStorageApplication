@@ -6,7 +6,7 @@ namespace PokemonBox.Models
 {
     public class PokemonType
     {
-        private const string ELEMENT_ICON_DIRECTORY = "PokemonData/ElementIcons/";
+        private const string ELEMENT_ICON_DIRECTORY = "Images/TypeSprites/";
         private const string ICON_FILE_EXTENSIONS = ".png";
         private string[] weaknesses;
         private string[] strengths;
@@ -33,7 +33,7 @@ namespace PokemonBox.Models
         // Returns the path to the type's image icon
         public string ImagePath
         {
-            get { return ELEMENT_ICON_DIRECTORY + Name + ICON_FILE_EXTENSIONS; }
+            get { return ELEMENT_ICON_DIRECTORY + Name.ToLower() + ICON_FILE_EXTENSIONS; }
         }
 
         // Returns a string array or all this type's weaknesses' names
