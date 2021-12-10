@@ -35,8 +35,13 @@ namespace PokemonBox
         {
             // Instantiate the pc box
             pcBox = new PCBox();
-            //cmbSpeciesOptions.ItemsSource = pcBox.GetAttackOptions();
-            //cmbSpeciesOptions.ItemsSource = pcBox.GetPokemonOptions
+            meSelectedPokemon.Source = new Uri("../../../Images/Regular/abra.gif", UriKind.Relative);
+        }
+
+        private void meSelectedPokemonLoop(object sender, RoutedEventArgs e)
+        {
+            //meSelectedPokemon.Position = new TimeSpan(0, 0, 1);
+            //meSelectedPokemon.Play();
         }
 
         //private void cmbAttackTypes_SelectionChanged(object sender, SelectionChangedEventArgs e)

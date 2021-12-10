@@ -56,10 +56,16 @@
 
             <!--Image of Selected Pokemon-->
             <StackPanel Background="AliceBlue" Grid.Row="1">
-                <Image
-                       x:Name="imgSelectedPokemon"
-                       Source="/bin/Debug/netcoreapp3.1/PokemonData/PokemonIcons/Front/1.png"
-                       RenderOptions.BitmapScalingMode="Fant" Height="167" Width="216"/>
+                <!--<MediaElement
+                       x:Name="meSelectedPokemon"
+                       Source="..../../Images/Regular/alakazam.gif"
+                    Height="167" Width="216"/>-->
+                <MediaElement Source="Images/Regular/abra.gif" LoadedBehavior="Play" Visibility="Visible"/>
+                <MediaElement x:Name="meSelectedPokemon"  Source=""  LoadedBehavior="Play"  >
+                    <MediaElement.OpacityMask>
+                        <ImageBrush x:Name="imgSelectedOpacity"/>
+                    </MediaElement.OpacityMask>
+                </MediaElement>
             </StackPanel>
 
             <Border Grid.Row="2" BorderBrush="#FF7597" BorderThickness="5px">
@@ -75,7 +81,7 @@
                     </Grid.RowDefinitions>
 
                     <TextBlock x:Name="txtSelectedPokemonName"
-                               Grid.Row="0" Text="Azumarill" FontSize="15" 
+                               Grid.Row="0" Text="Alakazam" FontSize="15" 
                                HorizontalAlignment="Center" Margin="0,15,0,0"/>
                     <!--2 Column Grid for type and Type name-->
                     <Grid Grid.Row="1" Margin="0,15,0,0">
@@ -89,7 +95,7 @@
                                RenderOptions.BitmapScalingMode="Fant" Grid.Column="0">
                         </Image>
                         <TextBlock x:Name="txtSelectedPokemonType"
-                                   Grid.Column="1" Text="Water" FontSize="15" VerticalAlignment="Center"/>
+                                   Grid.Column="1" Text="Psychic" FontSize="15" VerticalAlignment="Center"/>
                     </Grid>
                     <!--SHOW STATS BUTTON-->
                     <Button Grid.Row="2" Content="Show Stats" Background="#03DAC5"
