@@ -10,12 +10,916 @@
     <None Remove="1.png" />
     <None Remove="azu.png" />
     <None Remove="Images\azu.png" />
+    <None Remove="Images\Regular\abra.gif" />
+    <None Remove="Images\Regular\aerodactyl.gif" />
+    <None Remove="Images\Regular\alakazam.gif" />
+    <None Remove="Images\Regular\arbok.gif" />
+    <None Remove="Images\Regular\arcanine.gif" />
+    <None Remove="Images\Regular\articuno.gif" />
+    <None Remove="Images\Regular\beedrill.gif" />
+    <None Remove="Images\Regular\bellsprout.gif" />
+    <None Remove="Images\Regular\blastoise.gif" />
+    <None Remove="Images\Regular\bulbasaur.gif" />
+    <None Remove="Images\Regular\butterfree.gif" />
+    <None Remove="Images\Regular\caterpie.gif" />
+    <None Remove="Images\Regular\chansey.gif" />
+    <None Remove="Images\Regular\charizard.gif" />
+    <None Remove="Images\Regular\charmander.gif" />
+    <None Remove="Images\Regular\charmeleon.gif" />
+    <None Remove="Images\Regular\clefable.gif" />
+    <None Remove="Images\Regular\clefairy.gif" />
+    <None Remove="Images\Regular\cloyster.gif" />
+    <None Remove="Images\Regular\cubone.gif" />
+    <None Remove="Images\Regular\dewgong.gif" />
+    <None Remove="Images\Regular\diglett.gif" />
+    <None Remove="Images\Regular\ditto.gif" />
+    <None Remove="Images\Regular\dodrio.gif" />
+    <None Remove="Images\Regular\doduo.gif" />
+    <None Remove="Images\Regular\dragonair.gif" />
+    <None Remove="Images\Regular\dragonite.gif" />
+    <None Remove="Images\Regular\dratini.gif" />
+    <None Remove="Images\Regular\drowzee.gif" />
+    <None Remove="Images\Regular\dugtrio.gif" />
+    <None Remove="Images\Regular\eevee.gif" />
+    <None Remove="Images\Regular\ekans.gif" />
+    <None Remove="Images\Regular\electabuzz.gif" />
+    <None Remove="Images\Regular\electrode.gif" />
+    <None Remove="Images\Regular\exeggcute.gif" />
+    <None Remove="Images\Regular\exeggutor.gif" />
+    <None Remove="Images\Regular\farfetchd.gif" />
+    <None Remove="Images\Regular\fearow.gif" />
+    <None Remove="Images\Regular\flareon.gif" />
+    <None Remove="Images\Regular\gengar.gif" />
+    <None Remove="Images\Regular\geodude.gif" />
+    <None Remove="Images\Regular\ghastly.gif" />
+    <None Remove="Images\Regular\gloom.gif" />
+    <None Remove="Images\Regular\golbat.gif" />
+    <None Remove="Images\Regular\goldeen.gif" />
+    <None Remove="Images\Regular\golduck.gif" />
+    <None Remove="Images\Regular\golem.gif" />
+    <None Remove="Images\Regular\graveler.gif" />
+    <None Remove="Images\Regular\grimer.gif" />
+    <None Remove="Images\Regular\growlithe.gif" />
+    <None Remove="Images\Regular\gyarados.gif" />
+    <None Remove="Images\Regular\haunter.gif" />
+    <None Remove="Images\Regular\hitmonchan.gif" />
+    <None Remove="Images\Regular\hitmonlee.gif" />
+    <None Remove="Images\Regular\horsea.gif" />
+    <None Remove="Images\Regular\hypno.gif" />
+    <None Remove="Images\Regular\ivysaur.gif" />
+    <None Remove="Images\Regular\jigglypuff.gif" />
+    <None Remove="Images\Regular\jolteon.gif" />
+    <None Remove="Images\Regular\jynx.gif" />
+    <None Remove="Images\Regular\kabuto.gif" />
+    <None Remove="Images\Regular\kabutops.gif" />
+    <None Remove="Images\Regular\kadabra.gif" />
+    <None Remove="Images\Regular\kakuna.gif" />
+    <None Remove="Images\Regular\kangaskhan.gif" />
+    <None Remove="Images\Regular\kingler.gif" />
+    <None Remove="Images\Regular\koffing.gif" />
+    <None Remove="Images\Regular\krabby.gif" />
+    <None Remove="Images\Regular\lapras.gif" />
+    <None Remove="Images\Regular\lickitung.gif" />
+    <None Remove="Images\Regular\machamp.gif" />
+    <None Remove="Images\Regular\machoke.gif" />
+    <None Remove="Images\Regular\machop.gif" />
+    <None Remove="Images\Regular\magikarp.gif" />
+    <None Remove="Images\Regular\magmar.gif" />
+    <None Remove="Images\Regular\magnemite.gif" />
+    <None Remove="Images\Regular\magneton.gif" />
+    <None Remove="Images\Regular\mankey.gif" />
+    <None Remove="Images\Regular\marowak.gif" />
+    <None Remove="Images\Regular\meowth.gif" />
+    <None Remove="Images\Regular\metapod.gif" />
+    <None Remove="Images\Regular\mew.gif" />
+    <None Remove="Images\Regular\mewtwo.gif" />
+    <None Remove="Images\Regular\moltres.gif" />
+    <None Remove="Images\Regular\mr._mime.gif" />
+    <None Remove="Images\Regular\muk.gif" />
+    <None Remove="Images\Regular\nidoking.gif" />
+    <None Remove="Images\Regular\nidoqueen.gif" />
+    <None Remove="Images\Regular\nidoran_f.gif" />
+    <None Remove="Images\Regular\nidoran_m.gif" />
+    <None Remove="Images\Regular\nidorina.gif" />
+    <None Remove="Images\Regular\nidorino.gif" />
+    <None Remove="Images\Regular\ninetales.gif" />
+    <None Remove="Images\Regular\oddish.gif" />
+    <None Remove="Images\Regular\omanyte.gif" />
+    <None Remove="Images\Regular\omastar.gif" />
+    <None Remove="Images\Regular\onix.gif" />
+    <None Remove="Images\Regular\paras.gif" />
+    <None Remove="Images\Regular\parasect.gif" />
+    <None Remove="Images\Regular\persian.gif" />
+    <None Remove="Images\Regular\pidgeot.gif" />
+    <None Remove="Images\Regular\pidgeotto.gif" />
+    <None Remove="Images\Regular\pidgey.gif" />
+    <None Remove="Images\Regular\pikachu.gif" />
+    <None Remove="Images\Regular\pinsir.gif" />
+    <None Remove="Images\Regular\poliwag.gif" />
+    <None Remove="Images\Regular\poliwhirl.gif" />
+    <None Remove="Images\Regular\poliwrath.gif" />
+    <None Remove="Images\Regular\ponyta.gif" />
+    <None Remove="Images\Regular\porygon.gif" />
+    <None Remove="Images\Regular\primeape.gif" />
+    <None Remove="Images\Regular\psyduck.gif" />
+    <None Remove="Images\Regular\raichu.gif" />
+    <None Remove="Images\Regular\rapidash.gif" />
+    <None Remove="Images\Regular\raticate.gif" />
+    <None Remove="Images\Regular\rattata.gif" />
+    <None Remove="Images\Regular\rhydon.gif" />
+    <None Remove="Images\Regular\rhyhorn.gif" />
+    <None Remove="Images\Regular\sandshrew.gif" />
+    <None Remove="Images\Regular\sandslash.gif" />
+    <None Remove="Images\Regular\scyther.gif" />
+    <None Remove="Images\Regular\seadra.gif" />
+    <None Remove="Images\Regular\seaking.gif" />
+    <None Remove="Images\Regular\seel.gif" />
+    <None Remove="Images\Regular\shellder.gif" />
+    <None Remove="Images\Regular\slowbro.gif" />
+    <None Remove="Images\Regular\slowpoke.gif" />
+    <None Remove="Images\Regular\snorlax.gif" />
+    <None Remove="Images\Regular\spearow.gif" />
+    <None Remove="Images\Regular\squirtle.gif" />
+    <None Remove="Images\Regular\starmie.gif" />
+    <None Remove="Images\Regular\staryu.gif" />
+    <None Remove="Images\Regular\tangela.gif" />
+    <None Remove="Images\Regular\tauros.gif" />
+    <None Remove="Images\Regular\tentacool.gif" />
+    <None Remove="Images\Regular\tentacruel.gif" />
+    <None Remove="Images\Regular\vaporeon.gif" />
+    <None Remove="Images\Regular\venomoth.gif" />
+    <None Remove="Images\Regular\venonat.gif" />
+    <None Remove="Images\Regular\venusaur.gif" />
+    <None Remove="Images\Regular\victreebel.gif" />
+    <None Remove="Images\Regular\vileplume.gif" />
+    <None Remove="Images\Regular\voltorb.gif" />
+    <None Remove="Images\Regular\vulpix.gif" />
+    <None Remove="Images\Regular\wartortle.gif" />
+    <None Remove="Images\Regular\weedle.gif" />
+    <None Remove="Images\Regular\weepinbell.gif" />
+    <None Remove="Images\Regular\weezing.gif" />
+    <None Remove="Images\Regular\wigglytuff.gif" />
+    <None Remove="Images\Regular\zapdos.gif" />
+    <None Remove="Images\Regular\zubat.gif" />
+    <None Remove="Images\Shiny\1.gif" />
+    <None Remove="Images\Shiny\10.gif" />
+    <None Remove="Images\Shiny\100.gif" />
+    <None Remove="Images\Shiny\101.gif" />
+    <None Remove="Images\Shiny\102.gif" />
+    <None Remove="Images\Shiny\103.gif" />
+    <None Remove="Images\Shiny\104.gif" />
+    <None Remove="Images\Shiny\105.gif" />
+    <None Remove="Images\Shiny\106.gif" />
+    <None Remove="Images\Shiny\107.gif" />
+    <None Remove="Images\Shiny\108.gif" />
+    <None Remove="Images\Shiny\109.gif" />
+    <None Remove="Images\Shiny\11.gif" />
+    <None Remove="Images\Shiny\110.gif" />
+    <None Remove="Images\Shiny\111.gif" />
+    <None Remove="Images\Shiny\112.gif" />
+    <None Remove="Images\Shiny\113.gif" />
+    <None Remove="Images\Shiny\114.gif" />
+    <None Remove="Images\Shiny\115.gif" />
+    <None Remove="Images\Shiny\116.gif" />
+    <None Remove="Images\Shiny\117.gif" />
+    <None Remove="Images\Shiny\118.gif" />
+    <None Remove="Images\Shiny\119.gif" />
+    <None Remove="Images\Shiny\12.gif" />
+    <None Remove="Images\Shiny\120.gif" />
+    <None Remove="Images\Shiny\121.gif" />
+    <None Remove="Images\Shiny\122.gif" />
+    <None Remove="Images\Shiny\123.gif" />
+    <None Remove="Images\Shiny\124.gif" />
+    <None Remove="Images\Shiny\125.gif" />
+    <None Remove="Images\Shiny\126.gif" />
+    <None Remove="Images\Shiny\127.gif" />
+    <None Remove="Images\Shiny\128.gif" />
+    <None Remove="Images\Shiny\129.gif" />
+    <None Remove="Images\Shiny\13.gif" />
+    <None Remove="Images\Shiny\130.gif" />
+    <None Remove="Images\Shiny\131.gif" />
+    <None Remove="Images\Shiny\132.gif" />
+    <None Remove="Images\Shiny\133.gif" />
+    <None Remove="Images\Shiny\134.gif" />
+    <None Remove="Images\Shiny\135.gif" />
+    <None Remove="Images\Shiny\136.gif" />
+    <None Remove="Images\Shiny\137.gif" />
+    <None Remove="Images\Shiny\138.gif" />
+    <None Remove="Images\Shiny\139.gif" />
+    <None Remove="Images\Shiny\14.gif" />
+    <None Remove="Images\Shiny\140.gif" />
+    <None Remove="Images\Shiny\141.gif" />
+    <None Remove="Images\Shiny\142.gif" />
+    <None Remove="Images\Shiny\143.gif" />
+    <None Remove="Images\Shiny\144.gif" />
+    <None Remove="Images\Shiny\145.gif" />
+    <None Remove="Images\Shiny\146.gif" />
+    <None Remove="Images\Shiny\147.gif" />
+    <None Remove="Images\Shiny\148.gif" />
+    <None Remove="Images\Shiny\149.gif" />
+    <None Remove="Images\Shiny\15.gif" />
+    <None Remove="Images\Shiny\150.gif" />
+    <None Remove="Images\Shiny\151.gif" />
+    <None Remove="Images\Shiny\16.gif" />
+    <None Remove="Images\Shiny\17.gif" />
+    <None Remove="Images\Shiny\18.gif" />
+    <None Remove="Images\Shiny\19.gif" />
+    <None Remove="Images\Shiny\2.gif" />
+    <None Remove="Images\Shiny\20.gif" />
+    <None Remove="Images\Shiny\21.gif" />
+    <None Remove="Images\Shiny\22.gif" />
+    <None Remove="Images\Shiny\23.gif" />
+    <None Remove="Images\Shiny\24.gif" />
+    <None Remove="Images\Shiny\25.gif" />
+    <None Remove="Images\Shiny\26.gif" />
+    <None Remove="Images\Shiny\27.gif" />
+    <None Remove="Images\Shiny\28.gif" />
+    <None Remove="Images\Shiny\29.gif" />
+    <None Remove="Images\Shiny\3.gif" />
+    <None Remove="Images\Shiny\30.gif" />
+    <None Remove="Images\Shiny\31.gif" />
+    <None Remove="Images\Shiny\32.gif" />
+    <None Remove="Images\Shiny\33.gif" />
+    <None Remove="Images\Shiny\34.gif" />
+    <None Remove="Images\Shiny\35.gif" />
+    <None Remove="Images\Shiny\36.gif" />
+    <None Remove="Images\Shiny\37.gif" />
+    <None Remove="Images\Shiny\38.gif" />
+    <None Remove="Images\Shiny\39.gif" />
+    <None Remove="Images\Shiny\4.gif" />
+    <None Remove="Images\Shiny\40.gif" />
+    <None Remove="Images\Shiny\41.gif" />
+    <None Remove="Images\Shiny\42.gif" />
+    <None Remove="Images\Shiny\43.gif" />
+    <None Remove="Images\Shiny\44.gif" />
+    <None Remove="Images\Shiny\45.gif" />
+    <None Remove="Images\Shiny\47.gif" />
+    <None Remove="Images\Shiny\48.gif" />
+    <None Remove="Images\Shiny\49.gif" />
+    <None Remove="Images\Shiny\5.gif" />
+    <None Remove="Images\Shiny\50.gif" />
+    <None Remove="Images\Shiny\51.gif" />
+    <None Remove="Images\Shiny\52.gif" />
+    <None Remove="Images\Shiny\53.gif" />
+    <None Remove="Images\Shiny\54.gif" />
+    <None Remove="Images\Shiny\55.gif" />
+    <None Remove="Images\Shiny\56.gif" />
+    <None Remove="Images\Shiny\57.gif" />
+    <None Remove="Images\Shiny\58.gif" />
+    <None Remove="Images\Shiny\59.gif" />
+    <None Remove="Images\Shiny\6.gif" />
+    <None Remove="Images\Shiny\60.gif" />
+    <None Remove="Images\Shiny\61.gif" />
+    <None Remove="Images\Shiny\62.gif" />
+    <None Remove="Images\Shiny\63.gif" />
+    <None Remove="Images\Shiny\64.gif" />
+    <None Remove="Images\Shiny\65.gif" />
+    <None Remove="Images\Shiny\66.gif" />
+    <None Remove="Images\Shiny\67.gif" />
+    <None Remove="Images\Shiny\68.gif" />
+    <None Remove="Images\Shiny\69.gif" />
+    <None Remove="Images\Shiny\7.gif" />
+    <None Remove="Images\Shiny\70.gif" />
+    <None Remove="Images\Shiny\71.gif" />
+    <None Remove="Images\Shiny\72.gif" />
+    <None Remove="Images\Shiny\73.gif" />
+    <None Remove="Images\Shiny\74.gif" />
+    <None Remove="Images\Shiny\75.gif" />
+    <None Remove="Images\Shiny\76.gif" />
+    <None Remove="Images\Shiny\77.gif" />
+    <None Remove="Images\Shiny\78.gif" />
+    <None Remove="Images\Shiny\79.gif" />
+    <None Remove="Images\Shiny\8.gif" />
+    <None Remove="Images\Shiny\80.gif" />
+    <None Remove="Images\Shiny\81.gif" />
+    <None Remove="Images\Shiny\82.gif" />
+    <None Remove="Images\Shiny\84.gif" />
+    <None Remove="Images\Shiny\85.gif" />
+    <None Remove="Images\Shiny\86.gif" />
+    <None Remove="Images\Shiny\87.gif" />
+    <None Remove="Images\Shiny\88.gif" />
+    <None Remove="Images\Shiny\89.gif" />
+    <None Remove="Images\Shiny\9.gif" />
+    <None Remove="Images\Shiny\90.gif" />
+    <None Remove="Images\Shiny\91.gif" />
+    <None Remove="Images\Shiny\92.gif" />
+    <None Remove="Images\Shiny\93.gif" />
+    <None Remove="Images\Shiny\94.gif" />
+    <None Remove="Images\Shiny\95.gif" />
+    <None Remove="Images\Shiny\96.gif" />
+    <None Remove="Images\Shiny\97.gif" />
+    <None Remove="Images\Shiny\98.gif" />
+    <None Remove="Images\Shiny\99.gif" />
     <None Remove="waterType.png" />
   </ItemGroup>
 
   <ItemGroup>
-	  <Resource Include="bin\Debug\netcoreapp3.1\PokemonData\PokemonIcons\Front\*"/>
-	  <Resource Include="bin\Debug\netcoreapp3.1\PokemonData\PokemonIcons\Back\*"/>
+	  <Resource Include="Images\*" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Images\Regular\abra.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\aerodactyl.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\alakazam.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\arbok.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\arcanine.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\articuno.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\beedrill.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\bellsprout.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\blastoise.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\bulbasaur.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\butterfree.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\caterpie.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\chansey.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\charizard.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\charmander.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\charmeleon.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\clefable.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\clefairy.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\cloyster.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\cubone.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\dewgong.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\diglett.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\ditto.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\dodrio.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\doduo.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\dragonair.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\dragonite.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\dratini.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\drowzee.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\dugtrio.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\eevee.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\ekans.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\electabuzz.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\electrode.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\exeggcute.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\exeggutor.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\farfetchd.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\fearow.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\flareon.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\gengar.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\geodude.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\ghastly.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\gloom.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\golbat.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\goldeen.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\golduck.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\golem.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\graveler.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\grimer.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\growlithe.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\gyarados.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\haunter.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\hitmonchan.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\hitmonlee.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\horsea.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\hypno.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\ivysaur.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\jigglypuff.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\jolteon.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\jynx.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\kabuto.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\kabutops.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\kadabra.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\kakuna.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\kangaskhan.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\kingler.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\koffing.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\krabby.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\lapras.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\lickitung.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\machamp.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\machoke.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\machop.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\magikarp.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\magmar.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\magnemite.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\magneton.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\mankey.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\marowak.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\meowth.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\metapod.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\mew.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\mewtwo.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\moltres.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\mr._mime.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\muk.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\nidoking.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\nidoqueen.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\nidoran_f.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\nidoran_m.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\nidorina.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\nidorino.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\ninetales.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\oddish.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\omanyte.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\omastar.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\onix.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\paras.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\parasect.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\persian.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\pidgeot.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\pidgeotto.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\pidgey.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\pikachu.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\pinsir.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\poliwag.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\poliwhirl.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\poliwrath.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\ponyta.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\porygon.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\primeape.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\psyduck.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\raichu.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\rapidash.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\raticate.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\rattata.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\rhydon.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\rhyhorn.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\sandshrew.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\sandslash.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\scyther.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\seadra.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\seaking.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\seel.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\shellder.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\slowbro.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\slowpoke.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\snorlax.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\spearow.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\squirtle.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\starmie.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\staryu.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\tangela.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\tauros.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\tentacool.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\tentacruel.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\vaporeon.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\venomoth.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\venonat.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\venusaur.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\victreebel.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\vileplume.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\voltorb.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\vulpix.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\wartortle.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\weedle.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\weepinbell.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\weezing.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\wigglytuff.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\zapdos.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Regular\zubat.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="Images\Shiny\1.gif" />
+    <Resource Include="Images\Shiny\10.gif" />
+    <Resource Include="Images\Shiny\100.gif" />
+    <Resource Include="Images\Shiny\101.gif" />
+    <Resource Include="Images\Shiny\102.gif" />
+    <Resource Include="Images\Shiny\103.gif" />
+    <Resource Include="Images\Shiny\104.gif" />
+    <Resource Include="Images\Shiny\105.gif" />
+    <Resource Include="Images\Shiny\106.gif" />
+    <Resource Include="Images\Shiny\107.gif" />
+    <Resource Include="Images\Shiny\108.gif" />
+    <Resource Include="Images\Shiny\109.gif" />
+    <Resource Include="Images\Shiny\11.gif" />
+    <Resource Include="Images\Shiny\110.gif" />
+    <Resource Include="Images\Shiny\111.gif" />
+    <Resource Include="Images\Shiny\112.gif" />
+    <Resource Include="Images\Shiny\113.gif" />
+    <Resource Include="Images\Shiny\114.gif" />
+    <Resource Include="Images\Shiny\115.gif" />
+    <Resource Include="Images\Shiny\116.gif" />
+    <Resource Include="Images\Shiny\117.gif" />
+    <Resource Include="Images\Shiny\118.gif" />
+    <Resource Include="Images\Shiny\119.gif" />
+    <Resource Include="Images\Shiny\12.gif" />
+    <Resource Include="Images\Shiny\120.gif" />
+    <Resource Include="Images\Shiny\121.gif" />
+    <Resource Include="Images\Shiny\122.gif" />
+    <Resource Include="Images\Shiny\123.gif" />
+    <Resource Include="Images\Shiny\124.gif" />
+    <Resource Include="Images\Shiny\125.gif" />
+    <Resource Include="Images\Shiny\126.gif" />
+    <Resource Include="Images\Shiny\127.gif" />
+    <Resource Include="Images\Shiny\128.gif" />
+    <Resource Include="Images\Shiny\129.gif" />
+    <Resource Include="Images\Shiny\13.gif" />
+    <Resource Include="Images\Shiny\130.gif" />
+    <Resource Include="Images\Shiny\131.gif" />
+    <Resource Include="Images\Shiny\132.gif" />
+    <Resource Include="Images\Shiny\133.gif" />
+    <Resource Include="Images\Shiny\134.gif" />
+    <Resource Include="Images\Shiny\135.gif" />
+    <Resource Include="Images\Shiny\136.gif" />
+    <Resource Include="Images\Shiny\137.gif" />
+    <Resource Include="Images\Shiny\138.gif" />
+    <Resource Include="Images\Shiny\139.gif" />
+    <Resource Include="Images\Shiny\14.gif" />
+    <Resource Include="Images\Shiny\140.gif" />
+    <Resource Include="Images\Shiny\141.gif" />
+    <Resource Include="Images\Shiny\142.gif" />
+    <Resource Include="Images\Shiny\143.gif" />
+    <Resource Include="Images\Shiny\144.gif" />
+    <Resource Include="Images\Shiny\145.gif" />
+    <Resource Include="Images\Shiny\146.gif" />
+    <Resource Include="Images\Shiny\147.gif" />
+    <Resource Include="Images\Shiny\148.gif" />
+    <Resource Include="Images\Shiny\149.gif" />
+    <Resource Include="Images\Shiny\15.gif" />
+    <Resource Include="Images\Shiny\150.gif" />
+    <Resource Include="Images\Shiny\151.gif" />
+    <Resource Include="Images\Shiny\16.gif" />
+    <Resource Include="Images\Shiny\17.gif" />
+    <Resource Include="Images\Shiny\18.gif" />
+    <Resource Include="Images\Shiny\19.gif" />
+    <Resource Include="Images\Shiny\2.gif" />
+    <Resource Include="Images\Shiny\20.gif" />
+    <Resource Include="Images\Shiny\21.gif" />
+    <Resource Include="Images\Shiny\22.gif" />
+    <Resource Include="Images\Shiny\23.gif" />
+    <Resource Include="Images\Shiny\24.gif" />
+    <Resource Include="Images\Shiny\25.gif" />
+    <Resource Include="Images\Shiny\26.gif" />
+    <Resource Include="Images\Shiny\27.gif" />
+    <Resource Include="Images\Shiny\28.gif" />
+    <Resource Include="Images\Shiny\29.gif" />
+    <Resource Include="Images\Shiny\3.gif" />
+    <Resource Include="Images\Shiny\30.gif" />
+    <Resource Include="Images\Shiny\31.gif" />
+    <Resource Include="Images\Shiny\32.gif" />
+    <Resource Include="Images\Shiny\33.gif" />
+    <Resource Include="Images\Shiny\34.gif" />
+    <Resource Include="Images\Shiny\35.gif" />
+    <Resource Include="Images\Shiny\36.gif" />
+    <Resource Include="Images\Shiny\37.gif" />
+    <Resource Include="Images\Shiny\38.gif" />
+    <Resource Include="Images\Shiny\39.gif" />
+    <Resource Include="Images\Shiny\4.gif" />
+    <Resource Include="Images\Shiny\40.gif" />
+    <Resource Include="Images\Shiny\41.gif" />
+    <Resource Include="Images\Shiny\42.gif" />
+    <Resource Include="Images\Shiny\43.gif" />
+    <Resource Include="Images\Shiny\44.gif" />
+    <Resource Include="Images\Shiny\45.gif" />
+    <Resource Include="Images\Shiny\47.gif" />
+    <Resource Include="Images\Shiny\48.gif" />
+    <Resource Include="Images\Shiny\49.gif" />
+    <Resource Include="Images\Shiny\5.gif" />
+    <Resource Include="Images\Shiny\50.gif" />
+    <Resource Include="Images\Shiny\51.gif" />
+    <Resource Include="Images\Shiny\52.gif" />
+    <Resource Include="Images\Shiny\53.gif" />
+    <Resource Include="Images\Shiny\54.gif" />
+    <Resource Include="Images\Shiny\55.gif" />
+    <Resource Include="Images\Shiny\56.gif" />
+    <Resource Include="Images\Shiny\57.gif" />
+    <Resource Include="Images\Shiny\58.gif" />
+    <Resource Include="Images\Shiny\59.gif" />
+    <Resource Include="Images\Shiny\6.gif" />
+    <Resource Include="Images\Shiny\60.gif" />
+    <Resource Include="Images\Shiny\61.gif" />
+    <Resource Include="Images\Shiny\62.gif" />
+    <Resource Include="Images\Shiny\63.gif" />
+    <Resource Include="Images\Shiny\64.gif" />
+    <Resource Include="Images\Shiny\65.gif" />
+    <Resource Include="Images\Shiny\66.gif" />
+    <Resource Include="Images\Shiny\67.gif" />
+    <Resource Include="Images\Shiny\68.gif" />
+    <Resource Include="Images\Shiny\69.gif" />
+    <Resource Include="Images\Shiny\7.gif" />
+    <Resource Include="Images\Shiny\70.gif" />
+    <Resource Include="Images\Shiny\71.gif" />
+    <Resource Include="Images\Shiny\72.gif" />
+    <Resource Include="Images\Shiny\73.gif" />
+    <Resource Include="Images\Shiny\74.gif" />
+    <Resource Include="Images\Shiny\75.gif" />
+    <Resource Include="Images\Shiny\76.gif" />
+    <Resource Include="Images\Shiny\77.gif" />
+    <Resource Include="Images\Shiny\78.gif" />
+    <Resource Include="Images\Shiny\79.gif" />
+    <Resource Include="Images\Shiny\8.gif" />
+    <Resource Include="Images\Shiny\80.gif" />
+    <Resource Include="Images\Shiny\81.gif" />
+    <Resource Include="Images\Shiny\82.gif" />
+    <Resource Include="Images\Shiny\84.gif" />
+    <Resource Include="Images\Shiny\85.gif" />
+    <Resource Include="Images\Shiny\86.gif" />
+    <Resource Include="Images\Shiny\87.gif" />
+    <Resource Include="Images\Shiny\88.gif" />
+    <Resource Include="Images\Shiny\89.gif" />
+    <Resource Include="Images\Shiny\9.gif" />
+    <Resource Include="Images\Shiny\90.gif" />
+    <Resource Include="Images\Shiny\91.gif" />
+    <Resource Include="Images\Shiny\92.gif" />
+    <Resource Include="Images\Shiny\93.gif" />
+    <Resource Include="Images\Shiny\94.gif" />
+    <Resource Include="Images\Shiny\95.gif" />
+    <Resource Include="Images\Shiny\96.gif" />
+    <Resource Include="Images\Shiny\97.gif" />
+    <Resource Include="Images\Shiny\98.gif" />
+    <Resource Include="Images\Shiny\99.gif" />
   </ItemGroup>
 
 </Project>
