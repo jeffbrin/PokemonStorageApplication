@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:PokemonBox.Models"
         mc:Ignorable="d"
         Title="PokemonAdditionWindow" Height="600" Width="500">
-    <StackPanel>
+    <StackPanel x:Name="spPokemonCreator">
         <ComboBox DisplayMemberPath="{Binding Species}"/>
+        <MediaElement Source="{Binding SpritePath}"/>
     </StackPanel>
 </Window>

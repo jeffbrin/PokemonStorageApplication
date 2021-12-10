@@ -35,8 +35,6 @@ namespace PokemonBox
         {
             // Instantiate the pc box
             pcBox = new PCBox();
-            //cmbSpeciesOptions.ItemsSource = pcBox.GetAttackOptions();
-            //cmbSpeciesOptions.ItemsSource = pcBox.GetPokemonOptions
         }
 
         //private void cmbAttackTypes_SelectionChanged(object sender, SelectionChangedEventArgs e)

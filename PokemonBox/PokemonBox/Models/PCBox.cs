@@ -10,6 +10,7 @@ namespace PokemonBox.Models
         private Pokemon[] pokemonOptions;
         private Attack[] attackOptions;
         private Ability[] abilityOptions;
+        private List<Pokemon> storedPokemon;
 
         public PCBox()
         {
@@ -77,22 +78,23 @@ namespace PokemonBox.Models
             return pokemonTypeDictionary;
         }
 
-        // Returns all the species of pokemon that the user can choose from
-        public Pokemon[] GetPokemonOptions()
+        // All the species of pokemon that the user can choose from
+        public Pokemon[] PokemonOptions
         {
-            return pokemonOptions;
+            get { return pokemonOptions; }
         }
 
-        // Returns all the attacks that the user can choose from
-        public Attack[] GetAttackOptions()
+        // All the attacks that the user can choose from
+        public Attack[] AttackOptions
         {
-            return attackOptions;
+            get { return attackOptions; }
         }
 
-        // Returns all the attacks that the user can choose from
-        public Ability[] GetAbilityAttackOptions()
+ 
+        // All the attacks that the user can choose from
+        public Ability[] AbilityOptions
         {
-            return abilityOptions;
+            get{ return abilityOptions; }
         }
     }
 }
