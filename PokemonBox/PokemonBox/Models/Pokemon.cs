@@ -4,11 +4,15 @@ using System.Text;
 
 namespace PokemonBox.Models
 {
-    class Pokemon
+    public class Pokemon
     {
 
         // The folder in which the images are stored
-        private const string SPRITES_DIRECTORY_PATH = "PokemonData/PokemonSprites";
+        private const string SPRITES_DIRECTORY_PATH = "Images/";
+        // The folder in which the non animated sprites are stored
+        private const string BOX_SPRITES_DIRECTORY_PATH = "BoxSprites/";
+        // The folder in which the animated sprites are stored
+        private const string ANIMATED_SPRITES_DIRECTORY_PATH = "AnimatedSprites/";
         // The file extension of the images
         private const string ICON_FILE_EXTENSIONS = ".gif";
 
@@ -52,12 +56,22 @@ namespace PokemonBox.Models
             Ability = ability;
         }
 
-        // The images are stored as their species name.png
-        public string SpritePath
+        // The path to this pokemon's animated sprites
+        public string AnimatedSpritePath
         {
             get {
-                if (Shiny) return $"{SPRITES_DIRECTORY_PATH}Shiny/{PokedexNumber}{ICON_FILE_EXTENSIONS}";
-                return $"{SPRITES_DIRECTORY_PATH}{Species}Regular/{ICON_FILE_EXTENSIONS}";
+                if (Shiny) return $"{SPRITES_DIRECTORY_PATH}{ANIMATED_SPRITES_DIRECTORY_PATH}Shiny/{PokedexNumber}{ICON_FILE_EXTENSIONS}";
+                return $"{SPRITES_DIRECTORY_PATH}{Species}{ANIMATED_SPRITES_DIRECTORY_PATH}Regular/{ICON_FILE_EXTENSIONS}";
+            }
+        }
+
+        // The path to this pokemon's non animated sprites
+        public string BoxSpritePath
+        {
+            get
+            {
+                if (Shiny) return $"{SPRITES_DIRECTORY_PATH}{BOX_SPRITES_DIRECTORY_PATH}Shiny/{PokedexNumber}{ICON_FILE_EXTENSIONS}";
+                return $"{SPRITES_DIRECTORY_PATH}{Species}{BOX_SPRITES_DIRECTORY_PATH}Regular/{ICON_FILE_EXTENSIONS}";
             }
         }
 

@@ -52,7 +52,7 @@
             <Button x:Name="btnAdd" Content="ADD" 
                     HorizontalAlignment="Left" Margin="25,0,0,0" VerticalAlignment="Center"
                     Padding="30,15,30,15" Background="#EA80FC" FontWeight="Bold"
-                    FontSize="20" Grid.Row="0"/>
+                    FontSize="20" Grid.Row="0" />
 
 
             <!--Image of Selected Pokemon-->
@@ -82,11 +82,7 @@
                             <ColumnDefinition/>
                             <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
-                        <Image Source="Images/TypeSprites/waterType.png" 
-                            x:Name="imgTypePng" HorizontalAlignment="Right"
-                             Margin="0,0,5,0" Width="25"
-                               RenderOptions.BitmapScalingMode="Fant" Grid.Column="0">
-                        </Image>
+                        <Image Source="Images/TypeSprites/waterType.png"/>
                         <TextBlock x:Name="txtSelectedPokemonType"
                                    Grid.Column="1" Text="Psychic" FontSize="15" VerticalAlignment="Center"/>
                     </Grid>

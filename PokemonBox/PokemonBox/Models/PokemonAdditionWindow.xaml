@@ -5,9 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PokemonBox.Models"
         mc:Ignorable="d"
+    xmlns:gif="http://wpfanimatedgif.codeplex.com"
+
+
         Title="PokemonAdditionWindow" Height="600" Width="500">
     <StackPanel x:Name="spPokemonCreator">
         <ComboBox DisplayMemberPath="{Binding Species}"/>
-        <MediaElement Source="{Binding SpritePath}"/>
+        <Image gif:ImageBehavior.AnimatedSource="{Binding SpritePath}"/>
     </StackPanel>
 </Window>

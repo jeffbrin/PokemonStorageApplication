@@ -28,15 +28,10 @@ namespace PokemonBox
         public MainWindow()
         {
             InitializeComponent();
-        }
-
-
-
-        private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
             // Instantiate the pc box
             pcBox = new PCBox();
         }
     }
 
 }
+

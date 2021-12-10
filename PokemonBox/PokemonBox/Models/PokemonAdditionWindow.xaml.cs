@@ -17,9 +17,10 @@ namespace PokemonBox.Models
     /// </summary>
     public partial class PokemonAdditionWindow : Window
     {
-        public PokemonAdditionWindow(PCBox pcBox)
+        public PokemonAdditionWindow(List<Pokemon> storedPokemon)
         {
             InitializeComponent();
+            spPokemonCreator.DataContext = storedPokemon;
             
         }
     }

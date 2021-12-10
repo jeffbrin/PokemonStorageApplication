@@ -4,7 +4,7 @@ using System.Text;
 
 namespace PokemonBox.Models
 {
-    class PokemonType
+    public class PokemonType
     {
         private const string ELEMENT_ICON_DIRECTORY = "PokemonData/ElementIcons/";
         private const string ICON_FILE_EXTENSIONS = ".png";

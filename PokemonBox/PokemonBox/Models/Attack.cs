@@ -4,7 +4,7 @@ using System.Text;
 
 namespace PokemonBox.Models
 {
-    class Attack
+    public class Attack
     {
         public string Category { get; set; } // Physical or special
         public int Power { get; set; }
