@@ -204,7 +204,39 @@
                    Stretch="Fill" Grid.Row="0"  Grid.RowSpan="5" Grid.ColumnSpan="5"/>
             <!--Each image goes in a stack panel to keep them in the box-->
             <Border BorderBrush="Black" BorderThickness="2" Grid.Column="0" Grid.Row="0">
-                <Button x:Name="btnSelectPokemon" Click="btnSelectPokemon_Click" BorderBrush="Transparent" Background="Transparent">
+                <Button Click="btnSelectPokemon_Click" BorderBrush="Transparent" Background="Transparent">
+                    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Image Source="{Binding BoxSpritePath}" 
+                        Width="50" Height="50"/>
+                    </StackPanel>
+                </Button>
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="2" Grid.Column="1" Grid.Row="0">
+                <Button Click="btnSelectPokemon_Click" BorderBrush="Transparent" Background="Transparent">
+                    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Image Source="{Binding BoxSpritePath}" 
+                        Width="50" Height="50"/>
+                    </StackPanel>
+                </Button>
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="2" Grid.Column="2" Grid.Row="0">
+                <Button Click="btnSelectPokemon_Click" BorderBrush="Transparent" Background="Transparent">
+                    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Image Source="{Binding BoxSpritePath}" 
+                        Width="50" Height="50"/>
+                    </StackPanel>
+                </Button>
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="2" Grid.Column="3" Grid.Row="0">
+                <Button Click="btnSelectPokemon_Click" BorderBrush="Transparent" Background="Transparent">
+                    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Image Source="{Binding BoxSpritePath}" 
+                        Width="50" Height="50"/>
+                    </StackPanel>
+                </Button>
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="2" Grid.Column="4" Grid.Row="0">
+                <Button Click="btnSelectPokemon_Click" BorderBrush="Transparent" Background="Transparent">
                     <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
                         <Image Source="{Binding BoxSpritePath}" 
                         Width="50" Height="50"/>
