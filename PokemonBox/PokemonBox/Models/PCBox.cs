@@ -6,10 +6,12 @@ namespace PokemonBox.Models
 {
     public class PCBox
     {
+        // These are static since every PCBox would share the same options
+        // They still need to be set in the constructor
+        static private Pokemon[] pokemonOptions;
+        static private Attack[] attackOptions;
+        static private Ability[] abilityOptions;
 
-        private Pokemon[] pokemonOptions;
-        private Attack[] attackOptions;
-        private Ability[] abilityOptions;
         private List<Pokemon> storedPokemon;
 
         public PCBox()
@@ -79,22 +81,22 @@ namespace PokemonBox.Models
         }
 
         // All the species of pokemon that the user can choose from
-        public Pokemon[] PokemonOptions
+        static public Pokemon[] PokemonOptions
         {
             get { return pokemonOptions; }
         }
 
         // All the attacks that the user can choose from
-        public Attack[] AttackOptions
+        static public Attack[] AttackOptions
         {
             get { return attackOptions; }
         }
 
- 
+
         // All the attacks that the user can choose from
-        public Ability[] AbilityOptions
+        static public Ability[] AbilityOptions
         {
-            get{ return abilityOptions; }
+            get { return abilityOptions; }
         }
 
         // All the pokemon currently stored in the box

@@ -19,7 +19,7 @@ namespace PokemonBox.Models
         public int PokedexNumber { get; set; }
         public string Species { get; set; }
         public string Nickname { get; set; }
-        public PokemonType[] Types {get; set;}
+        public PokemonType[] Types { get; set; }
         public int BaseHealth { get; set; }
         public int BaseAttack { get; set; }
         public int BaseDefence { get; set; }
@@ -59,9 +59,10 @@ namespace PokemonBox.Models
         // The path to this pokemon's animated sprites
         public string AnimatedSpritePath
         {
-            get {
+            get
+            {
                 if (Shiny) return $"{SPRITES_DIRECTORY_PATH}{ANIMATED_SPRITES_DIRECTORY_PATH}Shiny/{PokedexNumber}{ICON_FILE_EXTENSIONS}";
-                return $"{SPRITES_DIRECTORY_PATH}{Species}{ANIMATED_SPRITES_DIRECTORY_PATH}Regular/{ICON_FILE_EXTENSIONS}";
+                return $"{SPRITES_DIRECTORY_PATH}Regular/{ANIMATED_SPRITES_DIRECTORY_PATH}{Species}{ICON_FILE_EXTENSIONS}";
             }
         }
 
@@ -71,7 +72,7 @@ namespace PokemonBox.Models
             get
             {
                 if (Shiny) return $"{SPRITES_DIRECTORY_PATH}{BOX_SPRITES_DIRECTORY_PATH}Shiny/{PokedexNumber}{ICON_FILE_EXTENSIONS}";
-                return $"{SPRITES_DIRECTORY_PATH}{Species}{BOX_SPRITES_DIRECTORY_PATH}Regular/{ICON_FILE_EXTENSIONS}";
+                return $"{SPRITES_DIRECTORY_PATH}{BOX_SPRITES_DIRECTORY_PATH}Regular/{Species}{ICON_FILE_EXTENSIONS}";
             }
         }
 
@@ -79,12 +80,6 @@ namespace PokemonBox.Models
         public string DisplayName
         {
             get { return Nickname != string.Empty ? Nickname : Species; }
-        }
-
-        // This can get deleted
-        public override string ToString()
-        {
-            return $"{DisplayName}|{PokedexNumber}";
         }
 
     }

@@ -9,8 +9,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using PokemonBox.Models;
 
-namespace PokemonBox.Models
+namespace PokemonBox
 {
     /// <summary>
     /// Interaction logic for PokemonAdditionWindow.xaml
@@ -20,8 +21,14 @@ namespace PokemonBox.Models
         public PokemonAdditionWindow(List<Pokemon> storedPokemon)
         {
             InitializeComponent();
-            spPokemonCreator.DataContext = storedPokemon;
-            
+            cmbSpeciesPicker.ItemsSource = PCBox.PokemonOptions;
+
         }
+
+        private void cmbSpeciesPicker_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            spSelectedSpecies.DataContext = cmbSpeciesPicker.SelectedItem;
+        }
+
     }
 }
