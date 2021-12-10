@@ -771,6 +771,7 @@
     <Content Include="Images\Regular\zubat.gif">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <PackageReference Include="WpfAnimatedGif" Version="2.0.2" />
     <Resource Include="Images\Shiny\1.gif" />
     <Resource Include="Images\Shiny\10.gif" />
     <Resource Include="Images\Shiny\100.gif" />

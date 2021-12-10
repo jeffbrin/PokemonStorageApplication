@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using PokemonBox.Models;
+using System.Drawing;
 
 namespace PokemonBox
 {
@@ -30,6 +31,7 @@ namespace PokemonBox
             // Instantiate the pc box
             pcBox = new PCBox();
         }
+    }
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {

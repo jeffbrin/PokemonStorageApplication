@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PokemonBox"
+        xmlns:gif="http://wpfanimatedgif.codeplex.com"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800"
         Loaded="Window_Loaded"
@@ -56,16 +57,8 @@
 
             <!--Image of Selected Pokemon-->
             <StackPanel Background="AliceBlue" Grid.Row="1">
-                <!--<MediaElement
-                       x:Name="meSelectedPokemon"
-                       Source="..../../Images/Regular/alakazam.gif"
-                    Height="167" Width="216"/>-->
-                <MediaElement Source="Images/Regular/abra.gif" LoadedBehavior="Play" Visibility="Visible"/>
-                <MediaElement x:Name="meSelectedPokemon"  Source=""  LoadedBehavior="Play"  >
-                    <MediaElement.OpacityMask>
-                        <ImageBrush x:Name="imgSelectedOpacity"/>
-                    </MediaElement.OpacityMask>
-                </MediaElement>
+                <!--<MediaElement Source="Images/Regular/abra.gif" LoadedBehavior="Play" Visibility="Visible"/>-->
+                <Image gif:ImageBehavior.AnimatedSource="Images/Regular/abra.gif"/>
             </StackPanel>
 
             <Border Grid.Row="2" BorderBrush="#FF7597" BorderThickness="5px">
