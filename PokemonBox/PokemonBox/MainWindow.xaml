@@ -27,7 +27,7 @@
         </Grid.ColumnDefinitions>
 
         <!--header-->
-        <Grid x:Name="grdHeader" Background="#0f0f2d" Grid.ColumnSpan="2"
+        <Grid x:Name="grdHeader" Background="#000014" Grid.ColumnSpan="2"
               MouseDown="grdHeader_MouseDown">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="4*"/>
@@ -187,7 +187,7 @@
             </Grid.RowDefinitions>
             <Image Source="Images/BackgroundSprites/outerSpace.png" Grid.Column="0" 
                    Grid.Row="0"  Grid.RowSpan="5" Grid.ColumnSpan="5"/>
-            <Image Source="Images/BoxSprites/1.png" Grid.Column="0" 
+            <Image Source="Images/BoxSprites/Regular/1.png" Grid.Column="0" 
                    Grid.Row="0" Width="150" Height="150" HorizontalAlignment="Center"
                    VerticalAlignment="Center"/>
         </Grid>
