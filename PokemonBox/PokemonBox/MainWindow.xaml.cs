@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using PokemonBox.Models;
+using System.Drawing;
 
 namespace PokemonBox
 {
@@ -35,7 +36,6 @@ namespace PokemonBox
         {
             // Instantiate the pc box
             pcBox = new PCBox();
-            meSelectedPokemon.Source = new Uri("../../../Images/Regular/abra.gif", UriKind.Relative);
         }
 
         private void meSelectedPokemonLoop(object sender, RoutedEventArgs e)
