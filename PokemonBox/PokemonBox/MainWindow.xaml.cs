@@ -37,6 +37,29 @@ namespace PokemonBox
             PokemonAdditionWindow pokemonAdderWindow = new PokemonAdditionWindow(pcBox.StoredPokemon);
             pokemonAdderWindow.ShowDialog();
         }
+
+        /// <summary>
+        /// Allows the user to drag the window around the screen if mouse is pressed on the header
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void grdHeader_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                DragMove();
+            }
+        }
+
+        private void imgClose_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            Close();
+        }
+
+        private void imgMinus_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            this.WindowState = WindowState.Minimized;
+        }
     }
 
 }

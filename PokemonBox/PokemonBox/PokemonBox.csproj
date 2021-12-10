@@ -479,6 +479,12 @@
     <None Remove="Images\BoxSprites\97.png" />
     <None Remove="Images\BoxSprites\98.png" />
     <None Remove="Images\BoxSprites\99.png" />
+    <None Remove="Images\MiscIcons\close.png" />
+    <None Remove="Images\MiscIcons\closeFilled.png" />
+    <None Remove="Images\MiscIcons\closeInverted.png" />
+    <None Remove="Images\MiscIcons\minus.png" />
+    <None Remove="Images\MiscIcons\minusFilled.png" />
+    <None Remove="Images\MiscIcons\minusInverted.png" />
     <None Remove="Images\TypeSprites\waterType.png" />
   </ItemGroup>
 
@@ -1538,10 +1544,29 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\BoxSprites\99.png" />
+    <Content Include="Images\MiscIcons\close.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\MiscIcons\closeFilled.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\MiscIcons\closeInverted.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\MiscIcons\minus.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\MiscIcons\minusFilled.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\MiscIcons\minusInverted.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Images\TypeSprites\waterType.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
+
 
   <ItemGroup>
     <PackageReference Include="WpfAnimatedGif" Version="2.0.2" />

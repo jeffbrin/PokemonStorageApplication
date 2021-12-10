@@ -14,8 +14,12 @@
     <!--big Grid-->
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="25px"/>
-            <RowDefinition/>
+            <!--Header-->
+            <RowDefinition Height="2*"/>
+            <!--Main Body-->
+            <RowDefinition Height="30*"/>
+            <!--Footer-->
+            <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"/>
@@ -23,21 +27,53 @@
         </Grid.ColumnDefinitions>
 
         <!--header-->
-        <Grid Background="#0f0f2d" Grid.ColumnSpan="2">
+        <Grid x:Name="grdHeader" Background="#0f0f2d" Grid.ColumnSpan="2"
+              MouseDown="grdHeader_MouseDown">
             <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition Width="7*"/>
                 <ColumnDefinition Width="1*"/>
-                <ColumnDefinition Width="2*"/>
             </Grid.ColumnDefinitions>
 
             <TextBlock Text="Your PC" Foreground="White" Grid.Column="0" TextAlignment="Center"
-                       HorizontalAlignment="Left" FontFamily="Fonts/#Baloo" FontSize="20" Margin="50,0,0,0"/>
+                       HorizontalAlignment="Left" FontFamily="Baloo Bhaijaan 2" FontSize="20" Margin="50,0,0,0"/>
             <TextBlock Text="BOX 1" Foreground="White" Grid.Column="1" TextAlignment="Center"
                        HorizontalAlignment="Center"  FontFamily="Fonts/Baloo.ttf" FontSize="20"/>
+
+            <Image Grid.Column="2" HorizontalAlignment="Left" Width="15"
+                   Height="15" Margin="15,0,0,0" x:Name="imgMinus"
+                   MouseLeftButtonDown="imgMinus_MouseLeftButtonDown" ToolTip="Minimize">
+                <Image.Style>
+                    <Style TargetType="{x:Type Image}">
+                        <Setter Property="Source" Value="/Images/MiscIcons/minusFilled.png"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Cursor" Value="Hand"/>
+                                <Setter Property="Source" Value="/Images/MiscIcons/minusInverted.png"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Image.Style>
+            </Image>
+            <Image Grid.Column="2" HorizontalAlignment="Right" Margin="0,0,15,0" Width="15" Height="15"
+                   x:Name="imgClose" MouseLeftButtonDown="imgClose_MouseLeftButtonDown" ToolTip="Close">
+                <Image.Style>
+                    <Style TargetType="{x:Type Image}">
+                        <Setter Property="Source" Value="/Images/MiscIcons/closeFilled.png"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Cursor" Value="Hand"/>
+                                <Setter Property="Source" Value="/Images/MiscIcons/closeInverted.png"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Image.Style>
+            </Image>
         </Grid>
 
         <!--under header left side-->
         <Grid Grid.Row="1" Grid.Column="0" Margin="10,0,10,10">
-
+            <!--only one column so no need to make column definition-->
             <Grid.RowDefinitions>
                 <!--contains button-->
                 <RowDefinition Height="2*"/>
@@ -46,12 +82,36 @@
                 <!--contains picture and name-->
                 <RowDefinition Height="4*"/>
             </Grid.RowDefinitions>
-            <!--only one column so no need to make column definition-->
+            
 
-            <Button x:Name="btnAdd" Content="ADD" 
-                    HorizontalAlignment="Left" Margin="25,0,0,0" VerticalAlignment="Center"
-                    Padding="30,15,30,15" Background="#EA80FC" FontWeight="Bold"
-                    FontSize="20" Grid.Row="0" Click="btnAdd_Click"/>
+            
+            <!--Add Button-->
+            <Button x:Name="btnAdd" HorizontalAlignment="Left" 
+                    Margin="25,0,0,0" VerticalAlignment="Center"
+                    Padding="30,15,30,15" FontWeight="Bold" Foreground="White"
+                    FontSize="20" Grid.Row="0" Click="btnAdd_Click">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#EA80FC"/>
+                        <Setter Property="Cursor" Value="Hand"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter x:Name="btnTrigHover" Property="Background" Value="#B64FC8"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <!--Template makes it so the hover effect actually works and can set layers-->
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Width="125" Height="50"
+                                CornerRadius="12"
+                                Background="{TemplateBinding Background}">
+                            <ContentPresenter Content="ADD" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
 
 
             <!--Image of Selected Pokemon-->
@@ -64,6 +124,7 @@
                        RenderOptions.BitmapScalingMode="HighQuality"/>
             </StackPanel>
 
+            <!--Name Type and Show Stats button div-->
             <Border Grid.Row="2" BorderBrush="#FF7597" BorderThickness="5px">
                 <Grid Background="Beige">
 
@@ -90,9 +151,17 @@
                                    Grid.Column="1" Text="Psychic" FontSize="15" VerticalAlignment="Center"/>
                     </Grid>
                     <!--SHOW STATS BUTTON-->
-                    <Button Grid.Row="2" Content="Show Stats" Background="#03DAC5"
+                    <Button Grid.Row="2" Content="Show Stats" 
                             HorizontalAlignment="Center" VerticalAlignment="Center"
-                        Padding="30,15,30,15" FontWeight="Bold" FontSize="15"/>
+                        Padding="30,15,30,15" FontWeight="Bold" FontSize="15">
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Cursor" Value="Hand"/>
+                                <Setter Property="Background" Value="#03DAC5"/>
+                            </Style>
+                            
+                        </Button.Style>
+                    </Button>
                 </Grid>
             </Border>
             
