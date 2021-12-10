@@ -13,7 +13,6 @@
         <ComboBox x:Name="cmbSpeciesPicker" DisplayMemberPath="Species" SelectionChanged="cmbSpeciesPicker_SelectionChanged"/>
         <StackPanel x:Name="spSelectedSpecies">
             <TextBlock Text="{Binding Species}"/>
-            <TextBlock Text="{Binding AnimatedSpritePath}"/>
             <Image gif:ImageBehavior.AnimatedSource="{Binding AnimatedSpritePath}"/>
         </StackPanel>
     </StackPanel>

@@ -62,7 +62,7 @@ namespace PokemonBox.Models
             get
             {
                 if (Shiny) return $"{SPRITES_DIRECTORY_PATH}{ANIMATED_SPRITES_DIRECTORY_PATH}Shiny/{PokedexNumber}{ICON_FILE_EXTENSIONS}";
-                return $"{SPRITES_DIRECTORY_PATH}Regular/{ANIMATED_SPRITES_DIRECTORY_PATH}{Species}{ICON_FILE_EXTENSIONS}";
+                return $"{SPRITES_DIRECTORY_PATH}{ANIMATED_SPRITES_DIRECTORY_PATH}Regular/{Species}{ICON_FILE_EXTENSIONS}";
             }
         }
 

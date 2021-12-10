@@ -51,7 +51,7 @@
             <Button x:Name="btnAdd" Content="ADD" 
                     HorizontalAlignment="Left" Margin="25,0,0,0" VerticalAlignment="Center"
                     Padding="30,15,30,15" Background="#EA80FC" FontWeight="Bold"
-                    FontSize="20" Grid.Row="0" />
+                    FontSize="20" Grid.Row="0" Click="btnAdd_Click"/>
 
 
             <!--Image of Selected Pokemon-->

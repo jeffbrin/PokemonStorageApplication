@@ -327,6 +327,7 @@
     <None Remove="Images\AnimatedSprites\Shiny\97.gif" />
     <None Remove="Images\AnimatedSprites\Shiny\98.gif" />
     <None Remove="Images\AnimatedSprites\Shiny\99.gif" />
+    <None Remove="Images\BackgroundSprites\outerSpace.png" />
     <None Remove="Images\BoxSprites\1.png" />
     <None Remove="Images\BoxSprites\10.png" />
     <None Remove="Images\BoxSprites\100.png" />
@@ -936,6 +937,7 @@
     <Resource Include="Images\AnimatedSprites\Regular\zubat.gif">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Images\BackgroundSprites\outerSpace.png" />
     <Content Include="Images\AnimatedSprites\Shiny\1.gif" />
     <Content Include="Images\AnimatedSprites\Shiny\10.gif" />
     <Content Include="Images\AnimatedSprites\Shiny\100.gif" />

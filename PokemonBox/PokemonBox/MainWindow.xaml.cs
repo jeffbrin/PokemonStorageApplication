@@ -31,6 +31,12 @@ namespace PokemonBox
             // Instantiate the pc box
             pcBox = new PCBox();
         }
+
+        private void btnAdd_Click(object sender, RoutedEventArgs e)
+        {
+            PokemonAdditionWindow pokemonAdderWindow = new PokemonAdditionWindow(pcBox.StoredPokemon);
+            pokemonAdderWindow.ShowDialog();
+        }
     }
 
 }
