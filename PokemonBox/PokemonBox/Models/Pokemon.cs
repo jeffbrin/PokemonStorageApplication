@@ -38,6 +38,20 @@ namespace PokemonBox.Models
         
         public Ability Ability { get; set; }
 
+        // TODO: Complete
+        public string CSVData
+        {
+            get
+            {
+                string typeTwoName = Types[1] == null ? string.Empty : Types[1].Name;
+                string[] attackIds = new string[Attacks.Length];
+                for (int i = 0; i < Attacks.Length; i++)
+                    attackIds[i] = Attacks[i] == null ? string.Empty : Attacks[i].AttackId.ToString();
+                return "";
+                //return $"{PokedexNumber},{Species},{Nickname},{Types[0].Name},{typeTwoName},{BaseHealth},{BaseAttack},{BaseDefence},{BaseSpecialAttack},{BaseSpecialDefence},{BaseSpeed},
+            }
+        }
+
         // Default for object initialization syntax
         public Pokemon()
         {
@@ -139,6 +153,7 @@ namespace PokemonBox.Models
 
         // The event to invoke when a property has been changed, (built in)
         public event PropertyChangedEventHandler PropertyChanged;
+
 
         #endregion
     }

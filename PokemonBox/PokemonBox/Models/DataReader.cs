@@ -198,7 +198,8 @@ namespace PokemonBox.Models
                             Description = attackData[(int)AttackDatasheetColumns.Description], // Get the attack description
                             Power = int.Parse(attackData[(int)AttackDatasheetColumns.Power]), // Get the attack power
                             PP = int.Parse(attackData[(int)AttackDatasheetColumns.PP]), // Get the attack pp
-                            AttackType = stringToTypeDictionary[attackData[(int)AttackDatasheetColumns.Type]] // Get the PokemonType related to that attack
+                            AttackType = stringToTypeDictionary[attackData[(int)AttackDatasheetColumns.Type]], // Get the PokemonType related to that attack
+                            AttackId = i
                         };
                     }
 
@@ -243,7 +244,8 @@ namespace PokemonBox.Models
                             abilities[i] = new Ability()
                             {
                                 Name = abilityData[0],
-                                Description = abilityData[1]
+                                Description = abilityData[1],
+                                AbilityId = i
                             };
                         }
 
@@ -258,6 +260,12 @@ namespace PokemonBox.Models
                 }
                 return null;
             }
+        }
+
+        // TODO: Add an id to the Attack and Ability classes to be able to access them when loading from the file
+        static public Pokemon[] LoadBoxFromfile(string path, Dictionary<string, PokemonType> nameToTypeDictionary)
+        {
+
         }
     }
 }

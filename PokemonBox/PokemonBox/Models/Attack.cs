@@ -12,6 +12,7 @@ namespace PokemonBox.Models
         public string Description { get; set; }
         public PokemonType AttackType { get; set; }
         public int PP { get; set; }
+        public int AttackId { get; set; }
 
     }
 }
