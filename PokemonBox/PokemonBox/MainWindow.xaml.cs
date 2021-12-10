@@ -27,16 +27,14 @@ namespace PokemonBox
         public MainWindow()
         {
             InitializeComponent();
-        }
-
-
-
-        private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
             // Instantiate the pc box
             pcBox = new PCBox();
-
-            meSelectedPokemon.Source = new Uri("../../../Images/Regular/abra.gif", UriKind.Relative);
         }
 
+        private void btnAdd_Click(object sender, RoutedEventArgs e)
+        {
+            // Open the add window
+            
+        }
+    }
 }

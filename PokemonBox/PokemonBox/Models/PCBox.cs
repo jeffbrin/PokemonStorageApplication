@@ -96,5 +96,29 @@ namespace PokemonBox.Models
         {
             get{ return abilityOptions; }
         }
+
+        // All the pokemon currently stored in the box
+        public List<Pokemon> StoredPokemon
+        {
+            get { return storedPokemon; }
+        }
+
+        /// <summary>
+        /// Add a pokemon to the box.
+        /// </summary>
+        /// <param name="pokemon">The pokemon to add.</param>
+        public void AddPokemon(Pokemon pokemon)
+        {
+            storedPokemon.Add(pokemon);
+        }
+
+        /// <summary>
+        /// Remove a pokemon from the box.
+        /// </summary>
+        /// <param name="pokemon">The pokemon to remove.</param>
+        public void RemovePokemon(Pokemon pokemon)
+        {
+            storedPokemon.Remove(pokemon);
+        }
     }
 }
