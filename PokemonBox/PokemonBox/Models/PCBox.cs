@@ -4,7 +4,7 @@ using System.Text;
 
 namespace PokemonBox.Models
 {
-    class PCBox
+    public class PCBox
     {
 
         private Pokemon[] pokemonOptions;
