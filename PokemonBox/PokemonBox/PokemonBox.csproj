@@ -480,6 +480,8 @@
     <None Remove="Images\BoxSprites\98.png" />
     <None Remove="Images\BoxSprites\99.png" />
     <None Remove="Images\MiscIcons\close.png" />
+    <None Remove="Images\MiscIcons\closeFilled.png" />
+    <None Remove="Images\MiscIcons\closeInverted.png" />
     <None Remove="Images\MiscIcons\minus.png" />
     <None Remove="Images\MiscIcons\minusFilled.png" />
     <None Remove="Images\MiscIcons\minusInverted.png" />
@@ -1249,6 +1251,12 @@
     <Content Include="Images\MiscIcons\close.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Images\MiscIcons\closeFilled.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\MiscIcons\closeInverted.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Images\MiscIcons\minus.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -1262,6 +1270,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
+
 
   <ItemGroup>
     <PackageReference Include="WpfAnimatedGif" Version="2.0.2" />

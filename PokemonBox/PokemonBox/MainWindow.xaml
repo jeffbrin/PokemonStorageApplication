@@ -41,7 +41,8 @@
                        HorizontalAlignment="Center"  FontFamily="Fonts/Baloo.ttf" FontSize="20"/>
 
             <Image Grid.Column="2" HorizontalAlignment="Left" Width="15"
-                   Height="15" Margin="15,0,0,0">
+                   Height="15" Margin="15,0,0,0" x:Name="imgMinus"
+                   MouseLeftButtonDown="imgMinus_MouseLeftButtonDown" ToolTip="Minimize">
                 <Image.Style>
                     <Style TargetType="{x:Type Image}">
                         <Setter Property="Source" Value="/Images/MiscIcons/minusFilled.png"/>
@@ -54,8 +55,20 @@
                     </Style>
                 </Image.Style>
             </Image>
-            <Image Source="/Images/MiscIcons/close.png" Grid.Column="2" HorizontalAlignment="Right" 
-                   Margin="0,0,15,0" Width="15" Height="15"/>
+            <Image Grid.Column="2" HorizontalAlignment="Right" Margin="0,0,15,0" Width="15" Height="15"
+                   x:Name="imgClose" MouseLeftButtonDown="imgClose_MouseLeftButtonDown" ToolTip="Close">
+                <Image.Style>
+                    <Style TargetType="{x:Type Image}">
+                        <Setter Property="Source" Value="/Images/MiscIcons/closeFilled.png"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Cursor" Value="Hand"/>
+                                <Setter Property="Source" Value="/Images/MiscIcons/closeInverted.png"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Image.Style>
+            </Image>
         </Grid>
 
         <!--under header left side-->

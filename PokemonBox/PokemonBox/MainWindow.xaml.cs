@@ -50,6 +50,16 @@ namespace PokemonBox
                 DragMove();
             }
         }
+
+        private void imgClose_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            Close();
+        }
+
+        private void imgMinus_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            this.WindowState = WindowState.Minimized;
+        }
     }
 
 }
