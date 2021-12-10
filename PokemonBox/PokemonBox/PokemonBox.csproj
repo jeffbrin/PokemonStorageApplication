@@ -10,6 +10,7 @@
     <None Remove="1.png" />
     <None Remove="azu.png" />
     <None Remove="Images\azu.png" />
+    <None Remove="Images\outerSpace - Copy.png" />
     <None Remove="Images\Regular\abra.gif" />
     <None Remove="Images\Regular\aerodactyl.gif" />
     <None Remove="Images\Regular\alakazam.gif" />

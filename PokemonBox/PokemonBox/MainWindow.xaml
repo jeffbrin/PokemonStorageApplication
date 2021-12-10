@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:PokemonBox"
         xmlns:gif="http://wpfanimatedgif.codeplex.com"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800"
+        Title="MainWindow" Height="450" Width="1000"
         Loaded="Window_Loaded"
         WindowStyle="None"
         ResizeMode="NoResize"
@@ -58,7 +58,7 @@
             <!--Image of Selected Pokemon-->
             <StackPanel Background="AliceBlue" Grid.Row="1">
                 <!--<MediaElement Source="Images/Regular/abra.gif" LoadedBehavior="Play" Visibility="Visible"/>-->
-                <Image gif:ImageBehavior.AnimatedSource="Images/Regular/abra.gif"/>
+                <Image gif:ImageBehavior.AnimatedSource="Images/AnimatedSprites/Regular/abra.gif"/>
             </StackPanel>
 
             <Border Grid.Row="2" BorderBrush="#FF7597" BorderThickness="5px">
@@ -82,7 +82,7 @@
                             <ColumnDefinition/>
                             <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
-                        <Image Source="/waterType.png" 
+                        <Image Source="Images/TypeSprites/waterType.png" 
                             x:Name="imgTypePng" HorizontalAlignment="Right"
                              Margin="0,0,5,0" Width="25"
                                RenderOptions.BitmapScalingMode="Fant" Grid.Column="0">
@@ -98,6 +98,27 @@
             </Border>
             
 
+        </Grid>
+        
+        <!--Box UI Grid-->
+        <!--Going to do 5x5 grid for the pokemons-->
+        <Grid Grid.Row="1" Grid.Column="1" Margin="25,25,25,25">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Image Source="Images/BackgroundSprites/outerSpace.png" Grid.Column="0" 
+                   Grid.Row="0"  Grid.RowSpan="5" Grid.ColumnSpan="5"/>
         </Grid>
 
 
