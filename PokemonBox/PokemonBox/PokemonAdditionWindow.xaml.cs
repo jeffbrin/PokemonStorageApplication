@@ -37,9 +37,5 @@ namespace PokemonBox
             spSelectedSpecies.DataContext = tempPokemon; // resync the DataContext
         }
 
-        private void chkShiny_Toggled(object sender, RoutedEventArgs e)
-        {
-
-        }
     }
 }

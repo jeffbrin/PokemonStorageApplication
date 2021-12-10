@@ -16,6 +16,10 @@ namespace PokemonBox.Models
         private const string ANIMATED_SPRITES_DIRECTORY_PATH = "AnimatedSprites/";
         // The file extension of the images
         private const string ICON_FILE_EXTENSIONS = ".gif";
+        // The file extensions of the pokemon cries
+        private const string POKEMON_CRY_EXTENSIONS = ".FLAC";
+        // The path to the pokemon cries
+        private const string POKEMON_CRY_PATH = "Audio/Cries/";
 
         private bool isShiny;
 
@@ -85,26 +89,40 @@ namespace PokemonBox.Models
             get { return Nickname != string.Empty ? Nickname : Species; }
         }
 
+        // Whether of not this pokemon is shiny. Custom setter is needed for PropertyChanged events on the images
         public bool IsShiny
         {
             get { return isShiny; }
             set
             {
                 isShiny = value;
-                NotifyPropertyChanged("AnimatedSpritePath");
-                NotifyPropertyChanged("BoxSpritePath");
+                NotifyPropertyChanged("AnimatedSpritePath"); // Notify that the animated sprite was changed
+                NotifyPropertyChanged("BoxSpritePath"); // Notify that the box sprite was changed
             }
+        }
+
+        // The file path to this pokemon's cry sound effect
+        public string Cry
+        {
+            get { return $"{POKEMON_CRY_PATH}{PokedexNumber}{POKEMON_CRY_EXTENSIONS}"; }
         }
 
         #region INotify
         // This method is called by the Set accessor of each property.  
         // The CallerMemberName attribute that is applied to the optional propertyName  
         // parameter causes the property name of the caller to be substituted as an argument.  
-        private void NotifyPropertyChanged(String propertyName = "")
+        private void NotifyPropertyChanged(string propertyName = "")
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            if (PropertyChanged != null)
+                PropertyChanged.Invoke(this, new PropertyChangedEventArgs(propertyName)); // Invoke a property changed event on the property
+            
+            // This function checks if the PropertyChanged event handler is null
+            // If it exists, then it invokes the event, with this object and the name of the property that has been changed
+            // This is necessary to change the image sources since they are calculated properties and this event
+            // won't be called automatically when the setter is used
         }
 
+        // The event to invoke when a property has been changed, (built in)
         public event PropertyChangedEventHandler PropertyChanged;
 
         #endregion

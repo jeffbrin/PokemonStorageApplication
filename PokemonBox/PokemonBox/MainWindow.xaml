@@ -1,4 +1,9 @@
-﻿<Window x:Class="PokemonBox.MainWindow"
+﻿<!--This project uses copyright media owned by **Nintendo, Game Freak, and Creatures**, 
+    the images, sounds, names and animations are all the Intellectual Property of 
+    **Nintendo, Game Freak, and Creatures**. These assets are being used solely for educational purposes and we 
+    claim no ownership over any of the assets used in the program.-->
+    
+<Window x:Class="PokemonBox.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -82,9 +87,9 @@
                 <!--contains picture and name-->
                 <RowDefinition Height="4*"/>
             </Grid.RowDefinitions>
-            
 
-            
+
+
             <!--Add Button-->
             <Button x:Name="btnAdd" HorizontalAlignment="Left" 
                     Margin="25,0,0,0" VerticalAlignment="Center"
@@ -159,15 +164,15 @@
                                 <Setter Property="Cursor" Value="Hand"/>
                                 <Setter Property="Background" Value="#03DAC5"/>
                             </Style>
-                            
+
                         </Button.Style>
                     </Button>
                 </Grid>
             </Border>
-            
+
 
         </Grid>
-        
+
         <!--Box UI Grid-->
         <!--Going to do 5x5 grid for the pokemons-->
         <Grid Grid.Row="1" Grid.Column="1" Margin="25,25,25,25">

@@ -17,10 +17,30 @@ xmlns:gif="http://wpfanimatedgif.codeplex.com"
         
         <ComboBox Grid.Row="0" x:Name="cmbSpeciesPicker" DisplayMemberPath="Species" SelectionChanged="cmbSpeciesPicker_SelectionChanged"/>
         <StackPanel Grid.Row="1" x:Name="spSelectedSpecies">
+            <!--Pokemon species selector-->
             <TextBlock Text="{Binding Species}"/>
+            <!--The pokemon image-->
             <Image x:Name="imgSelectedSpecies" gif:ImageBehavior.AnimatedSource="{Binding AnimatedSpritePath}" 
                    Height="300" Width="300"/>
-            <CheckBox x:Name="chkShiny" Content="Shiny?" IsChecked="{Binding IsShiny}" Checked="chkShiny_Toggled" Unchecked="chkShiny_Toggled"/>
+            <!--Checkbox for if the pokemon is shiny-->
+            <CheckBox Content="Shiny" IsChecked="{Binding IsShiny}"/>
+            <!--The pokedex number-->
+            <TextBlock Text="{Binding PokedexNumber}"/>
+            <!--Grid to display pokemon types-->
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel x:Name="spTypeOne" Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center"  HorizontalAlignment="Center">
+                    <Image Source="{Binding Types[0].SpritePath}" Height="25" Width="25"/>
+                    <TextBlock FontSize="20" Text="{Binding Types[0].Name}" Margin="5 0 0 0"/>
+                </StackPanel>
+                <StackPanel x:Name="spTypeTwo" Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center"  HorizontalAlignment="Center">
+                    <Image Source="{Binding Types[1].SpritePath}" Height="25" Width="25"/>
+                    <TextBlock FontSize="20" Text="{Binding Types[1].Name}" Margin="5 0 0 0"/>
+                </StackPanel>
+            </Grid>
         </StackPanel>
     </Grid>
 </Window>
