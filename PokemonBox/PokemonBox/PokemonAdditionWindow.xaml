@@ -5,15 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PokemonBox.Models"
         mc:Ignorable="d"
-    xmlns:gif="http://wpfanimatedgif.codeplex.com"
-
-
-        Title="PokemonAdditionWindow" Height="600" Width="500">
-    <StackPanel x:Name="spPokemonCreator">
-        <ComboBox x:Name="cmbSpeciesPicker" DisplayMemberPath="Species" SelectionChanged="cmbSpeciesPicker_SelectionChanged"/>
-        <StackPanel x:Name="spSelectedSpecies">
+xmlns:gif="http://wpfanimatedgif.codeplex.com"
+        Title="PokemonAdditionWindow" Height="500" Width="500"
+        SizeToContent="Height">
+    <Grid x:Name="grdPokemonCreator">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        
+        <ComboBox Grid.Row="0" x:Name="cmbSpeciesPicker" DisplayMemberPath="Species" SelectionChanged="cmbSpeciesPicker_SelectionChanged"/>
+        <StackPanel Grid.Row="1" x:Name="spSelectedSpecies">
             <TextBlock Text="{Binding Species}"/>
-            <Image gif:ImageBehavior.AnimatedSource="{Binding AnimatedSpritePath}"/>
+            <Image x:Name="imgSelectedSpecies" gif:ImageBehavior.AnimatedSource="{Binding AnimatedSpritePath}" 
+                   Height="300" Width="300"/>
+            <CheckBox x:Name="chkShiny" Content="Shiny?" IsChecked="{Binding IsShiny}" Checked="chkShiny_Toggled" Unchecked="chkShiny_Toggled"/>
         </StackPanel>
-    </StackPanel>
+    </Grid>
 </Window>
