@@ -23,8 +23,8 @@ namespace PokemonBox.Models
             storedPokemon = new List<Pokemon>();
 
             // Get the dictionaries generated from csv files by the DataReader class
-            Dictionary<string, Dictionary<string, string[]>> pokemonTypeDictionary = DataReader.GetTypesInformation("PokemonData/defenceMatchups.csv");
-            Dictionary<string, Dictionary<string, string[]>> attackTypeDictionary = DataReader.GetTypesInformation("PokemonData/attackMatchups.csv");
+            Dictionary<string, Dictionary<string, string[]>> pokemonTypeDictionary = DataReaderWriter.GetTypesInformation("PokemonData/defenceMatchups.csv");
+            Dictionary<string, Dictionary<string, string[]>> attackTypeDictionary = DataReaderWriter.GetTypesInformation("PokemonData/attackMatchups.csv");
 
             // Get the arrays of pokemon types
             PokemonType[] pokemonTypes = GetAllTypes(pokemonTypeDictionary);
@@ -35,9 +35,9 @@ namespace PokemonBox.Models
             Dictionary<string, PokemonType> attackTypeByNameDictionary = GetPokemonTypesDictionary(attackTypes);
 
             // Get all the pokemon options from the backend
-            pokemonOptions = DataReader.GetPokemonOptions("PokemonData/pokemonData.csv", pokemonTypeByNameDictionary);
-            attackOptions = DataReader.GetAttackOptions("PokemonData/attackOptions.csv", attackTypeByNameDictionary);
-            abilityOptions = DataReader.GetAbilityOptions("PokemonData/abilityOptions.csv");
+            pokemonOptions = DataReaderWriter.GetPokemonOptions("PokemonData/pokemonData.csv", pokemonTypeByNameDictionary);
+            attackOptions = DataReaderWriter.GetAttackOptions("PokemonData/attackOptions.csv", attackTypeByNameDictionary);
+            abilityOptions = DataReaderWriter.GetAbilityOptions("PokemonData/abilityOptions.csv");
         }
 
         // The size of the box

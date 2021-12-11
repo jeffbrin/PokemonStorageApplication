@@ -47,8 +47,10 @@ namespace PokemonBox.Models
                 string[] attackIds = new string[Attacks.Length];
                 for (int i = 0; i < Attacks.Length; i++)
                     attackIds[i] = Attacks[i] == null ? string.Empty : Attacks[i].AttackId.ToString();
-                return "";
-                //return $"{PokedexNumber},{Species},{Nickname},{Types[0].Name},{typeTwoName},{BaseHealth},{BaseAttack},{BaseDefence},{BaseSpecialAttack},{BaseSpecialDefence},{BaseSpeed},
+
+                return $"{PokedexNumber},{Species},{Nickname},{Types[0].Name},{typeTwoName}," +
+                        $"{BaseHealth},{BaseAttack},{BaseDefence},{BaseSpecialAttack},{BaseSpecialDefence},{BaseSpeed}," +
+                        $"{attackIds[0]},{attackIds[1]},{attackIds[2]},{attackIds[3]},{Ability.AbilityId}";
             }
         }
 
