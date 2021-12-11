@@ -26,6 +26,8 @@ namespace PokemonBox
         private PCBox pcBox;
         private Pokemon selectedPokemon;
         private Button selectedPokemonUiParent;
+        private string saveLocation;
+        private bool saved;
 
         public MainWindow()
         {
@@ -162,6 +164,11 @@ namespace PokemonBox
                 else
                     cells[i].DataContext = null;
             }
+        }
+
+        private void btnSave_Click(object sender, RoutedEventArgs e)
+        {
+            
         }
     }
 

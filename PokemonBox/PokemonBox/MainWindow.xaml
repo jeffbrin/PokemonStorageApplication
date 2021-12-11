@@ -253,7 +253,11 @@
             </Grid.ColumnDefinitions>
 
             <StackPanel Grid.Column="1" Orientation="Horizontal">
-                <Button Content="Release Pokemon" Click="btnReleasePokemon_Click"/>
+                <Button Content="Release Pokemon" Margin="0,0,10,0" Width="100" Click="btnReleasePokemon_Click"/>
+                <Button Content="Edit Pokemon" Margin="0,0,10,0" Width="100" Click="btnReleasePokemon_Click"/>
+                <Button x:Name="btnSave" Content="Save Box" Margin="0,0,10,0" Width="100" Click="btnSave_Click"/>
+                <Button Content="Load Box" Margin="0,0,10,0" Width="100" Click="btnReleasePokemon_Click"/>
+                
             </StackPanel>
             
         </Grid>

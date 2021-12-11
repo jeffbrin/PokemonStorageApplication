@@ -5,7 +5,7 @@ using System.IO;
 
 namespace PokemonBox.Models
 {
-    static class DataReader
+    static class DataReaderWriter
     {
         // Used to read the lines in the GetPokemonOptions function
         private enum PokemonDatasheetColumns
@@ -267,5 +267,34 @@ namespace PokemonBox.Models
         //{
 
         //}
+
+        // Saved the box to the file located at the path
+        static public bool SaveBox(string path, Pokemon[] boxedPokemon)
+        {
+            try
+            {
+
+                StringBuilder sb = new StringBuilder();
+
+                // Append a pokemon to each line
+                foreach (Pokemon pokemon in boxedPokemon)
+                {
+                    sb.AppendLine(pokemon.CSVData);
+                }
+
+                // Write to the file
+                File.WriteAllText(path, sb.ToString());
+
+            }
+            catch (Exception)
+            {
+                // Unsuccessful write
+                return false;
+                throw;
+            }
+
+            // Successful write
+            return true;
+        }
     }
 }
