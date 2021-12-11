@@ -16,6 +16,8 @@ namespace PokemonBox.Models
         private const string ANIMATED_SPRITES_DIRECTORY_PATH = "AnimatedSprites/";
         // The file extension of the images
         private const string ICON_FILE_EXTENSIONS = ".gif";
+        // The file extension for the Box Pokemon Images
+        private const string BOX_FILE_EXTENSIONS = ".png";
         // The file extensions of the pokemon cries
         private const string POKEMON_CRY_EXTENSIONS = ".FLAC";
         // The path to the pokemon cries
@@ -104,10 +106,10 @@ namespace PokemonBox.Models
         {
             get
             {
-                if (IsShiny) return $"{SPRITES_DIRECTORY_PATH}{ANIMATED_SPRITES_DIRECTORY_PATH}Shiny/{PokedexNumber}{ICON_FILE_EXTENSIONS}";
-                return $"{SPRITES_DIRECTORY_PATH}{ANIMATED_SPRITES_DIRECTORY_PATH}Regular/{Species}{ICON_FILE_EXTENSIONS}";
-                if (IsShiny) return $"{SPRITES_DIRECTORY_PATH}{BOX_SPRITES_DIRECTORY_PATH}Shiny/{PokedexNumber}{ICON_FILE_EXTENSIONS}";
-                return $"{SPRITES_DIRECTORY_PATH}{BOX_SPRITES_DIRECTORY_PATH}Regular/{Species}{ICON_FILE_EXTENSIONS}";
+                //if (IsShiny) return $"{SPRITES_DIRECTORY_PATH}{ANIMATED_SPRITES_DIRECTORY_PATH}Shiny/{PokedexNumber}{ICON_FILE_EXTENSIONS}";
+                //return $"{SPRITES_DIRECTORY_PATH}{ANIMATED_SPRITES_DIRECTORY_PATH}Regular/{Species}{ICON_FILE_EXTENSIONS}";
+                if (IsShiny) return $"{SPRITES_DIRECTORY_PATH}{BOX_SPRITES_DIRECTORY_PATH}Shiny/{PokedexNumber}{BOX_FILE_EXTENSIONS}";
+                return $"{SPRITES_DIRECTORY_PATH}{BOX_SPRITES_DIRECTORY_PATH}Regular/{PokedexNumber}{BOX_FILE_EXTENSIONS}";
 
             }
         }

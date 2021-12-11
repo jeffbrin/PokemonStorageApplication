@@ -123,7 +123,6 @@
             <StackPanel Background="AliceBlue" Grid.Row="1">
                 <Image gif:ImageBehavior.AnimatedSource="{Binding AnimatedSpritePath}"
                        HorizontalAlignment="Center"
-                       VerticalAlignment="Top"
                        Height="200"
                        Width="200"
                        RenderOptions.BitmapScalingMode="HighQuality"/>

@@ -263,9 +263,9 @@ namespace PokemonBox.Models
         }
 
         // TODO: Add an id to the Attack and Ability classes to be able to access them when loading from the file
-        static public Pokemon[] LoadBoxFromfile(string path, Dictionary<string, PokemonType> nameToTypeDictionary)
-        {
+        //static public Pokemon[] LoadBoxFromfile(string path, Dictionary<string, PokemonType> nameToTypeDictionary)
+        //{
 
-        }
+        //}
     }
 }
