@@ -29,7 +29,7 @@ namespace PokemonBox
         private Pokemon selectedPokemon;
         private Button selectedPokemonUiParent;
         private string saveLocation;
-        private bool saved;
+        private bool saved = true; // Saved is true if there is an empty box since there are no unsaved changes
 
         public MainWindow()
         {
@@ -37,6 +37,22 @@ namespace PokemonBox
             // Instantiate the pc box
             pcBox = new PCBox(MaxCapacity);
 
+            // Link the save status to the display
+            SyncSaveStatus();
+        }
+
+        // Sets the saveStatus backing field to match the saved bool
+        private void SyncSaveStatus()
+        {
+            // New file
+            if (string.IsNullOrEmpty(saveLocation) && saved)
+                txtStatus.Text = "New box.";
+            // Not saved
+            else if (!saved || string.IsNullOrEmpty(saveLocation))
+                txtStatus.Text = "Unsaved changed";
+            // Saved
+            else
+                txtStatus.Text = $"Saved to: {saveLocation}";
         }
 
         // The maximum number of pokemon that can be stored
@@ -55,7 +71,13 @@ namespace PokemonBox
                 PokemonAdditionWindow pokemonAdderWindow = new PokemonAdditionWindow(pcBox);
                 pokemonAdderWindow.ShowDialog(); // Show the pokemon creation window
                 if (pokemonAdderWindow.CreatedPokemon) //If a pokemon was created, bind it to the next available grid cell
+                {
                     DisplayNewPokemon();
+                    // No longer saved
+                    saved = false;
+                    SyncSaveStatus();
+                }
+                
             }
             else
             {
@@ -64,6 +86,7 @@ namespace PokemonBox
             }
         }
 
+        // Sets the Data context of a new pokemon cell
         private void DisplayNewPokemon()
         {
             int storedPokemonQuantity = pcBox.StoredPokemon.Count; // get the number of pokemon
@@ -73,11 +96,10 @@ namespace PokemonBox
             grdBoxedPokemon.Children.OfType<Border>().ToArray()[storedPokemonQuantity - 1].DataContext = pcBox.StoredPokemon[storedPokemonQuantity - 1]; // Set the data context of the next slot to the new pokemon
         }
 
+
         /// <summary>
         /// Allows the user to drag the window around the screen if mouse is pressed on the header
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void grdHeader_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if (e.LeftButton == MouseButtonState.Pressed)
@@ -103,9 +125,7 @@ namespace PokemonBox
             if (((sender as Button).Parent as Border).DataContext is Pokemon)
             {
                 // If there was already a selected pokemon, clear its background
-                if (selectedPokemonUiParent != null) {
-                    ClearSelectedBoxEffects();
-                }
+                ClearSelectedBoxEffects();
 
                 // Get the new pokemon and parent
                 Button senderButton = sender as Button;
@@ -119,14 +139,11 @@ namespace PokemonBox
                 // Display the new selected pokemon
                 grdPokemonDisplayAndAdd.DataContext = selectedPokemon;
             }
-            // If null is sent or the user clicks on an empty cell, clear the selection
-            else if (sender == null || ((sender as Button).Parent as Border).DataContext == null)
+            // If the user clicks on an empty cell, clear the selection
+            else if (((sender as Button).Parent as Border).DataContext == null)
             {
                 // If there was already a selected pokemon, clear its background
-                if (selectedPokemonUiParent != null)
-                {
-                    ClearSelectedBoxEffects();
-                }
+                ClearSelectedBoxEffects();
 
                 // Make the selected pokemon null and clear the selected pokemon display
                 selectedPokemon = null;
@@ -144,6 +161,7 @@ namespace PokemonBox
             }
         }
 
+        // Releases a pokemon from the box
         private void btnReleasePokemon_Click(object sender, RoutedEventArgs e)
         {
             // Make sure there's a selected pokemon
@@ -159,6 +177,9 @@ namespace PokemonBox
                 if(MessageBox.Show(warning, "Warning!", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
                 {
                     RemoveSelectedPokemon();
+                    // No longer saved
+                    saved = false;
+                    SyncSaveStatus();
                 }
             }
         }
@@ -173,6 +194,7 @@ namespace PokemonBox
             ReplacePokemonInCorrectCells(); // Replace all the pokemon now that a hole may have been made
         }
 
+        // Resets all the data contexts for the cells in the box and for the selected pokemon section
         private void ReplacePokemonInCorrectCells()
         {
             // Get all the pokemon cells
@@ -209,14 +231,19 @@ namespace PokemonBox
 
                 if (open.ShowDialog() == true)
                 {
-
+                    // Store the old save location and save state in case the file reading goes wrong
+                    string oldSaveLocation = saveLocation;
+                    bool oldSaved = saved;
                     saveLocation = open.FileName;
                     saved = true;
 
                     // Make sure the file was loaded correctly
                     if (!pcBox.LoadFromFile(saveLocation))
                     {
+                        // Show error and revert to old save location and state
                         MessageBox.Show("Error loading data from file.", "Failed to load", MessageBoxButton.OK, MessageBoxImage.Error);
+                        saveLocation = oldSaveLocation;
+                        saved = oldSaved;
                     }
                     else
                     {
@@ -225,8 +252,10 @@ namespace PokemonBox
                         grdPokemonDisplayAndAdd.DataContext = selectedPokemon;
                         ReplacePokemonInCorrectCells();
                         ClearSelectedBoxEffects();
-
                     }
+
+                    // Change the save status 
+                    SyncSaveStatus();
                 }
             }
             
@@ -234,9 +263,9 @@ namespace PokemonBox
 
         private bool CheckBeforeOpening()
         {
-            // Check if the save location exists already
-            if (string.IsNullOrEmpty(saveLocation))
-                return true;
+            //// Check if the save location exists already
+            //if (string.IsNullOrEmpty(saveLocation))
+            //    return true;
 
             // If the file is already saved return
             if (saved)
@@ -263,9 +292,12 @@ namespace PokemonBox
 
         }
 
+        /// <summary>
+        /// Check if the user has already saved, if not find a save location and try to save
+        /// </summary>
         private void SaveLogic()
         {
-            // Check if there is already a save location
+            // Check if isn't there is already a save location
             if (string.IsNullOrEmpty(saveLocation))
             {
                 // Get the user to pick a save location
@@ -284,8 +316,13 @@ namespace PokemonBox
             }
 
             // Save the data to the save location
-            DataReaderWriter.SaveBox(saveLocation, pcBox.StoredPokemon.ToArray());
-            saved = true;
+            if (DataReaderWriter.SaveBox(saveLocation, pcBox.StoredPokemon.ToArray()))
+                saved = true;
+            else
+                MessageBox.Show("Your box could not be saved. Try again.", "Error saving.", MessageBoxButton.OK, MessageBoxImage.Error);
+
+            // Sync the save status
+            SyncSaveStatus();
         }
 
         private void btnShowStats_Click(object sender, RoutedEventArgs e)
@@ -297,6 +334,15 @@ namespace PokemonBox
                 ViewStatsWindow statsWindow = new ViewStatsWindow(selectedPokemon);
                 statsWindow.ShowDialog();
             }
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            // Check if the user has saved, if not ask them if they want to then exit
+            if (CheckBeforeOpening())
+                e.Cancel = false;
+
+            //e.Cancel;
         }
     }
 
