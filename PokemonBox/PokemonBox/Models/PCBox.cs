@@ -47,7 +47,7 @@ namespace PokemonBox.Models
         // Indicated whether the box full
         public bool IsFull
         {
-            get { return StoredPokemon.Count == MaxStorageSlots; }
+            get { return StoredPokemon.Count >= MaxStorageSlots; }
         }
 
         /// <summary>
@@ -156,8 +156,12 @@ namespace PokemonBox.Models
             List<Pokemon> loadedPokemon = DataReaderWriter.LoadBoxFromfile(path, pokemonTypeByNameDictionary);
 
             // Load the pokemon if there was no error
-            if (loadedPokemon != null) 
-                storedPokemon = loadedPokemon;
+            if (loadedPokemon != null)
+                foreach (Pokemon p in loadedPokemon)
+                {
+                    if (IsFull) break; // Stop adding if the box is full
+                    storedPokemon.Add(p); // Add the next loaded pokemon
+                }
 
             return loadedPokemon != null;
         }
