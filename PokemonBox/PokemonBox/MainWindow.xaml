@@ -200,8 +200,7 @@
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <Image Source="Images/BackgroundSprites/outerSpace.png" Grid.Column="0" 
-                   Stretch="Fill" Grid.Row="0"  Grid.RowSpan="5" Grid.ColumnSpan="5"/>
+            <Border Background="#292b62" Grid.Column="0" Grid.Row="0" Grid.RowSpan="5" Grid.ColumnSpan="5"/>
             <!--Each image goes in a stack panel to keep them in the box-->
             <Border BorderBrush="Black" BorderThickness="2" Grid.Column="0" Grid.Row="0">
                 <Button Click="btnSelectPokemon_Click" BorderBrush="Transparent" Background="Transparent">
