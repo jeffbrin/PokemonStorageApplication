@@ -1,1 +1,5 @@
-Shiny pokemon aren't loaded shiny
+Unsaved when pokemon is added,
+Unsaved when pokemon is edited,
+Saved when loading from file,
+Unsaved when pokemon is released
+Saved when user saves

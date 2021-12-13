@@ -14,7 +14,8 @@
         Title="MainWindow" Height="450" Width="1000"
         WindowStyle="None"
         ResizeMode="NoResize"
-        Background="#181735">
+        Background="#181735"
+        Closing="Window_Closing">
 
     <!--big Grid-->
     <Grid>
@@ -246,11 +247,14 @@
         </Grid>
 
         <!--Footer-->
-        <Grid Grid.Row="2" Grid.ColumnSpan="2">
+        <Grid x:Name="grdFooter" Grid.Row="2" Grid.ColumnSpan="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
+
+            <!--Status-->
+            <TextBlock Foreground="White" Text="{Binding SaveStatus}" x:Name="txtStatus" Grid.Row="0" FontSize="15"/>
 
             <StackPanel Grid.Column="1" Orientation="Horizontal">
                 <Button Content="Release Pokemon" Margin="0,0,10,0" Width="100" Click="btnReleasePokemon_Click"/>
