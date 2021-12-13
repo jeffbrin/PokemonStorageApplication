@@ -40,7 +40,30 @@ namespace PokemonBox.Models
         
         public Ability Ability { get; set; }
 
-        // TODO: Complete
+        private enum CSVColumns
+        {
+            PokedexNumber,
+            Species,
+            Nickname,
+            TypeOne,
+            TypeTwo,
+            BaseHealth,
+            BaseDefence,
+            BaseAttack,
+            BaseSpecialAttack,
+            BaseSpecialDefence,
+            BaseSpeed,
+            AttackOne,
+            AttackTwo,
+            AttackThree,
+            AttackFour,
+            Ability,
+            Shiny
+        }
+
+        /// <summary>
+        /// Sets the property values from csv data, excluding the attacks, ability and type.
+        /// </summary>
         public string CSVData
         {
             get
@@ -52,7 +75,21 @@ namespace PokemonBox.Models
 
                 return $"{PokedexNumber},{Species},{Nickname},{Types[0].Name},{typeTwoName}," +
                         $"{BaseHealth},{BaseAttack},{BaseDefence},{BaseSpecialAttack},{BaseSpecialDefence},{BaseSpeed}," +
-                        $"{attackIds[0]},{attackIds[1]},{attackIds[2]},{attackIds[3]},{Ability.AbilityId}";
+                        $"{attackIds[0]},{attackIds[1]},{attackIds[2]},{attackIds[3]},{Ability.AbilityId},{IsShiny}";
+            }
+            set
+            {
+                string[] pokemonData = value.Split(',');
+                PokedexNumber = int.Parse(pokemonData[(int)CSVColumns.PokedexNumber]);
+                Species = pokemonData[(int)CSVColumns.Species];
+                Nickname = pokemonData[(int)CSVColumns.Nickname];
+                BaseHealth = int.Parse(pokemonData[(int)CSVColumns.BaseHealth]);
+                BaseAttack = int.Parse(pokemonData[(int)CSVColumns.BaseAttack]);
+                BaseDefence = int.Parse(pokemonData[(int)CSVColumns.BaseDefence]);
+                BaseSpecialAttack = int.Parse(pokemonData[(int)CSVColumns.BaseSpecialDefence]);
+                BaseSpecialDefence = int.Parse(pokemonData[(int)CSVColumns.BaseSpecialDefence]);
+                BaseSpeed = int.Parse(pokemonData[(int)CSVColumns.BaseSpeed]);
+                IsShiny = bool.Parse(pokemonData[(int)CSVColumns.Shiny]);
             }
         }
 

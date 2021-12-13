@@ -165,9 +165,9 @@
                         </StackPanel>
                     </Grid>
                     <!--SHOW STATS BUTTON-->
-                    <Button Grid.Row="2" Content="Show Stats" 
+                    <Button x:Name="btnShowStats" Grid.Row="2" Content="Show Stats" 
                             HorizontalAlignment="Center" VerticalAlignment="Center"
-                        Padding="30,15,30,15" FontWeight="Bold" FontSize="15">
+                        Padding="30,15,30,15" FontWeight="Bold" FontSize="15" Click="btnShowStats_Click">
                         <Button.Style>
                             <Style TargetType="Button">
                                 <Setter Property="Cursor" Value="Hand"/>
@@ -256,7 +256,7 @@
                 <Button Content="Release Pokemon" Margin="0,0,10,0" Width="100" Click="btnReleasePokemon_Click"/>
                 <Button Content="Edit Pokemon" Margin="0,0,10,0" Width="100" Click="btnReleasePokemon_Click"/>
                 <Button x:Name="btnSave" Content="Save Box" Margin="0,0,10,0" Width="100" Click="btnSave_Click"/>
-                <Button Content="Load Box" Margin="0,0,10,0" Width="100" Click="btnReleasePokemon_Click"/>
+                <Button Content="Load Box" Margin="0,0,10,0" Width="100" Click="btnLoad_Click"/>
                 
             </StackPanel>
             

@@ -262,11 +262,67 @@ namespace PokemonBox.Models
             }
         }
 
-        // TODO: Add an id to the Attack and Ability classes to be able to access them when loading from the file
-        //static public Pokemon[] LoadBoxFromfile(string path, Dictionary<string, PokemonType> nameToTypeDictionary)
-        //{
 
-        //}
+        private enum LoadingCSVColumns
+        {
+            TypeOne = 3,
+            TypeTwo = 4,
+            AttackOneID = 11,
+            AttackTwoID = 12,
+            AttackThreeID = 13,
+            AttackFourID = 14,
+            AbilityID = 15
+        }
+
+        static public List<Pokemon> LoadBoxFromfile(string path, Dictionary<string, PokemonType> nameToTypeDictionary)
+        {
+            try
+            {
+                // Read from the file
+                if (File.Exists(path))
+                {
+                    string[] pokemonLines = File.ReadAllLines(path);
+                    List<Pokemon> boxedPokemon = new List<Pokemon>();
+
+                    // Get all the pokemon in the box, let the user decide how many to keep
+                    foreach (string line in pokemonLines)
+                    {
+                        string[] values = line.Split(',');
+                        
+                        // Create a new pokemon and add to the list
+                        boxedPokemon.Add(new Pokemon()
+                        {
+                            CSVData = line,
+
+                            // Add the types, null if there's no secondary type
+                            Types = new PokemonType[] {
+                                nameToTypeDictionary[values[(int)LoadingCSVColumns.TypeOne]], 
+                                values[(int)LoadingCSVColumns.TypeTwo] == string.Empty ? null : nameToTypeDictionary[values[(int)LoadingCSVColumns.TypeTwo]] 
+                            },
+                            // Add the attacks, null if there's no attack
+                            Attacks = new Attack[] {
+                                values[(int)LoadingCSVColumns.AttackOneID] == "" ? null : PCBox.AttackOptions[int.Parse(values[(int)LoadingCSVColumns.AttackOneID])],
+                                values[(int)LoadingCSVColumns.AttackTwoID] == "" ? null : PCBox.AttackOptions[int.Parse(values[(int)LoadingCSVColumns.AttackTwoID])],
+                                values[(int)LoadingCSVColumns.AttackThreeID] == "" ? null : PCBox.AttackOptions[int.Parse(values[(int)LoadingCSVColumns.AttackThreeID])],
+                                values[(int)LoadingCSVColumns.AttackFourID] == "" ? null : PCBox.AttackOptions[int.Parse(values[(int)LoadingCSVColumns.AttackFourID])]
+                                },
+                            // This should never be null
+                            Ability = PCBox.AbilityOptions[(int)LoadingCSVColumns.AbilityID]
+                        });
+                    }
+
+                    return boxedPokemon;
+                }
+
+            }
+            catch (Exception)
+            {
+
+                return null;
+            }
+
+            return null;
+        }
 
         // Saved the box to the file located at the path
         static public bool SaveBox(string path, Pokemon[] boxedPokemon)

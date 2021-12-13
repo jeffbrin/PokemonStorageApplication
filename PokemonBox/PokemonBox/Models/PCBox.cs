@@ -11,6 +11,7 @@ namespace PokemonBox.Models
         static private Pokemon[] pokemonOptions;
         static private Attack[] attackOptions;
         static private Ability[] abilityOptions;
+        static private Dictionary<string, PokemonType> pokemonTypeByNameDictionary;
 
         private List<Pokemon> storedPokemon;
 
@@ -31,7 +32,7 @@ namespace PokemonBox.Models
             PokemonType[] attackTypes = GetAllTypes(attackTypeDictionary);
 
             // Get the typeName: PokemonType dictionaries
-            Dictionary<string, PokemonType> pokemonTypeByNameDictionary = GetPokemonTypesDictionary(pokemonTypes);
+            pokemonTypeByNameDictionary = GetPokemonTypesDictionary(pokemonTypes);
             Dictionary<string, PokemonType> attackTypeByNameDictionary = GetPokemonTypesDictionary(attackTypes);
 
             // Get all the pokemon options from the backend
@@ -143,5 +144,23 @@ namespace PokemonBox.Models
         {
             storedPokemon.Remove(pokemon);
         }
+
+        /// <summary>
+        /// Loads the pokemon from a file
+        /// </summary>
+        /// <param name="path">The path to the file of pokemon</param>
+        /// <returns>Whether the pokemon were loaded successfully</returns>
+        public bool LoadFromFile(string path)
+        {
+            // Load the pokemon
+            List<Pokemon> loadedPokemon = DataReaderWriter.LoadBoxFromfile(path, pokemonTypeByNameDictionary);
+
+            // Load the pokemon if there was no error
+            if (loadedPokemon != null) 
+                storedPokemon = loadedPokemon;
+
+            return loadedPokemon != null;
+        }
+
     }
 }
