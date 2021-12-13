@@ -34,11 +34,10 @@ namespace PokemonBox
             tempPokemon = new Pokemon(cmbSpeciesPicker.SelectedItem as Pokemon); // Get the selected pokemon and copy it to the temp pokemon
             spSelectedSpecies.DataContext = tempPokemon; // resync the DataContext
         }
+
         /// <summary>
         /// Ability to move window around screen
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void grdHeader_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if (e.LeftButton == MouseButtonState.Pressed)
@@ -63,14 +62,6 @@ namespace PokemonBox
         private void imgMinus_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             this.WindowState = WindowState.Minimized;
-        }
-
-        private void rdbGender_Checked(object sender, RoutedEventArgs e)
-        {
-            if (rdbMale.IsChecked == true)
-                tempPokemon.Sex = 'M';
-            else
-                tempPokemon.Sex = 'F';
         }
 
         // Sets up the combo boxes and temp pokemon for creation

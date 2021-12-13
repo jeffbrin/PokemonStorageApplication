@@ -25,9 +25,9 @@ namespace PokemonBox.Models
 
         private bool isShiny;
         private char sex;
+        private string species;
 
         public int PokedexNumber { get; set; }
-        public string Species { get; set; }
         public string Nickname { get; set; }
         public PokemonType[] Types { get; set; }
         public int BaseHealth { get; set; }
@@ -58,7 +58,8 @@ namespace PokemonBox.Models
             AttackThree,
             AttackFour,
             Ability,
-            Shiny
+            Shiny,
+            Sex
         }
 
         /// <summary>
@@ -75,7 +76,7 @@ namespace PokemonBox.Models
 
                 return $"{PokedexNumber},{Species},{Nickname},{Types[0].Name},{typeTwoName}," +
                         $"{BaseHealth},{BaseAttack},{BaseDefence},{BaseSpecialAttack},{BaseSpecialDefence},{BaseSpeed}," +
-                        $"{attackIds[0]},{attackIds[1]},{attackIds[2]},{attackIds[3]},{Ability.AbilityId},{IsShiny}";
+                        $"{attackIds[0]},{attackIds[1]},{attackIds[2]},{attackIds[3]},{Ability.AbilityId},{IsShiny},{Sex}";
             }
             set
             {
@@ -90,6 +91,7 @@ namespace PokemonBox.Models
                 BaseSpecialDefence = int.Parse(pokemonData[(int)CSVColumns.BaseSpecialDefence]);
                 BaseSpeed = int.Parse(pokemonData[(int)CSVColumns.BaseSpeed]);
                 IsShiny = bool.Parse(pokemonData[(int)CSVColumns.Shiny]);
+                Sex = char.Parse(pokemonData[(int)CSVColumns.Sex]);
             }
         }
 
@@ -101,7 +103,7 @@ namespace PokemonBox.Models
         }
 
         // constructor for making a new pokemon created by the player
-        public Pokemon(Pokemon generic, bool shiny = false, char sex = 'M', Ability ability = null, string nickname = ""): this()
+        public Pokemon(Pokemon generic, bool shiny = false, char sex = 'M', Ability ability = null, string nickname = "", Attack[] attacks = null)
         {
             PokedexNumber = generic.PokedexNumber;
             Species = generic.Species;
@@ -116,6 +118,10 @@ namespace PokemonBox.Models
             IsShiny = shiny;
             Sex = sex;
             Ability = ability;
+            if (attacks == null)
+                Attacks = generic.Attacks;
+            else
+                Attacks = attacks;
         }
 
         public char Sex
@@ -166,6 +172,18 @@ namespace PokemonBox.Models
             set
             {
                 isShiny = value;
+                NotifyPropertyChanged("AnimatedSpritePath"); // Notify that the animated sprite was changed
+                NotifyPropertyChanged("BoxSpritePath"); // Notify that the box sprite was changed
+            }
+        }
+
+        // Needed to notify that the image has changed, used in edit window
+        public string Species
+        {
+            get { return species; }
+            set
+            {
+                species = value;
                 NotifyPropertyChanged("AnimatedSpritePath"); // Notify that the animated sprite was changed
                 NotifyPropertyChanged("BoxSpritePath"); // Notify that the box sprite was changed
             }
