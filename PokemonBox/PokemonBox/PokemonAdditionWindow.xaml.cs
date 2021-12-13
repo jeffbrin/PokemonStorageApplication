@@ -10,7 +10,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using PokemonBox.Models;
-
 namespace PokemonBox
 {
     /// <summary>
@@ -34,6 +33,36 @@ namespace PokemonBox
             ResetFields(cmbSpeciesPicker.SelectedIndex);
             tempPokemon = new Pokemon(cmbSpeciesPicker.SelectedItem as Pokemon); // Get the selected pokemon and copy it to the temp pokemon
             spSelectedSpecies.DataContext = tempPokemon; // resync the DataContext
+        }
+        /// <summary>
+        /// Ability to move window around screen
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void grdHeader_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                DragMove();
+            }
+        }
+        /// <summary>
+        /// Close the window using custom 'X' Button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void imgClose_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            Close();
+        }
+        /// <summary>
+        /// Minimize Window Using custon '_' button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void imgMinus_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            this.WindowState = WindowState.Minimized;
         }
 
         private void rdbGender_Checked(object sender, RoutedEventArgs e)
