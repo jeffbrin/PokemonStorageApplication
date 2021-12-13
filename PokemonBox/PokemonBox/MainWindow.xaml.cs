@@ -31,6 +31,16 @@ namespace PokemonBox
         private string saveLocation;
         private bool saved = true; // Saved is true if there is an empty box since there are no unsaved changes
 
+        private bool Saved
+        {
+            get { return saved; }
+            set
+            {
+                saved = value;
+                SyncSaveStatus();
+            }
+        }
+
         public MainWindow()
         {
             InitializeComponent();
@@ -74,8 +84,7 @@ namespace PokemonBox
                 {
                     DisplayNewPokemon();
                     // No longer saved
-                    saved = false;
-                    SyncSaveStatus();
+                    Saved = false;
                 }
                 
             }
@@ -129,7 +138,7 @@ namespace PokemonBox
 
                 // Get the new pokemon and parent
                 Button senderButton = sender as Button;
-                selectedPokemon = (senderButton.Parent as Border).DataContext as Pokemon; // get the pokemon stored in the same cell as the button (sender)
+                selectedPokemon = senderButton.DataContext as Pokemon; // get the pokemon stored in the same cell as the button (sender)
                 selectedPokemonUiParent = senderButton;
 
                 // Set the background of the new parent
@@ -178,8 +187,7 @@ namespace PokemonBox
                 {
                     RemoveSelectedPokemon();
                     // No longer saved
-                    saved = false;
-                    SyncSaveStatus();
+                    Saved = false;
                 }
             }
         }
@@ -235,7 +243,7 @@ namespace PokemonBox
                     string oldSaveLocation = saveLocation;
                     bool oldSaved = saved;
                     saveLocation = open.FileName;
-                    saved = true;
+                    Saved = true;
 
                     // Make sure the file was loaded correctly
                     if (!pcBox.LoadFromFile(saveLocation))
@@ -243,7 +251,7 @@ namespace PokemonBox
                         // Show error and revert to old save location and state
                         MessageBox.Show("Error loading data from file.", "Failed to load", MessageBoxButton.OK, MessageBoxImage.Error);
                         saveLocation = oldSaveLocation;
-                        saved = oldSaved;
+                        Saved = oldSaved;
                     }
                     else
                     {
@@ -254,8 +262,6 @@ namespace PokemonBox
                         ClearSelectedBoxEffects();
                     }
 
-                    // Change the save status 
-                    SyncSaveStatus();
                 }
             }
             
@@ -317,12 +323,10 @@ namespace PokemonBox
 
             // Save the data to the save location
             if (DataReaderWriter.SaveBox(saveLocation, pcBox.StoredPokemon.ToArray()))
-                saved = true;
+                Saved = true;
             else
                 MessageBox.Show("Your box could not be saved. Try again.", "Error saving.", MessageBoxButton.OK, MessageBoxImage.Error);
-
-            // Sync the save status
-            SyncSaveStatus();
+            
         }
 
         private void btnShowStats_Click(object sender, RoutedEventArgs e)
@@ -344,6 +348,31 @@ namespace PokemonBox
             //e.Cancel;
         }
 
+        // Open the edit pokemon window
+        private void btnEdit_Click(object sender, RoutedEventArgs e)
+        {
+            if (selectedPokemon != null)
+            {
+                // If there is a pokemon selected, open the edit window with that pokemon
+                EditPokemonWindow editWindow = new EditPokemonWindow(selectedPokemon);
+                editWindow.ShowDialog();
+
+                if (editWindow.ChangesSaved)
+                {
+                    ReplaceSelectedPokemon(editWindow.editingPokemon);
+                    Saved = false;
+                }
+
+            }
+        }
+
+        private void ReplaceSelectedPokemon(Pokemon newPokemon)
+        {
+            pcBox.StoredPokemon[pcBox.StoredPokemon.IndexOf(selectedPokemon)] = newPokemon;
+            selectedPokemon = newPokemon;
+            selectedPokemonUiParent.DataContext = selectedPokemon;
+            ReplacePokemonInCorrectCells(); // Sync the display
+        }
     }
 
 }

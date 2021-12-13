@@ -492,17 +492,16 @@ xmlns:gif="http://wpfanimatedgif.codeplex.com"
 
 
                     <!--Gender picker-->
-
                     <Border Background="#292b62" Margin="25,10,25,15" CornerRadius="10,10,10,10" VerticalAlignment="Center">
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                             <Label Content="Sex" FontWeight="Bold" FontSize="14" Foreground="White"/>
                             <RadioButton x:Name="rdbMale" GroupName="Sex" Checked="rdbGender_Checked" VerticalAlignment="Center" Foreground="White">Male</RadioButton>
                             <RadioButton x:Name="rdbFemale" GroupName="Sex" VerticalAlignment="Center" Foreground="White">Female</RadioButton>
                         </StackPanel>
-                    </Border>
+                        </Border>
 
 
-                    <!--Nickname Picker-->
+                        <!--Nickname Picker-->
                     <Border Background="#292b62" Margin="25,10,25,0" CornerRadius="30,30,30,30">
                         <StackPanel Margin="0,15,0,15" Orientation="Horizontal" HorizontalAlignment="Center">
                             <Label FontWeight="Bold" Content="Nickname" Foreground="White"/>

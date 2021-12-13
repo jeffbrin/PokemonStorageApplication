@@ -157,6 +157,7 @@ namespace PokemonBox.Models
 
             // Load the pokemon if there was no error
             if (loadedPokemon != null)
+                storedPokemon.Clear();
                 foreach (Pokemon p in loadedPokemon)
                 {
                     if (IsFull) break; // Stop adding if the box is full
