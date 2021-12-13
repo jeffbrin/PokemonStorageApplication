@@ -339,11 +339,11 @@ namespace PokemonBox
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             // Check if the user has saved, if not ask them if they want to then exit
-            if (CheckBeforeOpening())
-                e.Cancel = false;
+            e.Cancel = !CheckBeforeOpening();
 
             //e.Cancel;
         }
+
     }
 
 }
