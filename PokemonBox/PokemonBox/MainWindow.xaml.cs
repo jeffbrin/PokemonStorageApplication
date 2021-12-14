@@ -194,12 +194,17 @@ namespace PokemonBox
         /// </summary>
         private void grdHeader_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            if (e.LeftButton == MouseButtonState.Pressed)
+            FixMargins();
+            if (e.LeftButton == MouseButtonState.Pressed && !MouseOnMaximize())
             {
+                WindowState = WindowState.Normal;
                 DragMove();
             }
         }
-
+        private bool MouseOnMaximize()
+        {
+            return this.imgMax.IsMouseOver;
+        }
         private void imgClose_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             Close();
@@ -472,15 +477,51 @@ namespace PokemonBox
 
         private void imgMax_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            if(WindowState != WindowState.Maximized)
+            if (WindowState != WindowState.Maximized)
             {
                 this.WindowState = WindowState.Maximized;
+                ResizeMode = ResizeMode.NoResize;
+                Thickness margin = grdMain.Margin;
+                margin.Left = 8;
+                margin.Right = 8;
+                margin.Top = 8;
+                margin.Bottom = 8;
+                grdMain.Margin = margin;
             }
             else
             {
                 this.WindowState = WindowState.Normal;
+                ResizeMode = ResizeMode.CanResizeWithGrip;
+                Thickness margin = grdMain.Margin;
+                margin.Left = 0;
+                margin.Right = 0;
+                margin.Top = 0;
+                margin.Bottom = 0;
+                grdMain.Margin = margin;
             }
-            
+
+        }
+        private void FixMargins()
+        {
+            if (WindowState == WindowState.Maximized)
+            {
+                Thickness margin = grdMain.Margin;
+                margin.Left = 8;
+                margin.Right = 8;
+                margin.Top = 8;
+                margin.Bottom = 8;
+                grdMain.Margin = margin;
+            }
+            else
+            {
+                ResizeMode = ResizeMode.CanResizeWithGrip;
+                Thickness margin = grdMain.Margin;
+                margin.Left = 0;
+                margin.Right = 0;
+                margin.Top = 0;
+                margin.Bottom = 0;
+                grdMain.Margin = margin;
+            }
         }
 
         // Replace a selected pokemon

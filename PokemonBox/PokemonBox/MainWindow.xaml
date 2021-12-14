@@ -15,7 +15,7 @@
         WindowStyle="None"
         ResizeMode="CanResizeWithGrip" AllowsTransparency="True"
         Background="#181735"
-        Closing="Window_Closing">
+        Closing="Window_Closing" FontFamily="Baloo Bhaijaan 2">
     <!--#region Resources (Overriding Default Templates)-->
     <Window.Resources>
         <Style x:Key="btnNoHoverEffect" TargetType="Button">
@@ -34,7 +34,7 @@
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter TargetName="border" Property="Background" Value="#516fff"/>
+                                <Setter TargetName="border" Property="Background" Value="#f67a9e"/>
                                 <Setter Property="Cursor" Value="Hand"/>
                             </Trigger>
                         </ControlTemplate.Triggers>
@@ -46,7 +46,7 @@
     <!--#endregion-->
 
     <!--big Grid-->
-    <Grid>
+    <Grid x:Name="grdMain">
 
         <Grid.RowDefinitions>
             <!--Header-->
@@ -54,7 +54,7 @@
             <!--Main Body-->
             <RowDefinition Height="30*"/>
             <!--Footer-->
-            <RowDefinition Height="2*"/>
+            <RowDefinition Height="3*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"/>
@@ -65,18 +65,17 @@
         <MediaElement x:Name="meMusic" MediaEnded="meMusic_MediaEnded"/>
 
         <!--#region Header-->
-        <Grid x:Name="grdHeader" Background="#000014" Grid.ColumnSpan="2"
-              MouseDown="grdHeader_MouseDown">
+        <Grid x:Name="grdHeader" MouseDown="grdHeader_MouseDown" Background="#000014" Grid.ColumnSpan="2">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition Width="4*" />
                 <ColumnDefinition Width="7*"/>
                 <ColumnDefinition Width="1*"/>
             </Grid.ColumnDefinitions>
 
             <TextBlock Text="Your PC" Foreground="White" Grid.Column="0" TextAlignment="Center"
                        HorizontalAlignment="Left" FontFamily="Baloo Bhaijaan 2" FontSize="20" Margin="50,0,0,0"/>
-            <TextBlock Text="BOX 1" Foreground="White" Grid.Column="1" TextAlignment="Center"
-                       HorizontalAlignment="Center"  FontFamily="Fonts/Baloo.ttf" FontSize="20"/>
+            <TextBlock Text="POKEMON BOX" Foreground="White" Grid.Column="1" TextAlignment="Center"
+                       HorizontalAlignment="Center"  FontSize="20" FontFamily="Baloo Bhaijaan 2"/>
 
             <Image Grid.Column="2" HorizontalAlignment="Left" Width="15"
                    Height="15" Margin="15,0,0,0" x:Name="imgMinus"
@@ -139,32 +138,34 @@
 
 
             <!--#region Add Button-->
-            <Button x:Name="btnAdd" HorizontalAlignment="Center" 
-                    VerticalAlignment="Center"
-                    Padding="30,15,30,15" FontWeight="Bold" Foreground="White"
-                    FontSize="20" Grid.Row="0" Click="btnAdd_Click">
-                <Button.Style>
-                    <Style TargetType="Button">
-                        <Setter Property="Background" Value="#de425b"/>
-                        <Setter Property="Cursor" Value="Hand"/>
-                        <Style.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter x:Name="btnTrigHover" Property="Background" Value="#B64FC8"/>
-                            </Trigger>
-                        </Style.Triggers>
-                    </Style>
-                </Button.Style>
-                <!--Template makes it so the hover effect actually works and can set layers-->
-                <Button.Template>
-                    <ControlTemplate TargetType="Button">
-                        <Border Width="125" Height="50"
+            <Viewbox StretchDirection="Both" Margin="0,15,0,0">
+                <Button x:Name="btnAdd" HorizontalAlignment="Center" 
+                    VerticalAlignment="Center" FontWeight="Bold" Foreground="White"
+                    MaxHeight="250" MaxWidth="500"
+                    FontSize="20" Grid.Row="0" Click="btnAdd_Click" FontFamily="Baloo Bhaijaan 2">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="#de425b"/>
+                            <Setter Property="Cursor" Value="Hand"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter x:Name="btnTrigHover" Property="Background" Value="#f67a9e"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                    <!--Template makes it so the hover effect actually works and can set layers-->
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Width="125" Height="50"
                                 CornerRadius="12"
                                 Background="{TemplateBinding Background}">
-                            <ContentPresenter Content="ADD" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                        </Border>
-                    </ControlTemplate>
-                </Button.Template>
-            </Button>
+                                <ContentPresenter Content="ADD" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </Viewbox>
             <!--#EndRegion-->
 
             <!--#Region Image of Selected Pokemon-->
@@ -175,7 +176,7 @@
             <!--#EndRegion-->
 
             <!--#region Name Type and Show Stats button div-->
-            <Border Grid.Row="2" BorderBrush="#ea5f85" BorderThickness="2px" CornerRadius="12" Background="#3f4bad">
+            <Border Grid.Row="2" BorderBrush="#f67a9e" BorderThickness="2px" CornerRadius="12" Background="#3f4bad">
                 <Grid >
 
                     <Grid.RowDefinitions>
@@ -212,27 +213,35 @@
                     </Grid>
                     
                     <!--#region SHOW STATS BUTTON-->
-                    <Button x:Name="btnShowStats" Grid.Row="2"
-                        Padding="30,15,30,15" FontWeight="Medium" FontSize="15" Click="btnShowStats_Click">
-                        <Button.Style>
-                            <Style TargetType="Button">
-                                <Setter Property="Cursor" Value="Hand"/>
-                                <Setter Property="Background" Value="#de425b"/>
-                                <Setter Property="Foreground" Value="White"/>
-                            </Style>
+                    <Viewbox StretchDirection="Both" Grid.Row="2" Margin="0,0,0,15">
+                        <Button x:Name="btnShowStats" FontWeight="Medium" FontSize="15" Click="btnShowStats_Click"
+                            MaxHeight="250" MaxWidth="500" FontFamily="Baloo Bhaijaan 2">
+                            <Button.Style>
+                                <Style TargetType="Button">
+                                    <Setter Property="Cursor" Value="Hand"/>
+                                    <Setter Property="Background" Value="#de425b"/>
+                                    <Setter Property="Foreground" Value="White"/>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter x:Name="btnTrigHover" Property="Background" Value="#f67a9e"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
 
-                        </Button.Style>
-                        <!--To be able to have corner Radisu-->
-                        <Button.Template>
-                            <ControlTemplate TargetType="Button">
-                                <Border Width="125" Height="50"
+                            </Button.Style>
+                            <!--To be able to have corner Radius-->
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Border Width="125" Height="50"
                                 CornerRadius="12"
                                 Background="{TemplateBinding Background}">
-                                    <ContentPresenter Content="Show Stats" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                                </Border>
-                            </ControlTemplate>
-                        </Button.Template>
-                    </Button>
+                                        <ContentPresenter Content="Show Stats" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                    </Viewbox>
+                    
                     <!--#Endregion-->
                 </Grid>
             </Border>
@@ -244,7 +253,7 @@
 
         <!--Box UI Grid-->
         <!--Going to do 5x5 grid for the pokemons-->
-        <Grid x:Name="grdBoxedPokemon" Grid.Row="1" Grid.Column="1" Margin="25,25,25,25">
+        <Grid x:Name="grdBoxedPokemon" Grid.Row="1" Grid.Column="1" Margin="25,10,25,10">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
@@ -263,45 +272,179 @@
             <!--Each image goes in a stack panel to keep them in the box-->
             <Border BorderBrush="Black" BorderThickness="2" Grid.Column="0" Grid.Row="0">
                 <Button Click="btnSelectPokemon_Click" BorderBrush="Transparent" Background="Transparent">
-                    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-                        <Image Source="{Binding BoxSpritePath}" 
-                        Width="50" Height="50"/>
-                    </StackPanel>
+                    <Viewbox StretchDirection="Both">
+                            <Image Source="{Binding BoxSpritePath}"/>
+                        </Viewbox>
                 </Button>
             </Border>
             <Border BorderBrush="Black" BorderThickness="2" Grid.Column="1" Grid.Row="0">
                 <Button Click="btnSelectPokemon_Click" BorderBrush="Transparent" Background="Transparent">
-                    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-                        <Image Source="{Binding BoxSpritePath}" 
-                        Width="50" Height="50"/>
-                    </StackPanel>
+                    <Viewbox StretchDirection="Both">
+                        <Image Source="{Binding BoxSpritePath}"/>
+                    </Viewbox>
                 </Button>
             </Border>
             <Border BorderBrush="Black" BorderThickness="2" Grid.Column="2" Grid.Row="0">
                 <Button Click="btnSelectPokemon_Click" BorderBrush="Transparent" Background="Transparent">
-                    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-                        <Image Source="{Binding BoxSpritePath}" 
-                        Width="50" Height="50"/>
-                    </StackPanel>
+                    <Viewbox StretchDirection="Both">
+                        <Image Source="{Binding BoxSpritePath}"/>
+                    </Viewbox>
                 </Button>
             </Border>
             <Border BorderBrush="Black" BorderThickness="2" Grid.Column="3" Grid.Row="0">
                 <Button Click="btnSelectPokemon_Click" BorderBrush="Transparent" Background="Transparent">
-                    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-                        <Image Source="{Binding BoxSpritePath}" 
-                        Width="50" Height="50"/>
-                    </StackPanel>
+                    <Viewbox StretchDirection="Both">
+                        <Image Source="{Binding BoxSpritePath}"/>
+                    </Viewbox>
                 </Button>
             </Border>
             <Border BorderBrush="Black" BorderThickness="2" Grid.Column="4" Grid.Row="0">
                 <Button Click="btnSelectPokemon_Click" BorderBrush="Transparent" Background="Transparent">
-                    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-                        <Image Source="{Binding BoxSpritePath}" 
-                        Width="50" Height="50"/>
-                    </StackPanel>
+                    <Viewbox StretchDirection="Both">
+                        <Image Source="{Binding BoxSpritePath}"/>
+                    </Viewbox>
                 </Button>
             </Border>
-
+            <Border BorderBrush="Black" BorderThickness="2" Grid.Column="0" Grid.Row="1">
+                <Button Click="btnSelectPokemon_Click" BorderBrush="Transparent" Background="Transparent">
+                    <Viewbox StretchDirection="Both">
+                        <Image Source="{Binding BoxSpritePath}"/>
+                    </Viewbox>
+                </Button>
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="2" Grid.Column="1" Grid.Row="1">
+                <Button Click="btnSelectPokemon_Click" BorderBrush="Transparent" Background="Transparent">
+                    <Viewbox StretchDirection="Both">
+                        <Image Source="{Binding BoxSpritePath}"/>
+                    </Viewbox>
+                </Button>
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="2" Grid.Column="2" Grid.Row="1">
+                <Button Click="btnSelectPokemon_Click" BorderBrush="Transparent" Background="Transparent">
+                    <Viewbox StretchDirection="Both">
+                        <Image Source="{Binding BoxSpritePath}"/>
+                    </Viewbox>
+                </Button>
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="2" Grid.Column="3" Grid.Row="1">
+                <Button Click="btnSelectPokemon_Click" BorderBrush="Transparent" Background="Transparent">
+                    <Viewbox StretchDirection="Both">
+                        <Image Source="{Binding BoxSpritePath}"/>
+                    </Viewbox>
+                </Button>
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="2" Grid.Column="4" Grid.Row="1">
+                <Button Click="btnSelectPokemon_Click" BorderBrush="Transparent" Background="Transparent">
+                    <Viewbox StretchDirection="Both">
+                        <Image Source="{Binding BoxSpritePath}"/>
+                    </Viewbox>
+                </Button>
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="2" Grid.Column="0" Grid.Row="2">
+                <Button Click="btnSelectPokemon_Click" BorderBrush="Transparent" Background="Transparent">
+                    <Viewbox StretchDirection="Both">
+                        <Image Source="{Binding BoxSpritePath}"/>
+                    </Viewbox>
+                </Button>
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="2" Grid.Column="1" Grid.Row="2">
+                <Button Click="btnSelectPokemon_Click" BorderBrush="Transparent" Background="Transparent">
+                    <Viewbox StretchDirection="Both">
+                        <Image Source="{Binding BoxSpritePath}"/>
+                    </Viewbox>
+                </Button>
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="2" Grid.Column="2" Grid.Row="2">
+                <Button Click="btnSelectPokemon_Click" BorderBrush="Transparent" Background="Transparent">
+                    <Viewbox StretchDirection="Both">
+                        <Image Source="{Binding BoxSpritePath}"/>
+                    </Viewbox>
+                </Button>
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="2" Grid.Column="3" Grid.Row="2">
+                <Button Click="btnSelectPokemon_Click" BorderBrush="Transparent" Background="Transparent">
+                    <Viewbox StretchDirection="Both">
+                        <Image Source="{Binding BoxSpritePath}"/>
+                    </Viewbox>
+                </Button>
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="2" Grid.Column="4" Grid.Row="2">
+                <Button Click="btnSelectPokemon_Click" BorderBrush="Transparent" Background="Transparent">
+                    <Viewbox StretchDirection="Both">
+                        <Image Source="{Binding BoxSpritePath}"/>
+                    </Viewbox>
+                </Button>
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="2" Grid.Column="0" Grid.Row="3">
+                <Button Click="btnSelectPokemon_Click" BorderBrush="Transparent" Background="Transparent">
+                    <Viewbox StretchDirection="Both">
+                        <Image Source="{Binding BoxSpritePath}"/>
+                    </Viewbox>
+                </Button>
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="2" Grid.Column="1" Grid.Row="3">
+                <Button Click="btnSelectPokemon_Click" BorderBrush="Transparent" Background="Transparent">
+                    <Viewbox StretchDirection="Both">
+                        <Image Source="{Binding BoxSpritePath}"/>
+                    </Viewbox>
+                </Button>
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="2" Grid.Column="2" Grid.Row="3">
+                <Button Click="btnSelectPokemon_Click" BorderBrush="Transparent" Background="Transparent">
+                    <Viewbox StretchDirection="Both">
+                        <Image Source="{Binding BoxSpritePath}"/>
+                    </Viewbox>
+                </Button>
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="2" Grid.Column="3" Grid.Row="3">
+                <Button Click="btnSelectPokemon_Click" BorderBrush="Transparent" Background="Transparent">
+                    <Viewbox StretchDirection="Both">
+                        <Image Source="{Binding BoxSpritePath}"/>
+                    </Viewbox>
+                </Button>
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="2" Grid.Column="4" Grid.Row="3">
+                <Button Click="btnSelectPokemon_Click" BorderBrush="Transparent" Background="Transparent">
+                    <Viewbox StretchDirection="Both">
+                        <Image Source="{Binding BoxSpritePath}"/>
+                    </Viewbox>
+                </Button>
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="2" Grid.Column="0" Grid.Row="4">
+                <Button Click="btnSelectPokemon_Click" BorderBrush="Transparent" Background="Transparent">
+                    <Viewbox StretchDirection="Both">
+                        <Image Source="{Binding BoxSpritePath}"/>
+                    </Viewbox>
+                </Button>
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="2" Grid.Column="1" Grid.Row="4">
+                <Button Click="btnSelectPokemon_Click" BorderBrush="Transparent" Background="Transparent">
+                    <Viewbox StretchDirection="Both">
+                        <Image Source="{Binding BoxSpritePath}"/>
+                    </Viewbox>
+                </Button>
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="2" Grid.Column="2" Grid.Row="4">
+                <Button Click="btnSelectPokemon_Click" BorderBrush="Transparent" Background="Transparent">
+                    <Viewbox StretchDirection="Both">
+                        <Image Source="{Binding BoxSpritePath}"/>
+                    </Viewbox>
+                </Button>
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="2" Grid.Column="3" Grid.Row="4">
+                <Button Click="btnSelectPokemon_Click" BorderBrush="Transparent" Background="Transparent">
+                    <Viewbox StretchDirection="Both">
+                        <Image Source="{Binding BoxSpritePath}"/>
+                    </Viewbox>
+                </Button>
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="2" Grid.Column="4" Grid.Row="4">
+                <Button Click="btnSelectPokemon_Click" BorderBrush="Transparent" Background="Transparent">
+                    <Viewbox StretchDirection="Both">
+                        <Image Source="{Binding BoxSpritePath}"/>
+                    </Viewbox>
+                </Button>
+            </Border>
         </Grid>
 
         <!--Footer-->
@@ -321,26 +464,29 @@
                     <ColumnDefinition Width="1*"/>
                 </Grid.ColumnDefinitions>
                 <TextBlock TextWrapping="Wrap" Foreground="White" Text="{Binding SaveStatus}" x:Name="txtStatus" Grid.Column="0" FontSize="12" FontWeight="Light"/>
-                <Grid Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Center">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
-                    <Button Grid.Column="0" Style="{StaticResource btnNoHoverEffect}" Foreground="White" Content="Release Pokemon"  Click="btnReleasePokemon_Click" HorizontalAlignment="Center" Margin="0,3,10,3" VerticalAlignment="Center"/>
-                    <Button Grid.Column="1" Style="{StaticResource btnNoHoverEffect}" Foreground="White" x:Name="btnEdit" Content="Edit Pokemon" Click="btnEdit_Click" HorizontalAlignment="Center" Margin="0,3,10,3" VerticalAlignment="Center"/>
-                    <Button Grid.Column="2" Style="{StaticResource btnNoHoverEffect}" Foreground="White" x:Name="btnSave" Content="Save Box" Click="btnSave_Click" HorizontalAlignment="Center" Margin="0,3,10,3" VerticalAlignment="Center"/>
-                    <Button Grid.Column="3" Style="{StaticResource btnNoHoverEffect}" Foreground="White" Content="Load Box" Click="btnLoad_Click" HorizontalAlignment="Center" Margin="0,3,10,3" VerticalAlignment="Center"/>
-                    <Button Grid.Column="4" Style="{StaticResource btnNoHoverEffect}" Foreground="White"  Click="btnMusicMute_Click" HorizontalAlignment="Center" Margin="0,3,10,3" VerticalAlignment="Center">
-                        <TextBlock x:Name="txtMusicMuted" FontWeight="Medium" Text="Music"/>
-                    </Button>
-                    <Button Grid.Column="5" Style="{StaticResource btnNoHoverEffect}" Foreground="White" Click="btnEffectsMute_Click" HorizontalAlignment="Center" Margin="0,3,10,3" VerticalAlignment="Center">
-                        <TextBlock x:Name="txtSoundsMuted" FontWeight="Medium" Text="Sound Effects"/>
-                    </Button>
-                </Grid>
+                <Viewbox Grid.Column="1" Grid.ColumnSpan="2" Margin="0,0,100,0">
+                    <Grid  HorizontalAlignment="Center">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Button Grid.Column="0"  Height="25" Width="150" Style="{StaticResource btnNoHoverEffect}" Foreground="White" Content="Release Pokemon"  Click="btnReleasePokemon_Click" HorizontalAlignment="Stretch" Margin="0,3,10,3" VerticalAlignment="Stretch" FontFamily="Baloo Bhaijaan 2"/>
+                        <Button Grid.Column="1" Height="25" Width="100" Style="{StaticResource btnNoHoverEffect}" Foreground="White" x:Name="btnEdit" Content="Edit Pokemon" Click="btnEdit_Click" HorizontalAlignment="Stretch" Margin="0,3,10,3" VerticalAlignment="Stretch" FontFamily="Baloo Bhaijaan 2"/>
+                        <Button Grid.Column="2" Height="25" Width="75" Style="{StaticResource btnNoHoverEffect}" Foreground="White" x:Name="btnSave" Content="Save Box" Click="btnSave_Click" HorizontalAlignment="Stretch" Margin="0,3,10,3" VerticalAlignment="Stretch" FontFamily="Baloo Bhaijaan 2"/>
+                        <Button Grid.Column="3" Height="25" Width="75" Style="{StaticResource btnNoHoverEffect}" Foreground="White" Content="Load Box" Click="btnLoad_Click" HorizontalAlignment="Stretch" Margin="0,3,10,3" VerticalAlignment="Stretch"/>
+                        <Button Grid.Column="4" Height="25" Width="75" Style="{StaticResource btnNoHoverEffect}" Foreground="White"  Click="btnMusicMute_Click" HorizontalAlignment="Stretch" Margin="0,3,10,3" VerticalAlignment="Stretch">
+                            <TextBlock x:Name="txtMusicMuted" FontWeight="Medium" Text="Music"/>
+                        </Button>
+                        <Button Grid.Column="5" Height="25" Width="100" Style="{StaticResource btnNoHoverEffect}" Foreground="White" Click="btnEffectsMute_Click" HorizontalAlignment="Stretch" Margin="0,3,10,3" VerticalAlignment="Stretch">
+                            <TextBlock x:Name="txtSoundsMuted" FontWeight="Medium" Text="Sound Effects"/>
+                        </Button>
+                    </Grid>
+                </Viewbox>
+                
                 <TextBlock Grid.Column="2" FontStyle="Italic" HorizontalAlignment="Right" Text="© The FireNation" Foreground="White"
                            FontWeight="Light" FontSize="12" TextWrapping="Wrap" FontFamily="Baloo Bhaijaan 2" VerticalAlignment="Bottom" Margin="0,0,15,0"/>
             </Grid>

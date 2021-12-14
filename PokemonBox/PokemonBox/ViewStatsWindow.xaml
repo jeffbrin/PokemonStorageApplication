@@ -11,7 +11,7 @@ xmlns:gif="http://wpfanimatedgif.codeplex.com"
         SizeToContent="Manual"
         Background="#181735"
         Foreground="White"
-        ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+        ResizeMode="NoResize" WindowStartupLocation="CenterScreen" FontFamily="Baloo Bhaijaan 2">
     <Window.Resources>
         <ResourceDictionary>
             <!--ovverride the Hover Effect on Buttons-->
@@ -44,7 +44,7 @@ xmlns:gif="http://wpfanimatedgif.codeplex.com"
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
-            <RowDefinition Height="19.5*"/>
+            <RowDefinition Height="20.5*"/>
             <RowDefinition Height="0.5*"/>
         </Grid.RowDefinitions>
         <!--Header-->
@@ -91,12 +91,12 @@ xmlns:gif="http://wpfanimatedgif.codeplex.com"
                 </Image.Style>
             </Image>
         </Grid>
-        <Grid Grid.Row="1" x:Name="spPokemonDisplay" Margin="15">
+        <Grid Grid.Row="1" x:Name="spPokemonDisplay" Margin="15,15,15,0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="1*"/>
-                <RowDefinition Height="6*"/>
+                <RowDefinition Height="7*"/>
                 <RowDefinition Height="1*"/>
-                <RowDefinition Height="1*"/>
+                <RowDefinition Height="2*"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
@@ -180,27 +180,27 @@ xmlns:gif="http://wpfanimatedgif.codeplex.com"
                     <TextBlock Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Text="Base Stats" FontSize="25" FontWeight="ExtraBold" HorizontalAlignment="Center"/>
                     <StackPanel Grid.Column="0" Grid.Row="1">
                         <TextBlock Text="Health" FontSize="18" FontWeight="Bold" HorizontalAlignment="Center"/>
-                        <TextBlock Text="{Binding BaseHealth}" HorizontalAlignment="Center"/>
+                        <TextBlock Text="{Binding BaseHealth}" HorizontalAlignment="Center" FontWeight="SemiBold" FontSize="22" Margin="0,15,0,0"/>
                     </StackPanel>
                     <StackPanel Grid.Column="1" Grid.Row="1">
                         <TextBlock Text="Speed" FontSize="18" FontWeight="Bold" HorizontalAlignment="Center"/>
-                        <TextBlock Text="{Binding BaseSpeed}" HorizontalAlignment="Center"/>
+                        <TextBlock Text="{Binding BaseSpeed}" HorizontalAlignment="Center" FontWeight="SemiBold" FontSize="22" Margin="0,15,0,0"/>
                     </StackPanel>
                     <StackPanel Grid.Column="0" Grid.Row="2">
                         <TextBlock Text="Attack" FontSize="18" FontWeight="Bold" HorizontalAlignment="Center"/>
-                        <TextBlock Text="{Binding BaseAttack}" HorizontalAlignment="Center"/>
+                        <TextBlock Text="{Binding BaseAttack}" HorizontalAlignment="Center" FontWeight="SemiBold" FontSize="22" Margin="0,15,0,0"/>
                     </StackPanel>
                     <StackPanel Grid.Column="1" Grid.Row="2">
                         <TextBlock Text="Defence" FontSize="18" FontWeight="Bold" HorizontalAlignment="Center"/>
-                        <TextBlock Text="{Binding BaseDefence}" HorizontalAlignment="Center"/>
+                        <TextBlock Text="{Binding BaseDefence}" HorizontalAlignment="Center" FontWeight="SemiBold" FontSize="22" Margin="0,15,0,0"/>
                     </StackPanel>
                     <StackPanel Grid.Column="0" Grid.Row="3">
                         <TextBlock Text="Special Attack" FontSize="18" FontWeight="Bold" HorizontalAlignment="Center"/>
-                        <TextBlock Text="{Binding BaseSpecialAttack}" HorizontalAlignment="Center"/>
+                        <TextBlock Text="{Binding BaseSpecialAttack}" HorizontalAlignment="Center" FontWeight="SemiBold" FontSize="22" Margin="0,15,0,0"/>
                     </StackPanel>
                     <StackPanel Grid.Column="2" Grid.Row="3">
                         <TextBlock Text="Special Defence" FontSize="18" FontWeight="Bold" HorizontalAlignment="Center"/>
-                        <TextBlock Text="{Binding BaseSpecialDefence}" HorizontalAlignment="Center" FontSize="14"/>
+                        <TextBlock Text="{Binding BaseSpecialDefence}" HorizontalAlignment="Center" FontWeight="SemiBold" FontSize="22" Margin="0,15,0,0"/>
                     </StackPanel>
 
                 </Grid>
@@ -227,7 +227,7 @@ xmlns:gif="http://wpfanimatedgif.codeplex.com"
                                     <RowDefinition/>
                                     <RowDefinition/>
                                 </Grid.RowDefinitions>
-                                <Grid Grid.Row="0">
+                                <Grid Grid.Row="0" HorizontalAlignment="Center">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="1*"/>
                                         <ColumnDefinition Width="3*"/>
@@ -235,14 +235,14 @@ xmlns:gif="http://wpfanimatedgif.codeplex.com"
                                     <Image VerticalAlignment="Center" Width="15" HorizontalAlignment="Right" Source="{Binding Attacks[0].AttackType.ImagePath}"/>
                                     <TextBlock Grid.Column="1" FontWeight="SemiBold" Margin="5,0,0,0" VerticalAlignment="Center" TextAlignment="Left" Text="{Binding Attacks[0].Name}"/>
                                 </Grid>
-                                <TextBlock Grid.Row="1" TextAlignment="Center">
+                                <TextBlock Grid.Row="1" TextAlignment="Center" HorizontalAlignment="Center">
                                     <TextBlock.Text>
                                         <MultiBinding StringFormat=" Base Power: {0}">
                                             <Binding Path="Attacks[0].Power"/>
                                         </MultiBinding>
                                     </TextBlock.Text>
                                 </TextBlock>
-                                <TextBlock TextAlignment="Center" Grid.Row="1" Text="{Binding Attacks[0].Description}"/>
+                                <TextBlock Margin="5,-10,5,0" TextAlignment="Center" Grid.Row="2" Text="{Binding Attacks[0].Description}"/>
                             </Grid>
                             <Grid Grid.Row="2" HorizontalAlignment="Center">
                                 <Grid.RowDefinitions>
@@ -250,7 +250,7 @@ xmlns:gif="http://wpfanimatedgif.codeplex.com"
                                     <RowDefinition/>
                                     <RowDefinition/>
                                 </Grid.RowDefinitions>
-                                <Grid Grid.Row="0">
+                                <Grid Grid.Row="0" HorizontalAlignment="Center">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="1*"/>
                                         <ColumnDefinition Width="3*"/>
@@ -265,7 +265,7 @@ xmlns:gif="http://wpfanimatedgif.codeplex.com"
                                         </MultiBinding>
                                     </TextBlock.Text>
                                 </TextBlock>
-                                <TextBlock Grid.Row="2" TextAlignment="Center" Text="{Binding Attacks[1].Description}"/>
+                                <TextBlock Grid.Row="2" Margin="5,-10,5,0" TextAlignment="Center" Text="{Binding Attacks[1].Description}"/>
                             </Grid>
                             <Grid Grid.Row="3" HorizontalAlignment="Center">
                                 <Grid.RowDefinitions>
@@ -273,7 +273,7 @@ xmlns:gif="http://wpfanimatedgif.codeplex.com"
                                     <RowDefinition/>
                                     <RowDefinition/>
                                 </Grid.RowDefinitions>
-                                <Grid Grid.Row="0">
+                                <Grid Grid.Row="0" HorizontalAlignment="Center">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="1*"/>
                                         <ColumnDefinition Width="3*"/>
@@ -288,7 +288,7 @@ xmlns:gif="http://wpfanimatedgif.codeplex.com"
                                         </MultiBinding>
                                     </TextBlock.Text>
                                 </TextBlock>
-                                <TextBlock TextAlignment="Center" Grid.Row="2" Text="{Binding Attacks[2].Description}"/>
+                                <TextBlock TextAlignment="Center" Margin="5,-10,5,0" Grid.Row="2" Text="{Binding Attacks[2].Description}"/>
                             </Grid>
                             <Grid Grid.Row="4" HorizontalAlignment="Center">
                                 <Grid.RowDefinitions>
@@ -296,13 +296,13 @@ xmlns:gif="http://wpfanimatedgif.codeplex.com"
                                     <RowDefinition/>
                                     <RowDefinition/>
                                 </Grid.RowDefinitions>
-                                <Grid Grid.Row="0">
+                                <Grid Grid.Row="0" HorizontalAlignment="Center">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="1*"/>
                                         <ColumnDefinition Width="3*"/>
                                     </Grid.ColumnDefinitions>
                                     <Image VerticalAlignment="Center" Width="15" HorizontalAlignment="Right" Source="{Binding Attacks[3].AttackType.ImagePath}"/>
-                                    <TextBlock Grid.Column="1" FontWeight="SemiBold" Margin="5,0,0,0" VerticalAlignment="Center" TextAlignment="Left" Text="{Binding Attacks[3].Name}"/>
+                                    <TextBlock Grid.Column="1" FontWeight="SemiBold" Margin="5,0,0,0" VerticalAlignment="Center" TextWrapping="Wrap" TextAlignment="Left" Text="{Binding Attacks[3].Name}"/>
                                 </Grid>
                                 <TextBlock Grid.Row="1" TextAlignment="Center">
                                     <TextBlock.Text>
@@ -311,23 +311,23 @@ xmlns:gif="http://wpfanimatedgif.codeplex.com"
                                         </MultiBinding>
                                     </TextBlock.Text>
                                 </TextBlock>
-                                <TextBlock TextAlignment="Center" Grid.Row="1" Text="{Binding Attacks[3].Description}"/>
+                                <TextBlock TextAlignment="Center" Grid.Row="2" TextWrapping="Wrap" Text="{Binding Attacks[3].Description}" Margin="5,-10,5,0"/>
                             </Grid>
                         </Grid>
                     </Border>
                 </Grid>
             </Grid>
             <Border Grid.Column="1" Grid.RowSpan="2" Grid.Row="2" Background="#20214b" CornerRadius="30" Margin="15,0,0,0">
-                <Grid VerticalAlignment="Center">
+                <Grid VerticalAlignment="Center" Height="120">
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="2*"/>
+                        <RowDefinition Height="2*"/>
+                        <RowDefinition Height="4*"/>
                     </Grid.RowDefinitions>
-                    <Label Grid.Row="0" HorizontalAlignment="Center" Content="Ability" FontWeight="Medium" FontSize="16" Foreground="White"/>
-                    <TextBlock Grid.Row="1" Text="{Binding Ability.Name}" TextAlignment="Center" VerticalAlignment="Center"/>
+                    <Label Grid.Row="0" Margin="0,-5,0,0" HorizontalAlignment="Center" Content="Ability" FontWeight="Medium" FontSize="16" Foreground="White"/>
+                    <TextBlock Grid.Row="1" Margin="0,-5,0,0" Text="{Binding Ability.Name}" TextAlignment="Center" VerticalAlignment="Center"/>
                     <TextBlock Grid.Row="2" Text="{Binding Ability.Description}" TextAlignment="Center"
-                               VerticalAlignment="Center"/>
+                               VerticalAlignment="Center" TextWrapping="Wrap" FontSize="12" Margin="10,-10,10,0"/>
                 </Grid>
             </Border>
             
