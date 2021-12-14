@@ -109,7 +109,6 @@ namespace PokemonBox.Models
             get { return attackOptions; }
         }
 
-
         // All the attacks that the user can choose from
         static public Ability[] AbilityOptions
         {
@@ -158,12 +157,14 @@ namespace PokemonBox.Models
 
             // Load the pokemon if there was no error
             if (loadedPokemon != null)
+            {
                 storedPokemon.Clear();
                 foreach (Pokemon p in loadedPokemon)
                 {
                     if (IsFull) break; // Stop adding if the box is full
                     storedPokemon.Add(p); // Add the next loaded pokemon
                 }
+            }
 
             return loadedPokemon != null;
         }

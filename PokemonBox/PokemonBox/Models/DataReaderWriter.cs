@@ -294,7 +294,7 @@ namespace PokemonBox.Models
                     foreach (string line in pokemonLines)
                     {
                         string[] values = line.Split(',');
-                        
+
                         // Create a new pokemon and add to the list
                         boxedPokemon.Add(new Pokemon()
                         {
@@ -302,8 +302,8 @@ namespace PokemonBox.Models
 
                             // Add the types, null if there's no secondary type
                             Types = new PokemonType[] {
-                                nameToTypeDictionary[values[(int)LoadingCSVColumns.TypeOne]], 
-                                values[(int)LoadingCSVColumns.TypeTwo] == string.Empty ? null : nameToTypeDictionary[values[(int)LoadingCSVColumns.TypeTwo]] 
+                                nameToTypeDictionary[values[(int)LoadingCSVColumns.TypeOne]],
+                                values[(int)LoadingCSVColumns.TypeTwo] == string.Empty ? null : nameToTypeDictionary[values[(int)LoadingCSVColumns.TypeTwo]]
                             },
                             // Add the attacks, null if there's no attack
                             Attacks = new Attack[] {
@@ -311,9 +311,10 @@ namespace PokemonBox.Models
                                 values[(int)LoadingCSVColumns.AttackTwoID] == "" ? null : PCBox.AttackOptions[int.Parse(values[(int)LoadingCSVColumns.AttackTwoID])],
                                 values[(int)LoadingCSVColumns.AttackThreeID] == "" ? null : PCBox.AttackOptions[int.Parse(values[(int)LoadingCSVColumns.AttackThreeID])],
                                 values[(int)LoadingCSVColumns.AttackFourID] == "" ? null : PCBox.AttackOptions[int.Parse(values[(int)LoadingCSVColumns.AttackFourID])]
-                                },
+                            },
+
                             // This should never be null
-                            Ability = PCBox.AbilityOptions[(int)LoadingCSVColumns.AbilityID]
+                            Ability = PCBox.AbilityOptions[int.Parse(values[(int)LoadingCSVColumns.AbilityID])]
                         });
                     }
 
