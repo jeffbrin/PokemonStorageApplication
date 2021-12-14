@@ -419,7 +419,7 @@ namespace PokemonBox
             }
 
             // Save the data to the save location
-            if (DataReaderWriter.SaveBox(saveLocation, pcBox.StoredPokemon.ToArray()))
+            if (pcBox.SaveToFile(saveLocation))
                 Saved = true;
             else
             {

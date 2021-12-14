@@ -168,5 +168,14 @@ namespace PokemonBox.Models
             return loadedPokemon != null;
         }
 
+        /// <summary>
+        /// Saves the contents of this box to a file
+        /// </summary>
+        /// <param name="path">The path to the save file</param>
+        /// <returns>Whether the box was saved successfully</returns>
+        public bool SaveToFile(string path)
+        {
+            return DataReaderWriter.SaveBox(path, StoredPokemon.ToArray());
+        }
     }
 }

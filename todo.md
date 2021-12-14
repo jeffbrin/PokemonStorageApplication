@@ -1,6 +1,5 @@
 # To Do
 
-- [ ] Create a PowerPoint slide for each window we want to have
 - [x] Decide on color palette
 - [x] Decide which type each element will be
 - [x] split into grids (where needed)
@@ -14,3 +13,4 @@
 - [x] Move Class
 - [x] Type Class
 - [x] PokemonBox Class to hold all the created pokemon
+- [ ] Set the error catching in the app.xaml file
