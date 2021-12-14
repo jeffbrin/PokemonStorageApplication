@@ -20,6 +20,7 @@
 
     <!--big Grid-->
     <Grid>
+
         <Grid.RowDefinitions>
             <!--Header-->
             <RowDefinition Height="2*"/>
@@ -32,6 +33,9 @@
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="2*"/>
         </Grid.ColumnDefinitions>
+        
+        <!--Background Music-->
+        <MediaElement x:Name="meMusic" MediaEnded="meMusic_MediaEnded"/>
 
         <!--header-->
         <Grid x:Name="grdHeader" Background="#000014" Grid.ColumnSpan="2"

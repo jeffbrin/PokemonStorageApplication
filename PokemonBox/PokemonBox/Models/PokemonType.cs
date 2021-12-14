@@ -6,6 +6,7 @@ namespace PokemonBox.Models
 {
     public class PokemonType
     {
+
         private const string ELEMENT_ICON_DIRECTORY = "Images/TypeSprites/";
         private const string ICON_FILE_EXTENSIONS = ".png";
         private string[] weaknesses;

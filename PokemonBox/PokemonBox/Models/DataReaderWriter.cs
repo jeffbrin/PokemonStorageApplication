@@ -274,6 +274,12 @@ namespace PokemonBox.Models
             AbilityID = 15
         }
 
+        /// <summary>
+        /// Gets a list of pokemon read from a file.
+        /// </summary>
+        /// <param name="path">The file path of the file holding the pokemon info</param>
+        /// <param name="nameToTypeDictionary">A dictionary that returns a PokemonType object when given a string.</param>
+        /// <returns></returns>
         static public List<Pokemon> LoadBoxFromfile(string path, Dictionary<string, PokemonType> nameToTypeDictionary)
         {
             try
@@ -324,7 +330,7 @@ namespace PokemonBox.Models
             return null;
         }
 
-        // Saved the box to the file located at the path
+        // Saves the box to the file located at the path
         static public bool SaveBox(string path, Pokemon[] boxedPokemon)
         {
             try

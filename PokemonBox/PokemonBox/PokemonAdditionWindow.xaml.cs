@@ -17,17 +17,19 @@ namespace PokemonBox
     /// </summary>
     public partial class PokemonAdditionWindow : Window
     {
-
+        // The pokemon that's being created
         private Pokemon tempPokemon;
         private PCBox localPcBox;
 
+        // constructor
         public PokemonAdditionWindow(PCBox pcBox)
         {
             InitializeComponent();
-            InitialOptionsSetup();
+            InitialOptionsSetup(); // Setup the options (species, attacks, ...)
             localPcBox = pcBox; // Change the scope to access it in the button function
         }
 
+        // Reset the fields since the species is being changed, and set the data context to the new pokemon
         private void cmbSpeciesPicker_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             ResetFields(cmbSpeciesPicker.SelectedIndex);
@@ -124,7 +126,7 @@ namespace PokemonBox
         // Adds the created pokemon to the box if it's valid
         private void btnCreatePokemon_Click(object sender, RoutedEventArgs e)
         {
-
+            // Validate the pokemon
             if (ValidatePokemonSelections())
             {
                 tempPokemon.Sex = rdbMale.IsChecked == true ? 'M' : 'F'; // Set the pokemon's sex
@@ -134,11 +136,13 @@ namespace PokemonBox
             }
         }
 
+        // Reset all the fields
         private void btnResetPokemon_Click(object sender, RoutedEventArgs e)
         {
             ResetFields();
         }
 
+        // Close the window and indicate that no pokemon was created
         private void btnExitPokemonCreation_Click(object sender, RoutedEventArgs e)
         {
             CreatedPokemon = false;
@@ -164,6 +168,7 @@ namespace PokemonBox
             cmbAbilitySelection.SelectedItem = null;
         }
 
+        // Used to indicate whether a new pokemon was created
         public bool CreatedPokemon { get; set; }
 
     }

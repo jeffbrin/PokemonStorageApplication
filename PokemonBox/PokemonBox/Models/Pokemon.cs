@@ -5,6 +5,7 @@ using System.ComponentModel; // For the interface
 
 namespace PokemonBox.Models
 {
+    // Implements INotifyPropertyChanged for the calculated properties
     public class Pokemon : INotifyPropertyChanged
     {
 
@@ -68,6 +69,7 @@ namespace PokemonBox.Models
         {
             get
             {
+                // Write each property as csv data
                 string typeTwoName = Types[1] == null ? string.Empty : Types[1].Name;
                 string[] attackIds = new string[Attacks.Length];
                 for (int i = 0; i < Attacks.Length; i++)
@@ -79,7 +81,10 @@ namespace PokemonBox.Models
             }
             set
             {
+                // split the passed value
                 string[] pokemonData = value.Split(',');
+
+                // Assign each field its corresponding property
                 PokedexNumber = int.Parse(pokemonData[(int)CSVColumns.PokedexNumber]);
                 Species = pokemonData[(int)CSVColumns.Species];
                 Nickname = pokemonData[(int)CSVColumns.Nickname];
@@ -113,6 +118,7 @@ namespace PokemonBox.Models
         }
 
         // constructor for making a new pokemon created by the player
+        // used to make a copy of another pokemon
         public Pokemon(Pokemon generic, Attack[] attacks, bool shiny = false, char sex = 'M', Ability ability = null, string nickname = "")
         {
             PokedexNumber = generic.PokedexNumber;
@@ -131,7 +137,8 @@ namespace PokemonBox.Models
             Attacks = attacks;
         }
 
-
+        // The sex of the pokemon can only be M or F
+        // Not auto implemented since it needs validation
         public char Sex
         {
             get { return sex; }

@@ -18,12 +18,14 @@ namespace PokemonBox
     /// </summary>
     public partial class ViewStatsWindow : Window
     {
+        // constructor
         public ViewStatsWindow(Pokemon viewedPokemon)
         {
             InitializeComponent();
             this.DataContext = viewedPokemon;
         }
 
+        // Exit the page
         private void btnExitPokemonCreation_Click(object sender, RoutedEventArgs e)
         {
             this.Close();

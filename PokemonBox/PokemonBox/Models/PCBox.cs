@@ -15,6 +15,7 @@ namespace PokemonBox.Models
 
         private List<Pokemon> storedPokemon;
 
+        // Constructor
         public PCBox(int maxStorageSlots)
         {
 
