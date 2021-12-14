@@ -15,6 +15,7 @@ namespace PokemonBox.Models
 
         private List<Pokemon> storedPokemon;
 
+        // Constructor
         public PCBox(int maxStorageSlots)
         {
 
@@ -108,7 +109,6 @@ namespace PokemonBox.Models
             get { return attackOptions; }
         }
 
-
         // All the attacks that the user can choose from
         static public Ability[] AbilityOptions
         {
@@ -153,19 +153,30 @@ namespace PokemonBox.Models
         public bool LoadFromFile(string path)
         {
             // Load the pokemon
-            List<Pokemon> loadedPokemon = DataReaderWriter.LoadBoxFromfile(path, pokemonTypeByNameDictionary);
+            List<Pokemon> loadedPokemon = DataReaderWriter.LoadBoxFromFile(path, pokemonTypeByNameDictionary);
 
             // Load the pokemon if there was no error
             if (loadedPokemon != null)
+            {
                 storedPokemon.Clear();
                 foreach (Pokemon p in loadedPokemon)
                 {
                     if (IsFull) break; // Stop adding if the box is full
                     storedPokemon.Add(p); // Add the next loaded pokemon
                 }
+            }
 
             return loadedPokemon != null;
         }
 
+        /// <summary>
+        /// Saves the contents of this box to a file
+        /// </summary>
+        /// <param name="path">The path to the save file</param>
+        /// <returns>Whether the box was saved successfully</returns>
+        public bool SaveToFile(string path)
+        {
+            return DataReaderWriter.SaveBox(path, StoredPokemon.ToArray());
+        }
     }
 }

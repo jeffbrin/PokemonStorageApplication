@@ -11,113 +11,217 @@ xmlns:gif="http://wpfanimatedgif.codeplex.com"
         SizeToContent="Height"
         Background="#181735"
         Foreground="White"
-        ResizeMode="NoResize">
+        ResizeMode="NoResize" FontFamily="Baloo Bhaijaan 2">
     <Window.Resources>
-        <Style x:Key="cmbHover" TargetType="{x:Type StackPanel}">
-            <Style.Triggers>
-                <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="Background" Value="#20214b"/>
-                </Trigger>
-            </Style.Triggers>
-        </Style>
-        <Style x:Key="customCheckBox" TargetType="{x:Type CheckBox}">
-            <Setter Property="Template"
+        <ResourceDictionary>
+            <Style x:Key="ScrollThumbs" TargetType="{x:Type Thumb}">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate>
+                            <Grid x:Name="grd">
+                                <Rectangle HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="Auto" Height="Auto"
+                                           Fill="Transparent"/>
+                                <Border x:Name="Rectangle1" CornerRadius="10" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                                        Width="Auto" Height="Auto" Background="{TemplateBinding Background}"/>
+                            </Grid>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="Tag" Value="Horizontal">
+                                    <Setter TargetName="Rectangle1" Property="Width" Value="Auto"/>
+                                    <Setter TargetName="Rectangle1" Property="Height" Value="7"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            <!--Scrollbars-->
+            <Style x:Key="{x:Type ScrollBar}" TargetType="{x:Type ScrollBar}">
+                <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
+                <Setter Property="Foreground" Value="#384093"/>
+                <Setter Property="Background" Value="DarkGray"/>
+                <Setter Property="Width" Value="10"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type ScrollBar}">
+                            <Grid x:Name="grdRoot" Width="12" Background="{x:Null}" Grid.Row="0" >
+                                <Track x:Name="PART_Track" Focusable="False" IsDirectionReversed="True">
+                                    <Track.Thumb>
+                                        <Thumb x:Name="Thumb" Background="{TemplateBinding Foreground}" 
+                                           Style="{DynamicResource ScrollThumbs}"/>
+                                    </Track.Thumb>
+                                    <Track.IncreaseRepeatButton>
+                                        <RepeatButton x:Name="PageUp" Command="ScrollBar.PageDownCommand" Opacity="0" Focusable="False"/>
+                                    </Track.IncreaseRepeatButton>
+                                    <Track.DecreaseRepeatButton>
+                                        <RepeatButton x:Name="PageDown" Command="ScrollBar.PageUpCommand" Opacity="0" Focusable="False"/>
+                                    </Track.DecreaseRepeatButton>
+                                </Track>
+                            </Grid>
+                            <ControlTemplate.Triggers>
+                                <Trigger SourceName="Thumb" Property="IsMouseOver" Value="True">
+                                    <Setter Value="{DynamicResource ButtonSelect}" TargetName="Thumb" Property="Background"/>
+                                </Trigger>
+                                <Trigger SourceName="Thumb" Property="IsDragging" Value="True">
+                                    <Setter Value="{DynamicResource DarkBrush}" TargetName="Thumb" Property="Background"/>
+                                </Trigger>
+
+                                <Trigger Property="IsEnabled" Value="False">
+                                    <Setter TargetName="Thumb" Property="Visibility" Value="Collapsed"/>
+                                </Trigger>
+
+                                <Trigger Property="Orientation" Value="Horizontal">
+                                    <Setter TargetName="grdRoot" Property="LayoutTransform">
+                                        <Setter.Value>
+                                            <RotateTransform Angle="-90"/>
+                                        </Setter.Value>
+                                    </Setter>
+                                    <Setter TargetName="PART_Track" Property="LayoutTransform">
+                                        <Setter.Value>
+                                            <RotateTransform Angle="-90"/>
+                                        </Setter.Value>
+                                    </Setter>
+                                    <Setter Property="Width" Value="Auto"/>
+                                    <Setter Property="Height" Value="12"/>
+                                    <Setter TargetName="Thumb" Property="Tag" Value="Horizontal"/>
+                                    <Setter TargetName="PageDown" Property="Command" Value="ScrollBar.PageLeftCommand"/>
+                                    <Setter TargetName="PageUp" Property="Command" Value="ScrollBar.PageRightCommand"/>
+                                </Trigger>
+
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            <Style x:Key="btnNoHoverEffect" TargetType="Button">
+                <Setter Property="OverridesDefaultStyle" Value="True"/>
+                <Setter Property="Margin" Value="5"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <Border Name="border" 
+                        BorderThickness="1"
+                        Padding="4,2" 
+                        BorderBrush="Transparent" 
+                        CornerRadius="3" 
+                        Background="#4657c7">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="border" Property="Background" Value="#516fff"/>
+                                    <Setter Property="Cursor" Value="Hand"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <Style x:Key="cmbHover" TargetType="{x:Type StackPanel}">
+                <Style.Triggers>
+                    <Trigger Property="IsMouseOver" Value="True">
+                        <Setter Property="Background" Value="#20214b"/>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+            <Style x:Key="customCheckBox" TargetType="{x:Type CheckBox}">
+                <Setter Property="Template"
 >
-                <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type CheckBox}">
-                        <StackPanel Orientation="Horizontal">
-                            <Image x:Name="chkImage" Source="/Images/MiscIcons/unchecked.png" Height="32"/>
-                            <ContentPresenter VerticalAlignment="Center" Margin="15,0,0,0"/>
-                        </StackPanel>
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsChecked" Value="True">
-                                <Setter TargetName="chkImage" Property="Source" Value="/Images/MiscIcons/checked.png"/>
-                            </Trigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-        <!--Took this from stack overflow and modified-->
-        <!--https://stackoverflow.com/questions/16392670/custom-combobox-in-wpf-application-->
-        <ControlTemplate x:Key="ComboBoxToggleButton" TargetType="{x:Type ToggleButton}">
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition />
-                    <ColumnDefinition Width="20" />
-                </Grid.ColumnDefinitions>
-                <Border
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type CheckBox}">
+                            <StackPanel Orientation="Horizontal">
+                                <Image x:Name="chkImage" Source="/Images/MiscIcons/unchecked.png" Height="32"/>
+                                <ContentPresenter VerticalAlignment="Center" Margin="15,0,0,0"/>
+                            </StackPanel>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsChecked" Value="True">
+                                    <Setter TargetName="chkImage" Property="Source" Value="/Images/MiscIcons/checked.png"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            <!--Took this from stack overflow and modified-->
+            <!--https://stackoverflow.com/questions/16392670/custom-combobox-in-wpf-application-->
+            <ControlTemplate x:Key="ComboBoxToggleButton" TargetType="{x:Type ToggleButton}">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="20" />
+                    </Grid.ColumnDefinitions>
+                    <Border
                   x:Name="Border" 
                   Grid.ColumnSpan="2"
                   CornerRadius="0"
                   Background="#181735"
-                  BorderBrush="#FF97A0A5"
+                  BorderBrush="White"
                   BorderThickness="1" />
-                <Border 
+                    <Border 
                   Grid.Column="0"
                     Grid.ColumnSpan="2"
                   CornerRadius="0" 
                   Margin="1" 
                   Background="#181735" 
-                  BorderBrush="#FF97A0A5"
+                  BorderBrush="White"
                   BorderThickness="0,0,1,0" />
-                <Path 
+                    <Path 
                   x:Name="Arrow"
                   Grid.Column="1"     
-                  Fill="White"
+                  Fill="#f67a9e"
                   HorizontalAlignment="Center"
                   VerticalAlignment="Center"
                   Data="M0,0 L0,2 L4,6 L8,2 L8,0 L4,4 z"
                 />
-            </Grid>
-            <ControlTemplate.Triggers>
-                <Trigger Property="ToggleButton.IsMouseOver" Value="true">
-                    <Setter TargetName="Border" Property="Background" Value="#20214b" />
-                </Trigger>
-                <Trigger Property="ToggleButton.IsChecked" Value="true">
-                    <Setter TargetName="Border" Property="Background" Value="#E0E0E0" />
-                </Trigger>
-                <Trigger Property="IsEnabled" Value="False">
-                    <Setter TargetName="Border" Property="Background" Value="#EEEEEE" />
-                    <Setter TargetName="Border" Property="BorderBrush" Value="#AAAAAA" />
-                    <Setter Property="Foreground" Value="White" />
-                    <Setter TargetName="Arrow" Property="Fill" Value="White"/>
-                </Trigger>
-            </ControlTemplate.Triggers>
-        </ControlTemplate>
+                </Grid>
+                <ControlTemplate.Triggers>
+                    <Trigger Property="ToggleButton.IsMouseOver" Value="true">
+                        <Setter TargetName="Border" Property="Background" Value="#20214b" />
+                    </Trigger>
+                    <Trigger Property="ToggleButton.IsChecked" Value="true">
+                        <Setter TargetName="Border" Property="Background" Value="#E0E0E0" />
+                    </Trigger>
+                    <Trigger Property="IsEnabled" Value="False">
+                        <Setter TargetName="Border" Property="Background" Value="#EEEEEE" />
+                        <Setter TargetName="Border" Property="BorderBrush" Value="#AAAAAA" />
+                        <Setter Property="Foreground" Value="White" />
+                        <Setter TargetName="Arrow" Property="Fill" Value="White"/>
+                    </Trigger>
+                </ControlTemplate.Triggers>
+            </ControlTemplate>
 
-        <ControlTemplate x:Key="ComboBoxTextBox" TargetType="{x:Type TextBox}">
-            <Border x:Name="PART_ContentHost" Focusable="False" Background="{TemplateBinding Background}" />
-        </ControlTemplate>
+            <ControlTemplate x:Key="ComboBoxTextBox" TargetType="{x:Type TextBox}">
+                <Border x:Name="PART_ContentHost" Focusable="False" Background="{TemplateBinding Background}" />
+            </ControlTemplate>
 
-        <Style x:Key="{x:Type ComboBox}" TargetType="{x:Type ComboBox}">
-            <Setter Property="SnapsToDevicePixels" Value="true"/>
-            <Setter Property="OverridesDefaultStyle" Value="true"/>
-            <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto"/>
-            <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>
-            <Setter Property="ScrollViewer.CanContentScroll" Value="true"/>
-            <Setter Property="MinWidth" Value="120"/>
-            <Setter Property="MinHeight" Value="20"/>
-            <Setter Property="Foreground" Value="White"/>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type ComboBox}">
-                        <Grid>
-                            <ToggleButton 
+            <Style x:Key="{x:Type ComboBox}" TargetType="{x:Type ComboBox}">
+                <Setter Property="SnapsToDevicePixels" Value="true"/>
+                <Setter Property="OverridesDefaultStyle" Value="true"/>
+                <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto"/>
+                <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>
+                <Setter Property="ScrollViewer.CanContentScroll" Value="true"/>
+                <Setter Property="MinWidth" Value="120"/>
+                <Setter Property="MinHeight" Value="20"/>
+                <Setter Property="Foreground" Value="White"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type ComboBox}">
+                            <Grid>
+                                <ToggleButton 
                             Name="ToggleButton" 
                             Template="{StaticResource ComboBoxToggleButton}" 
                             Grid.Column="2" 
                             Focusable="false"
                             IsChecked="{Binding Path=IsDropDownOpen,Mode=TwoWay,RelativeSource={RelativeSource TemplatedParent}}"
                             ClickMode="Press">
-                            </ToggleButton>
-                            <ContentPresenter Name="ContentSite" IsHitTestVisible="False"  Content="{TemplateBinding SelectionBoxItem}"
+                                </ToggleButton>
+                                <ContentPresenter Name="ContentSite" IsHitTestVisible="False"  Content="{TemplateBinding SelectionBoxItem}"
                             ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}"
                             ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}"
                             Margin="3,3,23,3"
                             VerticalAlignment="Center"
                             HorizontalAlignment="Left" />
-                            <TextBox x:Name="PART_EditableTextBox"
+                                <TextBox x:Name="PART_EditableTextBox"
                             Style="{x:Null}" 
                             Template="{StaticResource ComboBoxTextBox}" 
                             HorizontalAlignment="Left" 
@@ -128,7 +232,7 @@ xmlns:gif="http://wpfanimatedgif.codeplex.com"
                             Foreground="White"
                             Visibility="Hidden"
                             IsReadOnly="{TemplateBinding IsReadOnly}"/>
-                            <Popup 
+                                <Popup 
                             Name="Popup"
                             Placement="Bottom"
                             IsOpen="{TemplateBinding IsDropDownOpen}"
@@ -136,300 +240,332 @@ xmlns:gif="http://wpfanimatedgif.codeplex.com"
                             Focusable="False"
                             PopupAnimation="Slide">
 
-                                <Grid Name="DropDown"
+                                    <Grid Name="DropDown"
                               SnapsToDevicePixels="True"                
                               MinWidth="{TemplateBinding ActualWidth}"
                               MaxHeight="{TemplateBinding MaxDropDownHeight}">
-                                    <Border 
+                                        <Border 
                                 x:Name="DropDownBorder"
                                 Background="#181735"
 
                                 BorderThickness="1"
                                 BorderBrush="White"/>
-                                    <ScrollViewer Margin="4,6,4,6" SnapsToDevicePixels="True">
-                                        <StackPanel IsItemsHost="True" KeyboardNavigation.DirectionalNavigation="Contained" />
-                                    </ScrollViewer>
-                                </Grid>
-                            </Popup>
-                        </Grid>
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="HasItems" Value="false">
-                                <Setter TargetName="DropDownBorder" Property="MinHeight" Value="95"/>
-                            </Trigger>
-                            <Trigger Property="IsEnabled" Value="false">
-                                <Setter Property="Foreground" Value="#181735"/>
-                            </Trigger>
-                            <Trigger Property="IsGrouping" Value="true">
-                                <Setter Property="ScrollViewer.CanContentScroll" Value="false"/>
-                            </Trigger>
-                            <Trigger SourceName="Popup" Property="Popup.AllowsTransparency" Value="true">
-                                <Setter TargetName="DropDownBorder" Property="CornerRadius" Value="0"/>
-                                <Setter TargetName="DropDownBorder" Property="Margin" Value="0,2,0,0"/>
-                            </Trigger>
-                            <Trigger Property="IsEditable"  Value="true">
-                                <Setter Property="IsTabStop" Value="false"/>
-                                <Setter TargetName="PART_EditableTextBox" Property="Visibility" Value="Visible"/>
-                                <Setter TargetName="ContentSite" Property="Visibility" Value="Hidden"/>
-                            </Trigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-            <Style.Triggers>
-            </Style.Triggers>
-        </Style>
+                                        <ScrollViewer Margin="4,6,4,6" SnapsToDevicePixels="True">
+                                            <StackPanel IsItemsHost="True" KeyboardNavigation.DirectionalNavigation="Contained" />
+                                        </ScrollViewer>
+                                    </Grid>
+                                </Popup>
+                            </Grid>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="HasItems" Value="false">
+                                    <Setter TargetName="DropDownBorder" Property="MinHeight" Value="95"/>
+                                </Trigger>
+                                <Trigger Property="IsEnabled" Value="false">
+                                    <Setter Property="Foreground" Value="#181735"/>
+                                </Trigger>
+                                <Trigger Property="IsGrouping" Value="true">
+                                    <Setter Property="ScrollViewer.CanContentScroll" Value="false"/>
+                                </Trigger>
+                                <Trigger SourceName="Popup" Property="Popup.AllowsTransparency" Value="true">
+                                    <Setter TargetName="DropDownBorder" Property="CornerRadius" Value="0"/>
+                                    <Setter TargetName="DropDownBorder" Property="Margin" Value="0,2,0,0"/>
+                                </Trigger>
+                                <Trigger Property="IsEditable"  Value="true">
+                                    <Setter Property="IsTabStop" Value="false"/>
+                                    <Setter TargetName="PART_EditableTextBox" Property="Visibility" Value="Visible"/>
+                                    <Setter TargetName="ContentSite" Property="Visibility" Value="Hidden"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+                <Style.Triggers>
+                </Style.Triggers>
+            </Style>
 
-        <!-- SimpleStyles: ComboBoxItem -->
-        <Style x:Key="{x:Type ComboBoxItem}" TargetType="{x:Type ComboBoxItem}">
-            <Setter Property="SnapsToDevicePixels" Value="true"/>
-            <Setter Property="Foreground" Value="White"/>
-            <Setter Property="OverridesDefaultStyle" Value="true"/>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type ComboBoxItem}">
-                        <Border Name="Border"
+            <!-- SimpleStyles: ComboBoxItem -->
+            <Style x:Key="{x:Type ComboBoxItem}" TargetType="{x:Type ComboBoxItem}">
+                <Setter Property="SnapsToDevicePixels" Value="true"/>
+                <Setter Property="Foreground" Value="White"/>
+                <Setter Property="OverridesDefaultStyle" Value="true"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type ComboBoxItem}">
+                            <Border Name="Border"
                               Padding="2"
                               SnapsToDevicePixels="true">
-                            <ContentPresenter />
-                        </Border>
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsHighlighted" Value="true">
-                                <Setter TargetName="Border" Property="Background" Value="#20214b"/>
-                            </Trigger>
-                            <Trigger Property="IsEnabled" Value="false">
-                                <Setter Property="Foreground" Value="White"/>
-                            </Trigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
+                                <ContentPresenter />
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsHighlighted" Value="true">
+                                    <Setter TargetName="Border" Property="Background" Value="#20214b"/>
+                                </Trigger>
+                                <Trigger Property="IsEnabled" Value="false">
+                                    <Setter Property="Foreground" Value="White"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </ResourceDictionary>
+
     </Window.Resources>
-    <ScrollViewer MaxHeight="800">
+    <Grid x:Name="grdPokemonCreator">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
 
-        <Grid x:Name="grdPokemonCreator">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-            </Grid.RowDefinitions>
+        <!--header-->
+        <Grid x:Name="grdHeader" Background="#000014" Grid.ColumnSpan="2"
+              MouseDown="grdHeader_MouseDown" Panel.ZIndex="4" AutomationProperties.IsColumnHeader="True" AutomationProperties.IsOffscreenBehavior="Onscreen">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition Width="7*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
 
-            <!--header-->
-            <Grid x:Name="grdHeader" Background="#000014" Grid.ColumnSpan="2"
-              MouseDown="grdHeader_MouseDown">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="4*"/>
-                    <ColumnDefinition Width="7*"/>
-                    <ColumnDefinition Width="2*"/>
-                </Grid.ColumnDefinitions>
-
-                <TextBlock Text="Your PC" Foreground="White" Grid.Column="0" TextAlignment="Center"
+            <TextBlock Text="Your PC" Foreground="White" Grid.Column="0" TextAlignment="Center"
                        HorizontalAlignment="Left" FontFamily="Baloo Bhaijaan 2" FontSize="20" Margin="50,0,0,0"/>
-                <TextBlock Text="Pokemon Addition" Foreground="White" Grid.Column="1" TextAlignment="Center"
+            <TextBlock Text="Pokemon Addition" Foreground="White" Grid.Column="1" TextAlignment="Center"
                        HorizontalAlignment="Center"  FontFamily="Fonts/Baloo.ttf" FontSize="20"/>
 
-                <Image Grid.Column="2" HorizontalAlignment="Left" Width="15"
+            <Image Grid.Column="2" HorizontalAlignment="Left" Width="15"
                    Height="15" Margin="15,0,0,0" x:Name="imgMinus"
                    MouseLeftButtonDown="imgMinus_MouseLeftButtonDown" ToolTip="Minimize">
-                    <Image.Style>
-                        <Style TargetType="{x:Type Image}">
-                            <Setter Property="Source" Value="/Images/MiscIcons/minusFilled.png"/>
-                            <Style.Triggers>
-                                <Trigger Property="IsMouseOver" Value="True">
-                                    <Setter Property="Cursor" Value="Hand"/>
-                                    <Setter Property="Source" Value="/Images/MiscIcons/minusInverted.png"/>
-                                </Trigger>
-                            </Style.Triggers>
-                        </Style>
-                    </Image.Style>
-                </Image>
-                <Image Grid.Column="2" HorizontalAlignment="Right" Margin="0,0,15,0" Width="15" Height="15"
+                <Image.Style>
+                    <Style TargetType="{x:Type Image}">
+                        <Setter Property="Source" Value="/Images/MiscIcons/minusFilled.png"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Cursor" Value="Hand"/>
+                                <Setter Property="Source" Value="/Images/MiscIcons/minusInverted.png"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Image.Style>
+            </Image>
+            <Image Grid.Column="2" HorizontalAlignment="Right" Margin="0,0,15,0" Width="15" Height="15"
                    x:Name="imgClose" MouseLeftButtonDown="imgClose_MouseLeftButtonDown" ToolTip="Close">
-                    <Image.Style>
-                        <Style TargetType="{x:Type Image}">
-                            <Setter Property="Source" Value="/Images/MiscIcons/closeFilled.png"/>
-                            <Style.Triggers>
-                                <Trigger Property="IsMouseOver" Value="True">
-                                    <Setter Property="Cursor" Value="Hand"/>
-                                    <Setter Property="Source" Value="/Images/MiscIcons/closeInverted.png"/>
-                                </Trigger>
-                            </Style.Triggers>
-                        </Style>
-                    </Image.Style>
-                </Image>
-            </Grid>
-            <StackPanel Grid.Row="1" x:Name="stkSpeciesPicker" Background="#181735">
-                <ComboBox  x:Name="cmbSpeciesPicker" Background="#181735" ItemsSource="{Binding Species}" SelectionChanged="cmbSpeciesPicker_SelectionChanged">
-                    <ComboBox.ItemTemplate>
-                        <DataTemplate>
-                            <StackPanel Style="{StaticResource cmbHover}" Orientation="Horizontal">
-                                <Image Source="{Binding Types[0].ImagePath}" Height="25"/>
-                                <TextBlock Foreground="White" Text="{Binding Species}" Width="435"/>
-                            </StackPanel>
-                        </DataTemplate>
-                    </ComboBox.ItemTemplate>
-                </ComboBox>
-            </StackPanel>
-            <StackPanel Grid.Row="2" x:Name="spSelectedSpecies">
+                <Image.Style>
+                    <Style TargetType="{x:Type Image}">
+                        <Setter Property="Source" Value="/Images/MiscIcons/closeFilled.png"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Cursor" Value="Hand"/>
+                                <Setter Property="Source" Value="/Images/MiscIcons/closeInverted.png"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Image.Style>
+            </Image>
+        </Grid>
+        <ScrollViewer Grid.Row="1" MaxHeight="800">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <StackPanel Grid.Row="0" x:Name="stkSpeciesPicker" Background="#181735">
+                    <ComboBox  x:Name="cmbSpeciesPicker" Background="#181735" ItemsSource="{Binding Species}" SelectionChanged="cmbSpeciesPicker_SelectionChanged">
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Style="{StaticResource cmbHover}" Orientation="Horizontal">
+                                    <Image Source="{Binding Types[0].ImagePath}" Height="25"/>
+                                    <TextBlock Foreground="White" Text="{Binding Species}" 
+                                           Width="435" VerticalAlignment="Center"
+                                           Margin="15,0,0,0"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                    </ComboBox>
+                </StackPanel>
+                <StackPanel Grid.Row="1" x:Name="spSelectedSpecies">
 
-                <!--Pokemon species selector-->
-                <TextBlock Text="{Binding Species}"/>
+                    <!--Pokemon species and dex # selected-->
+                    <TextBlock FontSize="32" HorizontalAlignment="Center" FontWeight="Black">
+                        <TextBlock.Text>
+                            <MultiBinding StringFormat=" {0} - #{1}">
+                                <Binding Path="Species"/>
+                                <Binding Path="PokedexNumber"/>
+                            </MultiBinding>
+                        </TextBlock.Text>
+                    </TextBlock>
 
-                <!--The pokemon image-->
-                <Image x:Name="imgSelectedSpecies" gif:ImageBehavior.AnimatedSource="{Binding AnimatedSpritePath}" 
+                    <!--The pokemon image-->
+                    <Image x:Name="imgSelectedSpecies" gif:ImageBehavior.AnimatedSource="{Binding AnimatedSpritePath}" 
                    Height="300" Width="300"/>
 
-                <!--The pokedex number-->
-                <TextBlock Text="{Binding PokedexNumber}"/>
-
-                <!--Grid to display pokemon types-->
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
-                    <StackPanel x:Name="spTypeOne" Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center"  HorizontalAlignment="Center">
-                        <Image Source="{Binding Types[0].ImagePath}" Height="25" 
-                           Width="25" Margin="0,0,0,15"/>
-                        <TextBlock FontSize="20" Text="{Binding Types[0].Name}" Margin="5 0 0 0"/>
-                    </StackPanel>
-                    <StackPanel x:Name="spTypeTwo" Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center"  HorizontalAlignment="Center">
-                        <Image Source="{Binding Types[1].ImagePath}" Height="25" 
-                           Width="25" Margin="0,0,0,15"/>
-                        <TextBlock FontSize="20" Text="{Binding Types[1].Name}" Margin="5 0 0 0"/>
-                    </StackPanel>
-                </Grid>
-
-                <!--Grid for base stats-->
-                <Border Background="#20214b" Margin="25,0,25,0" CornerRadius="30,30,30,30">
+                    <!--Grid to display pokemon types-->
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="1*"/>
-                            <RowDefinition Height="1*"/>
-                            <RowDefinition Height="1*"/>
-                            <RowDefinition Height="1*"/>
-                            <RowDefinition Height="1*"/>
-                        </Grid.RowDefinitions>
-
-                        <!--Stack pannels for each base stat-->
-                        <TextBlock Grid.Column="0" Grid.ColumnSpan="2" Text="Base Stats" 
-                               Foreground="White" FontSize="25" FontWeight="Bold" HorizontalAlignment="Center"/>
-                        <!--wrapped each stack panel in a broder in order to achieve the corner radius effect-->
-                        <Border Grid.Column="0" Grid.Row="1" Background="#292b62" CornerRadius="10,10,10,10" Margin="15,15,15,0">
-                            <StackPanel >
-                                <TextBlock Text="Health" FontSize="18" Foreground="White" FontWeight="Medium" HorizontalAlignment="Center"/>
-                                <TextBlock Text="{Binding BaseHealth}" HorizontalAlignment="Center"/>
-                            </StackPanel>
-                        </Border>
-                        <Border Grid.Column="1" Grid.Row="1" Background="#292b62" CornerRadius="10,10,10,10" Margin="15,15,15,0">
-                            <StackPanel>
-                                <TextBlock Text="Speed" FontSize="18" FontWeight="Medium" Foreground="White" HorizontalAlignment="Center"/>
-                                <TextBlock Text="{Binding BaseSpeed}" HorizontalAlignment="Center"/>
-                            </StackPanel>
-                        </Border>
-
-                        <Border Grid.Column="0" Grid.Row="2" Background="#292b62" CornerRadius="10,10,10,10" Margin="15,15,15,0">
-                            <StackPanel>
-                                <TextBlock Text="Attack" FontSize="18" FontWeight="Medium" Foreground="White" HorizontalAlignment="Center"/>
-                                <TextBlock Text="{Binding BaseAttack}" HorizontalAlignment="Center"/>
-                            </StackPanel>
-                        </Border>
-                        <Border Grid.Column="1" Grid.Row="2" Background="#292b62" CornerRadius="10,10,10,10" Margin="15,15,15,0">
-                            <StackPanel>
-                                <TextBlock Text="Defence" FontSize="18" FontWeight="Medium" Foreground="White" HorizontalAlignment="Center"/>
-                                <TextBlock Text="{Binding BaseDefence}" HorizontalAlignment="Center"/>
-                            </StackPanel>
-                        </Border>
-
-                        <Border Grid.Column="0" Grid.Row="3" Background="#292b62" CornerRadius="10,10,10,10" Margin="15,15,15,15">
-                            <StackPanel>
-                                <TextBlock Text="Special Attack" FontSize="18" FontWeight="Medium" Foreground="White" HorizontalAlignment="Center"/>
-                                <TextBlock Text="{Binding BaseSpecialAttack}" HorizontalAlignment="Center"/>
-                            </StackPanel>
-                        </Border>
-
-                        <Border Grid.Column="1" Grid.Row="3" Background="#292b62" CornerRadius="10,10,10,10" Margin="15,15,15,15">
-                            <StackPanel>
-                                <TextBlock Text="Special Defence" FontSize="18" FontWeight="Medium" Foreground="White" HorizontalAlignment="Center"/>
-                                <TextBlock Text="{Binding BaseSpecialDefence}" HorizontalAlignment="Center"/>
-                            </StackPanel>
-                        </Border>
-                        <!--Had to put empty text for it to take up space-->
-                        <TextBlock Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2"
-                               Foreground="White" FontSize="25" FontWeight="Bold" HorizontalAlignment="Center"/>
-
+                        <StackPanel x:Name="spTypeOne" Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center"  HorizontalAlignment="Center">
+                            <Image Source="{Binding Types[0].ImagePath}" Height="25" 
+                           Width="25" Margin="0,0,0,15"/>
+                            <TextBlock FontSize="20" Text="{Binding Types[0].Name}" Margin="5 0 0 0"/>
+                        </StackPanel>
+                        <StackPanel x:Name="spTypeTwo" Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center"  HorizontalAlignment="Center">
+                            <Image Source="{Binding Types[1].ImagePath}" Height="25" 
+                           Width="25" Margin="0,0,0,15"/>
+                            <TextBlock FontSize="20" Text="{Binding Types[1].Name}" Margin="5 0 0 0"/>
+                        </StackPanel>
                     </Grid>
-                </Border>
+
+                    <!--Grid for base stats-->
+                    <Border Background="#20214b" Margin="25,0,25,0" CornerRadius="30,30,30,30">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="1*"/>
+                                <RowDefinition Height="1*"/>
+                                <RowDefinition Height="1*"/>
+                                <RowDefinition Height="1*"/>
+                                <RowDefinition Height="1*"/>
+                            </Grid.RowDefinitions>
+
+                            <!--Stack pannels for each base stat-->
+                            <TextBlock Grid.Column="0" Grid.ColumnSpan="2" Text="Base Stats" 
+                               Foreground="White" FontSize="25" FontWeight="Bold" HorizontalAlignment="Center"/>
+                            <!--wrapped each stack panel in a broder in order to achieve the corner radius effect-->
+                            <Border Grid.Column="0" Grid.Row="1" Background="#292b62" CornerRadius="10,10,10,10" Margin="15,15,15,0">
+                                <StackPanel >
+                                    <TextBlock Text="Health" FontSize="18" Foreground="White" FontWeight="Medium" HorizontalAlignment="Center"/>
+                                    <TextBlock Text="{Binding BaseHealth}" HorizontalAlignment="Center"/>
+                                </StackPanel>
+                            </Border>
+                            <Border Grid.Column="1" Grid.Row="1" Background="#292b62" CornerRadius="10,10,10,10" Margin="15,15,15,0">
+                                <StackPanel>
+                                    <TextBlock Text="Speed" FontSize="18" FontWeight="Medium" Foreground="White" HorizontalAlignment="Center"/>
+                                    <TextBlock Text="{Binding BaseSpeed}" HorizontalAlignment="Center"/>
+                                </StackPanel>
+                            </Border>
+
+                            <Border Grid.Column="0" Grid.Row="2" Background="#292b62" CornerRadius="10,10,10,10" Margin="15,15,15,0">
+                                <StackPanel>
+                                    <TextBlock Text="Attack" FontSize="18" FontWeight="Medium" Foreground="White" HorizontalAlignment="Center"/>
+                                    <TextBlock Text="{Binding BaseAttack}" HorizontalAlignment="Center"/>
+                                </StackPanel>
+                            </Border>
+                            <Border Grid.Column="1" Grid.Row="2" Background="#292b62" CornerRadius="10,10,10,10" Margin="15,15,15,0">
+                                <StackPanel>
+                                    <TextBlock Text="Defence" FontSize="18" FontWeight="Medium" Foreground="White" HorizontalAlignment="Center"/>
+                                    <TextBlock Text="{Binding BaseDefence}" HorizontalAlignment="Center"/>
+                                </StackPanel>
+                            </Border>
+
+                            <Border Grid.Column="0" Grid.Row="3" Background="#292b62" CornerRadius="10,10,10,10" Margin="15,15,15,15">
+                                <StackPanel>
+                                    <TextBlock Text="Special Attack" FontSize="18" FontWeight="Medium" Foreground="White" HorizontalAlignment="Center"/>
+                                    <TextBlock Text="{Binding BaseSpecialAttack}" HorizontalAlignment="Center"/>
+                                </StackPanel>
+                            </Border>
+
+                            <Border Grid.Column="1" Grid.Row="3" Background="#292b62" CornerRadius="10,10,10,10" Margin="15,15,15,15">
+                                <StackPanel>
+                                    <TextBlock Text="Special Defence" FontSize="18" FontWeight="Medium" Foreground="White" HorizontalAlignment="Center"/>
+                                    <TextBlock Text="{Binding BaseSpecialDefence}" HorizontalAlignment="Center"/>
+                                </StackPanel>
+                            </Border>
+                            <!--Had to put empty text for it to take up space-->
+                            <TextBlock Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2"
+                               Foreground="White" FontSize="25" FontWeight="Bold" HorizontalAlignment="Center"/>
+
+                        </Grid>
+                    </Border>
 
 
-                <!--Checkbox for if the pokemon is shiny-->
+                    <!--Checkbox for if the pokemon is shiny-->
 
-                <CheckBox x:Name="chkShiny" Margin="0,10,0,0" Foreground="White" HorizontalAlignment="Center" IsChecked="{Binding IsShiny}"
+                    <CheckBox x:Name="chkShiny" Margin="0,10,0,0" Foreground="White" HorizontalAlignment="Center" IsChecked="{Binding IsShiny}"
                           ClickMode="Press" Content="Shiny" FontWeight="Bold" FontSize="18"
                       Style="{StaticResource customCheckBox}">
 
-                </CheckBox>
+                    </CheckBox>
 
 
-                <!--Gender picker-->
+                    <!--Gender picker-->
+                    <Border Background="#292b62" Margin="10,10,10,10" CornerRadius="10,10,10,10" VerticalAlignment="Center">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <Label Content="Sex" FontWeight="Bold" FontSize="14" Foreground="White"/>
+                            <RadioButton x:Name="rdbMale" GroupName="Sex" VerticalAlignment="Center" Foreground="White">Male</RadioButton>
+                            <RadioButton x:Name="rdbFemale" GroupName="Sex" VerticalAlignment="Center" Foreground="White">Female</RadioButton>
+                        </StackPanel>
+                    </Border>
 
-                <Border Background="#292b62" Margin="10,10,10,10" CornerRadius="10,10,10,10" VerticalAlignment="Center">
-                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                        <Label Content="Sex" FontWeight="Bold" FontSize="14" Foreground="White"/>
-                        <RadioButton x:Name="rdbMale" GroupName="Sex" VerticalAlignment="Center" Foreground="White">Male</RadioButton>
-                        <RadioButton x:Name="rdbFemale" GroupName="Sex" VerticalAlignment="Center" Foreground="White">Female</RadioButton>
-                    </StackPanel>
-                </Border>
+
+                    <!--Nickname Picker-->
+                    <Border Background="#292b62" Margin="25,10,25,0" CornerRadius="30,30,30,30">
+                        <StackPanel Margin="0,15,0,15" Orientation="Horizontal" HorizontalAlignment="Center">
+                            <Label FontWeight="Bold" Content="Nickname" Foreground="White"/>
+                            <TextBox VerticalAlignment="Center" x:Name="txtNickname" Width="300" Text="{Binding Nickname}"
+                             Background="#4657c7" Foreground="White"/>
+                        </StackPanel>
+                    </Border>
 
 
-                <!--Nickname Picker-->
-                <StackPanel Margin="0,10,0,0" Orientation="Horizontal" HorizontalAlignment="Center">
-                    <Label FontWeight="Bold" Content="Nickname" Foreground="White"/>
-                    <TextBox VerticalAlignment="Center" x:Name="txtNickname" Width="300" Text="{Binding Nickname}"/>
+                    <!--Moves picker-->
+                    <Border Background="#20214b"  Margin="25,25,25,10" CornerRadius="30,30,30,30">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+
+                            <Label Grid.Column="0" Grid.ColumnSpan="2" Content="Attacks" FontWeight="Bold" FontSize="16" HorizontalAlignment="Center" Foreground="White"/>
+                            <ComboBox SelectedItem="{Binding Attacks[0]}" x:Name="cmbMoveSelection1" DisplayMemberPath="Name" Grid.Column="0" Grid.Row="1"
+                              Margin="25,0,25,0"/>
+                            <ComboBox SelectedItem="{Binding Attacks[1]}" x:Name="cmbMoveSelection2" DisplayMemberPath="Name" Grid.Column="1" Grid.Row="1"
+                              Margin="25,0,25,0"/>
+                            <ComboBox SelectedItem="{Binding Attacks[2]}" x:Name="cmbMoveSelection3" DisplayMemberPath="Name" Grid.Column="0" Grid.Row="2"
+                              Margin="25,15,25,0"/>
+                            <ComboBox SelectedItem="{Binding Attacks[3]}" x:Name="cmbMoveSelection4" DisplayMemberPath="Name" Grid.Column="1" Grid.Row="2"
+                              Margin="25,15,25,0"/>
+                            <TextBlock Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" FontSize="16" HorizontalAlignment="Center"/>
+                        </Grid>
+                    </Border>
+
+
+                    <!--Ability Picker-->
+                    <Border Background="#20214b" Margin="25,25,25,0" CornerRadius="30,30,30,30">
+                        <StackPanel>
+                            <Label HorizontalAlignment="Center" Content="Ability" FontWeight="Bold" FontSize="16" Foreground="White"/>
+                            <ComboBox SelectedItem="{Binding Ability}" x:Name="cmbAbilitySelection" DisplayMemberPath="Name"/>
+                        </StackPanel>
+                    </Border>
+
+
+                    <!--Functionality Buttons-->
+                    <Border>
+                        <Grid Margin="25,25,25,25">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Button Grid.Column="0" Width="100" Height="25" x:Name="btnExitPokemonEditing" Click="btnExitPokemonEditing_Click" Style="{StaticResource btnNoHoverEffect}" Content="Exit"/>
+
+                            <Button Style="{StaticResource btnNoHoverEffect}" Grid.Column="1" Content="Reset" Width="100" Height="25" x:Name="btnResetPokemon" Click="btnResetPokemon_Click"/>
+                            <Button Style="{StaticResource btnNoHoverEffect}" Grid.Column="2" Content="Save" Width="100" Height="25" x:Name="btnSaveChanges" Click="btnSaveChanges_Click"/>
+                        </Grid>
+                    </Border>
+
                 </StackPanel>
-
-                <!--Moves picker-->
-                <Grid Margin="0,10,0,0">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="auto"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                    </Grid.RowDefinitions>
-
-                    <Label Grid.Column="0" Grid.ColumnSpan="2" Content="Attacks" FontWeight="Bold" FontSize="16" HorizontalAlignment="Center" Foreground="White"/>
-                    <ComboBox SelectedItem="{Binding Attacks[0]}" x:Name="cmbMoveSelection1" DisplayMemberPath="Name" Grid.Column="0" Grid.Row="1"/>
-                    <ComboBox SelectedItem="{Binding Attacks[1]}" x:Name="cmbMoveSelection2" DisplayMemberPath="Name" Grid.Column="1" Grid.Row="1"/>
-                    <ComboBox SelectedItem="{Binding Attacks[2]}" x:Name="cmbMoveSelection3" DisplayMemberPath="Name" Grid.Column="0" Grid.Row="2"/>
-                    <ComboBox SelectedItem="{Binding Attacks[3]}" x:Name="cmbMoveSelection4" DisplayMemberPath="Name" Grid.Column="1" Grid.Row="2"/>
-                </Grid>
-
-                <!--Ability Picker-->
-                <StackPanel Margin="0,20,0,0">
-                    <Label HorizontalAlignment="Center" Content="Ability" FontWeight="Bold" FontSize="16" Foreground="White"/>
-                    <ComboBox SelectedItem="{Binding Ability}" x:Name="cmbAbilitySelection" DisplayMemberPath="Name"/>
-                </StackPanel>
-
-                <!--Functionality Buttons-->
-                <Grid Margin="0,20,0,0">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
-                    <Button Grid.Column="0" Content="Exit"  Width="100" Height="25" x:Name="btnExitPokemonEditing" Click="btnExitPokemonEditing_Click"/>
-                    <Button Grid.Column="1" Content="Reset" Width="100" Height="25" x:Name="btnResetPokemon" Click="btnResetPokemon_Click"/>
-                    <Button Grid.Column="2" Content="Save" Width="100" Height="25" x:Name="btnSaveChanges" Click="btnSaveChanges_Click"/>
-                </Grid>
-            </StackPanel>
-        </Grid>
-    </ScrollViewer>
+            </Grid>
+        </ScrollViewer>
+    </Grid>
 </Window>

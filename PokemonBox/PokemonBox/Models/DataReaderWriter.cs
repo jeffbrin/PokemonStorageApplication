@@ -10,7 +10,7 @@ namespace PokemonBox.Models
         // Used to read the lines in the GetPokemonOptions function
         private enum PokemonDatasheetColumns
         {
-            Pokedex_number,
+            PokedexNumber,
             Species,
             TypeOne,
             TypeTwo,
@@ -61,7 +61,7 @@ namespace PokemonBox.Models
                         // Generate the new pokemon from this line of data
                         pokemon[i] = new Pokemon()
                         {
-                            PokedexNumber = int.Parse(pokemonData[(int)PokemonDatasheetColumns.Pokedex_number]), // Get the pokedex number
+                            PokedexNumber = int.Parse(pokemonData[(int)PokemonDatasheetColumns.PokedexNumber]), // Get the pokedex number
                             Species = pokemonData[(int)PokemonDatasheetColumns.Species], //Get the pokemon's species
                             Types = new PokemonType[] {  // Add the pokemon's types. Make the second type null if it isn't a dual type
                                 pokemonTypeDictionary[pokemonData[(int)PokemonDatasheetColumns.TypeOne]], 
@@ -274,7 +274,13 @@ namespace PokemonBox.Models
             AbilityID = 15
         }
 
-        static public List<Pokemon> LoadBoxFromfile(string path, Dictionary<string, PokemonType> nameToTypeDictionary)
+        /// <summary>
+        /// Gets a list of pokemon read from a file.
+        /// </summary>
+        /// <param name="path">The file path of the file holding the pokemon info</param>
+        /// <param name="nameToTypeDictionary">A dictionary that returns a PokemonType object when given a string.</param>
+        /// <returns></returns>
+        static public List<Pokemon> LoadBoxFromFile(string path, Dictionary<string, PokemonType> nameToTypeDictionary)
         {
             try
             {
@@ -288,7 +294,7 @@ namespace PokemonBox.Models
                     foreach (string line in pokemonLines)
                     {
                         string[] values = line.Split(',');
-                        
+
                         // Create a new pokemon and add to the list
                         boxedPokemon.Add(new Pokemon()
                         {
@@ -296,8 +302,8 @@ namespace PokemonBox.Models
 
                             // Add the types, null if there's no secondary type
                             Types = new PokemonType[] {
-                                nameToTypeDictionary[values[(int)LoadingCSVColumns.TypeOne]], 
-                                values[(int)LoadingCSVColumns.TypeTwo] == string.Empty ? null : nameToTypeDictionary[values[(int)LoadingCSVColumns.TypeTwo]] 
+                                nameToTypeDictionary[values[(int)LoadingCSVColumns.TypeOne]],
+                                values[(int)LoadingCSVColumns.TypeTwo] == string.Empty ? null : nameToTypeDictionary[values[(int)LoadingCSVColumns.TypeTwo]]
                             },
                             // Add the attacks, null if there's no attack
                             Attacks = new Attack[] {
@@ -305,9 +311,10 @@ namespace PokemonBox.Models
                                 values[(int)LoadingCSVColumns.AttackTwoID] == "" ? null : PCBox.AttackOptions[int.Parse(values[(int)LoadingCSVColumns.AttackTwoID])],
                                 values[(int)LoadingCSVColumns.AttackThreeID] == "" ? null : PCBox.AttackOptions[int.Parse(values[(int)LoadingCSVColumns.AttackThreeID])],
                                 values[(int)LoadingCSVColumns.AttackFourID] == "" ? null : PCBox.AttackOptions[int.Parse(values[(int)LoadingCSVColumns.AttackFourID])]
-                                },
+                            },
+
                             // This should never be null
-                            Ability = PCBox.AbilityOptions[(int)LoadingCSVColumns.AbilityID]
+                            Ability = PCBox.AbilityOptions[int.Parse(values[(int)LoadingCSVColumns.AbilityID])]
                         });
                     }
 
@@ -324,7 +331,7 @@ namespace PokemonBox.Models
             return null;
         }
 
-        // Saved the box to the file located at the path
+        // Saves the box to the file located at the path
         static public bool SaveBox(string path, Pokemon[] boxedPokemon)
         {
             try

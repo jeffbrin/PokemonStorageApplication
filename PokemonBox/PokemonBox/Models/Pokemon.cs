@@ -5,6 +5,7 @@ using System.ComponentModel; // For the interface
 
 namespace PokemonBox.Models
 {
+    // Implements INotifyPropertyChanged for the calculated properties
     public class Pokemon : INotifyPropertyChanged
     {
 
@@ -19,7 +20,7 @@ namespace PokemonBox.Models
         // The file extension for the Box Pokemon Images
         private const string BOX_FILE_EXTENSIONS = ".png";
         // The file extensions of the pokemon cries
-        private const string POKEMON_CRY_EXTENSIONS = ".FLAC";
+        private const string POKEMON_CRY_EXTENSION = ".flac";
         // The path to the pokemon cries
         private const string POKEMON_CRY_PATH = "Audio/Cries/";
 
@@ -37,7 +38,6 @@ namespace PokemonBox.Models
         public int BaseSpecialDefence { get; set; }
         public int BaseSpeed { get; set; }
         public Attack[] Attacks { get; set; }
-        
         public Ability Ability { get; set; }
 
         private enum CSVColumns
@@ -69,6 +69,7 @@ namespace PokemonBox.Models
         {
             get
             {
+                // Write each property as csv data
                 string typeTwoName = Types[1] == null ? string.Empty : Types[1].Name;
                 string[] attackIds = new string[Attacks.Length];
                 for (int i = 0; i < Attacks.Length; i++)
@@ -80,7 +81,10 @@ namespace PokemonBox.Models
             }
             set
             {
+                // split the passed value
                 string[] pokemonData = value.Split(',');
+
+                // Assign each field its corresponding property
                 PokedexNumber = int.Parse(pokemonData[(int)CSVColumns.PokedexNumber]);
                 Species = pokemonData[(int)CSVColumns.Species];
                 Nickname = pokemonData[(int)CSVColumns.Nickname];
@@ -95,6 +99,17 @@ namespace PokemonBox.Models
             }
         }
 
+        // The path to this pokemon's cry sound effect file
+        public string CrySoundPath
+        {
+            get
+            {
+                // Format pokedex number to have leading zeros to match the path's naming conventions
+                string pokedexNumberWithLeadingZeros = new string('0', 3 - PokedexNumber.ToString().Length) + PokedexNumber.ToString();
+                return POKEMON_CRY_PATH + pokedexNumberWithLeadingZeros + "_" + Species.ToLower() + POKEMON_CRY_EXTENSION;
+            }
+        }
+
         // Default for object initialization syntax
         public Pokemon()
         {
@@ -103,7 +118,8 @@ namespace PokemonBox.Models
         }
 
         // constructor for making a new pokemon created by the player
-        public Pokemon(Pokemon generic, bool shiny = false, char sex = 'M', Ability ability = null, string nickname = "", Attack[] attacks = null)
+        // used to make a copy of another pokemon
+        public Pokemon(Pokemon generic, Attack[] attacks, bool shiny = false, char sex = 'M', Ability ability = null, string nickname = "")
         {
             PokedexNumber = generic.PokedexNumber;
             Species = generic.Species;
@@ -118,12 +134,11 @@ namespace PokemonBox.Models
             IsShiny = shiny;
             Sex = sex;
             Ability = ability;
-            if (attacks == null)
-                Attacks = generic.Attacks;
-            else
-                Attacks = attacks;
+            Attacks = attacks;
         }
 
+        // The sex of the pokemon can only be M or F
+        // Not auto implemented since it needs validation
         public char Sex
         {
             get { return sex; }
@@ -151,8 +166,6 @@ namespace PokemonBox.Models
         {
             get
             {
-                //if (IsShiny) return $"{SPRITES_DIRECTORY_PATH}{ANIMATED_SPRITES_DIRECTORY_PATH}Shiny/{PokedexNumber}{ICON_FILE_EXTENSIONS}";
-                //return $"{SPRITES_DIRECTORY_PATH}{ANIMATED_SPRITES_DIRECTORY_PATH}Regular/{Species}{ICON_FILE_EXTENSIONS}";
                 if (IsShiny) return $"{SPRITES_DIRECTORY_PATH}{BOX_SPRITES_DIRECTORY_PATH}Shiny/{PokedexNumber}{BOX_FILE_EXTENSIONS}";
                 return $"{SPRITES_DIRECTORY_PATH}{BOX_SPRITES_DIRECTORY_PATH}Regular/{PokedexNumber}{BOX_FILE_EXTENSIONS}";
 
@@ -189,11 +202,6 @@ namespace PokemonBox.Models
             }
         }
 
-        // The file path to this pokemon's cry sound effect
-        public string Cry
-        {
-            get { return $"{POKEMON_CRY_PATH}{PokedexNumber}{POKEMON_CRY_EXTENSIONS}"; }
-        }
 
         #region INotify
         // This method is called by the Set accessor of each property.  

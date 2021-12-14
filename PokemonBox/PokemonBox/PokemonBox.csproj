@@ -56,10 +56,10 @@
     <None Remove="Audio\Cries\026_raichu.flac" />
     <None Remove="Audio\Cries\027_sandshrew.flac" />
     <None Remove="Audio\Cries\028_sandslash.flac" />
-    <None Remove="Audio\Cries\029_nidoran♀.flac" />
+    <None Remove="Audio\Cries\029_nidoran_f.flac" />
     <None Remove="Audio\Cries\030_nidorina.flac" />
     <None Remove="Audio\Cries\031_nidoqueen.flac" />
-    <None Remove="Audio\Cries\032_nidoran♂.flac" />
+    <None Remove="Audio\Cries\032_nidoran_m.flac" />
     <None Remove="Audio\Cries\033_nidorino.flac" />
     <None Remove="Audio\Cries\034_nidoking.flac" />
     <None Remove="Audio\Cries\035_clefairy.flac" />
@@ -179,173 +179,7 @@
     <None Remove="Audio\Cries\149_dragonite.flac" />
     <None Remove="Audio\Cries\150_mewtwo.flac" />
     <None Remove="Audio\Cries\151_mew.flac" />
-    <None Remove="Audio\Music\101a Opening Demo %28Part 1%29.mp3" />
-    <None Remove="Audio\Music\101b Opening Demo %28Part 2%29.mp3" />
-    <None Remove="Audio\Music\102 Opening.mp3" />
-    <None Remove="Audio\Music\103a Special program %27Search for the Red Gyarados!%27 %28Part 1%29.mp3" />
-    <None Remove="Audio\Music\103b Special program %27Search for the Red Gyarados!%27 %28Part 2%29.mp3" />
-    <None Remove="Audio\Music\104 Twinleaf Town %28Daytime%29.mp3" />
-    <None Remove="Audio\Music\105 Rival.mp3" />
-    <None Remove="Audio\Music\106 Route 201 %28Daytime%29.mp3" />
-    <None Remove="Audio\Music\107 Lake.mp3" />
-    <None Remove="Audio\Music\108 Encounter at the Lake!.mp3" />
-    <None Remove="Audio\Music\109 Battle! Wild Pokemon.mp3" />
-    <None Remove="Audio\Music\110 Wild Pokemon Defeated!.mp3" />
-    <None Remove="Audio\Music\111 Dawn.mp3" />
-    <None Remove="Audio\Music\112 Item Get.mp3" />
-    <None Remove="Audio\Music\113 Sandgem Town %28Daytime%29.mp3" />
-    <None Remove="Audio\Music\114 Research Lab.mp3" />
-    <None Remove="Audio\Music\115 Come With Me.mp3" />
     <None Remove="Audio\Music\116 Pokemon Center %28Daytime%29.mp3" />
-    <None Remove="Audio\Music\117 Restoration.mp3" />
-    <None Remove="Audio\Music\118 Encounter! Kid.mp3" />
-    <None Remove="Audio\Music\119 Encounter! Miniskirt.mp3" />
-    <None Remove="Audio\Music\120 Battle! Trainer.mp3" />
-    <None Remove="Audio\Music\121 Trainer Defeated!.mp3" />
-    <None Remove="Audio\Music\122 Jubilife City %28Daytime%29.mp3" />
-    <None Remove="Audio\Music\123 Key Item Get.mp3" />
-    <None Remove="Audio\Music\124 Pokemart.mp3" />
-    <None Remove="Audio\Music\125 Route 203 %28Daytime%29.mp3" />
-    <None Remove="Audio\Music\126 Battle! Rival.mp3" />
-    <None Remove="Audio\Music\127 Oreburgh Gate.mp3" />
-    <None Remove="Audio\Music\128 TM Get.mp3" />
-    <None Remove="Audio\Music\129 Oreburgh City %28Daytime%29.mp3" />
-    <None Remove="Audio\Music\130 Oreburgh Mine.mp3" />
-    <None Remove="Audio\Music\131 Pokemon Gym.mp3" />
-    <None Remove="Audio\Music\132 Battle! Gym Leader.mp3" />
-    <None Remove="Audio\Music\133 Gym Leader Defeated!.mp3" />
-    <None Remove="Audio\Music\134 Badge Get.mp3" />
-    <None Remove="Audio\Music\135 Encounter! Twins.mp3" />
-    <None Remove="Audio\Music\136 Level Up.mp3" />
-    <None Remove="Audio\Music\137 Floaroma Town %28Daytime%29.mp3" />
-    <None Remove="Audio\Music\138 Berries Get.mp3" />
-    <None Remove="Audio\Music\139 Route 205 %28Daytime%29.mp3" />
-    <None Remove="Audio\Music\140 Team Galactic Appears.mp3" />
-    <None Remove="Audio\Music\141 Battle! Team Galactic.mp3" />
-    <None Remove="Audio\Music\142 Eterna Forest.mp3" />
-    <None Remove="Audio\Music\143 Let%27s Go Together!.mp3" />
-    <None Remove="Audio\Music\144 Eterna City %28Daytime%29.mp3" />
-    <None Remove="Audio\Music\145 Team Galactic Building.mp3" />
-    <None Remove="Audio\Music\146 Battle! Team Galactic Commander.mp3" />
-    <None Remove="Audio\Music\147 Team Galactic Defeated!.mp3" />
-    <None Remove="Audio\Music\148 Evolution.mp3" />
-    <None Remove="Audio\Music\149 Congratulations.mp3" />
-    <None Remove="Audio\Music\150 Bicycle.mp3" />
-    <None Remove="Audio\Music\151 Encounter! Biker.mp3" />
-    <None Remove="Audio\Music\152 Route 206 %28Daytime%29.mp3" />
-    <None Remove="Audio\Music\153 Hearthome City %28Daytime%29.mp3" />
-    <None Remove="Audio\Music\154 Route 209 %28Daytime%29.mp3" />
-    <None Remove="Audio\Music\155 Encounter! Hiker.mp3" />
-    <None Remove="Audio\Music\156 Solaceon Town %28Daytime%29.mp3" />
-    <None Remove="Audio\Music\157 Poketch App Get.mp3" />
-    <None Remove="Audio\Music\158 Route 210 %28Daytime%29.mp3" />
-    <None Remove="Audio\Music\159 Veilstone City %28Daytime%29.mp3" />
-    <None Remove="Audio\Music\160 Valor Lakefront %28Daytime%29.mp3" />
-    <None Remove="Audio\Music\161 Canalave City %28Daytime%29.mp3" />
-    <None Remove="Audio\Music\162 Route 216 %28Midday%29.mp3" />
-    <None Remove="Audio\Music\163 Snowpoint City %28Daytime%29.mp3" />
-    <None Remove="Audio\Music\164 Team Galactic Hideout.mp3" />
-    <None Remove="Audio\Music\165 Battle! Team Galactic Boss.mp3" />
-    <None Remove="Audio\Music\166 Deep Within the Hideout.mp3" />
-    <None Remove="Audio\Music\167 Mt. Coronet.mp3" />
-    <None Remove="Audio\Music\168 Spear Pillar.mp3" />
-    <None Remove="Audio\Music\169 The Legendary Pokemon Appears!.mp3" />
-    <None Remove="Audio\Music\170 Natural Disaster!.mp3" />
-    <None Remove="Audio\Music\171 Battle! Dialga &amp; Palkia.mp3" />
-    <None Remove="Audio\Music\172 Sunnyshore City %28Daytime%29.mp3" />
-    <None Remove="Audio\Music\173 Victory Road.mp3" />
-    <None Remove="Audio\Music\174 Encounter! Ace Trainer.mp3" />
-    <None Remove="Audio\Music\175 Pokemon League %28Daytime%29.mp3" />
-    <None Remove="Audio\Music\176 Fight Area %28Daytime%29.mp3" />
-    <None Remove="Audio\Music\177 Route 225 %28Daytime%29.mp3" />
-    <None Remove="Audio\Music\178 Route 228 %28Daytime%29.mp3" />
-    <None Remove="Audio\Music\201 Twinleaf Town %28Nighttime%29.mp3" />
-    <None Remove="Audio\Music\202 Route 201 %28Nighttime%29.mp3" />
-    <None Remove="Audio\Music\203 Pokemon Center %28Nighttime%29.mp3" />
-    <None Remove="Audio\Music\204 Wi-Fi.mp3" />
-    <None Remove="Audio\Music\205 Sandgem Town %28Nighttime%29.mp3" />
-    <None Remove="Audio\Music\206 Lucas.mp3" />
-    <None Remove="Audio\Music\207 Jubilife City %28Nighttime%29.mp3" />
-    <None Remove="Audio\Music\208 TV.mp3" />
-    <None Remove="Audio\Music\209 GTS.mp3" />
-    <None Remove="Audio\Music\210 Surfing.mp3" />
-    <None Remove="Audio\Music\211 Canalave City %28Nighttime%29.mp3" />
-    <None Remove="Audio\Music\212 Move Forget.mp3" />
-    <None Remove="Audio\Music\213 Route 203 %28Nighttime%29.mp3" />
-    <None Remove="Audio\Music\214 Encounter! Martial Artist.mp3" />
-    <None Remove="Audio\Music\215 Oreburgh City %28Nighttime%29.mp3" />
-    <None Remove="Audio\Music\216 Route 205 %28Nighttime%29.mp3" />
-    <None Remove="Audio\Music\217 Encounter! Sailor.mp3" />
-    <None Remove="Audio\Music\218 Eterna City %28Nighttime%29.mp3" />
-    <None Remove="Audio\Music\219 Underground.mp3" />
-    <None Remove="Audio\Music\220 Got a Flag!.mp3" />
-    <None Remove="Audio\Music\221 Encounter! Aroma Lady.mp3" />
-    <None Remove="Audio\Music\222 Floaroma Town %28Nighttime%29.mp3" />
-    <None Remove="Audio\Music\223 Forest House.mp3" />
-    <None Remove="Audio\Music\224 Solaceon Town %28Nighttime%29.mp3" />
-    <None Remove="Audio\Music\225 Great Marsh.mp3" />
-    <None Remove="Audio\Music\226 Route 206 %28Nighttime%29.mp3" />
-    <None Remove="Audio\Music\227 Encounter! Pokemon Collector.mp3" />
-    <None Remove="Audio\Music\228 Veilstone City %28Nighttime%29.mp3" />
-    <None Remove="Audio\Music\229 Game Corner.mp3" />
-    <None Remove="Audio\Music\230 Win at the Slots.mp3" />
-    <None Remove="Audio\Music\231 Big Win at the Slots.mp3" />
-    <None Remove="Audio\Music\232 Encounter! Gambler.mp3" />
-    <None Remove="Audio\Music\233 Route 209 %28Nighttime%29.mp3" />
-    <None Remove="Audio\Music\234 Snowpoint City %28Nighttime%29.mp3" />
-    <None Remove="Audio\Music\235 Route 216 %28Nighttime%29.mp3" />
-    <None Remove="Audio\Music\236 Cavern on the Lake.mp3" />
-    <None Remove="Audio\Music\237 Battle! Uxie, Mesprit &amp; Azelf.mp3" />
-    <None Remove="Audio\Music\238 Route 210 %28Nighttime%29.mp3" />
-    <None Remove="Audio\Music\239 As Seen on TV!.mp3" />
-    <None Remove="Audio\Music\240 Sunyshore City %28Nighttime%29.mp3" />
-    <None Remove="Audio\Music\241 Encounter! Artist.mp3" />
-    <None Remove="Audio\Music\242 Amity Square.mp3" />
-    <None Remove="Audio\Music\243 Accessory Get.mp3" />
-    <None Remove="Audio\Music\244 Hearthome City %28Nighttime%29.mp3" />
-    <None Remove="Audio\Music\245 Contest Hall.mp3" />
-    <None Remove="Audio\Music\246 Poffin.mp3" />
-    <None Remove="Audio\Music\247 Super Contest!.mp3" />
-    <None Remove="Audio\Music\248 Contest! Dress-up.mp3" />
-    <None Remove="Audio\Music\249 Dance, Easy.mp3" />
-    <None Remove="Audio\Music\250 Dance, Hard.mp3" />
-    <None Remove="Audio\Music\251 Announcing the Contest Results.mp3" />
-    <None Remove="Audio\Music\252 Won the Contest!.mp3" />
-    <None Remove="Audio\Music\253 Route 228 %28Nighttime%29.mp3" />
-    <None Remove="Audio\Music\254 Valor Lakefront %28Nighttime%29.mp3" />
-    <None Remove="Audio\Music\255 Fight Area %28Night%29.mp3" />
-    <None Remove="Audio\Music\256 Battle Tower.mp3" />
-    <None Remove="Audio\Music\257 Route 225 %28Nighttime%29.mp3" />
-    <None Remove="Audio\Music\258 Iron Mountain.mp3" />
-    <None Remove="Audio\Music\259 Battle! Legendary Pokemon.mp3" />
-    <None Remove="Audio\Music\260 Mysterious Sent Item.mp3" />
-    <None Remove="Audio\Music\261 Pokemon League %28Nighttime%29.mp3" />
-    <None Remove="Audio\Music\262 Showdown! Pokemon League.mp3" />
-    <None Remove="Audio\Music\263 The Elite Four Appear!.mp3" />
-    <None Remove="Audio\Music\264 Battle! Elite Four.mp3" />
-    <None Remove="Audio\Music\265 Elite Four Defeated!.mp3" />
-    <None Remove="Audio\Music\266 Champion Cynthia.mp3" />
-    <None Remove="Audio\Music\267 Battle! Champion.mp3" />
-    <None Remove="Audio\Music\268 Champion Defeated!.mp3" />
-    <None Remove="Audio\Music\269 Hall of Fame.mp3" />
-    <None Remove="Audio\Music\270 Congratulations!.mp3" />
-    <None Remove="Audio\Music\271 Ending.mp3" />
-    <None Remove="Audio\Music\301 Azure Flute.mp3" />
-    <None Remove="Audio\Music\302 Beginning Dimension - Arceus.mp3" />
-    <None Remove="Audio\Music\303 Battle! Arceus!.mp3" />
-    <None Remove="Audio\Music\304 Battle! Gym Leader %28Alt%29.mp3" />
-    <None Remove="Audio\Music\305 Old-Style Victory.mp3" />
-    <None Remove="Audio\Music\306 Unknown.mp3" />
-    <None Remove="Audio\Music\307 Pokemon Get %28Unused%29.mp3" />
-    <None Remove="Audio\Music\308 Unknown Fanfare.mp3" />
-    <None Remove="Audio\Music\309 Berries Get %28Alt%29.mp3" />
-    <None Remove="Audio\Music\310 Pokemon Ruby Sapphire Emerald - Title Main Theme.mp3" />
-    <None Remove="Audio\Music\311 Route 206 %28Alt%29.mp3" />
-    <None Remove="Audio\Music\312 Cavern on the Lake %28Alt%29.mp3" />
-    <None Remove="Audio\Music\313 Evolution %28Alt%29.mp3" />
-    <None Remove="Audio\Music\314 Eterna City %28Alt%29.mp3" />
-    <None Remove="Audio\Music\315 Route 205 %28Daytime%29 %28Alt%29.mp3" />
-    <None Remove="Audio\Music\316 Route 205 %28Nightime%29 %28Alt%29.mp3" />
     <None Remove="Images\AnimatedSprites\Regular\abra.gif" />
     <None Remove="Images\AnimatedSprites\Regular\aerodactyl.gif" />
     <None Remove="Images\AnimatedSprites\Regular\alakazam.gif" />
@@ -589,6 +423,7 @@
     <None Remove="Images\AnimatedSprites\Shiny\43.gif" />
     <None Remove="Images\AnimatedSprites\Shiny\44.gif" />
     <None Remove="Images\AnimatedSprites\Shiny\45.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\46.gif" />
     <None Remove="Images\AnimatedSprites\Shiny\47.gif" />
     <None Remove="Images\AnimatedSprites\Shiny\48.gif" />
     <None Remove="Images\AnimatedSprites\Shiny\49.gif" />
@@ -953,10 +788,13 @@
     <None Remove="Images\MiscIcons\close.png" />
     <None Remove="Images\MiscIcons\closeFilled.png" />
     <None Remove="Images\MiscIcons\closeInverted.png" />
+    <None Remove="Images\MiscIcons\maximize.png" />
+    <None Remove="Images\MiscIcons\maximizeInverted.png" />
     <None Remove="Images\MiscIcons\minus.png" />
     <None Remove="Images\MiscIcons\minusFilled.png" />
     <None Remove="Images\MiscIcons\minusInverted.png" />
     <None Remove="Images\MiscIcons\unchecked.png" />
+    <None Remove="Images\pokeIcon.ico" />
     <None Remove="Images\TypeSprites\bug.png" />
     <None Remove="Images\TypeSprites\dark.png" />
     <None Remove="Images\TypeSprites\dragon.png" />
@@ -975,6 +813,11 @@
     <None Remove="Images\TypeSprites\rock.png" />
     <None Remove="Images\TypeSprites\steel.png" />
     <None Remove="Images\TypeSprites\water.png" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <Resource Remove="Images\pokeIcon.ico" />
   </ItemGroup>
 
 
@@ -1517,7 +1360,7 @@
     <Content Include="Audio\Cries\028_sandslash.flac">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Audio\Cries\029_nidoran♀.flac">
+    <Content Include="Audio\Cries\029_nidoran_f.flac">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Audio\Cries\030_nidorina.flac">
@@ -1526,7 +1369,7 @@
     <Content Include="Audio\Cries\031_nidoqueen.flac">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Audio\Cries\032_nidoran♂.flac">
+    <Content Include="Audio\Cries\032_nidoran_m.flac">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Audio\Cries\033_nidorino.flac">
@@ -1886,505 +1729,7 @@
     <Content Include="Audio\Cries\151_mew.flac">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Audio\Music\101a Opening Demo (Part 1).mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\101b Opening Demo (Part 2).mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\102 Opening.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\103a Special program 'Search for the Red Gyarados!' (Part 1).mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\103b Special program 'Search for the Red Gyarados!' (Part 2).mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\104 Twinleaf Town (Daytime).mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\105 Rival.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\106 Route 201 (Daytime).mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\107 Lake.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\108 Encounter at the Lake!.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\109 Battle! Wild Pokemon.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\110 Wild Pokemon Defeated!.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\111 Dawn.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\112 Item Get.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\113 Sandgem Town (Daytime).mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\114 Research Lab.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\115 Come With Me.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="Audio\Music\116 Pokemon Center (Daytime).mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\117 Restoration.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\118 Encounter! Kid.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\119 Encounter! Miniskirt.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\120 Battle! Trainer.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\121 Trainer Defeated!.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\122 Jubilife City (Daytime).mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\123 Key Item Get.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\124 Pokemart.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\125 Route 203 (Daytime).mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\126 Battle! Rival.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\127 Oreburgh Gate.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\128 TM Get.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\129 Oreburgh City (Daytime).mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\130 Oreburgh Mine.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\131 Pokemon Gym.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\132 Battle! Gym Leader.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\133 Gym Leader Defeated!.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\134 Badge Get.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\135 Encounter! Twins.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\136 Level Up.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\137 Floaroma Town (Daytime).mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\138 Berries Get.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\139 Route 205 (Daytime).mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\140 Team Galactic Appears.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\141 Battle! Team Galactic.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\142 Eterna Forest.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\143 Let's Go Together!.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\144 Eterna City (Daytime).mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\145 Team Galactic Building.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\146 Battle! Team Galactic Commander.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\147 Team Galactic Defeated!.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\148 Evolution.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\149 Congratulations.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\150 Bicycle.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\151 Encounter! Biker.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\152 Route 206 (Daytime).mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\153 Hearthome City (Daytime).mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\154 Route 209 (Daytime).mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\155 Encounter! Hiker.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\156 Solaceon Town (Daytime).mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\157 Poketch App Get.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\158 Route 210 (Daytime).mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\159 Veilstone City (Daytime).mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\160 Valor Lakefront (Daytime).mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\161 Canalave City (Daytime).mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\162 Route 216 (Midday).mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\163 Snowpoint City (Daytime).mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\164 Team Galactic Hideout.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\165 Battle! Team Galactic Boss.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\166 Deep Within the Hideout.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\167 Mt. Coronet.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\168 Spear Pillar.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\169 The Legendary Pokemon Appears!.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\170 Natural Disaster!.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\171 Battle! Dialga &amp; Palkia.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\172 Sunnyshore City (Daytime).mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\173 Victory Road.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\174 Encounter! Ace Trainer.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\175 Pokemon League (Daytime).mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\176 Fight Area (Daytime).mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\177 Route 225 (Daytime).mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\178 Route 228 (Daytime).mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\201 Twinleaf Town (Nighttime).mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\202 Route 201 (Nighttime).mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\203 Pokemon Center (Nighttime).mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\204 Wi-Fi.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\205 Sandgem Town (Nighttime).mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\206 Lucas.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\207 Jubilife City (Nighttime).mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\208 TV.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\209 GTS.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\210 Surfing.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\211 Canalave City (Nighttime).mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\212 Move Forget.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\213 Route 203 (Nighttime).mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\214 Encounter! Martial Artist.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\215 Oreburgh City (Nighttime).mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\216 Route 205 (Nighttime).mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\217 Encounter! Sailor.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\218 Eterna City (Nighttime).mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\219 Underground.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\220 Got a Flag!.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\221 Encounter! Aroma Lady.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\222 Floaroma Town (Nighttime).mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\223 Forest House.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\224 Solaceon Town (Nighttime).mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\225 Great Marsh.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\226 Route 206 (Nighttime).mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\227 Encounter! Pokemon Collector.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\228 Veilstone City (Nighttime).mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\229 Game Corner.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\230 Win at the Slots.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\231 Big Win at the Slots.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\232 Encounter! Gambler.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\233 Route 209 (Nighttime).mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\234 Snowpoint City (Nighttime).mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\235 Route 216 (Nighttime).mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\236 Cavern on the Lake.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\237 Battle! Uxie, Mesprit &amp; Azelf.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\238 Route 210 (Nighttime).mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\239 As Seen on TV!.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\240 Sunyshore City (Nighttime).mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\241 Encounter! Artist.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\242 Amity Square.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\243 Accessory Get.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\244 Hearthome City (Nighttime).mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\245 Contest Hall.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\246 Poffin.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\247 Super Contest!.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\248 Contest! Dress-up.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\249 Dance, Easy.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\250 Dance, Hard.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\251 Announcing the Contest Results.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\252 Won the Contest!.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\253 Route 228 (Nighttime).mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\254 Valor Lakefront (Nighttime).mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\255 Fight Area (Night).mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\256 Battle Tower.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\257 Route 225 (Nighttime).mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\258 Iron Mountain.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\259 Battle! Legendary Pokemon.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\260 Mysterious Sent Item.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\261 Pokemon League (Nighttime).mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\262 Showdown! Pokemon League.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\263 The Elite Four Appear!.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\264 Battle! Elite Four.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\265 Elite Four Defeated!.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\266 Champion Cynthia.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\267 Battle! Champion.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\268 Champion Defeated!.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\269 Hall of Fame.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\270 Congratulations!.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\271 Ending.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\301 Azure Flute.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\302 Beginning Dimension - Arceus.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\303 Battle! Arceus!.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\304 Battle! Gym Leader (Alt).mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\305 Old-Style Victory.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\306 Unknown.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\307 Pokemon Get (Unused).mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\308 Unknown Fanfare.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\309 Berries Get (Alt).mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\310 Pokemon Ruby Sapphire Emerald - Title Main Theme.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\311 Route 206 (Alt).mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\312 Cavern on the Lake (Alt).mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\313 Evolution (Alt).mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\314 Eterna City (Alt).mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\315 Route 205 (Daytime) (Alt).mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Audio\Music\316 Route 205 (Nightime) (Alt).mp3">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\AnimatedSprites\Shiny\1.gif">
@@ -2661,6 +2006,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\AnimatedSprites\Shiny\45.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\46.gif">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\AnimatedSprites\Shiny\47.gif">
@@ -3750,6 +3098,12 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\MiscIcons\closeInverted.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\MiscIcons\maximize.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\MiscIcons\maximizeInverted.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\MiscIcons\minus.png">
