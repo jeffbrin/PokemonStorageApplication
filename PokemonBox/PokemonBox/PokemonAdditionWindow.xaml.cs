@@ -31,7 +31,7 @@ namespace PokemonBox
         private void cmbSpeciesPicker_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             ResetFields(cmbSpeciesPicker.SelectedIndex);
-            tempPokemon = new Pokemon(cmbSpeciesPicker.SelectedItem as Pokemon); // Get the selected pokemon and copy it to the temp pokemon
+            tempPokemon = new Pokemon(cmbSpeciesPicker.SelectedItem as Pokemon, new Attack[4]); // Get the selected pokemon and copy it to the temp pokemon
             spSelectedSpecies.DataContext = tempPokemon; // resync the DataContext
         }
 
@@ -69,7 +69,7 @@ namespace PokemonBox
         {
             cmbSpeciesPicker.ItemsSource = PCBox.PokemonOptions; // Bind the combo box with the pokemon options
             cmbSpeciesPicker.SelectedItem = PCBox.PokemonOptions[0]; // Set the default selection for the species picker
-            tempPokemon = new Pokemon(cmbSpeciesPicker.SelectedItem as Pokemon); // Set the default pokemon for the selection
+            tempPokemon = new Pokemon(cmbSpeciesPicker.SelectedItem as Pokemon, new Attack[4]); // Set the default pokemon for the selection
             spSelectedSpecies.DataContext = tempPokemon; // sync the selected species stack grid with the temp pokemon
             cmbMoveSelection1.ItemsSource = PCBox.AttackOptions; // Bind the attack selection combo boxes with the attack options
             cmbMoveSelection2.ItemsSource = PCBox.AttackOptions;
@@ -109,7 +109,7 @@ namespace PokemonBox
             // Check Ability
             if (tempPokemon.Ability == null)
             {
-                sb.AppendLine("No Ability selected.");
+                sb.AppendLine("No ability selected.");
                 valid = false;
             }
 
@@ -124,6 +124,7 @@ namespace PokemonBox
         // Adds the created pokemon to the box if it's valid
         private void btnCreatePokemon_Click(object sender, RoutedEventArgs e)
         {
+
             if (ValidatePokemonSelections())
             {
                 tempPokemon.Sex = rdbMale.IsChecked == true ? 'M' : 'F'; // Set the pokemon's sex

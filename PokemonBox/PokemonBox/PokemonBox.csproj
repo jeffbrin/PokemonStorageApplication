@@ -56,10 +56,10 @@
     <None Remove="Audio\Cries\026_raichu.flac" />
     <None Remove="Audio\Cries\027_sandshrew.flac" />
     <None Remove="Audio\Cries\028_sandslash.flac" />
-    <None Remove="Audio\Cries\029_nidoran♀.flac" />
+    <None Remove="Audio\Cries\029_nidoran_f.flac" />
     <None Remove="Audio\Cries\030_nidorina.flac" />
     <None Remove="Audio\Cries\031_nidoqueen.flac" />
-    <None Remove="Audio\Cries\032_nidoran♂.flac" />
+    <None Remove="Audio\Cries\032_nidoran_m.flac" />
     <None Remove="Audio\Cries\033_nidorino.flac" />
     <None Remove="Audio\Cries\034_nidoking.flac" />
     <None Remove="Audio\Cries\035_clefairy.flac" />
@@ -589,6 +589,7 @@
     <None Remove="Images\AnimatedSprites\Shiny\43.gif" />
     <None Remove="Images\AnimatedSprites\Shiny\44.gif" />
     <None Remove="Images\AnimatedSprites\Shiny\45.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\46.gif" />
     <None Remove="Images\AnimatedSprites\Shiny\47.gif" />
     <None Remove="Images\AnimatedSprites\Shiny\48.gif" />
     <None Remove="Images\AnimatedSprites\Shiny\49.gif" />
@@ -957,6 +958,7 @@
     <None Remove="Images\MiscIcons\minusFilled.png" />
     <None Remove="Images\MiscIcons\minusInverted.png" />
     <None Remove="Images\MiscIcons\unchecked.png" />
+    <None Remove="Images\pokeIcon.ico" />
     <None Remove="Images\TypeSprites\bug.png" />
     <None Remove="Images\TypeSprites\dark.png" />
     <None Remove="Images\TypeSprites\dragon.png" />
@@ -975,6 +977,11 @@
     <None Remove="Images\TypeSprites\rock.png" />
     <None Remove="Images\TypeSprites\steel.png" />
     <None Remove="Images\TypeSprites\water.png" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <Resource Remove="Images\pokeIcon.ico" />
   </ItemGroup>
 
 
@@ -1517,7 +1524,7 @@
     <Content Include="Audio\Cries\028_sandslash.flac">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Audio\Cries\029_nidoran♀.flac">
+    <Content Include="Audio\Cries\029_nidoran_f.flac">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Audio\Cries\030_nidorina.flac">
@@ -1526,7 +1533,7 @@
     <Content Include="Audio\Cries\031_nidoqueen.flac">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Audio\Cries\032_nidoran♂.flac">
+    <Content Include="Audio\Cries\032_nidoran_m.flac">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Audio\Cries\033_nidorino.flac">
@@ -2661,6 +2668,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\AnimatedSprites\Shiny\45.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\46.gif">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\AnimatedSprites\Shiny\47.gif">

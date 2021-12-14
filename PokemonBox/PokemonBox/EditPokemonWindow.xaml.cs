@@ -47,6 +47,11 @@ namespace PokemonBox
             cmbMoveSelection4.ItemsSource = PCBox.AttackOptions;
 
             cmbSpeciesPicker.SelectedIndex = editingPokemon.PokedexNumber - 1;
+
+            if (editingPokemon.Sex == 'M')
+                rdbMale.IsChecked = true;
+            else
+                rdbFemale.IsChecked = true;
         }
 
         /// <summary>
@@ -67,7 +72,7 @@ namespace PokemonBox
             Close();
         }
         /// <summary>
-        /// Minimize Window Using custon '_' button
+        /// Minimize Window Using custon '-' button
         /// </summary>
         private void imgMinus_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
@@ -84,30 +89,32 @@ namespace PokemonBox
             editingPokemon = GetClonePokemon();
             this.DataContext = editingPokemon; // Needed since it's a new object
             cmbSpeciesPicker.SelectedIndex = editingPokemon.PokedexNumber - 1;
+            InitialOptionsSetup();
         }
 
         private void btnSaveChanges_Click(object sender, RoutedEventArgs e)
         {
             ChangesSaved = true;
+            editingPokemon.Sex = rdbMale.IsChecked == true ? 'M' : 'F';
             this.Close();
         }
 
         private void cmbSpeciesPicker_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            editingPokemon = new Pokemon(cmbSpeciesPicker.SelectedItem as Pokemon, editingPokemon.IsShiny, editingPokemon.Sex, editingPokemon.Ability, editingPokemon.Nickname, editingPokemon.Attacks);
+            editingPokemon = new Pokemon(cmbSpeciesPicker.SelectedItem as Pokemon, editingPokemon.Attacks, editingPokemon.IsShiny, editingPokemon.Sex, editingPokemon.Ability, editingPokemon.Nickname);
             this.DataContext = editingPokemon; // Needed since it's a new object
         }
 
         // Returns a clone of the target pokemon
         private Pokemon GetClonePokemon()
         {
-            Pokemon clonePokemon = new Pokemon(localTargetPokemon, localTargetPokemon.IsShiny, localTargetPokemon.Sex, localTargetPokemon.Ability, localTargetPokemon.Nickname);
+            Pokemon clonePokemon = new Pokemon(localTargetPokemon, localTargetPokemon.Attacks, localTargetPokemon.IsShiny, localTargetPokemon.Sex, localTargetPokemon.Ability, localTargetPokemon.Nickname);
             // Attacks need a copy as well since they're objects and we don't want to edit the original attacks if the copy changes them
             clonePokemon.Attacks = new Attack[] {
-                PCBox.AttackOptions[clonePokemon.Attacks[0].AttackId],
-                PCBox.AttackOptions[clonePokemon.Attacks[1].AttackId],
-                PCBox.AttackOptions[clonePokemon.Attacks[2].AttackId],
-                PCBox.AttackOptions[clonePokemon.Attacks[3].AttackId]
+                clonePokemon.Attacks[0] == null ? null : PCBox.AttackOptions[clonePokemon.Attacks[0].AttackId],
+                clonePokemon.Attacks[1] == null ? null : PCBox.AttackOptions[clonePokemon.Attacks[1].AttackId],
+                clonePokemon.Attacks[2] == null ? null : PCBox.AttackOptions[clonePokemon.Attacks[2].AttackId],
+                clonePokemon.Attacks[3] == null ? null : PCBox.AttackOptions[clonePokemon.Attacks[3].AttackId]
             };
             // Same reason as the attacks
             clonePokemon.Ability = PCBox.AbilityOptions[clonePokemon.Ability.AbilityId];

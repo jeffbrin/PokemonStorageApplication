@@ -19,7 +19,7 @@ namespace PokemonBox.Models
         // The file extension for the Box Pokemon Images
         private const string BOX_FILE_EXTENSIONS = ".png";
         // The file extensions of the pokemon cries
-        private const string POKEMON_CRY_EXTENSIONS = ".FLAC";
+        private const string POKEMON_CRY_EXTENSION = ".flac";
         // The path to the pokemon cries
         private const string POKEMON_CRY_PATH = "Audio/Cries/";
 
@@ -37,7 +37,6 @@ namespace PokemonBox.Models
         public int BaseSpecialDefence { get; set; }
         public int BaseSpeed { get; set; }
         public Attack[] Attacks { get; set; }
-        
         public Ability Ability { get; set; }
 
         private enum CSVColumns
@@ -95,6 +94,17 @@ namespace PokemonBox.Models
             }
         }
 
+        // The path to this pokemon's cry sound effect file
+        public string CrySoundPath
+        {
+            get
+            {
+                // Format pokedex number to have leading zeros to match the path's naming conventions
+                string pokedexNumberWithLeadingZeros = new string('0', 3 - PokedexNumber.ToString().Length) + PokedexNumber.ToString();
+                return POKEMON_CRY_PATH + pokedexNumberWithLeadingZeros + "_" + Species.ToLower() + POKEMON_CRY_EXTENSION;
+            }
+        }
+
         // Default for object initialization syntax
         public Pokemon()
         {
@@ -103,7 +113,7 @@ namespace PokemonBox.Models
         }
 
         // constructor for making a new pokemon created by the player
-        public Pokemon(Pokemon generic, bool shiny = false, char sex = 'M', Ability ability = null, string nickname = "", Attack[] attacks = null)
+        public Pokemon(Pokemon generic, Attack[] attacks, bool shiny = false, char sex = 'M', Ability ability = null, string nickname = "")
         {
             PokedexNumber = generic.PokedexNumber;
             Species = generic.Species;
@@ -118,11 +128,9 @@ namespace PokemonBox.Models
             IsShiny = shiny;
             Sex = sex;
             Ability = ability;
-            if (attacks == null)
-                Attacks = generic.Attacks;
-            else
-                Attacks = attacks;
+            Attacks = attacks;
         }
+
 
         public char Sex
         {
@@ -189,11 +197,6 @@ namespace PokemonBox.Models
             }
         }
 
-        // The file path to this pokemon's cry sound effect
-        public string Cry
-        {
-            get { return $"{POKEMON_CRY_PATH}{PokedexNumber}{POKEMON_CRY_EXTENSIONS}"; }
-        }
 
         #region INotify
         // This method is called by the Set accessor of each property.  

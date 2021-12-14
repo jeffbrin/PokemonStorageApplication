@@ -15,7 +15,8 @@
         WindowStyle="None"
         ResizeMode="NoResize"
         Background="#181735"
-        Closing="Window_Closing">
+        Closing="Window_Closing"
+        Loaded="Window_Loaded">
 
     <!--big Grid-->
     <Grid>
@@ -248,19 +249,24 @@
         <!--Footer-->
         <Grid x:Name="grdFooter" Grid.Row="2" Grid.ColumnSpan="2">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="3*"/>
             </Grid.ColumnDefinitions>
 
             <!--Status-->
-            <TextBlock Foreground="White" Text="{Binding SaveStatus}" x:Name="txtStatus" Grid.Row="0" FontSize="15"/>
+            <TextBlock TextWrapping="Wrap" Foreground="White" Text="{Binding SaveStatus}" x:Name="txtStatus" Grid.Row="0" FontSize="15"/>
 
             <StackPanel Grid.Column="1" Orientation="Horizontal">
                 <Button Content="Release Pokemon" Margin="0,0,10,0" Width="100" Click="btnReleasePokemon_Click"/>
                 <Button x:Name="btnEdit" Content="Edit Pokemon" Margin="0,0,10,0" Width="100" Click="btnEdit_Click"/>
                 <Button x:Name="btnSave" Content="Save Box" Margin="0,0,10,0" Width="100" Click="btnSave_Click"/>
                 <Button Content="Load Box" Margin="0,0,10,0" Width="100" Click="btnLoad_Click"/>
-                
+                <Button Margin="0,0,10,0" Click="btnMusicMute_Click">
+                    <TextBlock x:Name="txtMusicMuted" FontWeight="bold" Text="Music"/>
+                </Button>
+                <Button Margin="0,0,10,0" Click="btnEffectsMute_Click">
+                    <TextBlock x:Name="txtSoundsMuted" FontWeight="bold" Text="Sound Effects"/>
+                </Button>
             </StackPanel>
             
         </Grid>
