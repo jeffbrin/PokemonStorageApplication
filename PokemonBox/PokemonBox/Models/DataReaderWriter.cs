@@ -10,7 +10,7 @@ namespace PokemonBox.Models
         // Used to read the lines in the GetPokemonOptions function
         private enum PokemonDatasheetColumns
         {
-            Pokedex_number,
+            PokedexNumber,
             Species,
             TypeOne,
             TypeTwo,
@@ -61,7 +61,7 @@ namespace PokemonBox.Models
                         // Generate the new pokemon from this line of data
                         pokemon[i] = new Pokemon()
                         {
-                            PokedexNumber = int.Parse(pokemonData[(int)PokemonDatasheetColumns.Pokedex_number]), // Get the pokedex number
+                            PokedexNumber = int.Parse(pokemonData[(int)PokemonDatasheetColumns.PokedexNumber]), // Get the pokedex number
                             Species = pokemonData[(int)PokemonDatasheetColumns.Species], //Get the pokemon's species
                             Types = new PokemonType[] {  // Add the pokemon's types. Make the second type null if it isn't a dual type
                                 pokemonTypeDictionary[pokemonData[(int)PokemonDatasheetColumns.TypeOne]], 
