@@ -463,8 +463,10 @@
                     <ColumnDefinition Width="7*"/>
                     <ColumnDefinition Width="1*"/>
                 </Grid.ColumnDefinitions>
-                <TextBlock TextWrapping="Wrap" Foreground="White" Text="{Binding SaveStatus}" x:Name="txtStatus" Grid.Column="0" FontSize="12" FontWeight="Light"/>
-                <Viewbox Grid.Column="1" Grid.ColumnSpan="2" Margin="0,0,100,0">
+                <Viewbox StretchDirection="Both" Margin="15,0,15,0">
+                    <TextBlock TextWrapping="Wrap" TextAlignment="Center" Foreground="White" Text="{Binding SaveStatus}" x:Name="txtStatus" Grid.Column="0" FontSize="12" FontWeight="Light"/>
+                </Viewbox>
+                <Viewbox Grid.Column="1" Grid.ColumnSpan="2" Margin="25,0,100,0">
                     <Grid  HorizontalAlignment="Center">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="auto"/>
@@ -486,7 +488,7 @@
                         </Button>
                     </Grid>
                 </Viewbox>
-                
+
                 <TextBlock Grid.Column="2" FontStyle="Italic" HorizontalAlignment="Right" Text="© The FireNation" Foreground="White"
                            FontWeight="Light" FontSize="12" TextWrapping="Wrap" FontFamily="Baloo Bhaijaan 2" VerticalAlignment="Bottom" Margin="0,0,15,0"/>
             </Grid>
