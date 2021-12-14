@@ -74,7 +74,7 @@ namespace PokemonBox
             Close();
         }
         /// <summary>
-        /// Minimize Window Using custon '-' button
+        /// Minimize Window Using custom '-' button
         /// </summary>
         private void imgMinus_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {

@@ -470,6 +470,19 @@ namespace PokemonBox
             }
         }
 
+        private void imgMax_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            if(WindowState != WindowState.Maximized)
+            {
+                this.WindowState = WindowState.Maximized;
+            }
+            else
+            {
+                this.WindowState = WindowState.Normal;
+            }
+            
+        }
+
         // Replace a selected pokemon
         private void ReplaceSelectedPokemon(Pokemon newPokemon)
         {
