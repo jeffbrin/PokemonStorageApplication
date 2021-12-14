@@ -280,7 +280,7 @@ namespace PokemonBox.Models
         /// <param name="path">The file path of the file holding the pokemon info</param>
         /// <param name="nameToTypeDictionary">A dictionary that returns a PokemonType object when given a string.</param>
         /// <returns></returns>
-        static public List<Pokemon> LoadBoxFromfile(string path, Dictionary<string, PokemonType> nameToTypeDictionary)
+        static public List<Pokemon> LoadBoxFromFile(string path, Dictionary<string, PokemonType> nameToTypeDictionary)
         {
             try
             {

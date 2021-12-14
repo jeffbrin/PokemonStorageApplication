@@ -153,7 +153,7 @@ namespace PokemonBox.Models
         public bool LoadFromFile(string path)
         {
             // Load the pokemon
-            List<Pokemon> loadedPokemon = DataReaderWriter.LoadBoxFromfile(path, pokemonTypeByNameDictionary);
+            List<Pokemon> loadedPokemon = DataReaderWriter.LoadBoxFromFile(path, pokemonTypeByNameDictionary);
 
             // Load the pokemon if there was no error
             if (loadedPokemon != null)
