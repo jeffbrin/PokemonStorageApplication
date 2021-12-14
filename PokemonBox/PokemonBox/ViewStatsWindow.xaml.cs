@@ -30,5 +30,29 @@ namespace PokemonBox
         {
             this.Close();
         }
+        /// <summary>
+        /// Ability to move window around screen
+        /// </summary>
+        private void grdHeader_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                DragMove();
+            }
+        }
+        /// <summary>
+        /// Close the window using custom 'X' Button
+        /// </summary>
+        private void imgClose_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            Close();
+        }
+        /// <summary>
+        /// Minimize Window Using custom '-' button
+        /// </summary>
+        private void imgMinus_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            this.WindowState = WindowState.Minimized;
+        }
     }
 }

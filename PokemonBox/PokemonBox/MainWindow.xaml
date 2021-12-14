@@ -13,9 +13,37 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="1000"
         WindowStyle="None"
-        ResizeMode="NoResize"
+        ResizeMode="CanResizeWithGrip" AllowsTransparency="True"
         Background="#181735"
         Closing="Window_Closing">
+    <!--#region Resources (Overriding Default Templates)-->
+    <Window.Resources>
+        <Style x:Key="btnNoHoverEffect" TargetType="Button">
+            <Setter Property="OverridesDefaultStyle" Value="True"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Name="border" 
+                        BorderThickness="1"
+                        Padding="4,2" 
+                        BorderBrush="Transparent" 
+                        CornerRadius="3" 
+                        Background="#de425b">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="#516fff"/>
+                                <Setter Property="Cursor" Value="Hand"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <!--#endregion-->
 
     <!--big Grid-->
     <Grid>
@@ -36,7 +64,7 @@
         <!--Background Music-->
         <MediaElement x:Name="meMusic" MediaEnded="meMusic_MediaEnded"/>
 
-        <!--header-->
+        <!--#region Header-->
         <Grid x:Name="grdHeader" Background="#000014" Grid.ColumnSpan="2"
               MouseDown="grdHeader_MouseDown">
             <Grid.ColumnDefinitions>
@@ -65,6 +93,20 @@
                     </Style>
                 </Image.Style>
             </Image>
+            <Image Grid.Column="2" HorizontalAlignment="Center" Width="15" Height="15"
+                   x:Name="imgMax" MouseLeftButtonDown="imgMax_MouseLeftButtonDown" ToolTip="Maximize/Restore">
+                <Image.Style>
+                    <Style TargetType="{x:Type Image}">
+                        <Setter Property="Source" Value="/Images/MiscIcons/maximize.png"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Cursor" Value="Hand"/>
+                                <Setter Property="Source" Value="/Images/MiscIcons/maximizeInverted.png"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Image.Style>
+            </Image>
             <Image Grid.Column="2" HorizontalAlignment="Right" Margin="0,0,15,0" Width="15" Height="15"
                    x:Name="imgClose" MouseLeftButtonDown="imgClose_MouseLeftButtonDown" ToolTip="Close">
                 <Image.Style>
@@ -80,8 +122,9 @@
                 </Image.Style>
             </Image>
         </Grid>
+        <!--#endRegion-->
 
-        <!--under header left side-->
+        <!--#region Grid left side-->
         <Grid x:Name="grdPokemonDisplayAndAdd" Grid.Row="1" Grid.Column="0" Margin="10,0,10,10">
             <!--only one column so no need to make column definition-->
             <Grid.RowDefinitions>
@@ -95,14 +138,14 @@
 
 
 
-            <!--Add Button-->
-            <Button x:Name="btnAdd" HorizontalAlignment="Left" 
-                    Margin="25,0,0,0" VerticalAlignment="Center"
+            <!--#region Add Button-->
+            <Button x:Name="btnAdd" HorizontalAlignment="Center" 
+                    VerticalAlignment="Center"
                     Padding="30,15,30,15" FontWeight="Bold" Foreground="White"
                     FontSize="20" Grid.Row="0" Click="btnAdd_Click">
                 <Button.Style>
                     <Style TargetType="Button">
-                        <Setter Property="Background" Value="#EA80FC"/>
+                        <Setter Property="Background" Value="#de425b"/>
                         <Setter Property="Cursor" Value="Hand"/>
                         <Style.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
@@ -122,20 +165,18 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
+            <!--#EndRegion-->
 
-
-            <!--Image of Selected Pokemon-->
-            <StackPanel Background="AliceBlue" Grid.Row="1">
+            <!--#Region Image of Selected Pokemon-->
+            <Viewbox StretchDirection="Both" Grid.Row="1">
                 <Image gif:ImageBehavior.AnimatedSource="{Binding AnimatedSpritePath}"
-                       HorizontalAlignment="Center"
-                       Height="200"
-                       Width="200"
-                       RenderOptions.BitmapScalingMode="HighQuality"/>
-            </StackPanel>
+                       RenderOptions.BitmapScalingMode="HighQuality" VerticalAlignment="Center"/>
+            </Viewbox>
+            <!--#EndRegion-->
 
-            <!--Name Type and Show Stats button div-->
-            <Border Grid.Row="2" BorderBrush="#FF7597" BorderThickness="5px">
-                <Grid Background="Beige">
+            <!--#region Name Type and Show Stats button div-->
+            <Border Grid.Row="2" BorderBrush="#ea5f85" BorderThickness="2px" CornerRadius="12" Background="#3f4bad">
+                <Grid >
 
                     <Grid.RowDefinitions>
                         <!--Name-->
@@ -146,7 +187,7 @@
                         <RowDefinition Height="2*"/>
                     </Grid.RowDefinitions>
 
-                    <TextBlock x:Name="txtSelectedPokemonName"
+                    <TextBlock x:Name="txtSelectedPokemonName" Foreground="White"
                                Grid.Row="0" Text="{Binding DisplayName}" FontSize="15" 
                                HorizontalAlignment="Center" Margin="0,15,0,0"/>
                     <!--2 Column Grid for type and Type name-->
@@ -159,33 +200,47 @@
                         <!--Type One-->
                         <StackPanel Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                             <Image Source="{Binding Types[0].ImagePath}"/>
-                            <TextBlock x:Name="txtSelectedPokemonTypeOne"
+                            <TextBlock x:Name="txtSelectedPokemonTypeOne" Foreground="White"
                                    Grid.Column="1" Text="{Binding Types[0].Name}" FontSize="15" VerticalAlignment="Center"/>
                         </StackPanel>
                         <!--Type Two-->
                         <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                             <Image Source="{Binding Types[1].ImagePath}"/>
-                            <TextBlock x:Name="txtSelectedPokemonTypeTwo"
+                            <TextBlock x:Name="txtSelectedPokemonTypeTwo" Foreground="White"
                                    Grid.Column="1" Text="{Binding Types[1].Name}" FontSize="15" VerticalAlignment="Center"/>
                         </StackPanel>
                     </Grid>
-                    <!--SHOW STATS BUTTON-->
-                    <Button x:Name="btnShowStats" Grid.Row="2" Content="Show Stats" 
-                            HorizontalAlignment="Center" VerticalAlignment="Center"
-                        Padding="30,15,30,15" FontWeight="Bold" FontSize="15" Click="btnShowStats_Click">
+                    
+                    <!--#region SHOW STATS BUTTON-->
+                    <Button x:Name="btnShowStats" Grid.Row="2"
+                        Padding="30,15,30,15" FontWeight="Medium" FontSize="15" Click="btnShowStats_Click">
                         <Button.Style>
                             <Style TargetType="Button">
                                 <Setter Property="Cursor" Value="Hand"/>
-                                <Setter Property="Background" Value="#03DAC5"/>
+                                <Setter Property="Background" Value="#de425b"/>
+                                <Setter Property="Foreground" Value="White"/>
                             </Style>
 
                         </Button.Style>
+                        <!--To be able to have corner Radisu-->
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Width="125" Height="50"
+                                CornerRadius="12"
+                                Background="{TemplateBinding Background}">
+                                    <ContentPresenter Content="Show Stats" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
                     </Button>
+                    <!--#Endregion-->
                 </Grid>
             </Border>
+            <!--#endregion-->
 
 
         </Grid>
+        <!--#endregion-->
 
         <!--Box UI Grid-->
         <!--Going to do 5x5 grid for the pokemons-->
@@ -257,23 +312,39 @@
             </Grid.ColumnDefinitions>
 
             <!--Status-->
-            <TextBlock TextWrapping="Wrap" Foreground="White" Text="{Binding SaveStatus}" x:Name="txtStatus" Grid.Row="0" FontSize="15"/>
+            <!--<TextBlock TextWrapping="Wrap" Foreground="White" Text="{Binding SaveStatus}" x:Name="txtStatus" Grid.Row="0" FontSize="15"/>-->
 
-            <StackPanel Grid.Column="1" Orientation="Horizontal">
-                <Button Content="Release Pokemon" Margin="0,0,10,0" Width="100" Click="btnReleasePokemon_Click"/>
-                <Button x:Name="btnEdit" Content="Edit Pokemon" Margin="0,0,10,0" Width="100" Click="btnEdit_Click"/>
-                <Button x:Name="btnSave" Content="Save Box" Margin="0,0,10,0" Width="100" Click="btnSave_Click"/>
-                <Button Content="Load Box" Margin="0,0,10,0" Width="100" Click="btnLoad_Click"/>
-                <Button Margin="0,0,10,0" Click="btnMusicMute_Click">
-                    <TextBlock x:Name="txtMusicMuted" FontWeight="bold" Text="Music"/>
-                </Button>
-                <Button Margin="0,0,10,0" Click="btnEffectsMute_Click">
-                    <TextBlock x:Name="txtSoundsMuted" FontWeight="bold" Text="Sound Effects"/>
-                </Button>
-            </StackPanel>
-            
+            <Grid Grid.Column="0" Grid.ColumnSpan="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="4*"/>
+                    <ColumnDefinition Width="7*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock TextWrapping="Wrap" Foreground="White" Text="{Binding SaveStatus}" x:Name="txtStatus" Grid.Column="0" FontSize="12" FontWeight="Light"/>
+                <Grid Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Center">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button Grid.Column="0" Style="{StaticResource btnNoHoverEffect}" Foreground="White" Content="Release Pokemon"  Click="btnReleasePokemon_Click" HorizontalAlignment="Center" Margin="0,3,10,3" VerticalAlignment="Center"/>
+                    <Button Grid.Column="1" Style="{StaticResource btnNoHoverEffect}" Foreground="White" x:Name="btnEdit" Content="Edit Pokemon" Click="btnEdit_Click" HorizontalAlignment="Center" Margin="0,3,10,3" VerticalAlignment="Center"/>
+                    <Button Grid.Column="2" Style="{StaticResource btnNoHoverEffect}" Foreground="White" x:Name="btnSave" Content="Save Box" Click="btnSave_Click" HorizontalAlignment="Center" Margin="0,3,10,3" VerticalAlignment="Center"/>
+                    <Button Grid.Column="3" Style="{StaticResource btnNoHoverEffect}" Foreground="White" Content="Load Box" Click="btnLoad_Click" HorizontalAlignment="Center" Margin="0,3,10,3" VerticalAlignment="Center"/>
+                    <Button Grid.Column="4" Style="{StaticResource btnNoHoverEffect}" Foreground="White"  Click="btnMusicMute_Click" HorizontalAlignment="Center" Margin="0,3,10,3" VerticalAlignment="Center">
+                        <TextBlock x:Name="txtMusicMuted" FontWeight="Medium" Text="Music"/>
+                    </Button>
+                    <Button Grid.Column="5" Style="{StaticResource btnNoHoverEffect}" Foreground="White" Click="btnEffectsMute_Click" HorizontalAlignment="Center" Margin="0,3,10,3" VerticalAlignment="Center">
+                        <TextBlock x:Name="txtSoundsMuted" FontWeight="Medium" Text="Sound Effects"/>
+                    </Button>
+                </Grid>
+                <TextBlock Grid.Column="2" FontStyle="Italic" HorizontalAlignment="Right" Text="© The FireNation" Foreground="White"
+                           FontWeight="Light" FontSize="12" TextWrapping="Wrap" FontFamily="Baloo Bhaijaan 2" VerticalAlignment="Bottom" Margin="0,0,15,0"/>
+            </Grid>
         </Grid>
-
     </Grid>
 
 </Window>
