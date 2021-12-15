@@ -465,6 +465,7 @@
     <None Remove="Images\AnimatedSprites\Shiny\80.gif" />
     <None Remove="Images\AnimatedSprites\Shiny\81.gif" />
     <None Remove="Images\AnimatedSprites\Shiny\82.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\83.gif" />
     <None Remove="Images\AnimatedSprites\Shiny\84.gif" />
     <None Remove="Images\AnimatedSprites\Shiny\85.gif" />
     <None Remove="Images\AnimatedSprites\Shiny\86.gif" />
@@ -2130,6 +2131,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\AnimatedSprites\Shiny\82.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\83.gif">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\AnimatedSprites\Shiny\84.gif">
