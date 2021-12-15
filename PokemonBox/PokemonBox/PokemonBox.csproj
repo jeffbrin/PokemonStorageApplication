@@ -216,6 +216,7 @@
     <None Remove="Images\AnimatedSprites\Regular\electrode.gif" />
     <None Remove="Images\AnimatedSprites\Regular\exeggcute.gif" />
     <None Remove="Images\AnimatedSprites\Regular\exeggutor.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\farfetch%27d.gif" />
     <None Remove="Images\AnimatedSprites\Regular\farfetchd.gif" />
     <None Remove="Images\AnimatedSprites\Regular\fearow.gif" />
     <None Remove="Images\AnimatedSprites\Regular\flareon.gif" />
@@ -928,9 +929,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Images\AnimatedSprites\Regular\exeggutor.gif">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Images\AnimatedSprites\Regular\farfetchd.gif">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Images\AnimatedSprites\Regular\fearow.gif">
@@ -1730,6 +1728,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Audio\Music\116 Pokemon Center (Daytime).mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Regular\farfetch'd.gif">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\AnimatedSprites\Shiny\1.gif">
