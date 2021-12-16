@@ -195,15 +195,15 @@ namespace PokemonBox
         private void grdHeader_MouseDown(object sender, MouseButtonEventArgs e)
         {
             FixMargins();
-            if (e.LeftButton == MouseButtonState.Pressed && !MouseOnMaximize())
+            if (e.LeftButton == MouseButtonState.Pressed && !MouseOnMaximizeOrMinimize())
             {
                 WindowState = WindowState.Normal;
                 DragMove();
             }
         }
-        private bool MouseOnMaximize()
+        private bool MouseOnMaximizeOrMinimize()
         {
-            return this.imgMax.IsMouseOver;
+            return this.imgMax.IsMouseOver || this.imgMinus.IsMouseOver;
         }
         private void imgClose_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
