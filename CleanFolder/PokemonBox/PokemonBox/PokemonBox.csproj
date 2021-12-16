@@ -1,0 +1,3187 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>pokeIcon.ico</ApplicationIcon>
+  </PropertyGroup>
+
+
+  <ItemGroup>
+	  <Resource Include="Images\*" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <Compile Remove="Images\Regular\**" />
+    <Compile Remove="Images\Shiny\**" />
+    <EmbeddedResource Remove="Images\Regular\**" />
+    <EmbeddedResource Remove="Images\Shiny\**" />
+    <None Remove="Images\Regular\**" />
+    <None Remove="Images\Shiny\**" />
+    <Page Remove="Images\Regular\**" />
+    <Page Remove="Images\Shiny\**" />
+    <Resource Remove="Images\Regular\**" />
+    <Resource Remove="Images\Shiny\**" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <None Remove="Audio\Cries\001_bulbasaur.flac" />
+    <None Remove="Audio\Cries\002_ivysaur.flac" />
+    <None Remove="Audio\Cries\003_venusaur.flac" />
+    <None Remove="Audio\Cries\004_charmander.flac" />
+    <None Remove="Audio\Cries\005_charmeleon.flac" />
+    <None Remove="Audio\Cries\006_charizard.flac" />
+    <None Remove="Audio\Cries\007_squirtle.flac" />
+    <None Remove="Audio\Cries\008_wartortle.flac" />
+    <None Remove="Audio\Cries\009_blastoise.flac" />
+    <None Remove="Audio\Cries\010_caterpie.flac" />
+    <None Remove="Audio\Cries\011_metapod.flac" />
+    <None Remove="Audio\Cries\012_butterfree.flac" />
+    <None Remove="Audio\Cries\013_weedle.flac" />
+    <None Remove="Audio\Cries\014_kakuna.flac" />
+    <None Remove="Audio\Cries\015_beedrill.flac" />
+    <None Remove="Audio\Cries\016_pidgey.flac" />
+    <None Remove="Audio\Cries\017_pidgeotto.flac" />
+    <None Remove="Audio\Cries\018_pidgeot.flac" />
+    <None Remove="Audio\Cries\019_rattata.flac" />
+    <None Remove="Audio\Cries\020_raticate.flac" />
+    <None Remove="Audio\Cries\021_spearow.flac" />
+    <None Remove="Audio\Cries\022_fearow.flac" />
+    <None Remove="Audio\Cries\023_ekans.flac" />
+    <None Remove="Audio\Cries\024_arbok.flac" />
+    <None Remove="Audio\Cries\025_pikachu.flac" />
+    <None Remove="Audio\Cries\026_raichu.flac" />
+    <None Remove="Audio\Cries\027_sandshrew.flac" />
+    <None Remove="Audio\Cries\028_sandslash.flac" />
+    <None Remove="Audio\Cries\029_nidoran_f.flac" />
+    <None Remove="Audio\Cries\030_nidorina.flac" />
+    <None Remove="Audio\Cries\031_nidoqueen.flac" />
+    <None Remove="Audio\Cries\032_nidoran_m.flac" />
+    <None Remove="Audio\Cries\033_nidorino.flac" />
+    <None Remove="Audio\Cries\034_nidoking.flac" />
+    <None Remove="Audio\Cries\035_clefairy.flac" />
+    <None Remove="Audio\Cries\036_clefable.flac" />
+    <None Remove="Audio\Cries\037_vulpix.flac" />
+    <None Remove="Audio\Cries\038_ninetales.flac" />
+    <None Remove="Audio\Cries\039_jigglypuff.flac" />
+    <None Remove="Audio\Cries\040_wigglytuff.flac" />
+    <None Remove="Audio\Cries\041_zubat.flac" />
+    <None Remove="Audio\Cries\042_golbat.flac" />
+    <None Remove="Audio\Cries\043_oddish.flac" />
+    <None Remove="Audio\Cries\044_gloom.flac" />
+    <None Remove="Audio\Cries\045_vileplume.flac" />
+    <None Remove="Audio\Cries\046_paras.flac" />
+    <None Remove="Audio\Cries\047_parasect.flac" />
+    <None Remove="Audio\Cries\048_venonat.flac" />
+    <None Remove="Audio\Cries\049_venomoth.flac" />
+    <None Remove="Audio\Cries\050_diglett.flac" />
+    <None Remove="Audio\Cries\051_dugtrio.flac" />
+    <None Remove="Audio\Cries\052_meowth.flac" />
+    <None Remove="Audio\Cries\053_persian.flac" />
+    <None Remove="Audio\Cries\054_psyduck.flac" />
+    <None Remove="Audio\Cries\055_golduck.flac" />
+    <None Remove="Audio\Cries\056_mankey.flac" />
+    <None Remove="Audio\Cries\057_primeape.flac" />
+    <None Remove="Audio\Cries\058_growlithe.flac" />
+    <None Remove="Audio\Cries\059_arcanine.flac" />
+    <None Remove="Audio\Cries\060_poliwag.flac" />
+    <None Remove="Audio\Cries\061_poliwhirl.flac" />
+    <None Remove="Audio\Cries\062_poliwrath.flac" />
+    <None Remove="Audio\Cries\063_abra.flac" />
+    <None Remove="Audio\Cries\064_kadabra.flac" />
+    <None Remove="Audio\Cries\065_alakazam.flac" />
+    <None Remove="Audio\Cries\066_machop.flac" />
+    <None Remove="Audio\Cries\067_machoke.flac" />
+    <None Remove="Audio\Cries\068_machamp.flac" />
+    <None Remove="Audio\Cries\069_bellsprout.flac" />
+    <None Remove="Audio\Cries\070_weepinbell.flac" />
+    <None Remove="Audio\Cries\071_victreebel.flac" />
+    <None Remove="Audio\Cries\072_tentacool.flac" />
+    <None Remove="Audio\Cries\073_tentacruel.flac" />
+    <None Remove="Audio\Cries\074_geodude.flac" />
+    <None Remove="Audio\Cries\075_graveler.flac" />
+    <None Remove="Audio\Cries\076_golem.flac" />
+    <None Remove="Audio\Cries\077_ponyta.flac" />
+    <None Remove="Audio\Cries\078_rapidash.flac" />
+    <None Remove="Audio\Cries\079_slowpoke.flac" />
+    <None Remove="Audio\Cries\080_slowbro.flac" />
+    <None Remove="Audio\Cries\081_magnemite.flac" />
+    <None Remove="Audio\Cries\082_magneton.flac" />
+    <None Remove="Audio\Cries\083_farfetch%27d.flac" />
+    <None Remove="Audio\Cries\084_doduo.flac" />
+    <None Remove="Audio\Cries\085_dodrio.flac" />
+    <None Remove="Audio\Cries\086_seel.flac" />
+    <None Remove="Audio\Cries\087_dewgong.flac" />
+    <None Remove="Audio\Cries\088_grimer.flac" />
+    <None Remove="Audio\Cries\089_muk.flac" />
+    <None Remove="Audio\Cries\090_shellder.flac" />
+    <None Remove="Audio\Cries\091_cloyster.flac" />
+    <None Remove="Audio\Cries\092_gastly.flac" />
+    <None Remove="Audio\Cries\093_haunter.flac" />
+    <None Remove="Audio\Cries\094_gengar.flac" />
+    <None Remove="Audio\Cries\095_onix.flac" />
+    <None Remove="Audio\Cries\096_drowzee.flac" />
+    <None Remove="Audio\Cries\097_hypno.flac" />
+    <None Remove="Audio\Cries\098_krabby.flac" />
+    <None Remove="Audio\Cries\099_kingler.flac" />
+    <None Remove="Audio\Cries\100_voltorb.flac" />
+    <None Remove="Audio\Cries\101_electrode.flac" />
+    <None Remove="Audio\Cries\102_exeggcute.flac" />
+    <None Remove="Audio\Cries\103_exeggutor.flac" />
+    <None Remove="Audio\Cries\104_cubone.flac" />
+    <None Remove="Audio\Cries\105_marowak.flac" />
+    <None Remove="Audio\Cries\106_hitmonlee.flac" />
+    <None Remove="Audio\Cries\107_hitmonchan.flac" />
+    <None Remove="Audio\Cries\108_lickitung.flac" />
+    <None Remove="Audio\Cries\109_koffing.flac" />
+    <None Remove="Audio\Cries\110_weezing.flac" />
+    <None Remove="Audio\Cries\111_rhyhorn.flac" />
+    <None Remove="Audio\Cries\112_rhydon.flac" />
+    <None Remove="Audio\Cries\113_chansey.flac" />
+    <None Remove="Audio\Cries\114_tangela.flac" />
+    <None Remove="Audio\Cries\115_kangaskhan.flac" />
+    <None Remove="Audio\Cries\116_horsea.flac" />
+    <None Remove="Audio\Cries\117_seadra.flac" />
+    <None Remove="Audio\Cries\118_goldeen.flac" />
+    <None Remove="Audio\Cries\119_seaking.flac" />
+    <None Remove="Audio\Cries\120_staryu.flac" />
+    <None Remove="Audio\Cries\121_starmie.flac" />
+    <None Remove="Audio\Cries\122_mr.mime.flac" />
+    <None Remove="Audio\Cries\123_scyther.flac" />
+    <None Remove="Audio\Cries\124_jynx.flac" />
+    <None Remove="Audio\Cries\125_electabuzz.flac" />
+    <None Remove="Audio\Cries\126_magmar.flac" />
+    <None Remove="Audio\Cries\127_pinsir.flac" />
+    <None Remove="Audio\Cries\128_tauros.flac" />
+    <None Remove="Audio\Cries\129_magikarp.flac" />
+    <None Remove="Audio\Cries\130_gyarados.flac" />
+    <None Remove="Audio\Cries\131_lapras.flac" />
+    <None Remove="Audio\Cries\132_ditto.flac" />
+    <None Remove="Audio\Cries\133_eevee.flac" />
+    <None Remove="Audio\Cries\134_vaporeon.flac" />
+    <None Remove="Audio\Cries\135_jolteon.flac" />
+    <None Remove="Audio\Cries\136_flareon.flac" />
+    <None Remove="Audio\Cries\137_porygon.flac" />
+    <None Remove="Audio\Cries\138_omanyte.flac" />
+    <None Remove="Audio\Cries\139_omastar.flac" />
+    <None Remove="Audio\Cries\140_kabuto.flac" />
+    <None Remove="Audio\Cries\141_kabutops.flac" />
+    <None Remove="Audio\Cries\142_aerodactyl.flac" />
+    <None Remove="Audio\Cries\143_snorlax.flac" />
+    <None Remove="Audio\Cries\144_articuno.flac" />
+    <None Remove="Audio\Cries\145_zapdos.flac" />
+    <None Remove="Audio\Cries\146_moltres.flac" />
+    <None Remove="Audio\Cries\147_dratini.flac" />
+    <None Remove="Audio\Cries\148_dragonair.flac" />
+    <None Remove="Audio\Cries\149_dragonite.flac" />
+    <None Remove="Audio\Cries\150_mewtwo.flac" />
+    <None Remove="Audio\Cries\151_mew.flac" />
+    <None Remove="Audio\Music\116 Pokemon Center %28Daytime%29.mp3" />
+    <None Remove="Images\AnimatedSprites\Regular\abra.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\aerodactyl.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\alakazam.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\arbok.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\arcanine.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\articuno.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\beedrill.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\bellsprout.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\blastoise.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\bulbasaur.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\butterfree.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\caterpie.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\chansey.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\charizard.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\charmander.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\charmeleon.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\clefable.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\clefairy.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\cloyster.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\cubone.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\dewgong.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\diglett.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\ditto.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\dodrio.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\doduo.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\dragonair.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\dragonite.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\dratini.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\drowzee.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\dugtrio.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\eevee.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\ekans.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\electabuzz.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\electrode.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\exeggcute.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\exeggutor.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\farfetch%27d.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\farfetchd.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\fearow.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\flareon.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\gengar.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\geodude.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\ghastly.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\gloom.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\golbat.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\goldeen.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\golduck.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\golem.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\graveler.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\grimer.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\growlithe.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\gyarados.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\haunter.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\hitmonchan.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\hitmonlee.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\horsea.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\hypno.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\ivysaur.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\jigglypuff.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\jolteon.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\jynx.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\kabuto.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\kabutops.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\kadabra.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\kakuna.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\kangaskhan.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\kingler.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\koffing.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\krabby.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\lapras.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\lickitung.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\machamp.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\machoke.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\machop.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\magikarp.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\magmar.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\magnemite.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\magneton.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\mankey.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\marowak.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\meowth.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\metapod.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\mew.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\mewtwo.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\moltres.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\mr._mime.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\muk.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\nidoking.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\nidoqueen.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\nidoran_f.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\nidoran_m.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\nidorina.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\nidorino.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\ninetales.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\oddish.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\omanyte.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\omastar.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\onix.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\paras.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\parasect.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\persian.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\pidgeot.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\pidgeotto.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\pidgey.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\pikachu.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\pinsir.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\poliwag.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\poliwhirl.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\poliwrath.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\ponyta.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\porygon.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\primeape.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\psyduck.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\raichu.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\rapidash.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\raticate.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\rattata.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\rhydon.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\rhyhorn.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\sandshrew.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\sandslash.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\scyther.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\seadra.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\seaking.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\seel.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\shellder.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\slowbro.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\slowpoke.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\snorlax.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\spearow.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\squirtle.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\starmie.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\staryu.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\tangela.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\tauros.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\tentacool.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\tentacruel.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\vaporeon.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\venomoth.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\venonat.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\venusaur.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\victreebel.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\vileplume.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\voltorb.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\vulpix.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\wartortle.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\weedle.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\weepinbell.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\weezing.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\wigglytuff.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\zapdos.gif" />
+    <None Remove="Images\AnimatedSprites\Regular\zubat.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\1.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\10.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\100.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\101.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\102.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\103.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\104.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\105.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\106.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\107.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\108.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\109.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\11.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\110.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\111.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\112.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\113.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\114.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\115.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\116.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\117.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\118.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\119.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\12.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\120.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\121.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\122.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\123.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\124.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\125.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\126.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\127.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\128.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\129.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\13.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\130.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\131.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\132.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\133.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\134.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\135.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\136.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\137.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\138.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\139.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\14.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\140.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\141.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\142.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\143.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\144.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\145.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\146.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\147.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\148.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\149.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\15.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\150.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\151.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\16.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\17.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\18.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\19.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\2.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\20.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\21.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\22.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\23.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\24.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\25.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\26.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\27.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\28.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\29.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\3.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\30.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\31.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\32.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\33.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\34.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\35.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\36.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\37.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\38.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\39.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\4.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\40.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\41.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\42.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\43.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\44.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\45.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\46.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\47.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\48.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\49.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\5.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\50.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\51.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\52.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\53.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\54.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\55.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\56.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\57.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\58.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\59.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\6.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\60.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\61.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\62.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\63.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\64.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\65.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\66.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\67.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\68.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\69.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\7.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\70.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\71.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\72.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\73.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\74.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\75.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\76.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\77.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\78.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\79.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\8.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\80.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\81.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\82.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\83.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\84.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\85.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\86.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\87.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\88.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\89.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\9.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\90.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\91.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\92.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\93.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\94.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\95.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\96.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\97.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\98.gif" />
+    <None Remove="Images\AnimatedSprites\Shiny\99.gif" />
+    <None Remove="Images\BackgroundSprites\outerSpace.png" />
+    <None Remove="Images\BoxSprites\1.png" />
+    <None Remove="Images\BoxSprites\10.png" />
+    <None Remove="Images\BoxSprites\100.png" />
+    <None Remove="Images\BoxSprites\101.png" />
+    <None Remove="Images\BoxSprites\102.png" />
+    <None Remove="Images\BoxSprites\103.png" />
+    <None Remove="Images\BoxSprites\104.png" />
+    <None Remove="Images\BoxSprites\105.png" />
+    <None Remove="Images\BoxSprites\106.png" />
+    <None Remove="Images\BoxSprites\107.png" />
+    <None Remove="Images\BoxSprites\108.png" />
+    <None Remove="Images\BoxSprites\109.png" />
+    <None Remove="Images\BoxSprites\11.png" />
+    <None Remove="Images\BoxSprites\110.png" />
+    <None Remove="Images\BoxSprites\111.png" />
+    <None Remove="Images\BoxSprites\112.png" />
+    <None Remove="Images\BoxSprites\113.png" />
+    <None Remove="Images\BoxSprites\114.png" />
+    <None Remove="Images\BoxSprites\115.png" />
+    <None Remove="Images\BoxSprites\116.png" />
+    <None Remove="Images\BoxSprites\117.png" />
+    <None Remove="Images\BoxSprites\118.png" />
+    <None Remove="Images\BoxSprites\119.png" />
+    <None Remove="Images\BoxSprites\12.png" />
+    <None Remove="Images\BoxSprites\120.png" />
+    <None Remove="Images\BoxSprites\121.png" />
+    <None Remove="Images\BoxSprites\122.png" />
+    <None Remove="Images\BoxSprites\123.png" />
+    <None Remove="Images\BoxSprites\124.png" />
+    <None Remove="Images\BoxSprites\125.png" />
+    <None Remove="Images\BoxSprites\126.png" />
+    <None Remove="Images\BoxSprites\127.png" />
+    <None Remove="Images\BoxSprites\128.png" />
+    <None Remove="Images\BoxSprites\129.png" />
+    <None Remove="Images\BoxSprites\13.png" />
+    <None Remove="Images\BoxSprites\130.png" />
+    <None Remove="Images\BoxSprites\131.png" />
+    <None Remove="Images\BoxSprites\132.png" />
+    <None Remove="Images\BoxSprites\133.png" />
+    <None Remove="Images\BoxSprites\134.png" />
+    <None Remove="Images\BoxSprites\135.png" />
+    <None Remove="Images\BoxSprites\136.png" />
+    <None Remove="Images\BoxSprites\137.png" />
+    <None Remove="Images\BoxSprites\138.png" />
+    <None Remove="Images\BoxSprites\139.png" />
+    <None Remove="Images\BoxSprites\14.png" />
+    <None Remove="Images\BoxSprites\140.png" />
+    <None Remove="Images\BoxSprites\141.png" />
+    <None Remove="Images\BoxSprites\142.png" />
+    <None Remove="Images\BoxSprites\143.png" />
+    <None Remove="Images\BoxSprites\144.png" />
+    <None Remove="Images\BoxSprites\145.png" />
+    <None Remove="Images\BoxSprites\146.png" />
+    <None Remove="Images\BoxSprites\147.png" />
+    <None Remove="Images\BoxSprites\148.png" />
+    <None Remove="Images\BoxSprites\149.png" />
+    <None Remove="Images\BoxSprites\15.png" />
+    <None Remove="Images\BoxSprites\150.png" />
+    <None Remove="Images\BoxSprites\151.png" />
+    <None Remove="Images\BoxSprites\16.png" />
+    <None Remove="Images\BoxSprites\17.png" />
+    <None Remove="Images\BoxSprites\18.png" />
+    <None Remove="Images\BoxSprites\19.png" />
+    <None Remove="Images\BoxSprites\2.png" />
+    <None Remove="Images\BoxSprites\20.png" />
+    <None Remove="Images\BoxSprites\21.png" />
+    <None Remove="Images\BoxSprites\22.png" />
+    <None Remove="Images\BoxSprites\23.png" />
+    <None Remove="Images\BoxSprites\24.png" />
+    <None Remove="Images\BoxSprites\25.png" />
+    <None Remove="Images\BoxSprites\26.png" />
+    <None Remove="Images\BoxSprites\27.png" />
+    <None Remove="Images\BoxSprites\28.png" />
+    <None Remove="Images\BoxSprites\29.png" />
+    <None Remove="Images\BoxSprites\3.png" />
+    <None Remove="Images\BoxSprites\30.png" />
+    <None Remove="Images\BoxSprites\31.png" />
+    <None Remove="Images\BoxSprites\32.png" />
+    <None Remove="Images\BoxSprites\33.png" />
+    <None Remove="Images\BoxSprites\34.png" />
+    <None Remove="Images\BoxSprites\35.png" />
+    <None Remove="Images\BoxSprites\36.png" />
+    <None Remove="Images\BoxSprites\37.png" />
+    <None Remove="Images\BoxSprites\38.png" />
+    <None Remove="Images\BoxSprites\39.png" />
+    <None Remove="Images\BoxSprites\4.png" />
+    <None Remove="Images\BoxSprites\40.png" />
+    <None Remove="Images\BoxSprites\41.png" />
+    <None Remove="Images\BoxSprites\42.png" />
+    <None Remove="Images\BoxSprites\43.png" />
+    <None Remove="Images\BoxSprites\44.png" />
+    <None Remove="Images\BoxSprites\45.png" />
+    <None Remove="Images\BoxSprites\46.png" />
+    <None Remove="Images\BoxSprites\47.png" />
+    <None Remove="Images\BoxSprites\48.png" />
+    <None Remove="Images\BoxSprites\49.png" />
+    <None Remove="Images\BoxSprites\5.png" />
+    <None Remove="Images\BoxSprites\50.png" />
+    <None Remove="Images\BoxSprites\51.png" />
+    <None Remove="Images\BoxSprites\52.png" />
+    <None Remove="Images\BoxSprites\53.png" />
+    <None Remove="Images\BoxSprites\54.png" />
+    <None Remove="Images\BoxSprites\55.png" />
+    <None Remove="Images\BoxSprites\56.png" />
+    <None Remove="Images\BoxSprites\57.png" />
+    <None Remove="Images\BoxSprites\58.png" />
+    <None Remove="Images\BoxSprites\59.png" />
+    <None Remove="Images\BoxSprites\6.png" />
+    <None Remove="Images\BoxSprites\60.png" />
+    <None Remove="Images\BoxSprites\61.png" />
+    <None Remove="Images\BoxSprites\62.png" />
+    <None Remove="Images\BoxSprites\63.png" />
+    <None Remove="Images\BoxSprites\64.png" />
+    <None Remove="Images\BoxSprites\65.png" />
+    <None Remove="Images\BoxSprites\66.png" />
+    <None Remove="Images\BoxSprites\67.png" />
+    <None Remove="Images\BoxSprites\68.png" />
+    <None Remove="Images\BoxSprites\69.png" />
+    <None Remove="Images\BoxSprites\7.png" />
+    <None Remove="Images\BoxSprites\70.png" />
+    <None Remove="Images\BoxSprites\71.png" />
+    <None Remove="Images\BoxSprites\72.png" />
+    <None Remove="Images\BoxSprites\73.png" />
+    <None Remove="Images\BoxSprites\74.png" />
+    <None Remove="Images\BoxSprites\75.png" />
+    <None Remove="Images\BoxSprites\76.png" />
+    <None Remove="Images\BoxSprites\77.png" />
+    <None Remove="Images\BoxSprites\78.png" />
+    <None Remove="Images\BoxSprites\79.png" />
+    <None Remove="Images\BoxSprites\8.png" />
+    <None Remove="Images\BoxSprites\80.png" />
+    <None Remove="Images\BoxSprites\81.png" />
+    <None Remove="Images\BoxSprites\82.png" />
+    <None Remove="Images\BoxSprites\83.png" />
+    <None Remove="Images\BoxSprites\84.png" />
+    <None Remove="Images\BoxSprites\85.png" />
+    <None Remove="Images\BoxSprites\86.png" />
+    <None Remove="Images\BoxSprites\87.png" />
+    <None Remove="Images\BoxSprites\88.png" />
+    <None Remove="Images\BoxSprites\89.png" />
+    <None Remove="Images\BoxSprites\9.png" />
+    <None Remove="Images\BoxSprites\90.png" />
+    <None Remove="Images\BoxSprites\91.png" />
+    <None Remove="Images\BoxSprites\92.png" />
+    <None Remove="Images\BoxSprites\93.png" />
+    <None Remove="Images\BoxSprites\94.png" />
+    <None Remove="Images\BoxSprites\95.png" />
+    <None Remove="Images\BoxSprites\96.png" />
+    <None Remove="Images\BoxSprites\97.png" />
+    <None Remove="Images\BoxSprites\98.png" />
+    <None Remove="Images\BoxSprites\99.png" />
+    <None Remove="Images\BoxSprites\Shiny\1.png" />
+    <None Remove="Images\BoxSprites\Shiny\10.png" />
+    <None Remove="Images\BoxSprites\Shiny\100.png" />
+    <None Remove="Images\BoxSprites\Shiny\101.png" />
+    <None Remove="Images\BoxSprites\Shiny\102.png" />
+    <None Remove="Images\BoxSprites\Shiny\103.png" />
+    <None Remove="Images\BoxSprites\Shiny\104.png" />
+    <None Remove="Images\BoxSprites\Shiny\105.png" />
+    <None Remove="Images\BoxSprites\Shiny\106.png" />
+    <None Remove="Images\BoxSprites\Shiny\107.png" />
+    <None Remove="Images\BoxSprites\Shiny\108.png" />
+    <None Remove="Images\BoxSprites\Shiny\109.png" />
+    <None Remove="Images\BoxSprites\Shiny\11.png" />
+    <None Remove="Images\BoxSprites\Shiny\110.png" />
+    <None Remove="Images\BoxSprites\Shiny\111.png" />
+    <None Remove="Images\BoxSprites\Shiny\112.png" />
+    <None Remove="Images\BoxSprites\Shiny\113.png" />
+    <None Remove="Images\BoxSprites\Shiny\114.png" />
+    <None Remove="Images\BoxSprites\Shiny\115.png" />
+    <None Remove="Images\BoxSprites\Shiny\116.png" />
+    <None Remove="Images\BoxSprites\Shiny\117.png" />
+    <None Remove="Images\BoxSprites\Shiny\118.png" />
+    <None Remove="Images\BoxSprites\Shiny\119.png" />
+    <None Remove="Images\BoxSprites\Shiny\12.png" />
+    <None Remove="Images\BoxSprites\Shiny\120.png" />
+    <None Remove="Images\BoxSprites\Shiny\121.png" />
+    <None Remove="Images\BoxSprites\Shiny\122.png" />
+    <None Remove="Images\BoxSprites\Shiny\123.png" />
+    <None Remove="Images\BoxSprites\Shiny\124.png" />
+    <None Remove="Images\BoxSprites\Shiny\125.png" />
+    <None Remove="Images\BoxSprites\Shiny\126.png" />
+    <None Remove="Images\BoxSprites\Shiny\127.png" />
+    <None Remove="Images\BoxSprites\Shiny\128.png" />
+    <None Remove="Images\BoxSprites\Shiny\129.png" />
+    <None Remove="Images\BoxSprites\Shiny\13.png" />
+    <None Remove="Images\BoxSprites\Shiny\130.png" />
+    <None Remove="Images\BoxSprites\Shiny\131.png" />
+    <None Remove="Images\BoxSprites\Shiny\132.png" />
+    <None Remove="Images\BoxSprites\Shiny\133.png" />
+    <None Remove="Images\BoxSprites\Shiny\134.png" />
+    <None Remove="Images\BoxSprites\Shiny\135.png" />
+    <None Remove="Images\BoxSprites\Shiny\136.png" />
+    <None Remove="Images\BoxSprites\Shiny\137.png" />
+    <None Remove="Images\BoxSprites\Shiny\138.png" />
+    <None Remove="Images\BoxSprites\Shiny\139.png" />
+    <None Remove="Images\BoxSprites\Shiny\14.png" />
+    <None Remove="Images\BoxSprites\Shiny\140.png" />
+    <None Remove="Images\BoxSprites\Shiny\141.png" />
+    <None Remove="Images\BoxSprites\Shiny\142.png" />
+    <None Remove="Images\BoxSprites\Shiny\143.png" />
+    <None Remove="Images\BoxSprites\Shiny\144.png" />
+    <None Remove="Images\BoxSprites\Shiny\145.png" />
+    <None Remove="Images\BoxSprites\Shiny\146.png" />
+    <None Remove="Images\BoxSprites\Shiny\147.png" />
+    <None Remove="Images\BoxSprites\Shiny\148.png" />
+    <None Remove="Images\BoxSprites\Shiny\149.png" />
+    <None Remove="Images\BoxSprites\Shiny\15.png" />
+    <None Remove="Images\BoxSprites\Shiny\150.png" />
+    <None Remove="Images\BoxSprites\Shiny\151.png" />
+    <None Remove="Images\BoxSprites\Shiny\16.png" />
+    <None Remove="Images\BoxSprites\Shiny\17.png" />
+    <None Remove="Images\BoxSprites\Shiny\18.png" />
+    <None Remove="Images\BoxSprites\Shiny\19.png" />
+    <None Remove="Images\BoxSprites\Shiny\2.png" />
+    <None Remove="Images\BoxSprites\Shiny\20.png" />
+    <None Remove="Images\BoxSprites\Shiny\21.png" />
+    <None Remove="Images\BoxSprites\Shiny\22.png" />
+    <None Remove="Images\BoxSprites\Shiny\23.png" />
+    <None Remove="Images\BoxSprites\Shiny\24.png" />
+    <None Remove="Images\BoxSprites\Shiny\25.png" />
+    <None Remove="Images\BoxSprites\Shiny\26.png" />
+    <None Remove="Images\BoxSprites\Shiny\27.png" />
+    <None Remove="Images\BoxSprites\Shiny\28.png" />
+    <None Remove="Images\BoxSprites\Shiny\29.png" />
+    <None Remove="Images\BoxSprites\Shiny\3.png" />
+    <None Remove="Images\BoxSprites\Shiny\30.png" />
+    <None Remove="Images\BoxSprites\Shiny\31.png" />
+    <None Remove="Images\BoxSprites\Shiny\32.png" />
+    <None Remove="Images\BoxSprites\Shiny\33.png" />
+    <None Remove="Images\BoxSprites\Shiny\34.png" />
+    <None Remove="Images\BoxSprites\Shiny\35.png" />
+    <None Remove="Images\BoxSprites\Shiny\36.png" />
+    <None Remove="Images\BoxSprites\Shiny\37.png" />
+    <None Remove="Images\BoxSprites\Shiny\38.png" />
+    <None Remove="Images\BoxSprites\Shiny\39.png" />
+    <None Remove="Images\BoxSprites\Shiny\4.png" />
+    <None Remove="Images\BoxSprites\Shiny\40.png" />
+    <None Remove="Images\BoxSprites\Shiny\41.png" />
+    <None Remove="Images\BoxSprites\Shiny\42.png" />
+    <None Remove="Images\BoxSprites\Shiny\43.png" />
+    <None Remove="Images\BoxSprites\Shiny\44.png" />
+    <None Remove="Images\BoxSprites\Shiny\45.png" />
+    <None Remove="Images\BoxSprites\Shiny\46.png" />
+    <None Remove="Images\BoxSprites\Shiny\47.png" />
+    <None Remove="Images\BoxSprites\Shiny\48.png" />
+    <None Remove="Images\BoxSprites\Shiny\49.png" />
+    <None Remove="Images\BoxSprites\Shiny\5.png" />
+    <None Remove="Images\BoxSprites\Shiny\50.png" />
+    <None Remove="Images\BoxSprites\Shiny\51.png" />
+    <None Remove="Images\BoxSprites\Shiny\52.png" />
+    <None Remove="Images\BoxSprites\Shiny\53.png" />
+    <None Remove="Images\BoxSprites\Shiny\54.png" />
+    <None Remove="Images\BoxSprites\Shiny\55.png" />
+    <None Remove="Images\BoxSprites\Shiny\56.png" />
+    <None Remove="Images\BoxSprites\Shiny\57.png" />
+    <None Remove="Images\BoxSprites\Shiny\58.png" />
+    <None Remove="Images\BoxSprites\Shiny\59.png" />
+    <None Remove="Images\BoxSprites\Shiny\6.png" />
+    <None Remove="Images\BoxSprites\Shiny\60.png" />
+    <None Remove="Images\BoxSprites\Shiny\61.png" />
+    <None Remove="Images\BoxSprites\Shiny\62.png" />
+    <None Remove="Images\BoxSprites\Shiny\63.png" />
+    <None Remove="Images\BoxSprites\Shiny\64.png" />
+    <None Remove="Images\BoxSprites\Shiny\65.png" />
+    <None Remove="Images\BoxSprites\Shiny\66.png" />
+    <None Remove="Images\BoxSprites\Shiny\67.png" />
+    <None Remove="Images\BoxSprites\Shiny\68.png" />
+    <None Remove="Images\BoxSprites\Shiny\69.png" />
+    <None Remove="Images\BoxSprites\Shiny\7.png" />
+    <None Remove="Images\BoxSprites\Shiny\70.png" />
+    <None Remove="Images\BoxSprites\Shiny\71.png" />
+    <None Remove="Images\BoxSprites\Shiny\72.png" />
+    <None Remove="Images\BoxSprites\Shiny\73.png" />
+    <None Remove="Images\BoxSprites\Shiny\74.png" />
+    <None Remove="Images\BoxSprites\Shiny\75.png" />
+    <None Remove="Images\BoxSprites\Shiny\76.png" />
+    <None Remove="Images\BoxSprites\Shiny\77.png" />
+    <None Remove="Images\BoxSprites\Shiny\78.png" />
+    <None Remove="Images\BoxSprites\Shiny\79.png" />
+    <None Remove="Images\BoxSprites\Shiny\8.png" />
+    <None Remove="Images\BoxSprites\Shiny\80.png" />
+    <None Remove="Images\BoxSprites\Shiny\81.png" />
+    <None Remove="Images\BoxSprites\Shiny\82.png" />
+    <None Remove="Images\BoxSprites\Shiny\83.png" />
+    <None Remove="Images\BoxSprites\Shiny\84.png" />
+    <None Remove="Images\BoxSprites\Shiny\85.png" />
+    <None Remove="Images\BoxSprites\Shiny\86.png" />
+    <None Remove="Images\BoxSprites\Shiny\87.png" />
+    <None Remove="Images\BoxSprites\Shiny\88.png" />
+    <None Remove="Images\BoxSprites\Shiny\89.png" />
+    <None Remove="Images\BoxSprites\Shiny\9.png" />
+    <None Remove="Images\BoxSprites\Shiny\90.png" />
+    <None Remove="Images\BoxSprites\Shiny\91.png" />
+    <None Remove="Images\BoxSprites\Shiny\92.png" />
+    <None Remove="Images\BoxSprites\Shiny\93.png" />
+    <None Remove="Images\BoxSprites\Shiny\94.png" />
+    <None Remove="Images\BoxSprites\Shiny\95.png" />
+    <None Remove="Images\BoxSprites\Shiny\96.png" />
+    <None Remove="Images\BoxSprites\Shiny\97.png" />
+    <None Remove="Images\BoxSprites\Shiny\98.png" />
+    <None Remove="Images\BoxSprites\Shiny\99.png" />
+    <None Remove="Images\MiscIcons\checked.png" />
+    <None Remove="Images\MiscIcons\close.png" />
+    <None Remove="Images\MiscIcons\closeFilled.png" />
+    <None Remove="Images\MiscIcons\closeInverted.png" />
+    <None Remove="Images\MiscIcons\maximize.png" />
+    <None Remove="Images\MiscIcons\maximizeInverted.png" />
+    <None Remove="Images\MiscIcons\minus.png" />
+    <None Remove="Images\MiscIcons\minusFilled.png" />
+    <None Remove="Images\MiscIcons\minusInverted.png" />
+    <None Remove="Images\MiscIcons\unchecked.png" />
+    <None Remove="Images\pokeIcon.ico" />
+    <None Remove="Images\TypeSprites\bug.png" />
+    <None Remove="Images\TypeSprites\dark.png" />
+    <None Remove="Images\TypeSprites\dragon.png" />
+    <None Remove="Images\TypeSprites\electric.png" />
+    <None Remove="Images\TypeSprites\fairy.png" />
+    <None Remove="Images\TypeSprites\fighting.png" />
+    <None Remove="Images\TypeSprites\fire.png" />
+    <None Remove="Images\TypeSprites\flying.png" />
+    <None Remove="Images\TypeSprites\ghost.png" />
+    <None Remove="Images\TypeSprites\grass.png" />
+    <None Remove="Images\TypeSprites\ground.png" />
+    <None Remove="Images\TypeSprites\ice.png" />
+    <None Remove="Images\TypeSprites\normal.png" />
+    <None Remove="Images\TypeSprites\poison.png" />
+    <None Remove="Images\TypeSprites\psychic.png" />
+    <None Remove="Images\TypeSprites\rock.png" />
+    <None Remove="Images\TypeSprites\steel.png" />
+    <None Remove="Images\TypeSprites\water.png" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <Resource Remove="Images\pokeIcon.ico" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <Resource Include="Images\AnimatedSprites\Regular\abra.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\aerodactyl.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\alakazam.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\arbok.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\arcanine.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\articuno.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\beedrill.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\bellsprout.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\blastoise.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\bulbasaur.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\butterfree.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\caterpie.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\chansey.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\charizard.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\charmander.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\charmeleon.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\clefable.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\clefairy.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\cloyster.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\cubone.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\dewgong.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\diglett.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\ditto.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\dodrio.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\doduo.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\dragonair.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\dragonite.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\dratini.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\drowzee.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\dugtrio.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\eevee.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\ekans.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\electabuzz.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\electrode.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\exeggcute.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\exeggutor.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\fearow.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\flareon.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\gengar.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\geodude.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\ghastly.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\gloom.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\golbat.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\goldeen.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\golduck.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\golem.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\graveler.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\grimer.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\growlithe.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\gyarados.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\haunter.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\hitmonchan.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\hitmonlee.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\horsea.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\hypno.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\ivysaur.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\jigglypuff.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\jolteon.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\jynx.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\kabuto.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\kabutops.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\kadabra.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\kakuna.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\kangaskhan.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\kingler.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\koffing.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\krabby.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\lapras.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\lickitung.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\machamp.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\machoke.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\machop.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\magikarp.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\magmar.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\magnemite.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\magneton.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\mankey.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\marowak.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\meowth.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\metapod.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\mew.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\mewtwo.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\moltres.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\mr._mime.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\muk.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\nidoking.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\nidoqueen.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\nidoran_f.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\nidoran_m.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\nidorina.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\nidorino.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\ninetales.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\oddish.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\omanyte.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\omastar.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\onix.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\paras.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\parasect.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\persian.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\pidgeot.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\pidgeotto.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\pidgey.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\pikachu.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\pinsir.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\poliwag.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\poliwhirl.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\poliwrath.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\ponyta.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\porygon.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\primeape.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\psyduck.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\raichu.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\rapidash.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\raticate.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\rattata.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\rhydon.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\rhyhorn.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\sandshrew.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\sandslash.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\scyther.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\seadra.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\seaking.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\seel.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\shellder.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\slowbro.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\slowpoke.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\snorlax.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\spearow.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\squirtle.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\starmie.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\staryu.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\tangela.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\tauros.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\tentacool.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\tentacruel.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\vaporeon.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\venomoth.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\venonat.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\venusaur.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\victreebel.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\vileplume.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\voltorb.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\vulpix.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\wartortle.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\weedle.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\weepinbell.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\weezing.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\wigglytuff.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\zapdos.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AnimatedSprites\Regular\zubat.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\BackgroundSprites\outerSpace.png" />
+    <Content Include="Audio\Cries\001_bulbasaur.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\002_ivysaur.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\003_venusaur.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\004_charmander.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\005_charmeleon.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\006_charizard.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\007_squirtle.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\008_wartortle.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\009_blastoise.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\010_caterpie.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\011_metapod.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\012_butterfree.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\013_weedle.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\014_kakuna.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\015_beedrill.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\016_pidgey.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\017_pidgeotto.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\018_pidgeot.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\019_rattata.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\020_raticate.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\021_spearow.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\022_fearow.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\023_ekans.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\024_arbok.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\025_pikachu.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\026_raichu.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\027_sandshrew.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\028_sandslash.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\029_nidoran_f.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\030_nidorina.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\031_nidoqueen.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\032_nidoran_m.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\033_nidorino.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\034_nidoking.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\035_clefairy.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\036_clefable.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\037_vulpix.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\038_ninetales.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\039_jigglypuff.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\040_wigglytuff.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\041_zubat.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\042_golbat.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\043_oddish.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\044_gloom.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\045_vileplume.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\046_paras.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\047_parasect.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\048_venonat.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\049_venomoth.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\050_diglett.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\051_dugtrio.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\052_meowth.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\053_persian.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\054_psyduck.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\055_golduck.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\056_mankey.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\057_primeape.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\058_growlithe.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\059_arcanine.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\060_poliwag.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\061_poliwhirl.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\062_poliwrath.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\063_abra.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\064_kadabra.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\065_alakazam.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\066_machop.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\067_machoke.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\068_machamp.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\069_bellsprout.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\070_weepinbell.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\071_victreebel.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\072_tentacool.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\073_tentacruel.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\074_geodude.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\075_graveler.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\076_golem.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\077_ponyta.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\078_rapidash.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\079_slowpoke.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\080_slowbro.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\081_magnemite.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\082_magneton.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\083_farfetch'd.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\084_doduo.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\085_dodrio.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\086_seel.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\087_dewgong.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\088_grimer.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\089_muk.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\090_shellder.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\091_cloyster.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\092_gastly.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\093_haunter.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\094_gengar.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\095_onix.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\096_drowzee.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\097_hypno.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\098_krabby.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\099_kingler.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\100_voltorb.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\101_electrode.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\102_exeggcute.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\103_exeggutor.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\104_cubone.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\105_marowak.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\106_hitmonlee.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\107_hitmonchan.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\108_lickitung.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\109_koffing.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\110_weezing.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\111_rhyhorn.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\112_rhydon.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\113_chansey.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\114_tangela.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\115_kangaskhan.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\116_horsea.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\117_seadra.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\118_goldeen.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\119_seaking.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\120_staryu.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\121_starmie.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\122_mr.mime.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\123_scyther.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\124_jynx.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\125_electabuzz.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\126_magmar.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\127_pinsir.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\128_tauros.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\129_magikarp.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\130_gyarados.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\131_lapras.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\132_ditto.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\133_eevee.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\134_vaporeon.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\135_jolteon.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\136_flareon.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\137_porygon.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\138_omanyte.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\139_omastar.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\140_kabuto.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\141_kabutops.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\142_aerodactyl.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\143_snorlax.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\144_articuno.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\145_zapdos.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\146_moltres.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\147_dratini.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\148_dragonair.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\149_dragonite.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\150_mewtwo.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Cries\151_mew.flac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\Music\116 Pokemon Center (Daytime).mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Regular\farfetch'd.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\1.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\10.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\100.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\101.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\102.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\103.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\104.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\105.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\106.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\107.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\108.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\109.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\11.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\110.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\111.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\112.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\113.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\114.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\115.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\116.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\117.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\118.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\119.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\12.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\120.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\121.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\122.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\123.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\124.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\125.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\126.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\127.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\128.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\129.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\13.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\130.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\131.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\132.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\133.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\134.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\135.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\136.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\137.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\138.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\139.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\14.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\140.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\141.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\142.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\143.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\144.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\145.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\146.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\147.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\148.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\149.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\15.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\150.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\151.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\16.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\17.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\18.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\19.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\2.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\20.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\21.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\22.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\23.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\24.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\25.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\26.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\27.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\28.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\29.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\3.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\30.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\31.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\32.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\33.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\34.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\35.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\36.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\37.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\38.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\39.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\4.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\40.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\41.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\42.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\43.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\44.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\45.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\46.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\47.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\48.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\49.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\5.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\50.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\51.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\52.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\53.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\54.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\55.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\56.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\57.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\58.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\59.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\6.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\60.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\61.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\62.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\63.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\64.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\65.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\66.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\67.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\68.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\69.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\7.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\70.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\71.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\72.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\73.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\74.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\75.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\76.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\77.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\78.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\79.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\8.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\80.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\81.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\82.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\83.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\84.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\85.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\86.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\87.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\88.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\89.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\9.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\90.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\91.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\92.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\93.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\94.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\95.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\96.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\97.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\98.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AnimatedSprites\Shiny\99.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\10.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\100.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\101.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\102.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\103.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\104.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\105.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\106.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\107.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\108.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\109.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\11.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\110.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\111.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\112.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\113.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\114.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\115.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\116.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\117.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\118.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\119.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\12.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\120.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\121.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\122.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\123.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\124.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\125.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\126.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\127.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\128.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\129.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\13.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\130.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\131.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\132.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\133.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\134.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\135.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\136.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\137.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\138.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\139.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\14.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\140.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\141.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\142.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\143.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\144.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\145.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\146.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\147.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\148.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\149.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\15.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\150.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\151.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\16.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\17.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\18.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\19.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\20.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\21.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\22.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\23.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\24.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\25.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\26.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\27.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\28.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\29.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\3.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\30.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\31.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\32.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\33.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\34.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\35.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\36.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\37.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\38.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\39.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\4.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\40.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\41.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\42.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\43.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\44.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\45.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\46.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\47.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\48.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\49.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\5.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\50.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\51.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\52.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\53.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\54.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\55.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\56.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\57.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\58.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\59.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\6.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\60.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\61.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\62.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\63.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\64.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\65.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\66.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\67.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\68.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\69.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\7.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\70.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\71.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\72.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\73.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\74.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\75.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\76.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\77.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\78.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\79.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\8.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\80.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\81.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\82.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\83.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\84.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\85.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\86.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\87.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\88.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\89.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\9.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\90.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\91.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\92.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\93.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\94.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\95.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\96.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\97.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\98.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Regular\99.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\10.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\100.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\101.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\102.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\103.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\104.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\105.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\106.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\107.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\108.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\109.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\11.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\110.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\111.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\112.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\113.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\114.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\115.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\116.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\117.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\118.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\119.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\12.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\120.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\121.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\122.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\123.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\124.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\125.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\126.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\127.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\128.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\129.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\13.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\130.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\131.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\132.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\133.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\134.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\135.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\136.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\137.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\138.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\139.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\14.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\140.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\141.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\142.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\143.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\144.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\145.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\146.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\147.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\148.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\149.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\15.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\150.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\151.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\16.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\17.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\18.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\19.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\20.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\21.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\22.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\23.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\24.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\25.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\26.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\27.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\28.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\29.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\3.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\30.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\31.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\32.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\33.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\34.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\35.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\36.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\37.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\38.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\39.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\4.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\40.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\41.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\42.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\43.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\44.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\45.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\46.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\47.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\48.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\49.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\5.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\50.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\51.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\52.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\53.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\54.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\55.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\56.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\57.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\58.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\59.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\6.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\60.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\61.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\62.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\63.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\64.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\65.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\66.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\67.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\68.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\69.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\7.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\70.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\71.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\72.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\73.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\74.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\75.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\76.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\77.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\78.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\79.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\8.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\80.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\81.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\82.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\83.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\84.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\85.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\86.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\87.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\88.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\89.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\9.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\90.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\91.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\92.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\93.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\94.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\95.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\96.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\97.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\98.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BoxSprites\Shiny\99.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\MiscIcons\checked.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\MiscIcons\close.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\MiscIcons\closeFilled.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\MiscIcons\closeInverted.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\MiscIcons\maximize.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\MiscIcons\maximizeInverted.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\MiscIcons\minus.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\MiscIcons\minusFilled.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\MiscIcons\minusInverted.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\MiscIcons\unchecked.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\TypeSprites\bug.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\TypeSprites\dark.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\TypeSprites\dragon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\TypeSprites\electric.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\TypeSprites\fairy.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\TypeSprites\fighting.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\TypeSprites\fire.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\TypeSprites\flying.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\TypeSprites\ghost.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\TypeSprites\grass.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\TypeSprites\ground.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\TypeSprites\ice.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\TypeSprites\normal.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\TypeSprites\poison.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\TypeSprites\psychic.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\TypeSprites\rock.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\TypeSprites\steel.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\TypeSprites\water.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <PackageReference Include="WpfAnimatedGif" Version="2.0.2" />
+  </ItemGroup>
+
+</Project>

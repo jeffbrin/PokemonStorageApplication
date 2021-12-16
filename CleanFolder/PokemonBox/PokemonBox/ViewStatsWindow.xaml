@@ -1,0 +1,345 @@
+﻿<Window x:Class="PokemonBox.ViewStatsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PokemonBox.Models"
+        mc:Ignorable="d"
+xmlns:gif="http://wpfanimatedgif.codeplex.com"
+        Title="Pokemon Stats" Height="500" Width="900"
+        WindowStyle="None"
+        SizeToContent="Manual"
+        Background="#181735"
+        Foreground="White"
+        ResizeMode="NoResize" WindowStartupLocation="CenterScreen" FontFamily="Baloo Bhaijaan 2">
+    <Window.Resources>
+        <ResourceDictionary>
+            <!--ovverride the Hover Effect on Buttons-->
+            <Style x:Key="btnNoHoverEffect" TargetType="Button">
+                <Setter Property="OverridesDefaultStyle" Value="True"/>
+                <Setter Property="Margin" Value="5"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <Border Name="border" 
+                        BorderThickness="1"
+                        Padding="4,2" 
+                        BorderBrush="Transparent" 
+                        CornerRadius="30" 
+                        Background="#4657c7">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="border" Property="Background" Value="#516fff"/>
+                                    <Setter Property="Cursor" Value="Hand"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="20.5*"/>
+            <RowDefinition Height="0.5*"/>
+        </Grid.RowDefinitions>
+        <!--Header-->
+        <Grid x:Name="grdHeader" Background="#000014" Grid.ColumnSpan="2" Grid.Row="0"
+              MouseDown="grdHeader_MouseDown" Panel.ZIndex="4" AutomationProperties.IsColumnHeader="True" AutomationProperties.IsOffscreenBehavior="Onscreen">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition Width="7*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Text="Your PC" Foreground="White" Grid.Column="0" TextAlignment="Center"
+                       HorizontalAlignment="Left" FontFamily="Baloo Bhaijaan 2" FontSize="20" Margin="50,0,0,0"/>
+            <TextBlock Text="Pokemon Stats" Foreground="White" Grid.Column="0" Grid.ColumnSpan="3" TextAlignment="Center"
+                       HorizontalAlignment="Center"  FontFamily="Fonts/Baloo.ttf" FontSize="20"/>
+
+            <Image Grid.Column="2" HorizontalAlignment="Left" Width="15"
+                   Height="15" Margin="15,0,0,0" x:Name="imgMinus"
+                   MouseLeftButtonDown="imgMinus_MouseLeftButtonDown" ToolTip="Minimize">
+                <Image.Style>
+                    <Style TargetType="{x:Type Image}">
+                        <Setter Property="Source" Value="/Images/MiscIcons/minusFilled.png"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Cursor" Value="Hand"/>
+                                <Setter Property="Source" Value="/Images/MiscIcons/minusInverted.png"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Image.Style>
+            </Image>
+            <Image Grid.Column="2" HorizontalAlignment="Right" Margin="0,0,15,0" Width="15" Height="15"
+                   x:Name="imgClose" MouseLeftButtonDown="imgClose_MouseLeftButtonDown" ToolTip="Close">
+                <Image.Style>
+                    <Style TargetType="{x:Type Image}">
+                        <Setter Property="Source" Value="/Images/MiscIcons/closeFilled.png"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Cursor" Value="Hand"/>
+                                <Setter Property="Source" Value="/Images/MiscIcons/closeInverted.png"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Image.Style>
+            </Image>
+        </Grid>
+        <Grid Grid.Row="1" x:Name="spPokemonDisplay" Margin="15,15,15,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="7*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="2*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <!--Name and pokedex number-->
+            <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal">
+                <!--Pokemon species and dex # selected-->
+                <TextBlock FontSize="32" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Black">
+                    <TextBlock.Text>
+                        <MultiBinding StringFormat=" {0} - #{1}">
+                            <Binding Path="Species"/>
+                            <Binding Path="PokedexNumber"/>
+                        </MultiBinding>
+                    </TextBlock.Text>
+                </TextBlock>
+            </StackPanel>
+            <!--The pokemon image-->
+            <Viewbox StretchDirection="Both" Grid.Row="1" Grid.Column="0">
+                <Image x:Name="imgSelectedSpecies" gif:ImageBehavior.AnimatedSource="{Binding AnimatedSpritePath}" 
+                   Height="300" Width="300"/>
+            </Viewbox>
+            
+
+            <!--Grid to display pokemon types-->
+            <Border Grid.Row="2" Grid.RowSpan="2" Grid.Column="0" Background="#20214b" CornerRadius="30">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Grid.Row="0" x:Name="spTypeOne" Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center"  HorizontalAlignment="Center">
+                        <Image Source="{Binding Types[0].ImagePath}" Height="25" Width="25"/>
+                        <TextBlock FontSize="20" Text="{Binding Types[0].Name}" Margin="5 0 0 0"/>
+                    </StackPanel>
+                    <StackPanel Grid.Row="0" x:Name="spTypeTwo" Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center"  HorizontalAlignment="Center">
+                        <Image Source="{Binding Types[1].ImagePath}" Height="25" Width="25"/>
+                        <TextBlock FontSize="20" Text="{Binding Types[1].Name}" Margin="5 0 0 0"/>
+                    </StackPanel>
+                    <Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <!--Shiny-->
+                        <StackPanel HorizontalAlignment="Center" Grid.Column="0" Orientation="Horizontal">
+                            <Label Content="Shiny" Foreground="White" VerticalAlignment="Center"/>
+                            <CheckBox VerticalAlignment="Center" Grid.Row="3" IsEnabled="False" IsChecked="{Binding IsShiny}"/>
+                        </StackPanel>
+
+                        <!--Gender-->
+                        <StackPanel HorizontalAlignment="Center" Grid.Column="1" Orientation="Horizontal">
+                            <Label Content="Sex:" Foreground="White" VerticalAlignment="Center"/>
+                            <TextBlock Text="{Binding Sex}" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Grid>
+                </Grid>
+            </Border>
+            <!--Grid for base stats-->
+            <Border Grid.Column="1" Grid.RowSpan="2" VerticalAlignment="Stretch" Background="#20214b" CornerRadius="30"
+                    Margin="15,0,0,15">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="2*"/>
+                        <RowDefinition Height="2*"/>
+                        <RowDefinition Height="2*"/>
+                    </Grid.RowDefinitions>
+
+                    <!--Stack pannels for each base stat-->
+                    <TextBlock Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Text="Base Stats" FontSize="25" FontWeight="ExtraBold" HorizontalAlignment="Center"/>
+                    <StackPanel Grid.Column="0" Grid.Row="1">
+                        <TextBlock Text="Health" FontSize="18" FontWeight="Bold" HorizontalAlignment="Center"/>
+                        <TextBlock Text="{Binding BaseHealth}" HorizontalAlignment="Center" FontWeight="SemiBold" FontSize="22" Margin="0,15,0,0"/>
+                    </StackPanel>
+                    <StackPanel Grid.Column="1" Grid.Row="1">
+                        <TextBlock Text="Speed" FontSize="18" FontWeight="Bold" HorizontalAlignment="Center"/>
+                        <TextBlock Text="{Binding BaseSpeed}" HorizontalAlignment="Center" FontWeight="SemiBold" FontSize="22" Margin="0,15,0,0"/>
+                    </StackPanel>
+                    <StackPanel Grid.Column="0" Grid.Row="2">
+                        <TextBlock Text="Attack" FontSize="18" FontWeight="Bold" HorizontalAlignment="Center"/>
+                        <TextBlock Text="{Binding BaseAttack}" HorizontalAlignment="Center" FontWeight="SemiBold" FontSize="22" Margin="0,15,0,0"/>
+                    </StackPanel>
+                    <StackPanel Grid.Column="1" Grid.Row="2">
+                        <TextBlock Text="Defence" FontSize="18" FontWeight="Bold" HorizontalAlignment="Center"/>
+                        <TextBlock Text="{Binding BaseDefence}" HorizontalAlignment="Center" FontWeight="SemiBold" FontSize="22" Margin="0,15,0,0"/>
+                    </StackPanel>
+                    <StackPanel Grid.Column="0" Grid.Row="3">
+                        <TextBlock Text="Special Attack" FontSize="18" FontWeight="Bold" HorizontalAlignment="Center"/>
+                        <TextBlock Text="{Binding BaseSpecialAttack}" HorizontalAlignment="Center" FontWeight="SemiBold" FontSize="22" Margin="0,15,0,0"/>
+                    </StackPanel>
+                    <StackPanel Grid.Column="2" Grid.Row="3">
+                        <TextBlock Text="Special Defence" FontSize="18" FontWeight="Bold" HorizontalAlignment="Center"/>
+                        <TextBlock Text="{Binding BaseSpecialDefence}" HorizontalAlignment="Center" FontWeight="SemiBold" FontSize="22" Margin="0,15,0,0"/>
+                    </StackPanel>
+
+                </Grid>
+            </Border>
+            
+            <Grid Grid.Column="2" Grid.Row="0" Grid.RowSpan="2">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Border Background="#20214b" CornerRadius="30" Margin="15,0,0,15">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="1*"/>
+                                <RowDefinition Height="2*"/>
+                                <RowDefinition Height="2*"/>
+                                <RowDefinition Height="2*"/>
+                                <RowDefinition Height="2*"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Row="0" Text="Attacks" FontWeight="ExtraBold" Foreground="White" FontSize="25" HorizontalAlignment="Center"/>
+                            <Grid Grid.Row="1" HorizontalAlignment="Center">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <Grid Grid.Row="0" HorizontalAlignment="Center">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="3*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Image VerticalAlignment="Center" Width="15" HorizontalAlignment="Right" Source="{Binding Attacks[0].AttackType.ImagePath}"/>
+                                    <TextBlock Grid.Column="1" FontWeight="SemiBold" Margin="5,0,0,0" VerticalAlignment="Center" TextAlignment="Left" Text="{Binding Attacks[0].Name}"/>
+                                </Grid>
+                                <TextBlock Grid.Row="1" TextAlignment="Center" HorizontalAlignment="Center">
+                                    <TextBlock.Text>
+                                        <MultiBinding StringFormat=" Base Power: {0}">
+                                            <Binding Path="Attacks[0].Power"/>
+                                        </MultiBinding>
+                                    </TextBlock.Text>
+                                </TextBlock>
+                                <TextBlock Margin="5,-10,5,0" TextAlignment="Center" Grid.Row="2" Text="{Binding Attacks[0].Description}"/>
+                            </Grid>
+                            <Grid Grid.Row="2" HorizontalAlignment="Center">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <Grid Grid.Row="0" HorizontalAlignment="Center">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="3*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Image VerticalAlignment="Center" Width="15" HorizontalAlignment="Right" Source="{Binding Attacks[1].AttackType.ImagePath}"/>
+                                    <TextBlock Grid.Column="1" FontWeight="SemiBold" Margin="5,0,0,0" VerticalAlignment="Center" TextAlignment="Left" Text="{Binding Attacks[1].Name}"/>
+                                </Grid>
+                                <TextBlock Grid.Row="1" TextAlignment="Center">
+                                    <TextBlock.Text>
+                                        <MultiBinding StringFormat=" Base Power: {0}">
+                                            <Binding Path="Attacks[1].Power"/>
+                                        </MultiBinding>
+                                    </TextBlock.Text>
+                                </TextBlock>
+                                <TextBlock Grid.Row="2" Margin="5,-10,5,0" TextAlignment="Center" Text="{Binding Attacks[1].Description}"/>
+                            </Grid>
+                            <Grid Grid.Row="3" HorizontalAlignment="Center">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <Grid Grid.Row="0" HorizontalAlignment="Center">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="3*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Image VerticalAlignment="Center" Width="15" HorizontalAlignment="Right" Source="{Binding Attacks[2].AttackType.ImagePath}"/>
+                                    <TextBlock Grid.Column="1" FontWeight="SemiBold" Margin="5,0,0,0" VerticalAlignment="Center" TextAlignment="Left" Text="{Binding Attacks[2].Name}"/>
+                                </Grid>
+                                <TextBlock Grid.Row="1" TextAlignment="Center">
+                                    <TextBlock.Text>
+                                        <MultiBinding StringFormat=" Base Power: {0}">
+                                            <Binding Path="Attacks[2].Power"/>
+                                        </MultiBinding>
+                                    </TextBlock.Text>
+                                </TextBlock>
+                                <TextBlock TextAlignment="Center" Margin="5,-10,5,0" Grid.Row="2" Text="{Binding Attacks[2].Description}"/>
+                            </Grid>
+                            <Grid Grid.Row="4" HorizontalAlignment="Center">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <Grid Grid.Row="0" HorizontalAlignment="Center">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="3*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Image VerticalAlignment="Center" Width="15" HorizontalAlignment="Right" Source="{Binding Attacks[3].AttackType.ImagePath}"/>
+                                    <TextBlock Grid.Column="1" FontWeight="SemiBold" Margin="5,0,0,0" VerticalAlignment="Center" TextWrapping="Wrap" TextAlignment="Left" Text="{Binding Attacks[3].Name}"/>
+                                </Grid>
+                                <TextBlock Grid.Row="1" TextAlignment="Center">
+                                    <TextBlock.Text>
+                                        <MultiBinding StringFormat=" Base Power: {0}">
+                                            <Binding Path="Attacks[3].Power"/>
+                                        </MultiBinding>
+                                    </TextBlock.Text>
+                                </TextBlock>
+                                <TextBlock TextAlignment="Center" Grid.Row="2" TextWrapping="Wrap" Text="{Binding Attacks[3].Description}" Margin="5,-10,5,0"/>
+                            </Grid>
+                        </Grid>
+                    </Border>
+                </Grid>
+            </Grid>
+            <Border Grid.Column="1" Grid.RowSpan="2" Grid.Row="2" Background="#20214b" CornerRadius="30" Margin="15,0,0,0">
+                <Grid VerticalAlignment="Center" Height="120">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="2*"/>
+                        <RowDefinition Height="2*"/>
+                        <RowDefinition Height="4*"/>
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="0" Margin="0,-5,0,0" HorizontalAlignment="Center" Content="Ability" FontWeight="Medium" FontSize="16" Foreground="White"/>
+                    <TextBlock Grid.Row="1" Margin="0,-5,0,0" Text="{Binding Ability.Name}" TextAlignment="Center" VerticalAlignment="Center"/>
+                    <TextBlock Grid.Row="2" Text="{Binding Ability.Description}" TextAlignment="Center"
+                               VerticalAlignment="Center" TextWrapping="Wrap" FontSize="12" Margin="10,-10,10,0"/>
+                </Grid>
+            </Border>
+            
+
+            <!--Functionality Buttons-->
+            <Grid Grid.Column="2" Grid.Row="2" Grid.RowSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button  Style="{StaticResource btnNoHoverEffect}" Width="150" Height="75" Grid.Column="0" FontSize="25" Content="Exit" x:Name="btnExitPokemonCreation" Click="btnExitPokemonCreation_Click"/>
+            </Grid>
+        </Grid>
+        <TextBlock Grid.Row="2" HorizontalAlignment="Right" Text="© The FireNation" VerticalAlignment="Bottom" FontStyle="Italic"/>
+    </Grid>
+</Window>
