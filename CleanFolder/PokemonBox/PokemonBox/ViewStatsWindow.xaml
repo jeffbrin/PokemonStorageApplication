@@ -104,17 +104,20 @@ xmlns:gif="http://wpfanimatedgif.codeplex.com"
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <!--Name and pokedex number-->
-            <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal">
-                <!--Pokemon species and dex # selected-->
-                <TextBlock FontSize="32" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Black">
-                    <TextBlock.Text>
-                        <MultiBinding StringFormat=" {0} - #{1}">
-                            <Binding Path="Species"/>
-                            <Binding Path="PokedexNumber"/>
-                        </MultiBinding>
-                    </TextBlock.Text>
-                </TextBlock>
-            </StackPanel>
+            <Viewbox Grid.Row="0" Grid.Column="0" StretchDirection="Both">
+                <StackPanel Orientation="Horizontal">
+                    <!--Pokemon species and dex # selected-->
+                    <TextBlock FontSize="32" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Black">
+                        <TextBlock.Text>
+                            <MultiBinding StringFormat=" {0} - #{1}">
+                                <Binding Path="Species"/>
+                                <Binding Path="PokedexNumber"/>
+                            </MultiBinding>
+                        </TextBlock.Text>
+                    </TextBlock>
+                </StackPanel>
+            </Viewbox>
+            
             <!--The pokemon image-->
             <Viewbox StretchDirection="Both" Grid.Row="1" Grid.Column="0">
                 <Image x:Name="imgSelectedSpecies" gif:ImageBehavior.AnimatedSource="{Binding AnimatedSpritePath}" 
