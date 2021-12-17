@@ -175,7 +175,13 @@ namespace PokemonBox
             else
             {
                 // Show an error message indicating that the box is full
-                MessageBox.Show("The box is full! Remove some pokemon before adding more.", "Full Box", MessageBoxButton.OK, MessageBoxImage.Error);
+                ErrorMessage em = new ErrorMessage("The box is full! Remove some pokemon before adding more");
+                em.btnError1.Content = "OK";
+                em.btnError2.Content = "Exit";
+                Grid.SetColumnSpan(em.btnError2, 2);
+                em.grdButtons.Children.Remove((UIElement)em.FindName("btnError3"));
+                em.Show();
+                //MessageBox.Show("The box is full! Remove some pokemon before adding more.", "Full Box", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
@@ -348,7 +354,15 @@ namespace PokemonBox
                     if (!pcBox.LoadFromFile(saveLocation))
                     {
                         // Show error and revert to old save location and state
-                        MessageBox.Show("Error loading data from file.", "Failed to load", MessageBoxButton.OK, MessageBoxImage.Error);
+                        ErrorMessage em = new ErrorMessage("Error loading data from file.");
+                        em.btnError1.Content = "OK";
+                        em.btnError2.Content = "Exit";
+                        //Because no 3rd button make second span
+                        Grid.SetColumnSpan(em.btnError2, 2);
+                        //Remove 3rd Button
+                        em.grdButtons.Children.Remove((UIElement)em.FindName("btnError3"));
+                        em.Show();
+                        //MessageBox.Show("Error loading data from file.", "Failed to load", MessageBoxButton.OK, MessageBoxImage.Error);
                         saveLocation = oldSaveLocation;
                         Saved = oldSaved;
                     }
@@ -380,10 +394,29 @@ namespace PokemonBox
                 return true;
 
             // Check if the user wants to save
+
+            //ErrorMessage errorMessage = new ErrorMessage("Do you want to save changes?");
+            //errorMessage.btnError1.Content = "Yes";
+            //errorMessage.btnError2.Content = "No";
+            //errorMessage.btnError3.Content = "Cancel";
+            //errorMessage.Show();
+            //ErrorMessage.ErrorMessageResult result = errorMessage.ChooseErrorMessageresult;
+
+            //if (result == ErrorMessage.ErrorMessageResult.No)
+            //    return true;
+
+            ////if Cancel the loading
+            //if (result == ErrorMessage.ErrorMessageResult.Cancel)
+            //    return false;
+
+            //if (result == ErrorMessage.ErrorMessageResult.Yes)
+            //    SaveLogic();
+
+            //return saved;
+
             MessageBoxResult result =
             MessageBox.Show("Do you want to save changes?", "Unsaved data", MessageBoxButton.YesNoCancel, MessageBoxImage.Warning);
-
-            // If the user doesn't want to save 
+            //If the user doesn't want to save 
             if (result == MessageBoxResult.No)
                 return true;
 

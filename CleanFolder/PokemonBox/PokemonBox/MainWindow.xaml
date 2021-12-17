@@ -72,54 +72,69 @@
                 <ColumnDefinition Width="1*"/>
             </Grid.ColumnDefinitions>
 
-            <TextBlock Text="Your PC" Foreground="White" Grid.Column="0" TextAlignment="Center"
+            <Viewbox Grid.Column="0" StretchDirection="Both">
+                <TextBlock Text="Your PC" Foreground="White" TextAlignment="Center"
                        HorizontalAlignment="Left" FontFamily="Baloo Bhaijaan 2" FontSize="20" Margin="50,0,0,0"/>
-            <TextBlock Text="POKEMON BOX" Foreground="White" Grid.Column="1" TextAlignment="Center"
-                       HorizontalAlignment="Center"  FontSize="20" FontFamily="Baloo Bhaijaan 2"/>
+            </Viewbox>
 
-            <Image Grid.Column="2" HorizontalAlignment="Left" Width="15"
+            <Viewbox Grid.Column="1">
+                <TextBlock Text="POKEMON BOX" Foreground="White" TextAlignment="Center"
+                       HorizontalAlignment="Center"  FontSize="20" FontFamily="Baloo Bhaijaan 2"/>
+            </Viewbox>
+
+            <Viewbox Grid.Column="2">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Image Grid.Column="0" HorizontalAlignment="Left" Width="15"
                    Height="15" Margin="15,0,0,0" x:Name="imgMinus"
                    MouseLeftButtonDown="imgMinus_MouseLeftButtonDown" ToolTip="Minimize">
-                <Image.Style>
-                    <Style TargetType="{x:Type Image}">
-                        <Setter Property="Source" Value="/Images/MiscIcons/minusFilled.png"/>
-                        <Style.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Cursor" Value="Hand"/>
-                                <Setter Property="Source" Value="/Images/MiscIcons/minusInverted.png"/>
-                            </Trigger>
-                        </Style.Triggers>
-                    </Style>
-                </Image.Style>
-            </Image>
-            <Image Grid.Column="2" HorizontalAlignment="Center" Width="15" Height="15"
-                   x:Name="imgMax" MouseLeftButtonDown="imgMax_MouseLeftButtonDown" ToolTip="Maximize/Restore">
-                <Image.Style>
-                    <Style TargetType="{x:Type Image}">
-                        <Setter Property="Source" Value="/Images/MiscIcons/maximize.png"/>
-                        <Style.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Cursor" Value="Hand"/>
-                                <Setter Property="Source" Value="/Images/MiscIcons/maximizeInverted.png"/>
-                            </Trigger>
-                        </Style.Triggers>
-                    </Style>
-                </Image.Style>
-            </Image>
-            <Image Grid.Column="2" HorizontalAlignment="Right" Margin="0,0,15,0" Width="15" Height="15"
+                        <Image.Style>
+                            <Style TargetType="{x:Type Image}">
+                                <Setter Property="Source" Value="/Images/MiscIcons/minusFilled.png"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Cursor" Value="Hand"/>
+                                        <Setter Property="Source" Value="/Images/MiscIcons/minusInverted.png"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Image.Style>
+                    </Image>
+                    <Image Grid.Column="1" HorizontalAlignment="Center" Width="15" Height="15"
+                   x:Name="imgMax" MouseLeftButtonDown="imgMax_MouseLeftButtonDown" Margin="15,0,15,0" ToolTip="Maximize/Restore">
+                        <Image.Style>
+                            <Style TargetType="{x:Type Image}">
+                                <Setter Property="Source" Value="/Images/MiscIcons/maximize.png"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Cursor" Value="Hand"/>
+                                        <Setter Property="Source" Value="/Images/MiscIcons/maximizeInverted.png"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Image.Style>
+                    </Image>
+                    <Image Grid.Column="2" HorizontalAlignment="Right" Margin="0,0,15,0" Width="15" Height="15"
                    x:Name="imgClose" MouseLeftButtonDown="imgClose_MouseLeftButtonDown" ToolTip="Close">
-                <Image.Style>
-                    <Style TargetType="{x:Type Image}">
-                        <Setter Property="Source" Value="/Images/MiscIcons/closeFilled.png"/>
-                        <Style.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Cursor" Value="Hand"/>
-                                <Setter Property="Source" Value="/Images/MiscIcons/closeInverted.png"/>
-                            </Trigger>
-                        </Style.Triggers>
-                    </Style>
-                </Image.Style>
-            </Image>
+                        <Image.Style>
+                            <Style TargetType="{x:Type Image}">
+                                <Setter Property="Source" Value="/Images/MiscIcons/closeFilled.png"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Cursor" Value="Hand"/>
+                                        <Setter Property="Source" Value="/Images/MiscIcons/closeInverted.png"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Image.Style>
+                    </Image>
+                </Grid>
+            </Viewbox>
+            
         </Grid>
         <!--#endRegion-->
 
