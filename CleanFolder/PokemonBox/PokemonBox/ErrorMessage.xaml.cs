@@ -17,50 +17,38 @@ namespace PokemonBox
     /// </summary>
     public partial class ErrorMessage : Window
     {
-        public enum ErrorMessageResult
-        {
-            //
-            // Summary:
-            //     The message box returns no result.
-            None = 0,
-            //
-            // Summary:
-            //     The result value of the message box is OK.
-            OK = 1,
-            //
-            // Summary:
-            //     The result value of the message box is Cancel.
-            Cancel = 2,
-            //
-            // Summary:
-            //     The result value of the message box is Yes.
-            Yes = 6,
-            //
-            // Summary:
-            //     The result value of the message box is No.
-            No = 7
-        }
-        public ErrorMessageResult ChooseErrorMessageresult
-        {
-            get
-            {
-                if (btnError1.IsPressed)
-                {
-                    return ErrorMessageResult.Yes;
-                }
-                if (btnError2.IsPressed)
-                {
-                    return ErrorMessageResult.No;
-                }
-                return ErrorMessageResult.Cancel;
-            }
-        }
+        MessageBoxResult button1Result, button2Result, button3Result;
+        private MessageBoxResult ChooseErrorMessageresult { get; set; }
 
-        public ErrorMessage(string errorMessage)
+        public ErrorMessage(string errorMessage, string caption, string buttonText1, MessageBoxResult result1, string buttonText2 = "", MessageBoxResult result2 = MessageBoxResult.None, string buttonText3 = "", MessageBoxResult result3 = MessageBoxResult.None)
         {
             InitializeComponent();
             txtError.Text = errorMessage;
+            txtCaption.Text = caption;
+            btnError1.Content = buttonText1;
+            button1Result = result1;
+
+            // Set the text of the second button, remove otherwise
+            if (buttonText2 != string.Empty)
+            {
+                btnError2.Content = buttonText2;
+                button2Result = result2;
+
+            }
+            else
+                this.grdButtons.Children.Remove((UIElement)FindName("btnError2"));
+
+            // Set the text of the third button, remove otherwise
+            if (buttonText3 != string.Empty)
+            {
+                btnError3.Content = buttonText3;
+                button3Result = result3;
+            }
+            else
+                this.grdButtons.Children.Remove((UIElement)FindName("btnError3"));
+
         }
+
         private void grdHeader_MouseDown(object sender, MouseButtonEventArgs e)
         {
             DragMove();
@@ -69,7 +57,7 @@ namespace PokemonBox
         {
             return this.imgMinus.IsMouseOver;
         }
-        private void imgClose_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        private void btnClose_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             Close();
         }
@@ -127,9 +115,38 @@ namespace PokemonBox
 
         }
 
-        private void btnErrorClose_Click(object sender, RoutedEventArgs e)
+        // Shows the box and returns the result
+
+        public MessageBoxResult ShowBox()
         {
-            Close();
+            this.ShowDialog();
+            return ChooseErrorMessageresult;
+        }
+
+        // These are used to set the result by different buttons, could have been done by changing each button's
+        // click event but we don't have a good understanding of how events work and we didn't want to take something straight off stack overflow
+        // click event but we don't have a good understanding of how events work and we didn't want to take something straight off stack overflow
+
+        private void btnError1_Click(object sender, RoutedEventArgs e)
+        {
+            ChooseErrorMessageresult = button1Result;
+            this.Close();
+        }
+
+        private void btnError2_Click(object sender, RoutedEventArgs e)
+        {
+            ChooseErrorMessageresult = button2Result;
+            this.Close();
+        }
+        private void btnError3_Click(object sender, RoutedEventArgs e)
+        {
+            ChooseErrorMessageresult = button3Result;
+            this.Close();
+        }
+        private void XButtonClose(object sender, RoutedEventArgs e)
+        {
+            ChooseErrorMessageresult = MessageBoxResult.Cancel;
+            this.Close();
         }
     }
 }

@@ -175,9 +175,8 @@ namespace PokemonBox
             else
             {
                 // Show an error message indicating that the box is full
-                ErrorMessage em = new ErrorMessage("The box is full! Remove some pokemon before adding more");
-                em.btnError1.Content = "OK";
-                em.btnError2.Content = "Exit";
+                ErrorMessage em = new ErrorMessage("The box is full! Remove some pokemon before adding more", "Full Box", "Ok", MessageBoxResult.OK);
+
                 Grid.SetColumnSpan(em.btnError2, 2);
                 em.grdButtons.Children.Remove((UIElement)em.FindName("btnError3"));
                 em.Show();
@@ -282,13 +281,23 @@ namespace PokemonBox
                 string warning = $"You are about to release your {shiny}{selectedPokemon.Species}{nickname}. This can not be reversed, are you sure you want to release {pronouns}?";
 
                 // If the user confirms the delete
-                if (MessageBox.Show(warning, "Warning!", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
+                ErrorMessage em = new ErrorMessage(warning, "Warning!", "Yes", MessageBoxResult.Yes, "No", MessageBoxResult.No);
+                if (em.ShowBox() == MessageBoxResult.Yes)
                 {
                     // Remove the pokemon
                     RemoveSelectedPokemon();
                     // No longer saved
                     Saved = false;
                 }
+
+                // OLD
+                //if (MessageBox.Show(warning, "Warning!", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
+                //{
+                //    // Remove the pokemon
+                //    RemoveSelectedPokemon();
+                //    // No longer saved
+                //    Saved = false;
+                //}
             }
         }
 
@@ -354,14 +363,8 @@ namespace PokemonBox
                     if (!pcBox.LoadFromFile(saveLocation))
                     {
                         // Show error and revert to old save location and state
-                        ErrorMessage em = new ErrorMessage("Error loading data from file.");
-                        em.btnError1.Content = "OK";
-                        em.btnError2.Content = "Exit";
-                        //Because no 3rd button make second span
-                        Grid.SetColumnSpan(em.btnError2, 2);
-                        //Remove 3rd Button
-                        em.grdButtons.Children.Remove((UIElement)em.FindName("btnError3"));
-                        em.Show();
+                        ErrorMessage em = new ErrorMessage("Error loading data from file.", "Failed to load", "Ok", MessageBoxResult.OK);
+                        em.ShowBox();
                         //MessageBox.Show("Error loading data from file.", "Failed to load", MessageBoxButton.OK, MessageBoxImage.Error);
                         saveLocation = oldSaveLocation;
                         Saved = oldSaved;
@@ -414,8 +417,10 @@ namespace PokemonBox
 
             //return saved;
 
+            ErrorMessage em = new ErrorMessage("Do you want to save changes?", "Unsaved data", "Yes", MessageBoxResult.Yes, "No", MessageBoxResult.No, "Cancel", MessageBoxResult.Cancel);
+
             MessageBoxResult result =
-            MessageBox.Show("Do you want to save changes?", "Unsaved data", MessageBoxButton.YesNoCancel, MessageBoxImage.Warning);
+            em.ShowBox();
             //If the user doesn't want to save 
             if (result == MessageBoxResult.No)
                 return true;
@@ -461,7 +466,10 @@ namespace PokemonBox
                 Saved = true;
             else
             {
-                MessageBox.Show("Your box could not be saved. Try again.", "Error saving.", MessageBoxButton.OK, MessageBoxImage.Error);
+                //MessageBox.Show("Your box could not be saved. Try again.", "Error saving.", MessageBoxButton.OK, MessageBoxImage.Error);
+                ErrorMessage em = new ErrorMessage("Your box could not be saved. Try again.", "Error saving.", "Ok", MessageBoxResult.OK);
+                em.ShowBox();
+
                 Saved = false;
             }
 

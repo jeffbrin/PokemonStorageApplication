@@ -117,7 +117,10 @@ namespace PokemonBox
 
             // Show an error if the selection wasn't valid
             if (!valid)
-                MessageBox.Show(sb.ToString(), "Invalid Pokemon", MessageBoxButton.OK, MessageBoxImage.Error);
+            {
+                ErrorMessage em = new ErrorMessage(sb.ToString(), "Invalid Pokemon", "Ok", MessageBoxResult.OK);
+                em.ShowBox();
+            }
 
             return valid;
 
