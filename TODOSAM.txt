@@ -1,5 +1,0 @@
-for sam
-Change filenames of music to just the # (save the names somewhere so you have them in case)
-make sure everything is content and copy if newer
-
-SaveStatus isn't displaying properly if the path is too long - If you could fix that it would be splendid
